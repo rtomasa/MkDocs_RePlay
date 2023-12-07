@@ -1,0 +1,230 @@
+# Changelog
+
+## v0.24.0
+- [ ] Added boot to system folder option
+- [ ] Added Philips CD-i system (do not support FMV games)
+- [ ] Added Atari Lynx system
+- [ ] Added Nintendo DS system
+- [ ] Added single monitor option (less performance impact when two monitors are connected)
+- [ ] Added ability to change audio output device without rebooting the system
+- [ ] Added ability to remove recents
+- [ ] Added ability to automatic filter out systems not supporting CRT mode
+- [ ] Added ability to automatic set default aspect ratio when selecting dual/single monitor mode
+- [ ] Added player/controller information
+- [ ] Fixed resolution for cores not honoring RETRO_ENVIRONMENT_SET_GEOMETRY
+- [ ] Fixed deemed extensions in favs and recents
+- [ ] Fixed recents not working with arcade games
+- [ ] Fixed libretro log levels
+- [ ] Fixed crash unloading sound engine when bad rom is loaded
+- [ ] Fixed UI scaling bug on dual monitor mode 
+
+## v0.23.0
+- [X] Added Raspberry Pi 3B/3B+/3A+ support
+- [X] Added new libretro based configuration engine for system and cores
+- [X] Added system info (eth IP, wlan IP and available space)
+- [X] Added gamepad test rumble support option
+- [X] Added screen position X/Y option for CRT mode
+- [X] Added autostart game functionality
+- [X] Added Kiosk mode config parameter
+- [X] Added option to set Select button for setting favorites
+- [X] Added volume configuration to the audio resample engine + volume option
+- [X] Added MAME system
+- [X] Added self restart capability in case that loading a rom crashes
+- [X] Added system option to flter out by vertical and horizontal games
+- [X] Added performance level profile option
+- [X] Added firstboot time auto configuration based on Pi model
+- [X] Added option value info text support
+- [X] Added system information
+- [X] Changed Python utility to generate arcade title info from FBNeo + MAME full Arcade DAT
+- [X] Fixed incorrect Full Native and Integer Scaled aspect ratios on some games
+- [X] Fixed bug drawing dimmed files extensions
+- [X] Fixed several bugs when saving and displaying arcade games in favorites and recent
+- [X] Fixed crash and bug on letter navigation functionality on recents and system folders
+- [X] Fixed analog-to-digital option making dpad not working when disabled
+- [X] Fixed interna UI view Id state
+- [X] Changed default alsa volume levels to 80% (80-100% can cause saturation on some systems)
+
+## v0.22.0
+- [X] Added HDMI dual screen support with automatic detection
+    - [X] Added duplicated display mode
+    - [X] Added side-by-side extended display mode
+    - [X] Added vertical stack extended display mode
+- [X] Added Raspberry Pi 4/5 model detection
+- [X] Fixed UI video corruption after pause
+
+## v0.21.0
+- [X] Added pause functionality when UI menu is open
+- [X] Added system halt state (P key) for CRT user photos 
+- [X] Fixed some UI memory leaks
+
+## v0.20.0
+- [X] Added arcade naming database engine
+- [X] Added supported file extensions filter
+- [X] Added Sega Game Gear in extended view mode
+- [X] Added UI text scrolling effect
+- [X] Added Python utility to generate arcade title info from FBNeo full Arcade DAT
+- [X] Improved UI message engine performance
+- [X] Improved configuration engine performance when reading files
+- [X] Fixed Atari 2600 horizontal resolution (in replay)
+- [X] Fixed Amstrad CPC horizontal resolution (in core)
+- [X] Fixed a crash when core incorrectly reports a NULL configuration value
+- [X] Fixed UI dimmed font icon chars
+- [X] Fixed UI folder elipsis position
+- [X] Removed ScummVM core Exit button (not needed)
+
+## v0.19.0
+- [X] Changed core neocd by FBNeo (more accurate)
+- [X] Changed core mednafen_supergrafx by mednafen_pce (more accurate)
+- [X] Fixed UI in 32 bit XRGB8888 pixel format
+- [X] Updated all cores (compiled on 2023-09-17)
+
+## v0.18.0
+- [X] Added option for selecting the menu hotkey (Home button, Hold Start, and Select + Start combo)
+- [X] Added logic to SDL to check if monitor is powered on
+- [X] Added video option for helping color blind people (Protanopia, Deuteranopia and Tritanopia)
+- [X] Added Dark/Light scanline filters
+- [X] Added Recent played games folder
+- [X] Changed audio resampler engine to always output at 48000 kHz instead of dynamic native rates
+- [X] Fixed HDMI audio handshake in some monitors/TVs
+- [X] Fixed favorite foldes sorting
+
+## v0.17.0
+- [X] Added Coin-op timer game mode
+- [X] Added favorites info message (add/remove)
+- [X] Added favorites game launcher functionality
+
+## v0.16.0
+- [X] Added new functionality to set proper UI boot menu aspect ratio and resolution
+
+## v0.15.0
+- [X] Improved UI performance
+- [X] Fixed UI memory leak (items index mismatch)
+- [X] Removed unused code (code clean up)
+
+## v0.14.0
+- [X] Added new video_show_info option and info message
+- [X] Added controller info message
+- [X] Added fps counter info message
+
+## v0.13.0
+- [X] Added initial information message engine
+- [X] Changed UI font to embeded hex compiled code
+- [X] Changed UI rotation and activation logic
+- [X] Fixed system filter list (read only supported systems)
+
+## v0.12.0
+- [X] Added new audio gain engine to avoid clipping artifacts on high freqs
+- [X] Added new audio buffer/unpause engine on init
+- [X] Added new Full Aspect Ratio scaling mode
+- [X] Added system UI swap A/B buttons option
+- [X] Added logic to set the controller status to ready only when connected and not buttons are phisically pressed
+- [X] Added SN30 Gamepad mapping to game controllers DB
+- [X] Added new Favorites engine
+- [X] Added default Game Boy Player mode to GBA core (rumble support)
+- [X] Added wait state until a monitor is connected on program start
+- [X] Added improved debug system levels
+- [X] Added basic UI/UX features
+    - [X] List menus only loops when using (UP) and (DOWN)
+    - [X] Allow going back using both (B) button or (..) special entry
+    - [X] Allow back navigation full index history
+    - [X] Dimmed file extension color
+    - [X] Hide menu when launching game from UI
+    - [X] Hide menu when launching game from CLI
+- [X] Fixed crashes on several cores where log info introduces bad chars
+- [X] Fixed Keyboard fallback game controller
+- [X] Fixed menu not displayed with home button afer rotating
+- [X] Fixed DC crash when unloading core
+- [X] Fixed N64 crash when unloading core
+- [X] Fixed verbose DEBUG mode not working fine on non ssh session
+- [X] Fixed N64 game launcher crash
+- [X] Fixed DC game launcher crash
+- [X] Fixed SNES game launcher crash
+- [X] Fixed FBNEO game launcher crash
+- [X] Fixed N64 bad textures when launched from UI
+- [X] Fixed DC bad textures when launched from UI
+- [X] Fixed standalone game launcher
+- [X] Fixed save/load functions
+- [X] Fixed no HDMI sound when launching games from UI
+- [X] Fixed audio stuttering for some games on load
+- [X] Fixed gamepad not working on PSX games when launched from UI
+
+## v0.11.0
+- [X] Added new audio engine
+    - Based on Dynamyc Rate Control
+    - Based on SINC resampling algorithm
+    - Low latency and CPU ussage
+
+## v0.10.0
+- [X] Added initial UI engine
+    - Integer scale
+    - Rotation +/-90
+    - Auto scaling factor
+- [X] Added 4 players support
+- [X] Added controller sorting engine
+    - Player number assigned by connection order
+    - Connected controllers keep player number
+    - New controllers take first free player number
+- [X] Added new input configuration file
+- [X] Added controller rumble implementation
+- [X] Added input descriptors implementation
+- [X] Added controller info implementation
+- [X] Added support for 0RGB1555, XRGB8888 and RGB565 pixel formats
+
+## v0.9.0
+- [X] Added dynamic rate control for Atomis/Naomi/DC games running at 60/30 fps
+- [X] Added core assets directory implementation
+- [X] Added disk control interface version implementation
+- [X] Fixed cores that request OpenGL ES 3.0 context instead of 3.1
+
+## v0.8.0
+- [X] Added a/v sync to content engine (i.e. run PAL games nicely)
+- [X] Added headphone/hdmi audio output selector
+- [X] Fixed crash when unloading games using core threading
+
+## v0.7.0
+- [X] Added custom input poll for cores not honoring libretro input poll callback
+- [X] Added new option to display FPS
+- [X] Fixed PSX support
+- [X] Fixed all libretro-gl core performance issues
+- [X] Fixed crash when booting with monitor powered off
+- [X] Fixed crash when saving SRAM on some games
+- [X] Fixed screenshot crashes in some cores
+- [X] Fixed savestate crashes in some cores
+- [X] Fixed SRAM crashes in some cores
+
+## v0.6.0
+- [X] Added video scalling configurations (Full 4:3, Native 1:1, Integer Scaled HV)
+- [X] Added user screenshot functionality (F10)
+- [X] Added system screenshot functionality (on savestates)
+- [X] Fixed several bugs in the configuration file engine
+
+## v0.5.0
+- [X] Added system option to enable/disable verbosity
+- [X] Added load/save system and core configuration file support
+- [X] Added DragonRise controller mappings
+- [X] Added user savestates support (F5/F9)
+- [X] Added support for .zip files (only supported cores)
+- [X] Fixed crash when pressig keyboard arrows with a controller connected
+- [X] Fixed keyboard/controller priority when connected and/or disconnected
+
+## v0.4.0
+- [X] Added support for native SRAM save files
+- [X] Added initial support for libretro-gl cores
+
+## v0.3.0
+- [X] Added basic system configuration file engine
+- [X] Added automatic core identification
+- [X] Added new input engine with controller DB
+- [X] Added analog to digital input option
+
+## v0.2.0
+- [X] Added automatic monitor EDID video selector (best mode)
+- [X] Added new audio sync engine
+    - Low latency
+    - Prevents buffer underrun and overrun
+    - Adaptative speed to video refresh rate
+
+## v0.1.0
+- [X] Added support for Raspberry Pi 4 using KMS/DRM, EGL, GBM and OpenGL ES 3.X
+- [X] Added basic support for audio and input via SDL2
+- [X] Added basic support for non-libretro-gl cores

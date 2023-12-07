@@ -1,0 +1,101 @@
+site_name: RePlay OS Official Site
+site_url: https://github.com/rtomasa/MkDocs_RePlay
+site_author: Rubén Tomás
+site_description: >-
+  RePlay OS is a Linux distribution featuring a streamlined libretro frontend. It's specifically designed to emulate a wide range of classic game consoles, arcade machines, and computers. The OS focuses on delivering fast and user-friendly emulation experiences, optimized for use with Raspberry Pi boards. This emphasis on ease of use and broad compatibility makes it an ideal choice for enthusiasts looking to relive classic gaming moments on modern hardware.
+copyright: >-
+  Copyright &copy; 2023 <a href="https://github.com/rtomasa" target="_blank" rel="noopener">Rubén Tomás (RTA)</a> -
+  <a href="#__consent">Change cookie settings</a>
+
+repo_name: MkDocs_RePlay
+repo_url: https://github.com/rtomasa/MkDocs_RePlay
+
+theme:
+  name: material
+  logo: img/logo.png
+  favicon: img/favicon.png
+  font:
+    text: Saira Semi Condensed
+    code: Sometype Mono
+  icon:
+    repo: fontawesome/brands/github-alt
+  languaje: en
+  palette:
+    scheme: slate
+    primary: black
+    accent: pink
+  custom_dir: overrides
+  features:
+    - navigation.tracking
+    - navigation.top
+    - navigation.path
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy  
+
+extra:
+  analytics:
+    provider: google
+    property: G-78GVW6P3JY
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    cookies:
+      analytics:
+        name: Google Analytics
+        checked: true
+      github:
+        name: GitHub
+        checked: true
+  social:
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/rtomasal
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@RTA_RetroDev
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/rtomasa
+    - icon: simple/kofi
+      link: https://ko-fi.com/rtomas
+  generator: false
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - md_in_html
+  - tables
+
+nav:
+  - Home: index.md
+  - System Cores:
+    - Supported Systems: systems.md
+  - Changelog: changelog.md
+  - Download: download.md
+  - F.A.Q: faq.md
+  - About: about.md
