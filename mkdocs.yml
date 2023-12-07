@@ -65,11 +65,6 @@ extra:
       link: https://ko-fi.com/rtomas
   generator: false
 
-plugins:
-  - git-revision-date-localized:
-      type: datetime
-      enable_creation_date: true
-
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
