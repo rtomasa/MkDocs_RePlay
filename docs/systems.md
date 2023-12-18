@@ -30,8 +30,8 @@
 | NEO-GEO CD                   | :red_circle:     | :green_circle:   | :green_circle: | :green_circle: | cue, ccd, chd |
 | NEO-GEO Pocket               | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | ngp, ngc, ngpc, npc |
 | PlayStation                  | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | exe, psexe, cue, img, iso, chd, pbp, ecm, mds, psf, m3u |
-| 3DO                          | :red_circle:     | :red_circle:     | :green_circle: | :green_circle: | iso, chd, cue |
-| Philips CD-I                 | :red_circle:     | :red_circle:     | :green_circle: | :green_circle: | iso, chd, cue |
+| 3DO                          | :red_circle:     | :green_circle:   | :green_circle: | :green_circle: | iso, chd, cue |
+| Philips CD-I                 | :red_circle:     | :green_circle:   | :green_circle: | :green_circle: | iso, chd, cue |
 | Amstrad CPC                  | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | dsk, sna, tap, cdt, voc, cpr, m3u |
 | Commodore 64                 | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | d64, d71, d80, d81, d82, g64, g41, x64, t64, tap, prg, p00, crt, bin, gz, d6z, d8z, g6z, g4z, x6z, cmd, m3u, vfl, vs |
 | Commodore Amiga              | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | adf, adz, dms, fdi, raw, ipf, hdf, hdz, lha, slave, info, uae, m3u |
