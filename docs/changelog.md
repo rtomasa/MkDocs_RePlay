@@ -1,22 +1,31 @@
 # Changelog
 
+## v0.25.0
+- [X] Added new game menu screen
+    - [X] Added new save/load UI system engine
+    - [X] Added resume/reset game functionality
+- [X] Added system version information in replay optons menu
+- [X] Added new default background and system logo
+- [X] Updated all cores (compiled on 2023-12-17)
+
 ## v0.24.0
-- [ ] Added boot to system folder option
-- [ ] Added Philips CD-i system (do not support FMV games)
-- [ ] Added Atari Lynx system
-- [ ] Added Nintendo DS system
-- [ ] Added single monitor option (less performance impact when two monitors are connected)
-- [ ] Added ability to change audio output device without rebooting the system
-- [ ] Added ability to remove recents
-- [ ] Added ability to automatic filter out systems not supporting CRT mode
-- [ ] Added ability to automatic set default aspect ratio when selecting dual/single monitor mode
-- [ ] Added player/controller information
-- [ ] Fixed resolution for cores not honoring RETRO_ENVIRONMENT_SET_GEOMETRY
-- [ ] Fixed deemed extensions in favs and recents
-- [ ] Fixed recents not working with arcade games
-- [ ] Fixed libretro log levels
-- [ ] Fixed crash unloading sound engine when bad rom is loaded
-- [ ] Fixed UI scaling bug on dual monitor mode 
+- [X] Added boot to system folder option
+- [X] Added Philips CD-i system (do not support FMV games)
+- [X] Added 3DO system
+- [X] Added Atari Lynx system
+- [X] Added Nintendo DS system (RPi5)
+- [X] Added single monitor option (less performance impact when two monitors are connected)
+- [X] Added ability to change audio output device without rebooting the system
+- [X] Added ability to remove recents
+- [X] Added ability to automatically filter out systems not supporting CRT mode
+- [X] Added ability to automatically set default aspect ratio when selecting dual/single monitor mode
+- [X] Added player/controller information
+- [X] Fixed resolution for cores not honoring RETRO_ENVIRONMENT_SET_GEOMETRY
+- [X] Fixed deemed extensions in favs and recents
+- [X] Fixed recents not working with arcade games
+- [X] Fixed libretro log levels
+- [X] Fixed crash unloading sound engine when bad rom is loaded
+- [X] Fixed UI scaling bug on dual monitor mode
 
 ## v0.23.0
 - [X] Added Raspberry Pi 3B/3B+/3A+ support
