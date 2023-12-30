@@ -40,14 +40,14 @@
 | Sharp X68000                 | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | dim, img, d88, 88d, hdm, dup, 2hd, xdf, hdf, cmd, m3u |
 | MSX                          | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | rom, ri, mx1, mx2, dsk, col, sg, sc, sf, cas, m3u |
 | ZX Spectrum                  | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | tzx, tap, z80, rzx, scl, trd, dsk |
-| IBM PC (MS-DOS)              | :green_circle:   | :yellow_circle:  | :green_circle: | :green_circle: | zip, dosz, exe, com, bat, iso, cue, ins, img, ima, vhd, jrc, tc, m3u, m3u8, conf |
+| IBM PC (MS-DOS)              | :yellow_circle:  | :yellow_circle:  | :green_circle: | :green_circle: | zip, dosz, exe, com, bat, iso, cue, ins, img, ima, vhd, jrc, tc, m3u, m3u8, conf |
 | ScummVM                      | :green_circle:   | :green_circle:   | :green_circle: | :green_circle: | scummvm, svm |
 
 ## System Legend
-:green_circle: most games run fine near or at full performance with no emulations issues.
-:yellow_circle: there are many games that could face emulation or performance issues.
-:red_circle: system not supported due to bad performance.
+:green_circle: most games run fine near or at full performance with no emulations issues.</br>
+:yellow_circle: there are many games that could face emulation or performance issues.</br>
+:red_circle: system not supported due to bad performance.</br>
 
 ## CRT Legend
-:green_circle: system is supported in CRT
+:green_circle: system is supported in CRT.</br>
 :red_circle: system is not supported in CRT
