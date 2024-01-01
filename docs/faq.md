@@ -42,5 +42,7 @@ The system is being developed using RGB-Pi hardware and no other devices will be
 
 Initially only Raspberry Pi 4 and 5 will support CRT TVs. RPi 3 is still pending on feasibility.
 
+**Note about Pi5 support:** we already tested video DPI compatibility with current hardware. Sound is still pending on further analysis and official Raspberry drivers.
+
 ## Will support image srapping?
 No it won't. The main goal of the system is to be super fast with zero configuration. This means that no scanning or database is used by the system so scrapping is not even feasible from the technical point of view. Also the UI layout makes impossible to fit images neither on LCD or CRT screens.
