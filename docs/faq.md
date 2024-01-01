@@ -9,6 +9,18 @@ Again no, and never will. Other devices fully lack the support for linux video d
 ## What is the advantage over other RPi distros like Lakka, RetroPie or RecalBox?
 Since the system is fully focused on a single device family with a limited list of supported systems, I can maximize the hardware's power and introduce many unique features. It is also worth noting that the system is extremely fast and user-friendly, with each system core thoroughly tested and pre-configured. This ensures the best experience right out of the box.
 
+## Why RePlay OS instead of a new RGB-Pi OS 5?
+
+The primary aim of RePlay OS is to offer a system that is fast and easy to start with. It demonstrates that emulation can achieve high quality when properly configured, allowing everyone to enjoy optimal gaming conditions right from the start, without requiring technical emulation skills to fine-tune everything.
+
+In all versions of RGB-Pi OS (0, 1, 2, 4), we were limited by the two frontends used—mine for the user interface and RetroArch for gaming. This limitation prevented certain functionalities, such as in-game menu rotation, a fully adaptable interface across various resolutions, customization based on my design preferences, and more.
+
+RePlay's frontend is not just a simple launcher; it is a complete libretro-based frontend similar to the one utilized in RetroArch/Lakka.
+
+Numerous features are exclusively achievable by using a custom libretro-based frontend, which cannot be accomplished using a basic launcher paired with RetroArch. These include dual-screen support, minimal input lag—comparable to or even less than that of the original hardware without utilizing runahead—complete control over various system options and configurations, core speed and performance enhancements, improvements in DynaRes engine speed for CRT TVs, special functionalities like the coin-op time feature, and many others.
+
+It's crucial to note that RePlay is compatible with both LCD and CRT monitors, and it will support our ongoing projects.
+
 ## What about input lag?
 The system runs by default in a super low-latency mode, adding only 0/1 frame of lag over the actual system hardware.
 
