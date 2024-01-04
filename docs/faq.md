@@ -47,3 +47,7 @@ Initially, only Raspberry Pi 4 and 5 will support CRT TVs. RPi 3 is still pendin
 
 ## Will it support image scrapping?
 No, it won't. The main goal of the system is to be super fast with zero configuration. This means that no scanning or database is used by the system, so scrapping is not even feasible from a technical point of view. Additionally, the UI layout makes it impossible to fit images on either LCD or CRT screens.
+
+## Can I use other cores?
+
+The answer is no. All the cores included in RePlay have been selected based on a balance between the best performance and emulation quality across different supported models of Raspberry Pi. That being said, depending on each Raspberry Pi model, some systems may be activated or deactivated, and it's possible that cores within the same system may also be changed. All the cores have been tested for years and come with optimal default configurations based on performance, emulation quality, fidelity, bugs, screen type, etc.
