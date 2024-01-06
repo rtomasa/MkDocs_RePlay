@@ -88,8 +88,9 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - System Cores:
-    - Supported Systems: systems.md
+  - Supported Systems:
+    - System Requirements: systems.md
+    - System Settings: settings.md
   - Changelog: changelog.md
   - Download: download.md
   - F.A.Q: faq.md

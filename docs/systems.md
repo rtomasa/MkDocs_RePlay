@@ -1,4 +1,4 @@
-# Supported Systems
+# System Requirements
 
 | System                                | RPi 3            | RPi 4            | RPi 5          | CRT            | Supported Format   |
 | ------------------------------------- | :--------------: | :--------------: | :------------: | :------------: | :----------------: |

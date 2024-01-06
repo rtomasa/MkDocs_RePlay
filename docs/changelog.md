@@ -1,5 +1,34 @@
 # Changelog
 
+## v0.27.0
+- [X] Added game system settings engine and menu options
+- [X] Added color highlight to option values for better readability
+- [X] Added core name and version to game settings menu
+- [X] Added linear interpolation to glcores with vertical resolution >= 480
+- [X] Added system options blacklist functionality
+- [X] Added system options default configurations for both LCD and CRT functionality
+- [X] Added company names to system view for better grouping and sorting
+- [X] Added default Roland GM sound font to ScummVM system
+- [X] Updated libretro API interface header file
+- [X] Changed Home btn so that it always returns to game menu
+- [X] Changed RETRO_ENVIRONMENT_GET_TARGET_REFRESH_RATE behaviour (fixes ScummVM)
+- [X] Changed favs and recent game display names (prettyfied)
+- [X] Fixed crash for cores not supporting savestates
+- [X] Fixed gl_init on RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO (fixes BLARGG filters)
+- [X] Fixed audio gpio dac output selection in audio options (developer purposes)
+- [X] Fixed incorrect FBO passed to gl-cores when requesting the same in RETRO_ENVIRONMENT_SET_HW_RENDER
+- [X] Fixed recents when same roms and different core exists
+- [X] Fixed some DC crashes by adding drm_deinit to core_unload_game
+- [X] Fixed crash on exit due to duplicated video deinit
+- [X] Fixed OpenGL inverted vertical coords after a gl-core game crashes on start
+- [X] Fixed name duplication issues in favs and recents (internal company prefix)
+- [X] Removed .ipf rom support due to copyright issues
+
+## v0.26.0
+- [X] Added MAME 2K3+ system
+- [X] Fixed input info display lenght
+- [X] Removed SEGA ST from boot to folder option
+
 ## v0.25.0
 - [X] Added new game menu screen
     - [X] Added new save/load UI system engine
