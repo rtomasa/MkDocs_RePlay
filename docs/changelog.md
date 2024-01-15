@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.28.0
+- [X] Added new Media Player system (alpha status)
+- [X] Added new per system or game custom settings:
+    * Aspect Ratio
+    * Volume
+    * Performance Level
+- [X] Added ability to downscale in Pixel Perfect aspect ratio mode when content has more resolution than the screen
+- [X] Added libretro SET_MESSAGE and SET_MESSAGE_EXT API implementation (OSD core messages)
+- [X] Added menu refresh after option command execution
+- [X] Fixed action command executed when option is disabled
+- [X] Fixed crash when input.cfg is missing
+- [X] Fixed OpenGL bug not properly clearing main FBO making content backgroung to draw garbage in some scenarios
+
 ## v0.27.0
 - [X] Added game system settings engine and menu options
 - [X] Added color highlight to option values for better readability

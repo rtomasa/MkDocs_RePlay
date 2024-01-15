@@ -2,7 +2,7 @@
 
 | System                                | RPi 3            | RPi 4            | RPi 5          | CRT            | Supported Format   |
 | ------------------------------------- | :--------------: | :--------------: | :------------: | :------------: | :----------------: |
-| Arcade (FBNeo)                        | :yellow_circle:  | :green_circle:  | :green_circle: | :green_circle: | zip |
+| Arcade (FBNeo)                        | :yellow_circle:  | :green_circle:   | :green_circle: | :green_circle: | zip |
 | Arcade (MAME)                         | :red_circle:     | :yellow_circle:  | :green_circle: | :green_circle: | zip |
 | Arcade (MAME 2K3+)                    | :yellow_circle:  | :yellow_circle:  | :green_circle: | :green_circle: | zip |
 | Arcade SEGA Naomi/Atomis              | :red_circle:     | :yellow_circle:  | :green_circle: | :green_circle: | zip |
