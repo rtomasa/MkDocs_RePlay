@@ -2,7 +2,7 @@
 
 ## Arcade (FBNeo)
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Vertical mode | fbneo-vertical-mode | Rotate display for vertical screens |
 | Force 60Hz | fbneo-force-60hz | Ignore game's original refresh rate and try to run it at 60hz instead. It will cause incorrect game speed and frame pacing. It will try to use your monitor's correct refresh rate instead of 60hz if this refresh rate is between 59hz and 61hz. |
@@ -20,7 +20,7 @@
 
 ## Arcade (MAME)
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Thread Mode | mame_thread_mode | n/a |
 | Throttle | mame_throttle | n/a |
@@ -46,7 +46,7 @@
 
 ## Arcade (MAME 2K3+)
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | CPU Clock Scale | mame2003-plus_cpu_clock_scale | Used to under or over clock the emulated CPU by a specified percentage. |
 | Skip Disclaimer | mame2003-plus_skip_disclaimer | Bypasses a copyright warning from being displayed when loading content. |
@@ -68,7 +68,7 @@
 
 ## Arcade SEGA Naomi/Atomis
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Region | reicast_region | n/a |
 | Language | reicast_language | Changes the language used by the BIOS and by any games that contain multiple languages. |
@@ -139,7 +139,7 @@
 
 ## Atari 2600/VCS
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Console display | stella_console | n/a |
 | Palette colors | stella_palette | n/a |
@@ -154,7 +154,7 @@
 
 ## Atari 5200
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | BIOS (Restart) | a5200_bios | Set BIOS image. 'Official' loads an original console dump provided by the user, named '5200.rom' and placed in the frontend 'System' directory. 'Internal (Altirra OS)' uses an inbuilt open-source alternative with reduced compatibility. The 'Official |
 | Hi-Res Artifacting Mode | a5200_artifacting_mode | Set Hi-Res Artifacting mode used.  Typically dependant on the actual emulated system.  Pick the color combination that pleases you.  None disables artifacting.  Good for games like A.E., Backgammon, Miniature Golf and several Atari 800 to Atari 5200 |
@@ -171,7 +171,7 @@
 
 ## Atari 7800
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Audio Filter | prosystem_low_pass_filter | Enables a low pass audio filter to soften the 'harsh' sound produced by the Atari 7800's TIA chip. |
 | Audio Filter Level | prosystem_low_pass_range | Specifies the cut-off frequency of the low pass audio filter. A higher value increases the perceived 'strength' of the filter, since a wider range of the high frequency spectrum is attenuated. |
@@ -179,7 +179,7 @@
 
 ## Atari Jaguar
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Fast Blitter | virtualjaguar_usefastblitter | Use the faster blitter, it is older and less compatible, it will break some games. |
 | Doom Resolution Hack | virtualjaguar_doom_res_hack | Hack to fix the halved resolution in Doom. |
@@ -238,14 +238,14 @@
 
 ## Atari Lynx
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Auto-rotate Screen | lynx_rot_screen | Virtually rotate screen orientation and button mappings automatically for known games. When set to 'Manual', screen rotation is adjusted by pressing the SELECT button, otherwise a fixed rotation can be set to either 0, 90, 180 or 270 degrees counter |
 | Force 60Hz | lynx_force_60hz | Force 60Hz instead of original 75Hz refresh rate, for perfectly smooth movement on 60Hz displays |
 
 ## NEC TurboGrafx-16/PC Engine
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | **Raspberry Pi 4 and higher** {: colspan=3} |
 | Color Palette | pce_palette | Composite tries to recreate the original console output and can show more details in some games. |
@@ -312,7 +312,7 @@
 
 ## NEC TurboGrafx-CD/CD-ROM2 System
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | **Raspberry Pi 4 and higher** {: colspan=3} |
 | Color Palette | pce_palette | Composite tries to recreate the original console output and can show more details in some games. |
@@ -379,7 +379,7 @@
 
 ## Nintendo NES/Famicom
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Region | fceumm_region | Force core to use NTSC, PAL or Dendy region timings. |
 | Game Genie Add-On (Restart Required) | fceumm_game_genie | Enable emulation of a Game Genie add-on cartridge, allowing cheat codes to be entered when launching games. The Game Genie ROM file 'gamegenie.nes' must be present in the frontend's system directory. Does not apply to FDS or arcade content. |
@@ -411,7 +411,7 @@
 
 ## Nintendo Super Nintendo/Super Famicom
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | **Raspberry Pi 4 and higher** {: colspan=3} |
 | Console Region (Reload Core) | snes9x_region | Specify which region the system is from. 'PAL' is 50hz, 'NTSC' is 60hz. Games will run faster or slower than normal if the incorrect region is selected. |
@@ -462,7 +462,7 @@
 
 ## Nintendo 64
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Frame Duplication | mupen64plus-FrameDuping | Enable Frame duplication to improve smoothing on low-end. Different from frameskip. |
 | Framerate | mupen64plus-Framerate | Fullspeed will enforce Count per Op 1 and FBEmu settings, this will break some games! |
@@ -529,7 +529,7 @@ Based on the above info, the most authentic look is:
 
 ## Nintendo Game Boy
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Game Boy Model (Restart) | mgba_gb_model | Runs loaded content with a specific Game Boy model. 'Autodetect' will select the most appropriate model for the current game. |
 | Use BIOS File if Found (Restart) | mgba_use_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. |
@@ -548,7 +548,7 @@ Based on the above info, the most authentic look is:
 
 ## Nintendo Game Boy Advance
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Game Boy Model (Restart) | mgba_gb_model | Runs loaded content with a specific Game Boy model. 'Autodetect' will select the most appropriate model for the current game. |
 | Use BIOS File if Found (Restart) | mgba_use_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. |
@@ -566,7 +566,7 @@ Based on the above info, the most authentic look is:
 | Idle Loop Removal | mgba_idle_optimization | Reduce system load by optimizing so-called 'idle-loops' - sections in the code where nothing happens, but the CPU runs at full speed (like a car revving in neutral). Improves performance, and should be enabled on low-end hardware. |
 
 ## Nintendo DS
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Console Mode | melonds_console_mode | n/a |
 | Boot Game Directly | melonds_boot_directly | Choose if the core should boot the game directly or if it should boot to the DS menu instead (BIOS and firmware files required). |
@@ -586,7 +586,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA SG-1000
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System | system | n/a |
 | .. | .. | n/a |
@@ -647,7 +647,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA Game Gear
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System | system | n/a |
 | .. | .. | n/a |
@@ -708,7 +708,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA Master System/Mark III
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System | system | n/a |
 | .. | .. | n/a |
@@ -769,7 +769,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA Megadrive/Genesis
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System | system | n/a |
 | .. | .. | n/a |
@@ -830,7 +830,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA Mega-CD/Sega CD
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System | system | n/a |
 | .. | .. | n/a |
@@ -891,7 +891,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA Megadrive 32X/Sega 32X
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System Region | picodrive_region | Specify which region the system is from. 'PAL'/'Europe' is 50hz while 'NTSC'/'US' is 60hz. Games may run faster or slower than normal (or produce errors) if the incorrect region is selected. |
 | Master System Type | picodrive_smstype | Choose which type of hardware (SMS or Game Gear) the core should emulate when running Master System content. |
@@ -912,7 +912,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA Saturn
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System Region | beetle_saturn_region | Choose which region the system is from. |
 | BIOS language | beetle_saturn_autortc_lang | Also affects language used in some games (e.g. the European release of 'Panzer Dragoon'). |
@@ -934,7 +934,7 @@ Based on the above info, the most authentic look is:
 
 ## SEGA Dreamcast
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Region | reicast_region | n/a |
 | Language | reicast_language | Changes the language used by the BIOS and by any games that contain multiple languages. |
@@ -1005,7 +1005,7 @@ Based on the above info, the most authentic look is:
 
 ## SNK NEO-GEO (AES/MVS)
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Vertical mode | fbneo-vertical-mode | Rotate display for vertical screens |
 | Force 60Hz | fbneo-force-60hz | Ignore game's original refresh rate and try to run it at 60hz instead. It will cause incorrect game speed and frame pacing. It will try to use your monitor's correct refresh rate instead of 60hz if this refresh rate is between 59hz and 61hz. |
@@ -1049,7 +1049,7 @@ Based on the above info, the most authentic look is:
 
 ## SNK NEO-GEO CD
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Vertical mode | fbneo-vertical-mode | Rotate display for vertical screens |
 | Force 60Hz | fbneo-force-60hz | Ignore game's original refresh rate and try to run it at 60hz instead. It will cause incorrect game speed and frame pacing. It will try to use your monitor's correct refresh rate instead of 60hz if this refresh rate is between 59hz and 61hz. |
@@ -1067,13 +1067,13 @@ Based on the above info, the most authentic look is:
 
 ## SNK NEO-GEO Pocket
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Language (*) | ngp_language | n/a |
 
 ## SONY PlayStation
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | **Raspberry Pi 4 and higher** {: colspan=3} |
 | Console Region | swanstation_Console_Region | Determines which region/hardware to emulate. Auto-Detect will use the region of the disc inserted. |
@@ -1213,7 +1213,7 @@ Based on the above info, the most authentic look is:
 
 ## Panasonic 3DO
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | BIOS (rom1) | opera_bios | Select which official system BIOS (hardware revision) to use when performing emulation. Only files present in RetroArch's system directory are listed. |
 | Font (rom2) | opera_font | Select which official 'font rom' to use when performing emulation. Required by some Japanese games, otherwise optional. Only files present in RetroArch's system directory are listed. |
@@ -1236,7 +1236,7 @@ Based on the above info, the most authentic look is:
 
 ## Philips CD-I
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Read configuration | same_cdi_read_config | n/a |
 | Write configuration | same_cdi_write_config | n/a |
@@ -1253,7 +1253,7 @@ Based on the above info, the most authentic look is:
 
 ## Amstrad CPC
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Controls > User 1 Controller Config | cap32_retrojoy0 | n/a |
 | Controls > User 2 Controller Config | cap32_retrojoy1 | n/a |
@@ -1274,7 +1274,7 @@ Based on the above info, the most authentic look is:
 
 ## Commodore 64
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System > Model | vice_c64_model | 'Automatic' switches region per file path tags.</br>Changing while running resets the system! |
 | System > RAM Expansion Unit | vice_ram_expansion_unit | Changing while running resets the system! |
@@ -1379,7 +1379,7 @@ Based on the above info, the most authentic look is:
 
 ## Commodore Amiga
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System > Model | puae_model | 'Automatic' defaults to 'A500' with floppy disks, 'A1200' with hard drives and 'CD32' with compact discs. 'Automatic' can be overridden with file path tags.</br></br></br></br>Core restart required. |
 | System > Show Automatic Model Options | puae_model_options_display | Show/hide default model options (Floppy/HD/CD) for 'Automatic' model. |
@@ -1480,7 +1480,7 @@ Based on the above info, the most authentic look is:
 
 ## Commodore Amiga CD32
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | System > Model | puae_model | 'Automatic' defaults to 'A500' with floppy disks, 'A1200' with hard drives and 'CD32' with compact discs. 'Automatic' can be overridden with file path tags.</br></br></br></br>Core restart required. |
 | System > Show Automatic Model Options | puae_model_options_display | Show/hide default model options (Floppy/HD/CD) for 'Automatic' model. |
@@ -1581,7 +1581,7 @@ Based on the above info, the most authentic look is:
 
 ## Atari ST
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Polarized Audio Filter | hatari_polarized_filter | Uses hatari's polarized lowpass filters on audio to simulate distortion. |
 | Autoload hatari.cfg. | hatari_autoload_config | Loads SYSTEM\hatari\hatari.cfg on content start.  Warning.  Overrides everything except for selected TOS image. |
@@ -1630,7 +1630,7 @@ Based on the above info, the most authentic look is:
 
 ## Sharp X68000
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Menu Font Size | px68k_menufontsize | n/a |
 | CPU Speed | px68k_cpuspeed | Configure the CPU speed. Can be used to slow down games that run too fast or to speed up floppy loading times. |
@@ -1654,7 +1654,7 @@ Based on the above info, the most authentic look is:
 
 ## Microsoft MSX
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Machine Type (Restart) | bluemsx_msxtype | n/a |
 | VDP Sync Type (Restart) | bluemsx_vdp_synctype | n/a |
@@ -1665,7 +1665,7 @@ Based on the above info, the most authentic look is:
 
 ## Sinclair ZX Spectrum
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Model (needs content load) | fuse_machine | n/a |
 | Size Video Border | fuse_size_border | n/a |
@@ -1694,7 +1694,7 @@ Based on the above info, the most authentic look is:
 
 ## IBM PC (MS-DOS)
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Force 60 FPS Output | dosbox_pure_force60fps | Enable this to force output at 60FPS. Use this if you encounter screen tearing or vsync issues. |
 | Show Performance Statistics | dosbox_pure_perfstats | Enable this to show statistics about performance and framerate and check if emulation runs at full speed. |
@@ -1742,7 +1742,7 @@ Based on the above info, the most authentic look is:
 
 ## ScummVM
 
-| Description                           | Key            | Value          |
+| Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Auto performance tuner | scummvm_auto_performance_tuner | In-game automatic change of timing/frameskip settings if low performances are detected. Timing/frameskip settings will be changed in sequence, if audio buffer underruns are detected and for the current game session only, and restored in sequence if  |
 | Cursor > Exclusive cursor control with RetroPad | scummvm_gamepad_cursor_only | Allows the use of RetroPad only to control mouse cursor, excluding the other inputs (e.g. physical mouse, touch screen). |
@@ -1779,3 +1779,14 @@ Based on the above info, the most authentic look is:
 | RetroPad > Right Analog > Down | scummvm_mapper_rd | n/a |
 | RetroPad > Right Analog > Left | scummvm_mapper_rl | n/a |
 | RetroPad > Right Analog > Right | scummvm_mapper_rr | n/a |
+
+## Alpha Player
+
+| Setting                               | Key            | Info           |
+| ------------------------------------- | -------------- | -------------- |
+| Resolution (restart) | mplayer_video_resolution | n/a |
+| Hardware Decoder (restart) | mplayer_hw_decoder | n/a |
+| Loop | mplayer_loop_content | n/a |
+| Software Decoder Threads (restart) | mplayer_sw_decoder_threads | n/a |
+| Colorspace | mplayer_color_space | n/a |
+| Visualizer Resolution | mplayer_fft_resolution | n/a |

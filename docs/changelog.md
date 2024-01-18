@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.29.0
+- [X] Added global mouse support
+    * Only one mouse is currently supported
+    * Mouse works no matter the player number or port
+- [X] Added start button emulation via middle mouse button (opens ScummVM menu)
+
 ## v0.28.0
 - [X] Added new Media Player system (alpha status)
 - [X] Added new per system or game custom settings:
