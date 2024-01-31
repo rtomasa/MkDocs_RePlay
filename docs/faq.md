@@ -51,3 +51,19 @@ No, it won't. The main goal of the system is to be super fast with zero configur
 ## Can I use other cores?
 
 The answer is no. All the cores included in RePlay have been selected based on a balance between the best performance and emulation quality across different supported models of Raspberry Pi. That being said, depending on each Raspberry Pi model, some systems may be activated or deactivated, and it's possible that cores within the same system may also be changed. All the cores have been tested for years and come with optimal default configurations based on performance, emulation quality, fidelity, bugs, screen type, etc.
+
+## What is libretro?
+
+The Libretro API is a lightweight C-based Application Programming Interface (API) that exposes generic audio, video, and input callbacks.
+
+There are two sides to Libretro development:
+
+- **frontends** are programs that provide a user interface and all the implementation-specific details to run libretro-compatible cores.
+- **cores** are programs built as a single library file (such as a game, emulator, or media player) that use the libretro API so that can be executed by libretro frontends.
+
+Developers of cores don’t have to worry about writing different video drivers for Direct3D, OpenGL or worrying about catering to all possible input APIs, sound APIs, gamepads, etc.
+
+**RePlay OS** uses a custom libretro frontend specifically tailored to Raspberry devices. It is programmed in C and uses the following libraries:
+
+- OpenGL ES 3.X for video
+- SDL2 for audio and input devices

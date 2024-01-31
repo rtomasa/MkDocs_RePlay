@@ -10,7 +10,7 @@
 
 ## What is RePlay OS?
 
-**RePlay OS** is a Linux distribution featuring a streamlined libretro frontend. It's specifically designed to emulate a wide range of classic game consoles, arcade machines, and computers. The OS focuses on delivering fast and user-friendly emulation experiences, optimized for use with Raspberry Pi boards. This emphasis on ease of use and broad compatibility makes it an ideal choice for enthusiasts looking to relive classic gaming moments on modern hardware.
+**RePlay OS** is a Linux distribution featuring a streamlined [libretro](./faq.md/#what-is-libretro) frontend. It's specifically designed to emulate a wide range of classic game consoles, arcade machines, and computers. The OS focuses on delivering fast and user-friendly emulation experiences, optimized for use with Raspberry Pi boards. This emphasis on ease of use and broad compatibility makes it an ideal choice for enthusiasts looking to relive classic gaming moments on modern hardware.
 
 RePlay OS is meant to be executed only in Raspberry Pi devices. Putting the focus on a single device allows me to bring the best emulation experience for both LCD and CRT TVs.
 
@@ -20,7 +20,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 
 *Big things have small beginings*
 
-* CRT is love
+* Support CRT TVs whenever possible
 * Retro should look retro
 * Stay far from whistles and bells
 * Fast is not enough
