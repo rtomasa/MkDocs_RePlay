@@ -41,7 +41,7 @@ No, there isn't. It will be released when it is finished.
 ## Will it be compatible with CRT TVs and RGB-Pi or other devices?
 The system is being developed using RGB-Pi hardware, and no other devices will be supported or tested.
 
-Initially, only Raspberry Pi 4 and 5 will support CRT TVs. RPi 3 is still pending on feasibility.
+Initially, only Raspberry Pi 4 and 5 will support CRT TVs. RPi 3 and Zero 2 are still pending on feasibility.
 
 **Note about Pi5 support:** we already tested video DPI compatibility with current hardware. Sound is still pending on further analysis and official Raspberry drivers.
 

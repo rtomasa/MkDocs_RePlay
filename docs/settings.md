@@ -284,7 +284,7 @@
 | (CD) ADPCM Volume % | pce_adpcmvolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CDDA Volume % | pce_cddavolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CD PSG Volume % | pce_cdpsgvolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| **Raspberry Pi 3** {: colspan=3} |
+| **Raspberry Pi 3 / Zero 2** {: colspan=3} |
 | Color Palette | sgx_palette | Composite tries to recreate the original console output and can show more details in some games. |
 | Mouse Sensitivity | sgx_mouse_sensitivity | Higher values will make the mouse cursor move faster. |
 | Allow Opposing Directions | sgx_up_down_allowed | Enabling this will allow pressing / quickly alternating / holding both left and right (or up and down) directions at the same time. This may cause movement-based glitches. |
@@ -351,7 +351,7 @@
 | (CD) ADPCM Volume % | pce_adpcmvolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CDDA Volume % | pce_cddavolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CD PSG Volume % | pce_cdpsgvolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| **Raspberry Pi 3** {: colspan=3} |
+| **Raspberry Pi 3 / Zero 2** {: colspan=3} |
 | Color Palette | sgx_palette | Composite tries to recreate the original console output and can show more details in some games. |
 | Mouse Sensitivity | sgx_mouse_sensitivity | Higher values will make the mouse cursor move faster. |
 | Allow Opposing Directions | sgx_up_down_allowed | Enabling this will allow pressing / quickly alternating / holding both left and right (or up and down) directions at the same time. This may cause movement-based glitches. |
@@ -451,7 +451,7 @@
 | Enable Sound Channel 6 | snes9x_sndchan_6 | n/a |
 | Enable Sound Channel 7 | snes9x_sndchan_7 | n/a |
 | Enable Sound Channel 8 | snes9x_sndchan_8 | n/a |
-| **Raspberry Pi 3** {: colspan=3} |
+| **Raspberry Pi 3 / Zero 2** {: colspan=3} |
 | Console Region (Restart) | snes9x_2010_region | Specify which region the system is from. 'PAL' is 50hz, 'NTSC' is 60hz. Games will run faster or slower than normal if the incorrect region is selected. |
 | Set Autofire Pulse | snes9x_2010_turbodelay | Fire interval: medium - 6 frames, fast - 4 frames, slow - 8 frames. |
 | Blargg NTSC Filter | snes9x_2010_blargg | Apply a video filter to mimic various NTSC TV signals. |
@@ -1174,7 +1174,7 @@ Based on the above info, the most authentic look is:
 | Enable 8MB RAM (Dev Console) | swanstation_Console_Enable8MBRAM | Enabled an additional 6MB of RAM, usually present on dev consoles. Games have to use a larger heap size for this additional RAM to be usable, and may break games which rely on memory mirroring, so it should only be used with compatible mods. |
 | Use Old MDEC Routines | swanstation_Hacks_UseOldMDECRoutines | Use old routines for MDEC content. |
 | Use Alternative Audio Hook (Restart) | swanstation_Audio_FastHook | Use a faster and more efficient to submit audio samples to the frontend. Mostly safe to enable, but may hang for a select few games that rely on the old method to function. Requires the core to be restarted to apply. |
-| **Raspberry Pi 3** {: colspan=3} |
+| **Raspberry Pi 3 / Zero 2** {: colspan=3} |
 | Region | pcsx_rearmed_region | Specify which region the system is from. 'NTSC' is 60 Hz while 'PAL' is 50 Hz. 'Auto' will detect the region of the currently loaded content. Games may run faster or slower than normal if the incorrect region is selected. |
 | BIOS Selection | pcsx_rearmed_bios | Specify which BIOS to use. 'Auto' will attempt to load a real bios file from the frontend 'system' directory, falling back to high level emulation if unavailable. 'HLE' forces high level BIOS emulation. It is recommended to use an official bios file |
 | Show BIOS Boot Logo | pcsx_rearmed_show_bios_bootlogo | When using an official BIOS file, specify whether to show the PlayStation logo upon starting or resetting content. Warning: Enabling the boot logo may reduce game compatibility. |

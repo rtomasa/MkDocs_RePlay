@@ -1,6 +1,6 @@
 # System Requirements
 
-| System                                | RPi 3            | RPi 4            | RPi 5          | CRT            | Supported Format   |
+| System                                | RPi 3/Zero 2     | RPi 4            | RPi 5          | CRT            | Supported Format   |
 | ------------------------------------- | :--------------: | :--------------: | :------------: | :------------: | :----------------: |
 | Arcade (FBNeo)                        | :yellow_circle:  | :green_circle:   | :green_circle: | :green_circle: | zip |
 | Arcade (MAME)                         | :red_circle:     | :yellow_circle:  | :green_circle: | :green_circle: | zip |

@@ -1,17 +1,37 @@
 # Changelog
 
+## v0.30.0
+- [X] Added new system core remapping engine
+- [X] Added support for Raspberry Pi Zero 2
+- [X] Added Shoulders to Trigger (digital to analog) to both system and game input option menu. (e.g. allows playing Outrun using digital controls)
+- [X] Added Left Stick to DPAD (analog to digital) to both system and game input option menu
+- [X] Added option to hide Media Player
+- [X] Changed some RePlay UI design patterns
+    - Added .. entry in systems if not in menu core
+    - Added replay options entry in systems if in menu core
+    - Added replay options entry in system menu
+    - Added .. entry in replay options (same action cmd as start btn)
+    - Changed input and settings labels in system menu
+    - Changed home btn as quick direct access back to system menu if not in menu core
+    - Removed thread titles to improve readability and performance
+    - Removed start action cmd
+    - Removed start ui labels
+    - Removed core name info inside all system settings
+- [X] Changed Kiosk hardcoded values to whitelist
+- [X] Fixed performance issue in Replay options > video menu
+
 ## v0.29.0
 - [X] Added global mouse support
-    * Only one mouse is currently supported
-    * Mouse works no matter the player number or port
+    - Only one mouse is currently supported
+    - Mouse works no matter the player number or port
 - [X] Added start button emulation via middle mouse button (opens ScummVM menu)
 
 ## v0.28.0
 - [X] Added new Media Player system (alpha status)
 - [X] Added new per system or game custom settings:
-    * Aspect Ratio
-    * Volume
-    * Performance Level
+    - Aspect Ratio
+    - Volume
+    - Performance Level
 - [X] Added ability to downscale in Pixel Perfect aspect ratio mode when content has more resolution than the screen
 - [X] Added libretro SET_MESSAGE and SET_MESSAGE_EXT API implementation (OSD core messages)
 - [X] Added menu refresh after option command execution
@@ -29,7 +49,7 @@
 - [X] Added company names to system view for better grouping and sorting
 - [X] Added default Roland GM sound font to ScummVM system
 - [X] Updated libretro API interface header file
-- [X] Changed Home btn so that it always returns to game menu
+- [X] Changed Home btn so that it always returns to system menu
 - [X] Changed RETRO_ENVIRONMENT_GET_TARGET_REFRESH_RATE behaviour (fixes ScummVM)
 - [X] Changed favs and recent game display names (prettyfied)
 - [X] Fixed crash for cores not supporting savestates
@@ -49,9 +69,9 @@
 - [X] Removed SEGA ST from boot to folder option
 
 ## v0.25.0
-- [X] Added new game menu screen
-    - [X] Added new save/load UI system engine
-    - [X] Added resume/reset game functionality
+- [X] Added new system menu screen
+    - Added new save/load UI system engine
+    - Added resume/reset game functionality
 - [X] Added system version information in replay optons menu
 - [X] Added new default background and system logo
 - [X] Updated all cores (compiled on 2023-12-17)
@@ -89,7 +109,7 @@
 - [X] Added self restart capability in case that loading a rom crashes
 - [X] Added system option to flter out by vertical and horizontal games
 - [X] Added performance level profile option
-- [X] Added firstboot time auto configuration based on Pi model
+- [X] Added firstboot time auto configuration based on RPi model
 - [X] Added option value info text support
 - [X] Added system information
 - [X] Changed Python utility to generate arcade title info from FBNeo + MAME full Arcade DAT
@@ -98,14 +118,14 @@
 - [X] Fixed several bugs when saving and displaying arcade games in favorites and recent
 - [X] Fixed crash and bug on letter navigation functionality on recents and system folders
 - [X] Fixed analog-to-digital option making dpad not working when disabled
-- [X] Fixed interna UI view Id state
+- [X] Fixed internal UI view Id state
 - [X] Changed default alsa volume levels to 80% (80-100% can cause saturation on some systems)
 
 ## v0.22.0
 - [X] Added HDMI dual screen support with automatic detection
-    - [X] Added duplicated display mode
-    - [X] Added side-by-side extended display mode
-    - [X] Added vertical stack extended display mode
+    - Added duplicated display mode
+    - Added side-by-side extended display mode
+    - Added vertical stack extended display mode
 - [X] Added Raspberry Pi 4/5 model detection
 - [X] Fixed UI video corruption after pause
 
@@ -181,12 +201,12 @@
 - [X] Added wait state until a monitor is connected on program start
 - [X] Added improved debug system levels
 - [X] Added basic UI/UX features
-    - [X] List menus only loops when using (UP) and (DOWN)
-    - [X] Allow going back using both (B) button or (..) special entry
-    - [X] Allow back navigation full index history
-    - [X] Dimmed file extension color
-    - [X] Hide menu when launching game from UI
-    - [X] Hide menu when launching game from CLI
+    - List menus only loops when using (UP) and (DOWN)
+    - Allow going back using both (B) button or (..) special entry
+    - Allow back navigation full index history
+    - Dimmed file extension color
+    - Hide menu when launching game from UI
+    - Hide menu when launching game from CLI
 - [X] Fixed crashes on several cores where log info introduces bad chars
 - [X] Fixed Keyboard fallback game controller
 - [X] Fixed menu not displayed with home button afer rotating
