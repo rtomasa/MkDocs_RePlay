@@ -67,3 +67,11 @@ Developers of cores don’t have to worry about writing different video drivers 
 
 - OpenGL ES 3.X for video
 - SDL2 for audio and input devices
+
+## Can I use CRT shaders on my LCD?
+
+No, that's not possible. The system offers only two basic scanline shaders tailored for LCD screens, and they're activated exclusively when integer scaling is enabled. These shaders are intended to provide a subtle texturing effect for those who prefer it, rather than to simulate the appearance of a CRT screen.
+
+Attempting to replicate the authentic CRT TV experience using CRT shaders is beyond the project's intended scope and philosophy. In fact, CRT shaders introduce image aberrations and performance issues that vary depending on the system in use. Additionally, they cannot reproduce the distinctive contrast or smooth motion of a real CRT TV.
+
+If you're fond of the look and feel of CRT TVs, your best bet is to acquire an actual CRT TV!
