@@ -3,12 +3,12 @@
 ## v0.31.0
 - [X] Added virtual disk engine
 - [X] Added filter to hide all files contained in a M3U file
+- [X] Added initial support for Egret II mini spinner/trackball controller (NOT TESTED)
 - [X] Added input option for checking button IDs when pressed
 - [X] Changed option Shoulders to Triggers (digital to analog) to Buttons to Triggers supporting 3 configurations:
     - Buttons 1/2 - Useful in arcade/jamma
     - Buttons 2/3 - Useful in arcade/jamma
     - Buttons 9/10 (L/R) - Useful in arcade/jamma and SNES like gamepads
-- [X] Added initial support for Egret II mini spinner/trackball controller (NOT TESTED)
 - [X] Changed all "Reset ..." option labels to "Remove ..."
 - [X] Fixed save/load slot name not updated when overrided
 - [X] Fixed core crashes due to a bug in RETRO_ENVIRONMENT_SET_MESSAGE
