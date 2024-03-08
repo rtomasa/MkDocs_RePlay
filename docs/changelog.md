@@ -8,7 +8,7 @@
 - [X] Changed option Shoulders to Triggers (digital to analog) to Buttons to Triggers supporting 3 configurations:
     - Buttons 1/2 - Useful in arcade/jamma
     - Buttons 2/3 - Useful in arcade/jamma
-    - Buttons 9/10 (L/R) - Useful arcade/jamma and SNES like gamepads
+    - Buttons 9/10 (L/R) - Useful in arcade/jamma and SNES like gamepads
 - [X] Changed all "Reset ..." option labels to "Remove ..."
 - [X] Fixed core crashes due to a bug in RETRO_ENVIRONMENT_SET_MESSAGE
 - [X] Fixed save/load crash getting label 
