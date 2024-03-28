@@ -18,7 +18,7 @@ There are different options available for emulating both RDP and RSP in N64 emul
 | --------- | --------- | --------------------- | ----------------- |
 | LLE	    | Vulkan	| ParaLLEl-RSP 		    | ParaLLEl-RDP      |
 | LLE	    | Software	| ParaLLEl-RSP		    | Angrylion RDP Plus|
-| HLE	    | GL	    | Mupen64Plus HLE RSP	| GLideN64          |
+| HLE	    | OpenGL    | Mupen64Plus HLE RSP	| GLideN64          |
 
 ## N64 Dithering Emulation
 
