@@ -509,24 +509,6 @@
 | Don't filter background textures | mupen64plus-txFilterIgnoreBG | (GLN64) Ignore filtering for Background Textures. |
 | INI Behaviour | mupen64plus-GLideN64IniBehaviour | (GLN64) Specifies INI Settings behaviour. This should really only contain essential options. Changing this can and will break ROM's, if the correct options aren't set manually. Some options may only be set via INI (fbInfoDisabled). |
 
-### Dithering Advanced Info
-
-RDRAM image dithering and shader dithering are mostly independent of each other.
-Native res + shader dithering provides authentic look, and no post processing is required.
-
-* DitheringPattern: shader dithering is per-polygon and controlled by game.
-* RDRAMImageDitheringMode: RDRAM image dithering is post-processing, dithering method controlled by user or hardcoded.
-The only case when shader dithering overrides RDRAM image dithering is "native res + shader dithering are both enabled".
-* DitheringQuantization: quantization converts RGB to RGB555 and 8Bit alpha to 5Bit alpha if dithering is used. So in theory it should look worse, because you loose precision. On the other hand it looks right, because real hardware is doing the same thing.
-
-Based on the above info, the most authentic look is:
-
-* DitheringPattern = "True"
-* DitheringQuantization = "True"
-* RDRAMImageDitheringMode = "False"
-
-**Please do note that the above configurations will impact the system performance**
-
 ## Nintendo Game Boy
 
 | Setting                               | Key            | Info           |
