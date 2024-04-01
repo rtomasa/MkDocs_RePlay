@@ -88,6 +88,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Main Features: features.md
   - Supported Systems:
     - System Requirements: systems.md
     - System Settings: settings.md
