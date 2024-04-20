@@ -45,8 +45,8 @@
 | ScummVM                               | :green_circle: :desktop:  | :green_circle:   | :green_circle:             | scummvm, svm |
 | Alpha Player                          | :yellow_circle: :desktop: | :yellow_circle:  | :yellow_circle:            | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
 
-## System Legend
+## Icon Legend
 :green_circle: most games run fine near or at full performance with no emulations issues.</br>
 :yellow_circle: there are many games that could face emulation or performance issues.</br>
 :red_circle: system not supported due to bad performance.</br>
-:desktop: LCD only. In RPi3/Zero 2, CRT is not supported due to hardware pixel clock limitations.</br>
+:desktop: LCD only. RPi 3 and Zero 2 do not support CRT monitors because of hardware constraints related to the pixel clock.</br>
