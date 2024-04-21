@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.32.1
+- [X] Fixed aspect ratio in some systems due to OpenGL texture assigment error when setting game geometry
+- [X] Fixed random crash loading systems due to disk control interface not being properly freed
+
 ## v0.32.0
 - [X] Added new DynaRes 2.0 engine
     - Support for multiple LCD and CRT initialization modes
@@ -28,10 +32,9 @@
 - [X] Added per system/game X/Y position
 - [X] Improved X/Y position option to automatically scale based on current resolution
 - [X] Improved audio and video per frame speed accuracy and synchonization
-- [X] Fixed core speed when running muntithread cores
+- [X] Fixed core speed when running multithread cores
 - [X] Fixed crash when changing a RePlay option from game menu
 - [X] Fixed bug loading custom paths from cfg file
-- [X] Fixed monitor modes not detected when connected HDMI2 only
 - [X] Fixed UI scaling in dual screen vertical mode
 - [X] Fixed game input remaps affecting UI button actions
 
