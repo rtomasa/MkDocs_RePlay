@@ -1,5 +1,40 @@
 # Changelog
 
+## v0.32.0
+- [X] Added new DynaRes 2.0 engine
+    - Support for multiple LCD and CRT initialization modes
+    - Ability to load system without any connected monitor
+    - New screen mode option to set resolution
+    - New CRT type option to set monitor type
+    - CRT support for all RPi 3, 4 and 5 models (RPi 3 support is limited)
+    - RPi3 won't display/support systems running interlaced modes in CRT mode
+    - Updated modeline calculator based on latest version of Calamity's SwitchRes
+    - Added DRR (Dual Refresh Rate) 60/50Hz support for both CRT and LCD displays
+    - Set default HDMI mode to 60hz (max FHD 1080)
+    - Enhanced capability for ultra-fast on-the-fly timing adjustments within 1-3 frames Vs. 108-120 frames in DynaRes 1.0
+    - Added handheld CRT lowres support
+- [X] Added new scalling modes:
+    - Integer Scale Overscan (only works in FHD 1080! nearly the original overscan of a CRT)
+    - Integer Scale Underscan (usefull for special DIY projects)
+- [X] Added new functionlity to RePlay start menu core
+    - It now properly manage all diferent video modes at boot
+    - Fixed background scaling in dual screen modes
+    - Fixed background rendering when changing dual screen modes from UI
+    - Improved performance
+    - Background rotation
+    - Uses its own native aspect ratio different from other cores
+- [X] Added current resolution in information option
+- [X] Added automatic roms folder creation functionality
+- [X] Added per system/game X/Y position
+- [X] Improved X/Y position option to automatically scale based on current resolution
+- [X] Improved audio and video per frame speed accuracy and synchonization
+- [X] Fixed core speed when running muntithread cores
+- [X] Fixed crash when changing a RePlay option from game menu
+- [X] Fixed bug loading custom paths from cfg file
+- [X] Fixed monitor modes not detected when connected HDMI2 only
+- [X] Fixed UI scaling in dual screen vertical mode
+- [X] Fixed game input remaps affecting UI button actions
+
 ## v0.31.0
 - [X] Added virtual disk engine
 - [X] Added filter to hide all files contained in a M3U file
