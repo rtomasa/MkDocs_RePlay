@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.32.2
+- [X] Fixed Raspberry Pi 5 OpenGL core support
+- [X] Fixed audio resampler dynamic audio pitch
+- [X] Fixed audio not init when moving SD to another different Pi model
+
 ## v0.32.1
 - [X] Fixed aspect ratio in some systems due to OpenGL texture assigment error when setting game geometry
 - [X] Fixed random crash loading systems due to disk control interface not being properly freed
