@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.33.0
+- [X] Added DynRes interlaced video mode support for Raspberry Pi 3, 4 and 5
+- [X] Added Raspberry Pi 3 CRT support for PSX, X68K, IBM PC and SCUMMVM
+- [X] Added option to enable/disable overscan reduction in CRT screens
+- [X] Added CRT dual screen support
+- [X] Added new dual screen UI game filter (stacked and side-by-syde)
+- [X] Added UI game filter auto selection on dual screen mode selection
+- [X] Added NDS support in CRT mode (only in dual screen stacked mode)
+- [X] Added support for 6 players
+- [X] Fixed several UI zoom scaling issues
+- [X] Fixed RePlay core background tiling and zoom now based on screen resolution
+- [X] Fixed screen capture in CRT dual screen modes
+- [X] Fixed crash when there are no joysticks connected on loading games
+- [X] Fixed UI Game Filter not working with Favorites and Recent games
+- [X] Removed forced CRT 50/60Hz modes due to compatibility and stability issues
+
+## v0.32.3
+<!-- **IMPORTANT!!! This is the last version containing development code for old RGB-Pi standard A/V** -->
+- [X] Fixed bug in audio resampler dynamic audio pitch in single-thread cores
+
 ## v0.32.2
 - [X] Fixed Raspberry Pi 5 OpenGL core support
 - [X] Fixed audio resampler dynamic audio pitch

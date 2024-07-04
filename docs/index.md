@@ -22,7 +22,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 
 * Support CRT TVs whenever possible
 * Retro should look retro
-* Stay far from whistles and bells
+* Avoid unnecessary frills
 * Fast is not enough
 * Less is more
 * Small details matter
