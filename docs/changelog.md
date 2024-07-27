@@ -9,11 +9,21 @@
 - [X] Added UI game filter auto selection on dual screen mode selection
 - [X] Added NDS support in CRT mode (only in dual screen stacked mode)
 - [X] Added support for 6 players
+- [X] Added USB storage support (FAT/FAT32/exFAT)
+- [X] Added NFS storage support
+- [X] Added bios check when loading games
+- [X] Added new RePlay Extra folder
+- [X] Added option to autodetect and set time zone (useful for save state names)
+- [X] Added new driver support for TAITO Paddle & Trackball
+- [X] Added new driver support for NAMCO GunCon 2 Lightgun
+- [X] Added initial support for keyboard scancode core inputs (required for MAME TAB OSD)
 - [X] Fixed several UI zoom scaling issues
 - [X] Fixed RePlay core background tiling and zoom now based on screen resolution
 - [X] Fixed screen capture in CRT dual screen modes
 - [X] Fixed crash when there are no joysticks connected on loading games
 - [X] Fixed UI Game Filter not working with Favorites and Recent games
+- [X] Fixed incorrect port device type assigment
+- [X] Fixed Replay UI core zoom factor in hi-res modes
 - [X] Removed forced CRT 50/60Hz modes due to compatibility and stability issues
 
 ## v0.32.3
