@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.36.0
+- [X] Added RePlay script updater
+- [X] Refactored script launcher
+- [X] Refactored timezone functionality
+- [X] Refactored reboot functionality
+
+## v0.35.0
+- [X] Added script to create user sd FAT partition on first boot
+- [X] Added option to show/hide arcade, consoles, computers, handhelds
+- [X] Added verbose system option only when frontend is compiled in DEBUG mode
+- [X] Fixed MSX BIOS check
+
+## v0.34.0
+- [X] Added support for special RePlay Extra cores and scripts
+- [X] Added Screen Test extra core (color and geometry)
+- [X] Added BIOS script downloader
+- [X] Added USB disk I/O performance improvements
+- [X] Added storage safe mode (requires manual remount)
+- [X] Added custom GCon2 screen flash for improved precision
+- [X] Fixed system volume in RPi3 model
+
 ## v0.33.0
 - [X] Added DynRes interlaced video mode support for Raspberry Pi 3, 4 and 5
 - [X] Added Raspberry Pi 3 CRT support for PSX, X68K, IBM PC and SCUMMVM

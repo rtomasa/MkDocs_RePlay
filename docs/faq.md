@@ -54,7 +54,7 @@ The answer is no. All the cores included in RePlay have been selected and pre-co
 
 ## What is libretro?
 
-The [Libretro API](https://www.libretro.com/index.php/api/) is a lightweight C-based Application Programming Interface (API) that exposes generic audio, video, and input callbacks.
+The [Libretro API](https://www.libretro.com/index.php/api/){target=_blank} is a lightweight C-based Application Programming Interface (API) that exposes generic audio, video, and input callbacks.
 
 There are two sides to Libretro development:
 

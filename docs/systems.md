@@ -1,4 +1,6 @@
-# System Requirements
+# Supported Systems
+
+## Compatibility Matrix
 
 | System                                | RPi 3/Zero 2              | RPi 4            | RPi 5                      | Supported Format   |
 | ------------------------------------- | :--------------:          | :--------------: | :------------:             | :----------------: |
@@ -45,7 +47,7 @@
 | ScummVM                               | :green_circle:            | :green_circle:   | :green_circle:             | scummvm, svm |
 | Alpha Player                          | :yellow_circle:           | :yellow_circle:  | :yellow_circle:            | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
 
-## Icon Legend
+## Icon Description
 :green_circle: most games run fine near or at full performance with no emulations issues.</br>
 :yellow_circle: there are many games that could face emulation or performance issues.</br>
 :red_circle: system not supported due to bad performance.</br>

@@ -1,4 +1,6 @@
-# System Settings
+# Core System Settings
+
+Below you can find a full reference to all available core system setting.
 
 ## Arcade (FBNeo)
 

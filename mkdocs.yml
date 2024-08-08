@@ -88,12 +88,22 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Features: features.md
-  - Supported Systems:
-    - System Requirements: systems.md
-    - System Settings: settings.md
-  - Retro & Emu Insights: insights.md
+  - Wiki (basic):
+    - Requirements: sysreq.md
+    - Supported Systems: systems.md
+    - Installation & First Boot: install.md
+    - Gamepad Configuration: gpadbasic.md
+    - Keyboard Configuration: keyboard.md
+    - Folder Structure: folders.md
+    - Adding Games: addgames.md
+    - Adding BIOS: addbios.md
+    - Video Configuration: videobasic.md
+    - Input Lag: inputlag.md
+  - Wiki (advanced):
+    - Wi-Fi Configuration: wifi.md
+    - Core System Settings: settings.md
+    - Emulation Know-How: insights.md
+  - F.A.Q: faq.md
   - Changelog: changelog.md
   - Download: download.md
-  - F.A.Q: faq.md
   - About: about.md

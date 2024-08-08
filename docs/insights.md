@@ -1,4 +1,4 @@
-# Retro & Emulation Insights
+# Emulation Know-How
 
 ## N64 Graphics & Audio Emulation
 
