@@ -17,6 +17,8 @@ You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MOD
 * `LCD 1920X1080@60/50`: this mode can switch between 60Hz and 50Hz, accommodating PAL games or arcade games that operate close to 50Hz (could not work in all TVs).
 * `LCD 1280X720@60/50`
 
+**NOTE:** when changing between LCD and CRT modes, you must reboot the system to apply the configuration.
+
 ## Dual Screen Mode
 
 RePlay OS is able to make use of dual screen configuration in both LCD and CRT configurations. You can select different modes from `REPLAY OPTIONS > VIDEO > DUAL SCREEN MODE`:
