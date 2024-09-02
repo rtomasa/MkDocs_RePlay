@@ -1,5 +1,26 @@
 # Changelog
 
+## v0.37.0
+- [X] Added HDMI LCD video mode check to make use of progressive resolutions only
+- [X] Added power off option (its use is optional)
+- [X] Added seven extra skin slots for user custom skins
+- [X] Added satellaview missing BIOS to new official pack
+- [X] Added fds missing BIOS to new official pack
+- [X] Added SD fallback functionality when USB is removed without umounting
+- [X] Added ability to set best built-in core settings based on Pi family (E.g. default DC alpha sorting on Pi4/Pi5)
+- [X] Changed boot and system mount points to secure write mode
+- [X] Changed default overclock from 2900 to 2800 because some Pi5 not booting
+- [X] Changed video mode text list for better readability
+- [X] Changed default NDS touch control to Joystick
+- [X] Changed predefault performance emu options for N64 and DC in Pi5
+- [X] Fixed Aero Blasters PCE crash
+- [X] Fixed crash loading Screen Test extra core after playing cores with multy CD support
+- [X] Fixed crash loading frontend UI after core not able to load content
+- [X] Fixed UI search index buffer overflow
+- [X] Fixed custom GCon2 screen flash in DC
+- [X] Removed Atari ST due to many emulation and performance issues
+- [X] Update all cores (2024-08-30)
+ 
 ## v0.36.0
 - [X] Added RePlay script updater
 - [X] Refactored script launcher

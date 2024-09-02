@@ -39,7 +39,6 @@
 | Commodore 64                          | :green_circle:            | :green_circle:   | :green_circle:             | d64, d71, d80, d81, d82, g64, g41, x64, t64, tap, prg, p00, crt, bin, gz, d6z, d8z, g6z, g4z, x6z, cmd, m3u, vfl, vs |
 | Commodore Amiga                       | :yellow_circle:           | :green_circle:  | :green_circle:              | adf, adz, dms, fdi, raw, hdf, hdz, lha, slave, info, uae, m3u |
 | Commodore Amiga CD32                  | :red_circle:              | :green_circle:   | :green_circle:             | cue, ccd, nrg, mds, iso, chd, m3u |
-| Atari ST                              | :red_circle:              | :red_circle:     | :red_circle:               | st, msa, stx, m3u |
 | Sharp X68000                          | :green_circle:            | :green_circle:   | :green_circle:             | dim, img, d88, 88d, hdm, dup, 2hd, xdf, hdf, cmd, m3u |
 | Microsoft MSX                         | :green_circle:            | :green_circle:   | :green_circle:             | rom, ri, mx1, mx2, dsk, col, sg, sc, sf, cas, m3u |
 | Sinclair ZX Spectrum                  | :green_circle:            | :green_circle:   | :green_circle:             | tzx, tap, z80, rzx, scl, trd, dsk |
