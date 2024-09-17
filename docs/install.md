@@ -30,6 +30,12 @@ If the flash fails, try again. If it still fails, your MicroSD card could be bro
 
 * Finally, you can close balenaEtcher, remove the MicroSD card and plug it into your Raspberry device.
 
+## Connect the primary HDMI
+
+**IMPORTANT:** Ensure you are using the primary HDMI port when booting your Raspberry Pi. Using the wrong port will result in a black screen.
+
+![Step 7](img/pi_hdmi_1.png)
+
 ## First Boot
 
 When booting your Raspberry Pi for the first time, it will perform some initial operations silently (black screen), such as creating and expanding a new FAT partition on the MicroSD card for storing your ROMs, BIOS, saves, and config files.

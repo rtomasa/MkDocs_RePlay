@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.38.0
+- [X] Added support for new Raspberry Pi 5 2GB model
+- [X] Added ARM64 performance compilation flags
+- [X] Added new mono downmix audio option
+- [X] Added 60/50Hz Screen Test button toggle
+- [X] Added support for many new gamepads and joystics
+- [X] Added 5 connection retries with 2 seconds of retry interval for NFS mounting
+- [X] Added frontend autoreload functionality on crash
+- [X] Updated Amiga Core (2024-09-16). Fixes some game crashes and issues
+- [X] Changed Favorites, Recents and Autostart files from absolute to relative paths
+- [X] Changed default Linux kernel joystick polling rate to 1ms
+- [X] Fixed RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO refresh rate change detection
+- [X] Fixed initialization of some gamepad and joysticks (E.g. Astro City Mini)
+- [X] Removed login service for improved boot experience and speed
+
 ## v0.37.0
 - [X] Added HDMI LCD video mode check to make use of progressive resolutions only
 - [X] Added power off option (its use is optional)
