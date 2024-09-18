@@ -101,6 +101,7 @@ nav:
     - Input Lag: inputlag.md
   - Wiki (advanced):
     - Wi-Fi Configuration: wifi.md
+    - New Controllers Support: mappings.md
     - Core System Settings: settings.md
     - Emulation Know-How: insights.md
   - F.A.Q: faq.md

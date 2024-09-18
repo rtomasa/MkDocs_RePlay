@@ -1,7 +1,3 @@
-Here's the refined version of your text:
-
----
-
 # Adding Games
 
 Before playing games, you must copy them to your MicroSD, USB, or NFS.
