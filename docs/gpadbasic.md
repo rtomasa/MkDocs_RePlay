@@ -2,11 +2,11 @@
 
 RePlay is designed to be a zero-configuration system, which involves some trade-offs, such as with gamepad support.
 
-Unlike many other systems where you need to configure and map your controllers manually, RePlay provides a database of over 600 different controller configurations out of the box. Please note that any Xinput gamepad should work fine, but we cannot guarantee this for all gamepads. Additionally, rumble support is only available for Xinput controllers.
+Unlike many other systems where you need to configure and map your controllers manually, RePlay provides a database of over **630** different controller configurations out of the box. Please note that any Xinput gamepad should work fine, but we cannot guarantee this for all gamepads. Additionally, rumble support is only available for Xinput controllers.
 
 While playing games, you can apply remaps to the entire system or specific games to match your button preferences.
 
-For advanced controller configurations, please refer to the advanced Wiki.
+For advanced controller configurations, please refer to the [New Controllers Support](mappings.md) section in the advanced Wiki.
 
 **IMPORTANT:** please do note that we do not support Bluetooth devices out of the box. It is recommended to use USB or 2.4G controller devices, or if you relly want Bluetooth gamepad support, we recommend using a 8Bitdo Bluetooth dongle.
 
