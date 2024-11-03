@@ -4,7 +4,7 @@
   ![RTA Logo](img/rta.png){width="150"}
 </figure>
 
-My name is Rubén Tomás (AKA RTA or rTomas). I'm a C, Python, HTML/JavaScript programmer with focus on creating custom frontends for Raspberry Pi devices. I also contribute on the development and bugfixing of several core emulators, Linux kernel, drivers, and more.
+My name is Rubén Tomás Alonso (AKA RTA or rTomas). I'm a C, Python, HTML/JavaScript programmer with focus on creating custom frontends for Raspberry Pi devices. I also contribute on the development and bugfixing of several core emulators, Linux kernel, drivers, and more.
 
 BTW I'm also the creator of RGB-Pi OS 1/2/4!
 

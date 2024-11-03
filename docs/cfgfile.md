@@ -107,10 +107,18 @@ system_coinop_time          = "180"
 ## 5 = disabled
 system_verbose              = "5"
 system_kiosk_mode           = "false"
-# system_emu_quality
-## 0 = low (triple-buffer + linear resampler)
-## 1 = medium (triple-buffer + sync resampler)
-## 2 = high (double-buffer + sync resampler)
+## 0 = Performance
+##     - video triple-buffer
+##     - audio linear resampler
+##     - set specific core options
+## 1 = Balanced
+##     - video triple-buffer
+##     - audio sync resampler
+##     - set specific core options
+## 2 = Quality
+##     - video double-buffer
+##     - audio sync resampler
+##     - set specific core options
 system_emu_quality          = "1"
 # system_skin
 ## 0 = blue (default)

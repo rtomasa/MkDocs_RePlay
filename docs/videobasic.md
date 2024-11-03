@@ -6,7 +6,7 @@ Below you can find a description of some basic video configurations and features
 
 You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MODE`:
 
-* `DEFAULT`: this mode automatically selects the native default resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
+* `CRT/LCD AUTO`: this mode automatically selects the type (CRT or LCD), and native default resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080 for LCD. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
 * `CRT 320X240@VRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It uses variable refresh rates for each system/game. That is, it uses native refresh rates.
 * `CRT 640X480@VRR`: this mode is similar to the previous one but is specifically designed for high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
 * `LCD 1920X1080@60`

@@ -1,5 +1,29 @@
 # Changelog
 
+## v0.40.0
+- [X] Fixed core OpenGL video context reinit (fixes DC Full Framebuffer Emulation in CRT)
+- [X] Fixed DC interlaced drawing fields for improved image stability in some games
+- [X] Fixed non-working interlaced PAL resolutions
+- [X] Fixed silent boot
+
+## v0.39.0
+- [X] Added new option to boot into PAL 50 or NTSC 60 mode (usefull for some CRT only PAL TVs)
+- [X] Added GPU Frequency in System Information option menu
+- [X] Added option to reset all system configurations (frontend, cores, and input)
+- [X] Changed Default video mode option to CRT/LCD Auto
+- [X] Changed all predefault overclock settings for better stability
+- [X] Changed Emulation Quality options to Performance, Balanced, and Quality
+    - Automatically adjusts core options based on RPi model, and Emulation Quality selected option
+- [X] Fixed bug making P1 controlling P2
+- [X] Fixed function for getting interlaced video modes in CRT mode 
+- [X] Fixed A/V sync in VRR mode in systems running internally at different speed rates
+- [X] Fixed A/V reinit in OpenGL based cores when running in CRT in RPi5
+- [X] Fixed Screen Test core crashing due to bad compilation
+- [X] Fixed firstboot auto-configuration
+- [X] Fixed a bug hiding some input options in system menu
+- [X] Fixed OpenGL frontend texture sizing bug (fixes DC Full Framebuffer Emulation in LCD)
+- [X] Fixes PSX graphic glitches in Oddworld games
+
 ## v0.38.0
 - [X] Added support for new Raspberry Pi 5 2GB model
 - [X] Added ARM64 performance compilation flags

@@ -7,7 +7,7 @@ No, it doesn't, and probably never will. RePlay is developed with many features 
 No, it doesn't, and never will. Other devices completely lack support for Linux OpenGL ES and/or KMS/DRM video mode (no X), among other things. 
 
 ## What is the advantage over other RPi distros like Lakka, RetroPie, or RecalBox?
-Since the system is entirely focused on a single device family with a limited list of supported systems, I can maximize the hardware's power and introduce many [unique features](features.md#main-features). It's also worth noting that the system is extremely fast and user-friendly, with each system core thoroughly tested and pre-configured. This ensures the best experience right out of the box.
+Since the system is entirely focused on a single device family with a limited list of supported systems, I can maximize the hardware's power and introduce many [unique features](index.md#main-features). It's also worth noting that the system is extremely fast and user-friendly, with each system core thoroughly tested and pre-configured. This ensures the best experience right out of the box.
 
 ## Why RePlay OS instead of a new RGB-Pi OS 5?
 The primary aim of RePlay OS is to offer a system that is fast and easy to start with. It demonstrates that emulation can achieve high quality when properly configured, allowing everyone to enjoy optimal gaming conditions from the start, without requiring technical emulation skills to fine-tune everything.
