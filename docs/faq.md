@@ -28,9 +28,7 @@ Looking for more? RePlay also includes a performance system option where you can
 Also, please note that some system cores provide their own custom runahead functionality. When combined with this feature, input lag could be significantly less than that experienced on the real hardware.
 
 ## Is it OpenSource?
-No, it isn't. It is freeware, but maybe I'll open source it in the future.
-
-Since this is a full-time job in my spare time, I like to have full control of the project and avoid any kind of forking at the moment to prevent me from losing interest in the development.
+The OS operates under a dual-license model: while most components are free and open-source, the frontend remains proprietary. For more details, please refer to the licensing information on the [download](download.md#license) page.
 
 ## Can you add feature X to RePlay?
 The answer is likely to be no, as I'm trying to keep the system easy and small from both user and developer perspectives.

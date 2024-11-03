@@ -9,6 +9,8 @@
 
     **NOTE:** please check the [Supported System](./systems.md#compatibility-matrix) section to see which systems can be emulated depending on the Raspberry Pi model.
 
+    **CRT/JAMMA Users:** the system is being developed using new RGB-Pi prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
+
 **Case:**
 
 * We reccommend the official Raspberry Pi or metal Argon cases to ensure the best cooling.
