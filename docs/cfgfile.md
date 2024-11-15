@@ -62,6 +62,14 @@ video_color_blind           = "0"
 ## 1 = subtle scanlines
 ## 2 = strong scanlines
 video_filter                = "0"
+# video_screen_saver_delay
+## 0 = OFF
+## 60000 = 1 min
+## 180000 = 3 min
+## 300000 = 5 min
+## 600000 = 10 min
+## 900000 = 15 min
+video_screen_saver_delay    = "60000"
 audio_card                  = "1"
 audio_mono                  = "false"
 # audio_system_volume

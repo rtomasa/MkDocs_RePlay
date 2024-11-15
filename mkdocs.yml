@@ -57,6 +57,8 @@ extra:
   social:
     - icon: fontawesome/brands/x-twitter
       link: https://x.com/rtomasal
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/rtomasa.bsky.social
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/@RTA_RetroDev
     - icon: fontawesome/brands/github-alt
