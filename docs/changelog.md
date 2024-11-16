@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.40.3
+- [X] Added black screen screen saver
+- [X] Refactored OpenGL code and performed some code clean up
+
+## v0.40.2
+- [X] Changed DC RPi5 performance profile
+- [X] Removed "Reset All System Configs" option from user compilation (only available in debug mode)
+- [X] Fixed bug loading emulation quality profiles
+
+## v0.40.1
+- [X] Updated to new kernel 6.6.51 containing many video improvements making interlaced modes much more stable
+- [X] Fixed some games and systems not displaying any image due to the use of odd resolutions
+
 ## v0.40.0
 - [X] Fixed core OpenGL video context reinit (fixes DC Full Framebuffer Emulation in CRT)
 - [X] Fixed DC interlaced drawing fields for improved image stability in some games
