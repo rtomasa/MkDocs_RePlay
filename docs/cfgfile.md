@@ -4,7 +4,7 @@ The following is a description of all available options and default values that 
 
 The configuration file is located in `/media/sd/config/replay.cfg`:
 
-```ini
+```python
 # video_mode
 ## 0 = default
 ## 1 = crt 320x240@vrr

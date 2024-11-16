@@ -20,7 +20,7 @@ RePlay OS configures external drives so that all write operations are performed 
 
 The configuration of the NFS share must be done manually in the `replay.cfg` file located in `/media/sd/config/replay.cfg`:
 
-```ini
+```python
 nfs_server = "192.168.X.X"
 nfs_share = "/export/share"
 ```
@@ -56,3 +56,5 @@ You can turn off your Raspberry Pi, remove the MicroSD card, and plug it into yo
 Please check the supported file formats for ROMs and CD images from the [Compatibility Matrix](systems.md#compatibility-matrix).
 
 Note that to save RAM and improve boot times, RePlay OS only supports compressed `zip` files for a limited number of systems.
+
+For information about M3U multi-disc support please check [M3U Multi-Disc Management](m3u.md) from the advanced Wiki section.
