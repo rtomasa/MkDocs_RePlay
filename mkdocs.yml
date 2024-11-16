@@ -109,6 +109,7 @@ nav:
     - Emulation Know-How: insights.md
     - ROM Codes and Meanings: romcodes.md
     - M3U Multi-Disc Management: m3u.md
+  - Common Issues: issues.md
   - F.A.Q: faq.md
   - Changelog: changelog.md
   - Download: download.md
