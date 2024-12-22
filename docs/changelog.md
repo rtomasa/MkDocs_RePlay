@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.41.0
+- [X] Added a newly fully refactored A/V sync engine, now based on the audio master clock
+- [X] Added temporary code for RGB-Pi Prototype initialization
+- [X] Updated to new kernel 6.6.62 with support for RPi500
+- [X] Changed Dreamcast emulation profiles for improved performance
+- [X] Changed "Emulation Quality" to "Emulation Profile"
+- [X] Changed method used for calculating realtime FPS
+- [X] Removed audio resampler default volume reduction
+- [X] Fixed a regression bug with XRGB8888 color conversion
+
 ## v0.40.3
 - [X] Added black screen screen saver
 - [X] Refactored OpenGL code and performed some code clean up

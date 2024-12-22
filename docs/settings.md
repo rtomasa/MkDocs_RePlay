@@ -300,7 +300,6 @@ Below you can find a full reference to all available core system setting.
 | Turbo Hotkey Mode | sgx_turbo_toggle | Enable turbo buttons. Hotkeys (buttons III and IV) can behave as either toggle switches or dedicated (hold to use) turbo buttons. |
 | Alternate Turbo Hotkey | sgx_turbo_toggle_hotkey | Assign RetroPad's L3/R3 buttons as turbo hotkeys instead of buttons III and IV. Works only in 'Toggle' mode and only as long as nothing is assigned to the L3/R3 buttons. You can avoid remapping buttons III and IV when switching to 6-button controlle |
 | Turbo Delay | sgx_turbo_delay | Adjust the time between turbo fire (in frames). |
-| Input | input | n/a |
 | Force SuperGrafx Emulation (Restart Required) | sgx_forcesgx | This is helpful to run homebrew games or to isolate games that will not run in SuperGrafx mode (like Space Harrier). Save states are not compatible with each mode. It's better to leave this option off unless needed. Known SuperGrafx games (like Dai- |
 | No Sprite Limit | sgx_nospritelimit | Remove 16-sprites-per-scanline hardware limit. WARNING: May cause graphics glitching on some games. |
 | CPU Overclock Multiplier (Restart Required) | sgx_ocmultiplier | Higher values can reduce slowdowns in games. WARNING: Can cause glitches and crashes. |
@@ -367,7 +366,6 @@ Below you can find a full reference to all available core system setting.
 | Turbo Hotkey Mode | sgx_turbo_toggle | Enable turbo buttons. Hotkeys (buttons III and IV) can behave as either toggle switches or dedicated (hold to use) turbo buttons. |
 | Alternate Turbo Hotkey | sgx_turbo_toggle_hotkey | Assign RetroPad's L3/R3 buttons as turbo hotkeys instead of buttons III and IV. Works only in 'Toggle' mode and only as long as nothing is assigned to the L3/R3 buttons. You can avoid remapping buttons III and IV when switching to 6-button controlle |
 | Turbo Delay | sgx_turbo_delay | Adjust the time between turbo fire (in frames). |
-| Input | input | n/a |
 | Force SuperGrafx Emulation (Restart Required) | sgx_forcesgx | This is helpful to run homebrew games or to isolate games that will not run in SuperGrafx mode (like Space Harrier). Save states are not compatible with each mode. It's better to leave this option off unless needed. Known SuperGrafx games (like Dai- |
 | No Sprite Limit | sgx_nospritelimit | Remove 16-sprites-per-scanline hardware limit. WARNING: May cause graphics glitching on some games. |
 | CPU Overclock Multiplier (Restart Required) | sgx_ocmultiplier | Higher values can reduce slowdowns in games. WARNING: Can cause glitches and crashes. |
@@ -572,8 +570,6 @@ Below you can find a full reference to all available core system setting.
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| System | system | n/a |
-| .. | .. | n/a |
 | System Hardware | genesis_plus_gx_system_hw | Runs loaded content with a specific emulated console. 'Auto' will select the most appropriate system for the current game. |
 | System Region | genesis_plus_gx_region_detect | Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50 Hz, while 'NTSC' is 60 Hz. Games may run faster or slower than normal if the incorrect region is selected. |
 | System Boot ROM | genesis_plus_gx_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. Displays console-specific start-up sequence/animation, then runs loaded content. |
@@ -633,8 +629,6 @@ Below you can find a full reference to all available core system setting.
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| System | system | n/a |
-| .. | .. | n/a |
 | System Hardware | genesis_plus_gx_system_hw | Runs loaded content with a specific emulated console. 'Auto' will select the most appropriate system for the current game. |
 | System Region | genesis_plus_gx_region_detect | Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50 Hz, while 'NTSC' is 60 Hz. Games may run faster or slower than normal if the incorrect region is selected. |
 | System Boot ROM | genesis_plus_gx_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. Displays console-specific start-up sequence/animation, then runs loaded content. |
@@ -694,8 +688,6 @@ Below you can find a full reference to all available core system setting.
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| System | system | n/a |
-| .. | .. | n/a |
 | System Hardware | genesis_plus_gx_system_hw | Runs loaded content with a specific emulated console. 'Auto' will select the most appropriate system for the current game. |
 | System Region | genesis_plus_gx_region_detect | Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50 Hz, while 'NTSC' is 60 Hz. Games may run faster or slower than normal if the incorrect region is selected. |
 | System Boot ROM | genesis_plus_gx_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. Displays console-specific start-up sequence/animation, then runs loaded content. |
@@ -755,8 +747,6 @@ Below you can find a full reference to all available core system setting.
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| System | system | n/a |
-| .. | .. | n/a |
 | System Hardware | genesis_plus_gx_system_hw | Runs loaded content with a specific emulated console. 'Auto' will select the most appropriate system for the current game. |
 | System Region | genesis_plus_gx_region_detect | Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50 Hz, while 'NTSC' is 60 Hz. Games may run faster or slower than normal if the incorrect region is selected. |
 | System Boot ROM | genesis_plus_gx_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. Displays console-specific start-up sequence/animation, then runs loaded content. |
@@ -816,8 +806,6 @@ Below you can find a full reference to all available core system setting.
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| System | system | n/a |
-| .. | .. | n/a |
 | System Hardware | genesis_plus_gx_system_hw | Runs loaded content with a specific emulated console. 'Auto' will select the most appropriate system for the current game. |
 | System Region | genesis_plus_gx_region_detect | Specify which region the system is from. For consoles other than the Game Gear, 'PAL' is 50 Hz, while 'NTSC' is 60 Hz. Games may run faster or slower than normal if the incorrect region is selected. |
 | System Boot ROM | genesis_plus_gx_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. Displays console-specific start-up sequence/animation, then runs loaded content. |
@@ -1000,36 +988,10 @@ Below you can find a full reference to all available core system setting.
 | Diagnostic Input | fbneo-diagnostic-input | Configure button combination to enter cabinet service menu |
 | Neo-Geo mode | fbneo-neogeo-mode | Load appropriate bios depending on your choice, under the condition such a bios is compatible with the running game |
 | Memory card mode | fbneo-memcard-mode | Change the behavior for the memory card |
-| Debug Dip 1_1 | fbneo-debug-dip-1-1 | Enable Debug Dip 1_1 |
-| Debug Dip 1_2 | fbneo-debug-dip-1-2 | Enable Debug Dip 1_2 |
-| Debug Dip 1_3 | fbneo-debug-dip-1-3 | Enable Debug Dip 1_3 |
-| Debug Dip 1_4 | fbneo-debug-dip-1-4 | Enable Debug Dip 1_4 |
-| Debug Dip 1_5 | fbneo-debug-dip-1-5 | Enable Debug Dip 1_5 |
-| Debug Dip 1_6 | fbneo-debug-dip-1-6 | Enable Debug Dip 1_6 |
-| Debug Dip 1_7 | fbneo-debug-dip-1-7 | Enable Debug Dip 1_7 |
-| Debug Dip 1_8 | fbneo-debug-dip-1-8 | Enable Debug Dip 1_8 |
-| Debug Dip 2_1 | fbneo-debug-dip-2-1 | Enable Debug Dip 2_1 |
-| Debug Dip 2_2 | fbneo-debug-dip-2-2 | Enable Debug Dip 2_2 |
-| Debug Dip 2_3 | fbneo-debug-dip-2-3 | Enable Debug Dip 2_3 |
-| Debug Dip 2_4 | fbneo-debug-dip-2-4 | Enable Debug Dip 2_4 |
-| Debug Dip 2_5 | fbneo-debug-dip-2-5 | Enable Debug Dip 2_5 |
-| Debug Dip 2_6 | fbneo-debug-dip-2-6 | Enable Debug Dip 2_6 |
-| Debug Dip 2_7 | fbneo-debug-dip-2-7 | Enable Debug Dip 2_7 |
-| Debug Dip 2_8 | fbneo-debug-dip-2-8 | Enable Debug Dip 2_8 |
 | Samplerate | fbneo-samplerate | Configure samplerate, it could impact performances, closing & starting game again is required |
 | Sample Interpolation | fbneo-sample-interpolation | Configure sample interpolation, it could impact performances |
 | FM Interpolation | fbneo-fm-interpolation | Configure FM interpolation, it could impact performances |
 | LowPass Filter | fbneo-lowpass-filter | Enable LowPass Filter |
-| [Dipswitch] Autofire | fbneo-dipswitch-bstars-Autofire | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] Setting mode | fbneo-dipswitch-bstars-Setting_mode | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] Coin chutes | fbneo-dipswitch-bstars-Coin_chutes | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] Coin chutes | fbneo-dipswitch-bstars-Coin_chutes_2 | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] Commmunicaton | fbneo-dipswitch-bstars-Commmunicaton | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] Free play | fbneo-dipswitch-bstars-Free_play | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] Stop mode | fbneo-dipswitch-bstars-Stop_mode | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] BIOS | fbneo-dipswitch-bstars-BIOS | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] Memory card | fbneo-dipswitch-bstars-Memory_card | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] New card type | fbneo-dipswitch-bstars-New_card_type | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
 
 ## SNK NEO-GEO CD
 
@@ -1045,9 +1007,6 @@ Below you can find a full reference to all available core system setting.
 | Sample Interpolation | fbneo-sample-interpolation | Configure sample interpolation, it could impact performances |
 | FM Interpolation | fbneo-fm-interpolation | Configure FM interpolation, it could impact performances |
 | LowPass Filter | fbneo-lowpass-filter | Enable LowPass Filter |
-| [Dipswitch] Region | fbneo-dipswitch-neocdz-Region | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] BIOS | fbneo-dipswitch-neocdz-BIOS | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
-| [Dipswitch] CD Loading Speed | fbneo-dipswitch-neocdz-CD_Loading_Speed | Dipswitch setting, setting is specific to the running romset. Some dipswitches require a restart to work properly. |
 
 ## SNK NEO-GEO Pocket
 
@@ -1562,55 +1521,6 @@ Below you can find a full reference to all available core system setting.
 | OSD > Statusbar Startup | puae_statusbar_startup | Show statusbar on startup. |
 | OSD > Statusbar Messages | puae_statusbar_messages | Show messages when statusbar is hidden. |
 | OSD > Light Pen/Gun Pointer Color | puae_joyport_pointer_color | Crosshair color for light pens and guns. |
-
-## Atari ST
-
-| Setting                               | Key            | Info           |
-| ------------------------------------- | -------------- | -------------- |
-| Polarized Audio Filter | hatari_polarized_filter | Uses hatari's polarized lowpass filters on audio to simulate distortion. |
-| Autoload hatari.cfg. | hatari_autoload_config | Loads SYSTEM\hatari\hatari.cfg on content start.  Warning.  Overrides everything except for selected TOS image. |
-| System -> Atari Computer Machine Type | hatari_machinetype | Pick emulated machine.  ST, STE, TT or Falcon (Needs Restart) |
-| System -> Atari Computer Ramsize | hatari_ramsize | Set amount of emulated ram.  (Needs Restart) |
-| System -> TOS Image Used (Needs Restart) | hatari_tosimage | Select from list.</br>Place TOS images in system\hatari\tos\ folder.</br>Defaults to tos.img in SYSTEM folder |
-| System -> Enable Fastboot | hatari_fastboot | Enable/Disable fast boot TOS patch. |
-| System -> Reset Type | hatari_reset_type | Whether to Cold Start or Warm Start on "Restart". |
-| Input -> Start In Mouse Mode | hatari_start_in_mouse_mode | Starts with emulated mouse active on port 1.  Otherwise joystick is active on port 1. |
-| Input -> Analog Stick Mouse | hatari_mouse_control_stick | Set whether emulated mouse is controlled by left or right analog stick. |
-| Input -> Emulated Mouse Speed | hatari_emulated_mouse_speed | Set the starting mouse speed from 1 to 6.  Default is 2. |
-| Input -> Enable Second Joystick | hatari_twojoy | Enables a second joystick on port 2, may conflict with mouse. |
-| Input -> Disable Connected Mouse | hatari_nomouse | Prevents input from your sytem mouse device. Gamepad mouse mode (select) is not disabled. |
-| Input -> Disable Connected Keyboard | hatari_nokeys | Prevents input from your system keyboard. Virtual keyboard is not disabled. |
-| Video -> Force Refresh Rate. | hatari_forcerefresh | Force refresh rate to Auto, NTSC 60hz or PAL 50hz.  Auto uses selected TOS rate. |
-| Video -> Joy/Mouse Toggle/Speed Msg Location | hatari_joymousestatus_display | Where to display Joystick/Mouse toggle and speed change information |
-| Video -> Show Drive Activity In Status Info | hatari_led_status_display | Enable to show activity in Retroarch status display |
-| Media -> Fast Floppy Access | hatari_fastfdc | Decreases the time spent loading from disk. |
-| Media -> Auto Insert Drive B | hatari_autoloadb | Auto inserts disk in Drive B if detected.</br>Use only for content that can use two drives.</br>M3U loads 2nd entry.  Otherwise looks for "b" as last letter before extension. |
-| Media -> Write Protect Floppy Disks | hatari_writeprotect_floppy | Enable/Disable write protection for floppy disks. |
-| Media -> Write Protect Hard Drives | hatari_writeprotect_hd | Enable/Disable write protection for hard drives. |
-| RetroPad > Joystick Up | hatari_mapper_up | Unmapped defaults to joystick up. |
-| RetroPad > Joystick Down | hatari_mapper_down | Unmapped defaults to joystick down. |
-| RetroPad > Joystick Left | hatari_mapper_left | Unmapped defaults to joystick left. |
-| RetroPad > Joystick Right | hatari_mapper_right | Unmapped defaults to joystick right. |
-| RetroPad > A | hatari_mapper_a | Unmapped defaults to turbo fire/Mouse button 2. |
-| RetroPad > B | hatari_mapper_b | Unmapped defaults to fire/mouse button 1.</br>VKBD: Press selected key. |
-| RetroPad > X | hatari_mapper_x | VKBD: Toggle.  Remapping overrides VKBD toggle. |
-| RetroPad > Y | hatari_mapper_y | VKBD: Toggle 'ShiftLock'. Remapping overrides VKBD function! |
-| RetroPad > Select | hatari_mapper_select | Unmapped defaults to Joystick/Mouse mode toggle. |
-| RetroPad > Start | hatari_mapper_start | Unmapped defaults to Enter/Exit the Hatari Settings. |
-| RetroPad > L | hatari_mapper_l | Unmapped defaults to toggle the Status display. |
-| RetroPad > R | hatari_mapper_r | Unmapped defaults to switch virtual keyboard page. |
-| RetroPad > L2 | hatari_mapper_l2 | Unmapped defaults to decrease mouse speed. |
-| RetroPad > R2 | hatari_mapper_r2 | Unmapped defaults to increase mouse speed. |
-| RetroPad > L3 | hatari_mapper_l3 | n/a |
-| RetroPad > R3 | hatari_mapper_r3 | Unmapped defaults to space. |
-| RetroPad > Left Analog > Up | hatari_mapper_lu | Mouse mode must be off or on right analog.</br>Ignored if assigned to VKBD. |
-| RetroPad > Left Analog > Down | hatari_mapper_ld | Mouse mode must be off or on right analog.</br>Ignored if assigned to VKBD. |
-| RetroPad > Left Analog > Left | hatari_mapper_ll | Mouse mode must be off or on right analog.</br>Ignored if assigned to VKBD. |
-| RetroPad > Left Analog > Right | hatari_mapper_lr | Mouse mode must be off or on right analog.</br>Ignored if assigned to VKBD. |
-| RetroPad > Right Analog > Up | hatari_mapper_ru | Mouse mode must be off or on left analog. |
-| RetroPad > Right Analog > Down | hatari_mapper_rd | Mouse mode must be off or on left analog. |
-| RetroPad > Right Analog > Left | hatari_mapper_rl | Mouse mode must be off or on left analog. |
-| RetroPad > Right Analog > Right | hatari_mapper_rr | Mouse mode must be off or on left analog. |
 
 ## Sharp X68000
 
