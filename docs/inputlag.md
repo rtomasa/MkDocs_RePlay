@@ -14,7 +14,6 @@ By default, the video engine used by RePlay OS introduces a maximum of 1 frame o
 * **Reduced Mode**: Provides a zero-lag experience but requires a relatively powerful CPU, depending on the emulated system. This option works perfectly fine with many 8-bit and 16-bit systems, even on a Raspberry Pi 3.
 
     **NOTE:** reduced latency mode does not uses any kind of run-ahead technique, so it is 100% compatible with all system cores.
-    Here’s an improved version of your message:
 
     **IMPORTANT:** If you experience sound issues, such as stuttering, while using reduced latency mode, switch to the standard profile. These issues can occur due to the high CPU demands of reduced latency mode.
 
@@ -22,8 +21,6 @@ By default, the video engine used by RePlay OS introduces a maximum of 1 frame o
 
 * **Linear Resampler**: The fastest resampler, minimizing CPU requirements while providing very good sound quality.
 * **Sync Resampler**: The most advanced resampler engine, delivering the best sound quality but requiring more CPU resources.
-
-Here’s an improved version of your sentence:
 
 ## USB Gamepads & Joysticks Latency
 
