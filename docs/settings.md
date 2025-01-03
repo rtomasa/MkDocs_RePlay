@@ -997,16 +997,11 @@ Below you can find a full reference to all available core system setting.
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| Vertical mode | fbneo-vertical-mode | Rotate display for vertical screens |
-| Force 60Hz | fbneo-force-60hz | Ignore game's original refresh rate and try to run it at 60hz instead. It will cause incorrect game speed and frame pacing. It will try to use your monitor's correct refresh rate instead of 60hz if this refresh rate is between 59hz and 61hz. |
-| Allow patched romsets | fbneo-allow-patched-romsets | Allow romsets from your system/fbneo/patched/ folder to override your romsets, crcs will be ignored but sizes and names must still match, you need to close content for this setting to take effect |
-| Analog Speed | fbneo-analog-speed | Mitigate analog controls speed, some games might require low values to be playable |
-| Crosshair emulation | fbneo-lightgun-crosshair-emulation | Change emulated crosshair behavior |
-| CPU clock | fbneo-cpu-speed-adjust | Change emulated cpu frequency for various systems, by increasing you can fix native slowdowns in some games, by decreasing you can help performance on low-end devices |
-| Diagnostic Input | fbneo-diagnostic-input | Configure button combination to enter cabinet service menu |
-| Sample Interpolation | fbneo-sample-interpolation | Configure sample interpolation, it could impact performances |
-| FM Interpolation | fbneo-fm-interpolation | Configure FM interpolation, it could impact performances |
-| LowPass Filter | fbneo-lowpass-filter | Enable LowPass Filter |
+| Region | neocd_region | n/a |
+| BIOS Select | neocd_bios | n/a |
+| CD Speed Hack | neocd_cdspeedhack | n/a |
+| Skip CD Loading | neocd_loadskip | n/a |
+| Per-Game Saves | neocd_per_content_saves | n/a |
 
 ## SNK NEO-GEO Pocket
 

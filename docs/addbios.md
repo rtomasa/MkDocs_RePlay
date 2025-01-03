@@ -70,7 +70,7 @@ The following table is a reference about the minimum required BIOS files used by
 | sega_st            | sega_101.bin                           |
 | sega_st            | mpr-17933.bin                          |
 | snk_ng             | fbneo/neogeo.zip                       |
-| snk_ngcd           | fbneo/neocdz.zip                       |
+| snk_ngcd           | neocd/neocd_z.rom                      |
 | sony_psx           | scph5500.bin                           |
 | sony_psx           | scph5501.bin                           |
 | sony_psx           | scph5502.bin                           |
