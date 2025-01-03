@@ -22,7 +22,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Support for both LCD and CRT screens via [DynaRes 2.0](index.md#dynares-20) engine.
 - Support for single or dual screen configurations in both LCD and CRT modes.
 - Support for different performance profiles.
-- Support for non-runahead Zero lag mode, fully compatible with all systems and games (requires fairly powerfull CPU for properly work on certain systems and games).
+- Support for non-runahead Zero lag mode, fully compatible with all systems and games.
 - Support for easy virtual disk engine.
 - Out of the box automatic core configuration based on Pi model, emulated system, and monitor type.
 - Out of the box support for more than 700 game controllers.

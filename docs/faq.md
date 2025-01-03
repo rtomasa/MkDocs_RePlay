@@ -21,9 +21,7 @@ Numerous features are exclusively achievable by using a custom libretro-based fr
 It's crucial to note that RePlay is compatible with both LCD and CRT monitors, and it will support future ongoing RGB-Pi projects.
 
 ## What about input lag?
-The system runs by default in a super low-latency mode, adding only 0/1 frame of lag over the real system hardware.
-
-Looking for more? RePlay also includes a performance system option where you can select a profile to achieve the same or even less input lag than real hardware. This mode avoids the use of advanced and complex features like runahead, ensuring 100% compatibility with every emulated system. However, it requires a fairly powerful CPU and GPU, so not all systems run well on all Raspberry Pi models.
+The system runs by default in a super low-latency mode, achieving the same or even less input lag than real hardware. This mode avoids the use of advanced and complex features like runahead, ensuring 100% compatibility with every emulated system.
 
 Also, please note that some system cores provide their own custom runahead functionality. When combined with this feature, input lag could be significantly less than that experienced on the real hardware.
 
