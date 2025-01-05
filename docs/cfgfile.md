@@ -62,14 +62,14 @@ video_color_blind           = "0"
 ## 1 = subtle scanlines
 ## 2 = strong scanlines
 video_filter                = "0"
-# video_screen_saver_delay
+# video_screen_saver
 ## 0 = OFF
 ## 60000 = 1 min
 ## 180000 = 3 min
 ## 300000 = 5 min
 ## 600000 = 10 min
 ## 900000 = 15 min
-video_screen_saver_delay    = "60000"
+video_screen_saver          = "0"
 audio_card                  = "1"
 audio_mono                  = "false"
 # audio_system_volume
@@ -115,19 +115,21 @@ system_coinop_time          = "180"
 ## 5 = disabled
 system_verbose              = "5"
 system_kiosk_mode           = "false"
+# system_emu_quality
 ## 0 = Performance
-##     - video triple-buffer
 ##     - audio linear resampler
 ##     - set specific core options
 ## 1 = Balanced
-##     - video triple-buffer
 ##     - audio sync resampler
 ##     - set specific core options
 ## 2 = Quality
-##     - video double-buffer
 ##     - audio sync resampler
 ##     - set specific core options
 system_emu_quality          = "1"
+# system_low_latency_mode
+## true = -1/0 frames input lag
+## false = 0/1 frames input lag
+system_low_latency_mode     = "false"
 # system_skin
 ## 0 = blue (default)
 ## 1 = mega tech

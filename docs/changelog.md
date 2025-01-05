@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.43.0
+- [X] Added new gpio-joystick driver for Jamma arcade boards
+- [X] Added improved USB external drive mount engine
+- [X] Added new LOW LATENCY MODE option to both global and system/game settings
+- [X] Added new gamepads support
+- [X] Added CHD back to NGCD supported games and removed CCD
+- [X] Changed to NeoCD core for NeoGeo CD system
+- [X] Changed logic to disable some CRT-only options when using LCD
+- [X] Fixed driver support for TAITO Paddle & Trackball
+- [X] Fixed driver support for NAMCO GunCon 2 Lightgun
+- [X] Fixed game/system input config file not properly loaded on start or restart games
+
+## v0.42.0
+- [X] Added proper video memory flush when loading/unloading games and/or resolution changes
+- [X] Added ZX Spectrum libretro core proper PAL & NTSC resolutions
+- [X] Added kernel parameter to avoid USB gamepad autosuspend
+- [X] Added ability to load custom SDL mapping DB file from <unit>/config/input/sdlusermapsdb.txt path
+- [X] Updated retro-bit Sega Saturn SDL mappings
+- [X] Updated 8bitdo 8bitdo NeoGeo SDL mappings
+- [X] Changed default DC BIOS from HLE to Real BIOS due to some game compatibility issues
+- [X] Changed default PSX BIOS from fast to normal BIOS due to some game compatibility issues
+- [X] Changed PSX core options to avoid interlacing artifacts when using LCD screens
+- [X] Changed 3DO Threaded DSP to disabled due to some game compatibility issues
+- [X] Fixed screensaver
+- [X] Fixed sound mono downmix not working
+- [X] Fixed scanline system and core options not working properly
+- [X] Fixed dual screen to avoid enabling the option until system reboot
+- [X] Fixed scan lines filter on pixel perfect aspect ratio
+- [X] Fixed video reinit speed regresion back again to 1-3 frames speed
+- [X] Removed NeoGeo CD listing CHD games since FBNeo does not support CHD format due to licensing conflict
+- [X] Removed temporary code for RGB-Pi Prototype initialization from automatic video mode option (moved to manual)
+
 ## v0.41.0
 - [X] Added a newly fully refactored A/V sync engine, now based on the audio master clock
 - [X] Added temporary code for RGB-Pi Prototype initialization
