@@ -101,9 +101,11 @@ nav:
     - Adding BIOS: addbios.md
     - Video Configuration: videobasic.md
     - Input Lag: inputlag.md
+    - Emulation Profiles: emuprofiles.md
   - Wiki (advanced):
     - Wi-Fi Configuration: wifi.md
     - New Controllers Support: mappings.md
+    - RePlay Custom Drivers: drivers.md
     - RePlay Options File: cfgfile.md 
     - Core System Settings: settings.md
     - Emulation Know-How: insights.md
