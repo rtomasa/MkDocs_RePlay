@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.44.2
+- [X] Added a full set of new aspect ratio and scalling mode options
+- [X] Added a full set of new scan line modes using different levels of intensity
+- [X] Added support for additional Controllers
+
+## v0.44.1
+- [X] Changed Default aspect ratio on 16/9 TVs to 4/3 instead of Native to avoid games with anamorfic resolutions (e.g. 704x224) look streched
+
+## v0.44.0
+- [X] Added new sound option to enable experimental volume normalization engine
+- [X] Changed UI navigation page limit to 999
+
+## v0.43.1
+- [X] Fixed bug where system settings was missing one entry in all cores
+
 ## v0.43.0
 - [X] Added new gpio-joystick driver for Jamma arcade boards
 - [X] Added improved USB external drive mount engine

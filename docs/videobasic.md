@@ -36,28 +36,33 @@ Allows you to choose different TV and monitor types. Choose TV 15kHz for regular
 
 This allows you to choose different display modes when playing on LCD screens (CRT always uses a native aspect ratio) from `REPLAY OPTIONS > VIDEO > ASPECT RATIO`:
 
-* `AUTOMATIC`: Uses `FORCED 4:3` aspect ratio with 4:3 screens. For 16:9 and other non-4:3 screens, it uses `PIXEL PERFECT` mode. For 1:1 screens, it also uses `PIXEL PERFECT` mode.
-* `FORCED 4:3`: Displays the game image at full screen in 4:3, like a CRT TV.
-* `PIXEL PERFECT`: Performs an integer scale to the maximum area allowed by the screen resolution.
-* `SYSTEM NATIVE`: Scales fullscreen using the internal system native aspect ratio (e.g., NES/SNES 8:7).
-* `OVER SCALED`: Uses an integer overscaling mode to extend the image over 1080p, nearly displaying the original overscan of a CRT. This works only with 1080p screen modes.
-* `UNDER SCALED`: A special mode for performing integer underscale for internal use.
+* `FULL SCRN 4:3`: Displays the game image at full screen in 4:3, like a CRT TV.
+* `FULL SCRN NATIVE`: Scales fullscreen using the internal system native aspect ratio (e.g., NES/SNES 8:7).
+* `INT-V 4:3-H`: Scales the vertical resolution using an integer factor while maintaining a 4:3 aspect ratio for the horizontal resolution.
+* `INT-V NATIVE-H`: Scales the vertical resolution using an integer factor while scaling the horizontal resolution to match the game's native aspect ratio.
+* `INT-H 4:3-V`: Scales the horizontal resolution using an integer factor while maintaining a 4:3 aspect ratio for the vertical resolution.
+* `INT-H NATIVE-V`: Scales the horizontal resolution using an integer factor while scaling the vertical resolution to match the game's native aspect ratio.
+* `INT-HV`: Performs an integer scale to the maximum area allowed by the screen resolution.
+* `INT-HV OVER`: Uses an integer overscaling mode to extend the image over 1080p, nearly displaying the original overscan of a CRT. This works only with 1080p screen modes.
+* `INT-HV UNDER`: A special mode for performing integer underscale for internal use.
 
-| Forced 4:3|Pixel Perfect |
+| **FULL SCRN 4:3** | **INT-HV** |
 |:----------------------------------:|:------------------:|
-| ![4_3](img/4_3.png){width="360"} | ![pixel_perfect](img/pixel_perfect.png){width="360"} |
-| **System Native** | **Overscaled** |
-| ![system_native](img/system_native.png){width="360"} | ![overscaled](img/overscaled.png){width="360"} |
-| **Under Scaled** | |
-| ![underscaled](img/underscaled.png){width="360"} ||
+| ![4_3](img/4_3.png){width="360"} | ![INT_HV](img/pixel_perfect.png){width="360"} |
+| **FULL SCRN NATIVE** | **INT-HV OVER** |
+| ![FULL_SCRN_NATIVE](img/system_native.png){width="360"} | ![INT_HV_OVER](img/overscaled.png){width="360"} |
+| **INT-HV UNDER** | |
+| ![INT_HV_UNDER](img/underscaled.png){width="360"} ||
 
 ## Scan Lines
 
-This options allows you to add some texture to the image using a custom scanline filter. This mode can be only used with LCD screens in `PIXEL PERFECT` mode.
+This options allows you to add some texture to the image using a custom scanline filter. This mode can be only used with LCD screens when using any vertical integer scaling mode.
 
-| Subtle |
+| **Light** |
 |:----------------------------------:|
-| ![subtle](img/scanline_subtle.png) |
+| ![light](img/scanline_light.png) |
+| **Medium** |
+| ![medium](img/scanline_medium.png) |
 | **Strong** |
 | ![strong](img/scanline_strong.png) |
 

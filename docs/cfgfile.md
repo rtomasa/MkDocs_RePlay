@@ -32,12 +32,15 @@ video_monitor_dual_mode     = "0"
 ## pc_31_120
 video_crt_type              = "generic_15"
 # video_aspect_ratio
-## 0 = automatic
-## 1 = forced 4:3 (full screen)
-## 2 = pixel perfect (integer scaling)
-## 3 = system native (full screen)
-## 4 = over scaled (integer scaling)
-## 5 = under scaled (integer scaling)
+## 0 = full screen 4:3
+## 1 = full screen native
+## 2 = vertical integer scaling, horizontal 4:3
+## 3 = vertical integer scaling, horizontal native
+## 4 = horizontal integer scaling, vertical 4:3
+## 5 = horizontal integer scaling, vertical native
+## 6 = full integer scaling
+## 7 = full integer over scaling (only FHD TVs)
+## 8 = full integer under scaling
 video_aspect_ratio          = "0"
 video_monitor_x             = "0"
 video_monitor_y             = "0"
@@ -59,8 +62,9 @@ video_show_info             = "false"
 video_color_blind           = "0"
 # video_filter
 ## 0 = none
-## 1 = subtle scanlines
-## 2 = strong scanlines
+## 1 = light scanlines
+## 2 = medium scanlines
+## 3 = strong scanlines
 video_filter                = "0"
 # video_screen_saver
 ## 0 = OFF
@@ -72,6 +76,7 @@ video_filter                = "0"
 video_screen_saver          = "0"
 audio_card                  = "1"
 audio_mono                  = "false"
+audio_normalization         = "false"
 # audio_system_volume
 ## values = 0-10
 audio_system_volume         = "10"

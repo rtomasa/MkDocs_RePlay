@@ -27,6 +27,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Out of the box automatic core configuration based on Pi model, emulated system, and monitor type.
 - Out of the box support for more than 700 game controllers.
 - Low latency audio resampler engine.
+- Support for audio normalization.
 - Adaptative frontend UI integer scaling, based on system resolution.
 - Support for frontend UI rotation independently of the running system/game (90, 180 and 270 degrees).
 - Support for six players.
