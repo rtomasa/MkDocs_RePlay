@@ -43,8 +43,8 @@ All Raspberry Pi Zero 2, 3, 4 and 5 models will support CRT TVs using both progr
 
 **Note about DPI (GPIO) A/V support:** DPI is not longer compatible with current hardware due to the lack of audio and interlaced video support, so GPIO A/V hardware solutions like vga666 or current RGB-Pi (cable and JAMMA) won't be supported anymore in RePlay OS.
 
-## Will it support image scrapping?
-No, it won't. The main goal of the system is to be super fast, easy, and easy to setup. Scrapping does not comply with this goal. In addition, it is not even feasible from a technical point of view since the UI layout makes not possible to fit images on either LCD or CRT screens.
+## Will it support image scraping?
+No, it won't. The main goal of the system is to be super fast, easy, and easy to setup. Scraping does not comply with this goal. In addition, it is not even feasible from a technical point of view since the UI layout makes not possible to fit images on either LCD or CRT screens.
 
 ## Can I use other cores?
 
