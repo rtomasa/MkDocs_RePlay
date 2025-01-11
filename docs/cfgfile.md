@@ -74,7 +74,11 @@ video_filter                = "0"
 ## 600000 = 10 min
 ## 900000 = 15 min
 video_screen_saver          = "0"
-audio_card                  = "1"
+# audio_card
+## 0 = HDMI
+## 1 = GPIO DAC
+## 2 = USB DAC
+audio_card                  = "0"
 audio_mono                  = "false"
 audio_normalization         = "false"
 # audio_system_volume
@@ -168,4 +172,9 @@ system_storage              = "sd"
 system_storage_safe_mode    = "true"
 nfs_server                  = "192.168.x.x"
 nfs_share                   = "/media/share"
+# addon_retroflag_case_pi5
+## 0 = disabled
+## 1 = reset button for reboot
+## 2 = reset button for manu
+addon_retroflag_case_pi5    = "0"
 ```

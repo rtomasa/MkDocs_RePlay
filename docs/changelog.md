@@ -1,9 +1,14 @@
 # Changelog
 
-## v0.44.2
-- [X] Added a full set of new aspect ratio and scalling mode options
-- [X] Added a full set of new scan line modes using different levels of intensity
+## v0.45.0
+- [X] Added new audio device options (hdmi, gpio dac (hifiberry), usb dac)
+- [X] Added new set of aspect ratio and scalling modes
+- [X] Added new set of scan line modes
 - [X] Added support for additional Controllers
+- [X] Added support for Retroflag Pi5 cases
+- [X] Changed GPIO Joy overlay to [Pi5] section in config.txt
+- [X] Changed default N64 system options for improved performance
+- [X] Fixed bug where system needed two reboots to get sound when using the same SD in another Pi model
 
 ## v0.44.1
 - [X] Changed Default aspect ratio on 16/9 TVs to 4/3 instead of Native to avoid games with anamorfic resolutions (e.g. 704x224) look streched
