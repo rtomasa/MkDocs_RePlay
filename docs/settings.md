@@ -105,7 +105,6 @@ Below you can find a full reference to all available core system setting.
 | Digital Triggers | reicast_digital_triggers | n/a |
 | Purupuru Pack/Vibration Pack | reicast_enable_purupuru | Enables controller force feedback. |
 | Broadcast Digital Outputs | reicast_network_output | Broadcast digital outputs and force-feedback state on TCP port 8000. Compatible with the "-output network" MAME option. |
-| Show Light Gun Settings | reicast_show_lightgun_settings | Enable configuration of light gun crosshair display options. NOTE: Quick Menu may need to be toggled for this setting to take effect. |
 | Gun Crosshair Size Scaling | reicast_lightgun_crosshair_size_scaling | n/a |
 | Gun Crosshair 1 Display | reicast_lightgun1_crosshair | n/a |
 | Gun Crosshair 2 Display | reicast_lightgun2_crosshair | n/a |
@@ -384,7 +383,6 @@ Below you can find a full reference to all available core system setting.
 | Region | fceumm_region | Force core to use NTSC, PAL or Dendy region timings. |
 | Game Genie Add-On (Restart Required) | fceumm_game_genie | Enable emulation of a Game Genie add-on cartridge, allowing cheat codes to be entered when launching games. The Game Genie ROM file 'gamegenie.nes' must be present in the frontend's system directory. Does not apply to FDS or arcade content. |
 | Color Palette | fceumm_palette | Choose from pre-generated palettes, a custom 64x3 palette from file or raw format (needs to use a nes-decoder shader). |
-| NTSC Filter | fceumm_ntsc_filter | Blargg's NTSC filters are used to replicate RF, Composite, S-Video, and RGB cable signals. |
 | Sound Quality | fceumm_sndquality | Enable higher quality sound. Increases performance requirements. |
 | Audio RF Filter | fceumm_sndlowpass | Apply a low pass audio filter to simulate the 'muted' sound of the NES when connected to a television via the RF modulator. |
 | Stereo Sound Effect | fceumm_sndstereodelay | Enable a fake stereo sound effect by delaying the right audio channel when upmixing the mono signal output from the NES. |
@@ -405,7 +403,6 @@ Below you can find a full reference to all available core system setting.
 | Arkanoid Mode | fceumm_arkanoid_mode | Selects device to use for Arkanoid games. |
 | Mouse Sensitivity | fceumm_mouse_sensitivity | Mouse sensitivity in percent. |
 | Allow Opposing Directions | fceumm_up_down_allowed | Allows simultaneous UP+DOWN or LEFT+RIGHT button combinations, which can create different effects in some games. |
-| No Sprite Limit | fceumm_nospritelimit | Removes the 8-per-scanline hardware limit. This reduces sprite flickering but can cause some games to glitch since some use this for effects. |
 | Overclock | fceumm_overclocking | Enables or disables overclocking, which can reduce slowdowns in some games. Postrender method is more compatible with every game, Vblank is more effective for games like Contra Force. |
 | RAM Power-On Fill (Restart Required) | fceumm_ramstate | RAM values on power up. Some games rely on initial RAM values for random number generation as an example. |
 
@@ -416,16 +413,10 @@ Below you can find a full reference to all available core system setting.
 | **Raspberry Pi 4 and higher** {: colspan=3} |
 | Console Region (Reload Core) | snes9x_region | Specify which region the system is from. 'PAL' is 50hz, 'NTSC' is 60hz. Games will run faster or slower than normal if the incorrect region is selected. |
 | Hi-Res Blending | snes9x_hires_blend | Blend adjacent pixels when game switches to hi-res mode (512x448). Required for certain games that use hi-res mode to produce transparency effects (Kirby's Dream Land, Jurassic Park...). |
-| Blargg NTSC Filter | snes9x_blargg | Apply a video filter to mimic various NTSC TV signals. |
 | Audio Interpolation | snes9x_audio_interpolation | Apply an audio filter. 'Gaussian' reproduces the bass-heavy sound of the original hardware. 'Cubic' and 'Sinc' are less accurate, and preserve more of the high range. |
 | Allow Opposing Directions | snes9x_up_down_allowed | Enabling this will allow pressing / quickly alternating / holding both left and right (or up and down) directions at the same time. This may cause movement-based glitches. |
-| Show Light Gun Settings | snes9x_show_lightgun_settings | Enable configuration of Super Scope / Justifier / M.A.C.S. rifle input. NOTE: Quick Menu must be toggled for this setting to take effect. |
 | SuperFX Overclocking | snes9x_overclock_superfx | SuperFX coprocessor frequency multiplier. Can improve frame rate or cause timing errors. Values under 100% can improve game performance on slow devices. |
 | Reduce Slowdown (Hack, Unsafe) | snes9x_overclock_cycles | Overclock SNES CPU. May cause games to crash! Use 'Light' for shorter loading times, 'Compatible' for most games exhibiting slowdown and 'Max' only if absolutely required (Gradius 3, Super R-type...). |
-| Reduce Flickering (Hack, Unsafe) | snes9x_reduce_sprite_flicker | Increases number of sprites that can be drawn simultaneously on screen. |
-| Randomize Memory (Unsafe) | snes9x_randomize_memory | Randomizes system RAM upon start-up. Some games such as 'Super Off Road' use system RAM as a random number generator for item placement and AI behavior, to make gameplay more unpredictable. |
-| Block Invalid VRAM Access | snes9x_block_invalid_vram_access | Some homebrew/ROM hacks require this option to be disabled for correct operation. |
-| Echo Buffer Hack (Unsafe, only enable for old addmusic hacks) | snes9x_echo_buffer_hack | Some homebrew/ROM hacks require this option to be enabled for correct operation. |
 | Light Gun Mode | snes9x_lightgun_mode | Use a mouse-controlled 'Light Gun' or 'Touchscreen' input. |
 | Super Scope Reverse Trigger Buttons | snes9x_superscope_reverse_buttons | Swap the positions of the Super Scope 'Fire' and 'Cursor' buttons. |
 | Super Scope Crosshair | snes9x_superscope_crosshair | Change the crosshair size on screen. |
@@ -465,7 +456,6 @@ Below you can find a full reference to all available core system setting.
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
 | Frame Duplication | mupen64plus-FrameDuping | Enable Frame duplication to improve smoothing on low-end. Different from frameskip. |
-| Framerate | mupen64plus-Framerate | Fullspeed will enforce Count per Op 1 and FBEmu settings, this will break some games! |
 | VI Refresh (Overclock) | mupen64plus-virefresh | Select a VI Refresh clock, Auto does not impact behaviour, other values override CountPerScanline. |
 | Disable Expansion Pak | mupen64plus-ForceDisableExtraMem | Force disable Expansion Pak (might improve performance for some games while reducing emulation accuracy, will break games that require it). |
 | Ignore emulated TLB Exceptions | mupen64plus-IgnoreTLBExceptions | (HACK) Ignore emulated TLB Exceptions, this might fix some broken romhacks. This option might be removed in the future. |
@@ -502,12 +492,9 @@ Below you can find a full reference to all available core system setting.
 | Less accurate blending mode | mupen64plus-EnableLegacyBlending | (GLN64) Do not use shaders to emulate N64 blending modes. Works faster on slow GPU. Can cause glitches. |
 | GPU shader depth write | mupen64plus-EnableFragmentDepthWrite | (GLN64) Enable writing of fragment depth. Some mobile GPUs do not support it, thus it's optional. Leave enabled. |
 | Cache Textures | mupen64plus-EnableTextureCache | (GLN64) Save texture cache to hard disk. |
-| Max High-Res VRAM Limit | mupen64plus-MaxHiResTxVramLimit | (GLN64) Limit High-Res textures size in VRAM (in MB, 0 = no limit). |
 | Max texture cache size | mupen64plus-MaxTxCacheSize | (GLN64) Set Max texture cache size (in elements). Reduce it if you experience black textures leading to a crash. |
 | Texture filter | mupen64plus-txFilterMode | (GLN64) Select Texture Filtering mode. |
-| Texture Enhancement | mupen64plus-txEnhancementMode | (GLN64) Various Texture Filters ('As-Is' will just cache). |
 | Don't filter background textures | mupen64plus-txFilterIgnoreBG | (GLN64) Ignore filtering for Background Textures. |
-| INI Behaviour | mupen64plus-GLideN64IniBehaviour | (GLN64) Specifies INI Settings behaviour. This should really only contain essential options. Changing this can and will break ROM's, if the correct options aren't set manually. Some options may only be set via INI (fbInfoDisabled). |
 
 ## Nintendo Game Boy
 
@@ -579,7 +566,6 @@ Below you can find a full reference to all available core system setting.
 | CD add-on (MD mode) (Requires Restart) | genesis_plus_gx_add_on | Specify which add-on to use for CD audio playback with supported Mega Drive/Genesis games. |
 | Cartridge Lock-On | genesis_plus_gx_lock_on | Lock-On Technology is a Mega Drive/Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A  |
 | Game Gear Extended Screen | genesis_plus_gx_gg_extra | Forces Game Gear titles to run in SMS mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data. |
-| Blargg NTSC Filter | genesis_plus_gx_blargg_ntsc_filter | Apply a video filter to mimic various NTSC TV signals. |
 | LCD Ghosting Filter | genesis_plus_gx_lcd_filter | Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and Genesis Nomad LCD panels. |
 | Interlaced Mode 2 Output | genesis_plus_gx_render | Interlaced Mode 2 allows the Mega Drive/Genesis to output a double height (high resolution) 320x448 image by drawing alternate scan lines each frame (this is used by Sonic the Hedgehog 2 and Combat Cars multiplayer modes). 'Double Field' mimics orig |
 | Master System FM (YM2413) | genesis_plus_gx_ym2413 | Enable emulation of the FM Sound Unit used by certain Sega Mark III/Master System games for enhanced audio output. |
@@ -598,12 +584,7 @@ Below you can find a full reference to all available core system setting.
 | Light Gun Input | genesis_plus_gx_gun_input | Use a mouse-controlled 'Light Gun' or 'Touchscreen' input. |
 | Show Light Gun Crosshair | genesis_plus_gx_gun_cursor | Display light gun crosshairs when using the MD Menacer, MD Justifiers and MS Light Phaser input device types. |
 | Invert Mouse Y-Axis | genesis_plus_gx_invert_mouse | Inverts the Y-axis of the MD Mouse input device type. |
-| Remove Per-Line Sprite Limit | genesis_plus_gx_no_sprite_limit | Removes the original sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects. |
-| Enhanced per-tile vertical scroll | genesis_plus_gx_enhanced_vscroll | Allows each individual cell to be scrolled vertically, instead of 16px 2-cell, by averaging out with the vscroll value of the neighbouring cell. This hack only applies to few games that use 2-cell vertical scroll mode. |
-| Enhanced per-tile vertical scroll limit | genesis_plus_gx_enhanced_vscroll_limit | Only when Enhanced per-tile vertical scroll is enabled. Adjusts the limit of the vertical scroll enhancement. When the vscroll difference between neighbouring tiles is bigger than this limit, the enhancement is disabled. |
 | CPU Speed | genesis_plus_gx_overclock | Overclock the emulated CPU. Can reduce slowdown, but may cause glitches. |
-| System Lock-Ups | genesis_plus_gx_force_dtack | Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behavior for correct operation. |
-| 68K Address Error | genesis_plus_gx_addr_error | The Mega Drive/Genesis main CPU (Motorola 68000) generates an Address Error exception (crash) when attempting to perform unaligned memory access. Enabling this will simulate this behavior. It should only be disabled when playing ROM hacks, since the |
 | CD access time | genesis_plus_gx_cd_latency | Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabl |
 | PSG Tone Channel 0 Volume % | genesis_plus_gx_psg_channel_0_volume | Reduce the volume of the PSG Tone Channel 0. |
 | PSG Tone Channel 1 Volume % | genesis_plus_gx_psg_channel_1_volume | Reduce the volume of the PSG Tone Channel 1. |
@@ -638,7 +619,6 @@ Below you can find a full reference to all available core system setting.
 | CD add-on (MD mode) (Requires Restart) | genesis_plus_gx_add_on | Specify which add-on to use for CD audio playback with supported Mega Drive/Genesis games. |
 | Cartridge Lock-On | genesis_plus_gx_lock_on | Lock-On Technology is a Mega Drive/Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A  |
 | Game Gear Extended Screen | genesis_plus_gx_gg_extra | Forces Game Gear titles to run in SMS mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data. |
-| Blargg NTSC Filter | genesis_plus_gx_blargg_ntsc_filter | Apply a video filter to mimic various NTSC TV signals. |
 | LCD Ghosting Filter | genesis_plus_gx_lcd_filter | Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and Genesis Nomad LCD panels. |
 | Interlaced Mode 2 Output | genesis_plus_gx_render | Interlaced Mode 2 allows the Mega Drive/Genesis to output a double height (high resolution) 320x448 image by drawing alternate scan lines each frame (this is used by Sonic the Hedgehog 2 and Combat Cars multiplayer modes). 'Double Field' mimics orig |
 | Master System FM (YM2413) | genesis_plus_gx_ym2413 | Enable emulation of the FM Sound Unit used by certain Sega Mark III/Master System games for enhanced audio output. |
@@ -657,12 +637,7 @@ Below you can find a full reference to all available core system setting.
 | Light Gun Input | genesis_plus_gx_gun_input | Use a mouse-controlled 'Light Gun' or 'Touchscreen' input. |
 | Show Light Gun Crosshair | genesis_plus_gx_gun_cursor | Display light gun crosshairs when using the MD Menacer, MD Justifiers and MS Light Phaser input device types. |
 | Invert Mouse Y-Axis | genesis_plus_gx_invert_mouse | Inverts the Y-axis of the MD Mouse input device type. |
-| Remove Per-Line Sprite Limit | genesis_plus_gx_no_sprite_limit | Removes the original sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects. |
-| Enhanced per-tile vertical scroll | genesis_plus_gx_enhanced_vscroll | Allows each individual cell to be scrolled vertically, instead of 16px 2-cell, by averaging out with the vscroll value of the neighbouring cell. This hack only applies to few games that use 2-cell vertical scroll mode. |
-| Enhanced per-tile vertical scroll limit | genesis_plus_gx_enhanced_vscroll_limit | Only when Enhanced per-tile vertical scroll is enabled. Adjusts the limit of the vertical scroll enhancement. When the vscroll difference between neighbouring tiles is bigger than this limit, the enhancement is disabled. |
 | CPU Speed | genesis_plus_gx_overclock | Overclock the emulated CPU. Can reduce slowdown, but may cause glitches. |
-| System Lock-Ups | genesis_plus_gx_force_dtack | Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behavior for correct operation. |
-| 68K Address Error | genesis_plus_gx_addr_error | The Mega Drive/Genesis main CPU (Motorola 68000) generates an Address Error exception (crash) when attempting to perform unaligned memory access. Enabling this will simulate this behavior. It should only be disabled when playing ROM hacks, since the |
 | CD access time | genesis_plus_gx_cd_latency | Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabl |
 | PSG Tone Channel 0 Volume % | genesis_plus_gx_psg_channel_0_volume | Reduce the volume of the PSG Tone Channel 0. |
 | PSG Tone Channel 1 Volume % | genesis_plus_gx_psg_channel_1_volume | Reduce the volume of the PSG Tone Channel 1. |
@@ -697,7 +672,6 @@ Below you can find a full reference to all available core system setting.
 | CD add-on (MD mode) (Requires Restart) | genesis_plus_gx_add_on | Specify which add-on to use for CD audio playback with supported Mega Drive/Genesis games. |
 | Cartridge Lock-On | genesis_plus_gx_lock_on | Lock-On Technology is a Mega Drive/Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A  |
 | Game Gear Extended Screen | genesis_plus_gx_gg_extra | Forces Game Gear titles to run in SMS mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data. |
-| Blargg NTSC Filter | genesis_plus_gx_blargg_ntsc_filter | Apply a video filter to mimic various NTSC TV signals. |
 | LCD Ghosting Filter | genesis_plus_gx_lcd_filter | Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and Genesis Nomad LCD panels. |
 | Interlaced Mode 2 Output | genesis_plus_gx_render | Interlaced Mode 2 allows the Mega Drive/Genesis to output a double height (high resolution) 320x448 image by drawing alternate scan lines each frame (this is used by Sonic the Hedgehog 2 and Combat Cars multiplayer modes). 'Double Field' mimics orig |
 | Master System FM (YM2413) | genesis_plus_gx_ym2413 | Enable emulation of the FM Sound Unit used by certain Sega Mark III/Master System games for enhanced audio output. |
@@ -716,12 +690,7 @@ Below you can find a full reference to all available core system setting.
 | Light Gun Input | genesis_plus_gx_gun_input | Use a mouse-controlled 'Light Gun' or 'Touchscreen' input. |
 | Show Light Gun Crosshair | genesis_plus_gx_gun_cursor | Display light gun crosshairs when using the MD Menacer, MD Justifiers and MS Light Phaser input device types. |
 | Invert Mouse Y-Axis | genesis_plus_gx_invert_mouse | Inverts the Y-axis of the MD Mouse input device type. |
-| Remove Per-Line Sprite Limit | genesis_plus_gx_no_sprite_limit | Removes the original sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects. |
-| Enhanced per-tile vertical scroll | genesis_plus_gx_enhanced_vscroll | Allows each individual cell to be scrolled vertically, instead of 16px 2-cell, by averaging out with the vscroll value of the neighbouring cell. This hack only applies to few games that use 2-cell vertical scroll mode. |
-| Enhanced per-tile vertical scroll limit | genesis_plus_gx_enhanced_vscroll_limit | Only when Enhanced per-tile vertical scroll is enabled. Adjusts the limit of the vertical scroll enhancement. When the vscroll difference between neighbouring tiles is bigger than this limit, the enhancement is disabled. |
 | CPU Speed | genesis_plus_gx_overclock | Overclock the emulated CPU. Can reduce slowdown, but may cause glitches. |
-| System Lock-Ups | genesis_plus_gx_force_dtack | Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behavior for correct operation. |
-| 68K Address Error | genesis_plus_gx_addr_error | The Mega Drive/Genesis main CPU (Motorola 68000) generates an Address Error exception (crash) when attempting to perform unaligned memory access. Enabling this will simulate this behavior. It should only be disabled when playing ROM hacks, since the |
 | CD access time | genesis_plus_gx_cd_latency | Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabl |
 | PSG Tone Channel 0 Volume % | genesis_plus_gx_psg_channel_0_volume | Reduce the volume of the PSG Tone Channel 0. |
 | PSG Tone Channel 1 Volume % | genesis_plus_gx_psg_channel_1_volume | Reduce the volume of the PSG Tone Channel 1. |
@@ -756,7 +725,6 @@ Below you can find a full reference to all available core system setting.
 | CD add-on (MD mode) (Requires Restart) | genesis_plus_gx_add_on | Specify which add-on to use for CD audio playback with supported Mega Drive/Genesis games. |
 | Cartridge Lock-On | genesis_plus_gx_lock_on | Lock-On Technology is a Mega Drive/Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A  |
 | Game Gear Extended Screen | genesis_plus_gx_gg_extra | Forces Game Gear titles to run in SMS mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data. |
-| Blargg NTSC Filter | genesis_plus_gx_blargg_ntsc_filter | Apply a video filter to mimic various NTSC TV signals. |
 | LCD Ghosting Filter | genesis_plus_gx_lcd_filter | Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and Genesis Nomad LCD panels. |
 | Interlaced Mode 2 Output | genesis_plus_gx_render | Interlaced Mode 2 allows the Mega Drive/Genesis to output a double height (high resolution) 320x448 image by drawing alternate scan lines each frame (this is used by Sonic the Hedgehog 2 and Combat Cars multiplayer modes). 'Double Field' mimics orig |
 | Master System FM (YM2413) | genesis_plus_gx_ym2413 | Enable emulation of the FM Sound Unit used by certain Sega Mark III/Master System games for enhanced audio output. |
@@ -775,12 +743,7 @@ Below you can find a full reference to all available core system setting.
 | Light Gun Input | genesis_plus_gx_gun_input | Use a mouse-controlled 'Light Gun' or 'Touchscreen' input. |
 | Show Light Gun Crosshair | genesis_plus_gx_gun_cursor | Display light gun crosshairs when using the MD Menacer, MD Justifiers and MS Light Phaser input device types. |
 | Invert Mouse Y-Axis | genesis_plus_gx_invert_mouse | Inverts the Y-axis of the MD Mouse input device type. |
-| Remove Per-Line Sprite Limit | genesis_plus_gx_no_sprite_limit | Removes the original sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects. |
-| Enhanced per-tile vertical scroll | genesis_plus_gx_enhanced_vscroll | Allows each individual cell to be scrolled vertically, instead of 16px 2-cell, by averaging out with the vscroll value of the neighbouring cell. This hack only applies to few games that use 2-cell vertical scroll mode. |
-| Enhanced per-tile vertical scroll limit | genesis_plus_gx_enhanced_vscroll_limit | Only when Enhanced per-tile vertical scroll is enabled. Adjusts the limit of the vertical scroll enhancement. When the vscroll difference between neighbouring tiles is bigger than this limit, the enhancement is disabled. |
 | CPU Speed | genesis_plus_gx_overclock | Overclock the emulated CPU. Can reduce slowdown, but may cause glitches. |
-| System Lock-Ups | genesis_plus_gx_force_dtack | Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behavior for correct operation. |
-| 68K Address Error | genesis_plus_gx_addr_error | The Mega Drive/Genesis main CPU (Motorola 68000) generates an Address Error exception (crash) when attempting to perform unaligned memory access. Enabling this will simulate this behavior. It should only be disabled when playing ROM hacks, since the |
 | CD access time | genesis_plus_gx_cd_latency | Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabl |
 | PSG Tone Channel 0 Volume % | genesis_plus_gx_psg_channel_0_volume | Reduce the volume of the PSG Tone Channel 0. |
 | PSG Tone Channel 1 Volume % | genesis_plus_gx_psg_channel_1_volume | Reduce the volume of the PSG Tone Channel 1. |
@@ -815,7 +778,6 @@ Below you can find a full reference to all available core system setting.
 | CD add-on (MD mode) (Requires Restart) | genesis_plus_gx_add_on | Specify which add-on to use for CD audio playback with supported Mega Drive/Genesis games. |
 | Cartridge Lock-On | genesis_plus_gx_lock_on | Lock-On Technology is a Mega Drive/Genesis feature that allowed an older game to connect to the pass-through port of a special cartridge for extended or altered gameplay. This option specifies which type of special 'lock-on' cartridge to emulate. A  |
 | Game Gear Extended Screen | genesis_plus_gx_gg_extra | Forces Game Gear titles to run in SMS mode, with an increased resolution of 256x192. May show additional content, but typically displays a border of corrupt/unwanted image data. |
-| Blargg NTSC Filter | genesis_plus_gx_blargg_ntsc_filter | Apply a video filter to mimic various NTSC TV signals. |
 | LCD Ghosting Filter | genesis_plus_gx_lcd_filter | Apply an image 'ghosting' filter to mimic the display characteristics of the Game Gear and Genesis Nomad LCD panels. |
 | Interlaced Mode 2 Output | genesis_plus_gx_render | Interlaced Mode 2 allows the Mega Drive/Genesis to output a double height (high resolution) 320x448 image by drawing alternate scan lines each frame (this is used by Sonic the Hedgehog 2 and Combat Cars multiplayer modes). 'Double Field' mimics orig |
 | Master System FM (YM2413) | genesis_plus_gx_ym2413 | Enable emulation of the FM Sound Unit used by certain Sega Mark III/Master System games for enhanced audio output. |
@@ -834,12 +796,7 @@ Below you can find a full reference to all available core system setting.
 | Light Gun Input | genesis_plus_gx_gun_input | Use a mouse-controlled 'Light Gun' or 'Touchscreen' input. |
 | Show Light Gun Crosshair | genesis_plus_gx_gun_cursor | Display light gun crosshairs when using the MD Menacer, MD Justifiers and MS Light Phaser input device types. |
 | Invert Mouse Y-Axis | genesis_plus_gx_invert_mouse | Inverts the Y-axis of the MD Mouse input device type. |
-| Remove Per-Line Sprite Limit | genesis_plus_gx_no_sprite_limit | Removes the original sprite-per-scanline hardware limit. This reduces flickering but can cause visual glitches, as some games exploit the hardware limit to generate special effects. |
-| Enhanced per-tile vertical scroll | genesis_plus_gx_enhanced_vscroll | Allows each individual cell to be scrolled vertically, instead of 16px 2-cell, by averaging out with the vscroll value of the neighbouring cell. This hack only applies to few games that use 2-cell vertical scroll mode. |
-| Enhanced per-tile vertical scroll limit | genesis_plus_gx_enhanced_vscroll_limit | Only when Enhanced per-tile vertical scroll is enabled. Adjusts the limit of the vertical scroll enhancement. When the vscroll difference between neighbouring tiles is bigger than this limit, the enhancement is disabled. |
 | CPU Speed | genesis_plus_gx_overclock | Overclock the emulated CPU. Can reduce slowdown, but may cause glitches. |
-| System Lock-Ups | genesis_plus_gx_force_dtack | Emulate system lock-ups that occur on real hardware when performing illegal address access. This should only be disabled when playing certain demos and homebrew that rely on illegal behavior for correct operation. |
-| 68K Address Error | genesis_plus_gx_addr_error | The Mega Drive/Genesis main CPU (Motorola 68000) generates an Address Error exception (crash) when attempting to perform unaligned memory access. Enabling this will simulate this behavior. It should only be disabled when playing ROM hacks, since the |
 | CD access time | genesis_plus_gx_cd_latency | Simulate original CD hardware latency when initiating a read or seeking to a specific location on loaded disc. This is required by a few CD games that crash if CD data is available too soon and also fixes CD audio desync issues in some games. Disabl |
 | PSG Tone Channel 0 Volume % | genesis_plus_gx_psg_channel_0_volume | Reduce the volume of the PSG Tone Channel 0. |
 | PSG Tone Channel 1 Volume % | genesis_plus_gx_psg_channel_1_volume | Reduce the volume of the PSG Tone Channel 1. |
@@ -941,7 +898,6 @@ Below you can find a full reference to all available core system setting.
 | Digital Triggers | reicast_digital_triggers | n/a |
 | Purupuru Pack/Vibration Pack | reicast_enable_purupuru | Enables controller force feedback. |
 | Broadcast Digital Outputs | reicast_network_output | Broadcast digital outputs and force-feedback state on TCP port 8000. Compatible with the "-output network" MAME option. |
-| Show Light Gun Settings | reicast_show_lightgun_settings | Enable configuration of light gun crosshair display options. NOTE: Quick Menu may need to be toggled for this setting to take effect. |
 | Gun Crosshair Size Scaling | reicast_lightgun_crosshair_size_scaling | n/a |
 | Gun Crosshair 1 Display | reicast_lightgun1_crosshair | n/a |
 | Gun Crosshair 2 Display | reicast_lightgun2_crosshair | n/a |
