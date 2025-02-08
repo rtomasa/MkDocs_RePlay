@@ -18,9 +18,10 @@
 | Nintendo NES/Famicom                  | :green_circle:            | :green_circle:   | :green_circle:             | fds, nes, unf, unif |
 | Nintendo Super Nintendo/Super Famicom | :green_circle:            | :green_circle:   | :green_circle:             | smc, sfc, swc, fig, bs, st |
 | Nintendo 64                           | :red_circle:              | :yellow_circle:  | :green_circle:             | n64, v64, z64, bin, u1 |
-| Nintendo Game Boy                     | :green_circle:            | :green_circle:   | :green_circle:             | gb, gbc, sgb |
+| Nintendo Game Boy                     | :green_circle:            | :green_circle:   | :green_circle:             | gb, sgb |
+| Nintendo Game Boy Color               | :green_circle:            | :green_circle:   | :green_circle:             | gbc, sgbc |
 | Nintendo Game Boy Advance             | :green_circle:            | :green_circle:   | :green_circle:             | gba |
-| Nintendo DS                           | :red_circle:              | :red_circle:     | :green_circle: :desktop::desktop:             | nds |
+| Nintendo DS                           | :red_circle:              | :red_circle:     | :green_circle:             | nds |
 | SEGA SG-1000                          | :green_circle:            | :green_circle:   | :green_circle:             | sg |
 | SEGA Game Gear                        | :green_circle:            | :green_circle:   | :green_circle:             | gg |
 | SEGA Master System/Mark III           | :green_circle:            | :green_circle:   | :green_circle:             | sms |
@@ -44,10 +45,9 @@
 | Sinclair ZX Spectrum                  | :green_circle:            | :green_circle:   | :green_circle:             | tzx, tap, z80, rzx, scl, trd, dsk |
 | IBM PC (MS-DOS)                       | :yellow_circle:           | :yellow_circle:  | :green_circle:             | zip, dosz, exe, com, bat, iso, cue, ins, img, ima, vhd, jrc, tc, m3u, m3u8, conf |
 | ScummVM                               | :green_circle:            | :green_circle:   | :green_circle:             | scummvm, svm |
-| Alpha Player                          | :yellow_circle:           | :yellow_circle:  | :yellow_circle:            | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
+| Alpha Player                          | :red_circle:              | :red_circle:     | :yellow_circle:            | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
 
 ## Icon Description
-:green_circle: most games run fine near or at full performance with no emulations issues.</br>
-:yellow_circle: there are many games that could face emulation or performance issues.</br>
-:red_circle: system not supported due to bad performance.</br>
-:desktop::desktop: requires dual stacked screen configuration.</br>
+:green_circle: Most games run fine near or at full performance with no emulations issues.</br>
+:yellow_circle: There are many games that could face emulation or performance issues.</br>
+:red_circle: System not supported due to bad performance.</br>

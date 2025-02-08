@@ -1,6 +1,13 @@
 # Keyboard Configuration
 
-RePlay OS was designed with joysticks and gamepads as first-class citizens. While several computer emulators are supported, the system's primary target is arcade machines and video game consoles. Consequently, computer support is limited to gamepad/joystick compatibility, with the keyboard serving only as a fallback method for UI navigation and specific internal features, which are detailed in the table below:
+**RePlay OS** was designed to make the keyboard function like the original hardware on systems that natively support it, such as microcomputers. Consequently, the keyboard's primary functionality is UI navigation and integration with core emulators that support this mode.
+
+**NOTE**: the keyboard does not emulate or function as a gamepad when used with console or arcade games.
+
+The system offers two function modes, which can be selected via `SYSTEM > INPUT > KEYBOARD REAL MODE`:
+
+- `ON`: The keyboard behaves like the original hardware while also supporting UI navigation.  
+- `OFF`: The keyboard operates in a special hotkey command mode (see table below) while still supporting UI navigation.  
 
 ## Default UI Key Mapping
 
@@ -14,8 +21,6 @@ RePlay OS was designed with joysticks and gamepads as first-class citizens. Whil
 | <kbd>R Shift</kbd> <kbd>L Shift</kbd>   | Functions as the gamepad Select button |
 | <kbd>Space</kbd>                        | Functions as the gamepad Start button |
 | <kbd>Tab</kbd>                          | Hotkey for opening MAME native config menu |
-| <kbd>C</kbd>                            | Hotkey for adding time credits when Coin-Op mode is enabled |
 | <kbd>H</kbd>                            | Hotkey for system halt (useful for taking real photos) |
 | <kbd>S</kbd>                            | Hotkey for taking screenshots |
-| <kbd>F1</kbd>                           | Hotkey for opening/closing the UI menu |
-| <kbd>Esc</kbd>                          | Hotkey for exiting the UI to the Linux command prompt |
+| <kbd>Windows Key</kbd>                  | Hotkey for opening/closing the UI menu |

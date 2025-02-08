@@ -32,6 +32,10 @@ RePlay OS is able to make use of dual screen configuration in both LCD and CRT c
 
 Allows you to choose different TV and monitor types. Choose TV 15kHz for regular TVs.
 
+## Gamma, RGB Color Intensity and Screen X/Y Position
+
+You can fully customize various screen parameters, such as gamma, RGB color channel intensity (to adjust CRTs with degraded channels), and screen position on both LCD and CRT displays.
+
 ## Aspect Ratio
 
 This allows you to choose different display modes when playing on LCD screens (CRT always uses a native aspect ratio) from `REPLAY OPTIONS > VIDEO > ASPECT RATIO`:

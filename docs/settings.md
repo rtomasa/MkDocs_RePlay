@@ -515,6 +515,25 @@ Below you can find a full reference to all available core system setting.
 | Game Boy Player Rumble (Restart) | mgba_force_gbp | Enabling this will allow compatible games with the Game Boy Player boot logo to make the controller rumble. Due to how Nintendo decided this feature should work, it may cause glitches such as flickering or lag in some of these games. |
 | Idle Loop Removal | mgba_idle_optimization | Reduce system load by optimizing so-called 'idle-loops' - sections in the code where nothing happens, but the CPU runs at full speed (like a car revving in neutral). Improves performance, and should be enabled on low-end hardware. |
 
+## Nintendo Game Boy Color
+
+| Setting                               | Key            | Info           |
+| ------------------------------------- | -------------- | -------------- |
+| Game Boy Model (Restart) | mgba_gb_model | Runs loaded content with a specific Game Boy model. 'Autodetect' will select the most appropriate model for the current game. |
+| Use BIOS File if Found (Restart) | mgba_use_bios | Use official BIOS/bootloader for emulated hardware, if present in RetroArch's system directory. |
+| Skip BIOS Intro (Restart) | mgba_skip_bios | When using an official BIOS/bootloader, skip the start-up logo animation. This setting is ignored when 'Use BIOS File if Found' is disabled. |
+| Default Game Boy Palette | mgba_gb_colors | Selects which palette is used for Game Boy games that are not Game Boy Color or Super Game Boy compatible, or if the model is forced to Game Boy. |
+| Hardware Preset Game Boy Palettes (Restart) | mgba_gb_colors_preset | Use the palettes for Game Boy games that have presets on the Game Boy Color or Super Game Boy. |
+| Use Super Game Boy Borders (Restart) | mgba_sgb_borders | Display Super Game Boy borders when running Super Game Boy enhanced games. |
+| Color Correction | mgba_color_correction | Adjusts output colors to match the display of real GBA/GBC hardware. |
+| Interframe Blending | mgba_interframe_blending | Simulates LCD ghosting effects. 'Simple' performs a 50:50 mix of the current and previous frames. 'Smart' attempts to detect screen flickering, and only performs a 50:50 mix on affected pixels. 'LCD Ghosting' mimics natural LCD response times by com |
+| Audio Filter | mgba_audio_low_pass_filter | Enables a low pass audio filter to reduce the 'harshness' of generated audio. |
+| Audio Filter Level | mgba_audio_low_pass_range | Specifies the cut-off frequency of the low pass audio filter. A higher value increases the perceived 'strength' of the filter, since a wider range of the high frequency spectrum is attenuated. |
+| Allow Opposing Directional Input | mgba_allow_opposing_directions | Enabling this will allow pressing / quickly alternating / holding both left and right (or up and down) directions at the same time. This may cause movement-based glitches. |
+| Solar Sensor Level | mgba_solar_sensor_level | Sets ambient sunlight intensity. Can be used by games that included a solar sensor in their cartridges, e.g: the Boktai series. |
+| Game Boy Player Rumble (Restart) | mgba_force_gbp | Enabling this will allow compatible games with the Game Boy Player boot logo to make the controller rumble. Due to how Nintendo decided this feature should work, it may cause glitches such as flickering or lag in some of these games. |
+| Idle Loop Removal | mgba_idle_optimization | Reduce system load by optimizing so-called 'idle-loops' - sections in the code where nothing happens, but the CPU runs at full speed (like a car revving in neutral). Improves performance, and should be enabled on low-end hardware. |
+
 ## Nintendo Game Boy Advance
 
 | Setting                               | Key            | Info           |

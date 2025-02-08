@@ -1,5 +1,51 @@
 # Changelog
 
+## v0.48.0
+- [X] Added new refactored input engine to better support different input devices and fix some bugs
+- [X] Added new keyboard engine supporting poll, event, and text modes
+- [X] Added new keyboard option to set keyboard in real or command modes
+- [X] Added NDS in single screen mode
+- [X] Added NDS in CRT screen mode
+- [X] Changed native initialization interface for the RGB-Pi Prototype
+- [X] Changed GB/GBC into two sepparated systems
+- [X] Changed Nintendo DS default screen option to "Bottom Only"
+- [X] Changed Amstrad CPC combo button to B to avoid frontend menu combo conflict
+- [X] Changed keyboard UI menu button to Windows Key for avoiding key conflicts
+- [X] Fixed Commodore 64 core to properly announce RetroPad default controller info
+- [X] Fixed Commodore 64 default file mapping buttons
+- [X] Fixed XRGB8888 video corruption in some cores
+- [X] Fixed game dual screen stacked filter not working properly
+- [X] Fixed Amstrad CPC audio (core_audio_sample was not implemented)
+- [X] Fixed aspect ratio not set automatically when selecting dual screen modes
+- [X] Fixed a small bug where the video engine was not checking if second screen was initialized
+- [X] Fixed core default input type not set when new controller device is connected
+- [X] Removed Esc (exit) command when frontend is compiled in release mode
+
+## v0.47.0
+- [X] Refactored GL texture management to make use of native XRGB8888 and BGR color conversion for improved video quality and performance
+
+## v0.46.4
+- [X] Fixed OpenGL pixel format warning due to incomplete texture deinit
+
+## v0.46.3
+- [X] Improved performance when doing software based XRGB8888 to RGB565 color conversion
+
+## v0.46.2
+- [X] Removed Alpha-Player core until new re-work is completed
+- [X] Changed media_player folder name to alpha_player
+
+## v0.46.1
+- [X] Replaced color blind option by independent RGB color scale values
+
+## v0.46.0
+- [X] Added new native initialization interface for the RGB-Pi Prototype
+- [X] Added new option to set different CSYNC modes (Separated H/V, Csync (AND), Csync (XOR))
+- [X] Added new gamma video option
+- [X] Added display name and vendor in system information
+- [X] Changed N64 Emulation profiles (now Quality in Pi5 enables LLE Unfiltered)
+- [X] Fixed Xbox 360 Controller triggers
+- [X] Fixed missing package libgpiod-dev required by RetroFlag Pi5 Case
+
 ## v0.45.0
 - [X] Added new audio device options (hdmi, gpio dac (hifiberry), usb dac)
 - [X] Added new set of aspect ratio and scalling modes
@@ -15,7 +61,7 @@
 
 ## v0.44.0
 - [X] Added new sound option to enable experimental volume normalization engine
-- [X] Changed UI navigation page limit to 999
+- [X] Changed UI navigation page limit to 999 items
 
 ## v0.43.1
 - [X] Fixed bug where system settings was missing one entry in all cores
@@ -38,14 +84,14 @@
 - [X] Added kernel parameter to avoid USB gamepad autosuspend
 - [X] Added ability to load custom SDL mapping DB file from <unit>/config/input/sdlusermapsdb.txt path
 - [X] Updated retro-bit Sega Saturn SDL mappings
-- [X] Updated 8bitdo 8bitdo NeoGeo SDL mappings
+- [X] Updated 8bitdo NeoGeo SDL mappings
 - [X] Changed default DC BIOS from HLE to Real BIOS due to some game compatibility issues
 - [X] Changed default PSX BIOS from fast to normal BIOS due to some game compatibility issues
 - [X] Changed PSX core options to avoid interlacing artifacts when using LCD screens
 - [X] Changed 3DO Threaded DSP to disabled due to some game compatibility issues
 - [X] Fixed screensaver
 - [X] Fixed sound mono downmix not working
-- [X] Fixed scanline system and core options not working properly
+- [X] Fixed scan line system and core options not working properly
 - [X] Fixed dual screen to avoid enabling the option until system reboot
 - [X] Fixed scan lines filter on pixel perfect aspect ratio
 - [X] Fixed video reinit speed regresion back again to 1-3 frames speed
@@ -122,6 +168,7 @@
 - [X] Added fds missing BIOS to new official pack
 - [X] Added SD fallback functionality when USB is removed without umounting
 - [X] Added ability to set best built-in core settings based on Pi family (E.g. default DC alpha sorting on Pi4/Pi5)
+- [X] Updated all cores (2024-08-30)
 - [X] Changed boot and system mount points to secure write mode
 - [X] Changed default overclock from 2900 to 2800 because some Pi5 not booting
 - [X] Changed video mode text list for better readability
@@ -133,7 +180,6 @@
 - [X] Fixed UI search index buffer overflow
 - [X] Fixed custom GCon2 screen flash in DC
 - [X] Removed Atari ST due to many emulation and performance issues
-- [X] Update all cores (2024-08-30)
  
 ## v0.36.0
 - [X] Added RePlay script updater
@@ -183,7 +229,7 @@
 - [X] Removed forced CRT 50/60Hz modes due to compatibility and stability issues
 
 ## v0.32.3
-<!-- **IMPORTANT!!! This is the last version containing development code for old RGB-Pi standard A/V** -->
+**IMPORTANT!!! This is the last version containing development code for old RGB-Pi standard A/V**
 - [X] Fixed bug in audio resampler dynamic audio pitch in single-thread cores
 
 ## v0.32.2
