@@ -1,8 +1,8 @@
 # Gamepad Configuration
 
-RePlay is designed to be a zero-configuration system, which involves some trade-offs, such as with gamepad support.
+RePlay is designed to be a zero-configuration system, including gamepad configuration.
 
-Unlike many other systems where you need to configure and map your controllers manually, RePlay provides a database of over **630** different controller configurations out of the box. Please note that any Xinput gamepad should work fine, but we cannot guarantee this for all gamepads. Additionally, rumble support is only available for Xinput controllers.
+Unlike many other systems where you need to configure and map your controllers manually, RePlay provides a database of over **700** different controller configurations out of the box. Please note that any Xinput gamepad should work fine, but we cannot guarantee this for all gamepads. Additionally, rumble support is only available for Xinput controllers.
 
 While playing games, you can apply remaps to the entire system or specific games to match your button preferences.
 

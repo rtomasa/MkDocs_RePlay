@@ -1,24 +1,25 @@
-# New Controllers Support
+# Enhanced Controller Support in RePlay OS
 
-RePlay OS comes with a predefined controller database, allowing your gamepad and joysticks to work out of the box. This support is based on the [SDL_GameControllerDB](https://github.com/mdqinc/SDL_GameControllerDB){target=_blank} project, which currently supports more than **630** different controllers and revisions right out of the box.
+RePlay OS is designed to offer seamless compatibility with a wide range of gamepads and joysticks, thanks to its extensive predefined controller database. This database is built upon the [SDL_GameControllerDB](https://github.com/mdqinc/SDL_GameControllerDB){target=_blank} project, which boasts support for over **700** different controllers and their various revisions, ensuring that most devices work perfectly right out of the box.
 
-If your gamepad or joystick is not detected when connected to RePlay OS, you can still create a new SDL controller mapping by following the instructions provided in the official GitHub repository.
+## Custom Controller Mapping
 
-You have two options: you can fork the project and contribute by submitting your own mappings following the SDL standard Xinput/Hori mapping layout, or you can create a new one based on the instructions below and send it to me, and I'll prepare the same on your behalf.
+If your gamepad or joystick isn't automatically recognized by RePlay OS, or if the default mappings don't align with your preferences, you have the flexibility to create a custom SDL controller mapping. This can be done easily through the `REPLAY OPTIONS > INPUT > CONTROLLER MAPPER` menu.
 
-Please note that when following the instructions for creating the mapping, if you create it on a Windows or macOS, the mapping may differ from one created in a Linux environment, which could result in a non-working mapping in RePlay OS. For this reason, I strongly recommend following these steps:
+### Mapping Process
 
-1. Create the new mapping. Two options here:
-    * **Forking and contributing to the official SDL DB**. Create the new controller mapping by following the instructions in the [SDL_GameControllerDB](https://github.com/mdqinc/SDL_GameControllerDB){target=_blank} GitHub repository.
-    * **Creating the mapping specifically for RePlay OS**. Use the same instructions like above but use the below [Mapping Guide](#mapping-guide) instead.
-2. If the mapping was created on a system other than Linux, please update your mapping by replacing the platform parameter with the Linux value.
-3. Copy your new mapping to `<unit>/config/input/sdlusermapsdb.txt` system file. This file could be in the SD or USB unit depending on whether you are using the SD or USB external unit.
-4. Reboot the system.
-5. Check if the controller works.
-6. If it works, submit a Pull Request to the GitHub repository or send the mapping to me.
+1. **Access the Controller Mapper**: Navigate to `REPLAY OPTIONS > INPUT > CONTROLLER MAPPER` in the RePlay OS menu.
+2. **Start Mapping**: Follow the on-screen instructions to map each button and axis on your controller. Each button mapping has a timeout of 5 seconds; if no input is detected within this period, the button will be skipped.
+3. **Save Your Mapping**: Once the mapping process is complete, your custom configuration will be saved to the `<unit>/config/input/sdlusermapsdb.txt` file. The location of this file depends on whether you're using an SD card or USB unit.
 
-## Mapping Guide
+## Input Layout Design
 
-We strongly suggest following the next maping guide when creating a new mapping for RePlay OS:
+RePlay OS employs a universal gamepad layout inspired by the XBOX controller but uses positional button labeling to accommodate the diverse physical layouts of various controllers. This approach minimizes conflicts and ensures a consistent user experience across different devices.
 
-![Mapping GUide](img/mapping_guide.png)
+### Visual Mapping Guide
+
+For a clearer understanding of the button mapping process, refer to the visual guide below:
+
+![Mapping Guide](img/mapping_guide.png)
+
+This guide will help you visualize the button positions and ensure accurate mapping for your controller.

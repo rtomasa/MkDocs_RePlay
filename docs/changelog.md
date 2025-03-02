@@ -1,5 +1,34 @@
 # Changelog
 
+# v0.49.0
+- [X] Major input manager engine refactor:
+    - Added new option to create SDL native physical mappings (XBOX based mappings)
+    - Added new Device Port option to redirect controllers to other ports (e.g. P2 can also control P1)
+    - Changed Test Button option to display SDL logical button name + SDL physical Id
+    - Changed core input remap so that now it is based on the new SDL logical names
+    - Changed core input remap so that now it is simplified to only display the current player buttons
+    - Changed input remap indicator to simply display if a remap file is in use
+    - Fixed UI so that remaps only apply to games
+    - Fixed Device Type option not properly applying the user selections
+    - Fixed Remap Button options not properly applying the user selections
+    - Fixed many bugs in save_input_cfg function
+    - Fixed many bugs in load_input_cfg function
+    - Removed "LEFT STICK TO DPAD" option since it was confusing and it is not required with the new physical mappings
+    - Removed "BUTTONS TO TRIGGER" option since it was confusing and it is not required with the new physical mappings
+- [X] Changed vanilla ScummVM by RePlayOS fork
+
+## v0.48.4
+- [X] Fixed input test button timeout
+
+## v0.48.3
+- [X] Changed DRM default video mode detection before SDL initialization for improved HDMI audio handshake 
+
+## v0.48.2
+- [X] Added internal gamepad layout detection for future uses
+
+## v0.48.1
+- [X] Fixed small bug on DAC init 
+
 ## v0.48.0
 - [X] Added new refactored input engine to better support different input devices and fix some bugs
 - [X] Added new keyboard engine supporting poll, event, and text modes
