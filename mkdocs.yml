@@ -63,8 +63,8 @@ extra:
       link: https://www.youtube.com/@RTA_RetroDev
     - icon: fontawesome/brands/github-alt
       link: https://github.com/rtomasa
-    - icon: simple/kofi
-      link: https://ko-fi.com/rtomas
+    - icon: simple/patreon
+      link: https://patreon.com/RePlayOS
   generator: false
 
 markdown_extensions:

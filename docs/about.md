@@ -8,9 +8,9 @@ My name is Rubén Tomás Alonso (AKA RTA or rTomas). I'm a C, Python, HTML/JavaS
 
 BTW I'm also the creator of RGB-Pi OS 1/2/4!
 
-**Support me on Ko-fi if you like RePlay OS or any of my other projects**
+**Support me on Patreon if you like RePlay OS or any of my other projects**
 
-[Donate :simple-kofi:](https://ko-fi.com/rtomas/){ .md-button target=_blank }
+[Join my Patreon :simple-patreon:](https://patreon.com/RePlayOS){ .md-button target=_blank }
 
 **Follow me for more info and news**
 

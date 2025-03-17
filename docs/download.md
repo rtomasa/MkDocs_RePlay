@@ -1,12 +1,12 @@
 # Downloads
 
-## RePlay OS
+## RePlay OS  
 
-Please do note that **RePlay OS** is still in early development phase, so there is not any download still available.
+Please note that **RePlay OS** is still in the BETA development phase, so there is no public download available yet.
 
-Do you want to help me with the expenses of the development?
+Would you like to try out the BETA and support me with the development and other expenses?
 
-[Donate :simple-kofi:](https://ko-fi.com/rtomas/){ .md-button target=_blank }
+[Join my Patreon :simple-patreon:](https://patreon.com/RePlayOS){ .md-button target=_blank }
 
 ## RGB-Pi OS
 
