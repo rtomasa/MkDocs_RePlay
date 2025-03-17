@@ -40,7 +40,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Support for autostart games on system boot for real arcade cabinet experience.
 - Support for real GunCon2 lightgun in CRT TVs via custom driver and frontend special functionalities.
 - Support for RPi5 RetroFlag cases
-- Ability to filter out arcade games by screen type (horizontal, vertical, dual sisde-by-side, and vertical stack).
+- Ability to filter out arcade games by screen type (horizontal, vertical, dual side-by-side, and vertical stack).
 - Ability to filter out by arcade, consoles, computers, and handhelds
 - Ability to boot right into specific system folder for better experience on custom builds.
 
