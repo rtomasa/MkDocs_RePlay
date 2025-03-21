@@ -1,6 +1,106 @@
 # Changelog
 
-# v0.49.0
+# v0.50.0 (Second Private BETA)
+- [X] Added internal core version verification
+- [X] Updated MAME core to v0.275
+- [X] Updated Flycast core to v2.4
+- [X] Changed UI file explorer to automatically hide folders with arcade rom names
+- [X] Fixed recents not properly handling favorites
+- [X] Fixed crash when core is not properly identified
+
+# v0.49.23
+- [X] Fixed no sound when booting a game with audio normalization enabled and core starts with total silent
+
+# v0.49.22
+- [X] Fixed scanline shader not applied when UI menu is opened
+
+# v0.49.21
+- [X] Fixed handheld aspect ratio in CRT mode (also fixes Atari Lynx black screen)
+
+# v0.49.20
+- [X] Added modern disk control API v1 to blueMSX core
+- [X] Fixed frontend support for old disk control API v0
+- [X] Fixed input descriptor infinite loop execution bug
+
+# v0.49.19
+- [X] Added dual screen DB info to Soccer Superstars
+- [X] Fixed RePlay menu core booting with incorrect video mode after system crash
+- [X] Fixed RePlay menu core booting in infinite loop after system crash
+- [X] Fixed MAME random performance degradation
+- [X] Fixed games displaying black screen when its resolution is higher than the TV's native one
+
+# v0.49.18
+- [X] Changed RePlay menu core
+    - Fully refactored code to make standarized use of libretro API
+    - Fully integrarted images (no more external SDL and PNG file dependencies)
+    - Color mode is now 32bit XRGB8888
+- [X] Fixed flycast core not properly reseting static variables when dynamic library is unloaded. This caused the frontend to crash due to input descriptors never reloaded.
+
+# v0.49.17
+- [X] Fixed a bug when UTF8 chars are used in the core system settings
+
+# v0.49.16
+- [X] Changed Screen Test core utility
+    - Fully refactored code to make standarized use of libretro API
+    - Fully integrarted images (no more external SDL and PNG file dependencies)
+    - Color mode is now 32bit XRGB8888
+- [X] Fixed chash for cores not having any system setting
+
+# v0.49.15
+- [X] Added proper color conversion 0RGB1555 (fixes MAME Virtua Racing)
+- [X] Fixed bug in SET_INPUT_DESCRIPTORS and MAME 2K3+
+
+# v0.49.14
+- [X] Changed the options info text to blue color for better differentiation
+
+# v0.49.13
+- [X] Added new system functionality to write frontend events into /var/log/replay.log
+- [X] Changed shutdown functionality to properly handle system signals (like soft poweroff)
+- [X] Fixed gamepad initialization bug in Dreamcast system
+
+# v0.49.12
+- [X] Added new input option to allow all users to control de UI
+- [X] Added help hint when hovering over Controller Mapping menu option entry
+
+# v0.49.11
+- [X] Added a new additional 8Bitdo M30 default SDL mapping
+- [X] Fixed bug in Controller Mapping caused by some controllers having an axis and a buttom mapped to one single physical button
+
+# v0.49.10
+- [X] Removed timeout in Test Physical Button and Controller Mapping options.
+    - Mapped buttons can now skip mappings when pressed
+    - Keyboard space key now also skip mappings when pressed
+
+# v0.49.9
+- [X] Fixed a bug in the keyboard controller preventing the Test Physical Button and Controller Mapping options from working properly
+
+# v0.49.8
+- [X] Fixed RGB-Pi 2 (prototype) autodetection and initialization
+
+# v0.49.7
+- [X] Added .jag file extension support to Atari Jaguar system
+
+# v0.49.6
+- [X] Fixed custom controller mappings not loading for several cores and crashing the system randomly
+
+# v0.49.5
+- [X] Fixed and refactored the new RGB-Pi DAC init system which was also preventing all RPi4 models from booting
+
+# v0.49.4
+- [X] Fixed chash in forders having a big number of m3u files
+- [X] Fixed a bug where frontend crashes when trying to open a corrupted rom file
+
+# v0.49.3
+- [X] Fixed Home button UI mapping
+
+# v0.49.2
+- [X] Disabled Scanline option on Pi3 family due to lack of support for native OGL ES3
+
+# v0.49.1
+- [X] Changed coinop countdown to work also when UI is opened.
+- [X] Fixed coinop chrashing the system on boot when enabled
+
+# v0.49.0 (First Private BETA)
 - [X] Major input manager engine refactor:
     - Added new option to create SDL native physical mappings (XBOX based mappings)
     - Added new Device Port option to redirect controllers to other ports (e.g. P2 can also control P1)

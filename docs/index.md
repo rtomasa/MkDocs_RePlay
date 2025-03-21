@@ -6,6 +6,8 @@
 
 <figure markdown>
   ![RePlay OS Logo](img/banner.png){width="500"}
+  <br>
+  [Join my Patreon :simple-patreon:](https://patreon.com/RePlayOS){ .md-button target=_blank }
 </figure>
 
 ## What is RePlay OS?
