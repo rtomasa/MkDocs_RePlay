@@ -7,6 +7,7 @@
 - [X] Changed UI file explorer to automatically hide folders with arcade rom names
 - [X] Fixed recents not properly handling favorites
 - [X] Fixed crash when core is not properly identified
+- [X] Fixed saves, bios, assets cache path issue and memory leak
 
 # v0.49.23
 - [X] Fixed no sound when booting a game with audio normalization enabled and core starts with total silent
