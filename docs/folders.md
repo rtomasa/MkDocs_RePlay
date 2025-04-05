@@ -14,7 +14,7 @@ Whether you are using the internal the MicroSD FAT partition, USB unit or NFS sh
 ## bios folder
 It is where all system BIOS, arcade samples, sound fonts, computer special core configurations, and any other special system file are stored.
 
-## catures folder
+## captures folder
 This is the place where screenshots are stored.
 
 ## config folder
