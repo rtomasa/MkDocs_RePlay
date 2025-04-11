@@ -9,21 +9,21 @@
 
     **NOTE:** please check the [Supported System](./systems.md#compatibility-matrix) section to see which systems can be emulated depending on the Raspberry Pi model.
 
-    **CRT/JAMMA Users:** the system is being developed using new RGB-Pi prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
+    **CRT/JAMMA Users:** the system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
 
 **Case:**
 
-* We reccommend the official Raspberry Pi or metal Argon cases to ensure the best cooling.
+* We recommend the official Raspberry Pi, metal Argon cases, or the nice looking Retroflag cases, to ensure the best cooling.
 
-    **NOTE:** all cases will work without requiring any modification when using the new RGB-Pi cable CRT TV hardware.
+    **NOTE:** all cases will work without requiring any modification when using the new RGB-Pi 2 CRT hardware.
 
 **Power adapter:**
 
-* We reccommend the official Raspberry Pi (5.1V/3.0A) or Argon (5.25V/3.5A) power adapters to ensure the best performance, and avoid power drops and CPU throttling.
+* We recommend the official Raspberry Pi (5.1V/3.0A) or Argon (5.25V/3.5A) power adapters to ensure the best performance, and avoid power drops and CPU throttling.
 
 **Storage:**
 
-* (Required) MicroSD card (A2 U3) 8GB+ or better for system installation.
+* (Required) MicroSD card (A2 U3) 8GB+ or better for system installation. We recommend the official [Raspberry Pi SD Cards](https://www.raspberrypi.com/products/sd-cards/){target=_blank}.
 * (Optional) USB3 pendrive or SSD USB3 external drive for ROMs, BIOS, saves, and config files.
 
     **NOTE:** you can also use the MicroSD card for storing all your ROMs, BIOS, saves, and config files.

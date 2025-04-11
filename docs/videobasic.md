@@ -16,6 +16,7 @@ You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MOD
 * `LCD 1440X1440@90`: this is a special mode only for internal use.
 * `LCD 1920X1080@60/50`: this mode can switch between 60Hz and 50Hz, accommodating PAL games or arcade games that operate close to 50Hz (could not work in all TVs).
 * `LCD 1280X720@60/50`
+* `LCD 1024x768@70`: this is a special XGA mode.
 
 **NOTE:** when changing between LCD and CRT modes, you must reboot the system to apply the configuration.
 
@@ -60,7 +61,7 @@ This allows you to choose different display modes when playing on LCD screens (C
 
 ## Scan Lines
 
-This options allows you to add some texture to the image using a custom scanline filter. This mode can be only used with LCD screens when using any vertical integer scaling mode.
+This options allows you to add some texture to the image using a custom scanline filter. This mode can be only used with LCD screens when using any vertical integer scaling mode, or CRT 31kHz PC/Arcade monitors.
 
 | **Light** |
 |:----------------------------------:|
@@ -69,6 +70,8 @@ This options allows you to add some texture to the image using a custom scanline
 | ![medium](img/scanline_medium.png) |
 | **Strong** |
 | ![strong](img/scanline_strong.png) |
+| **Black** |
+| ![strong](img/scanline_black.png) |
 
 ## Overscan Reduction
 

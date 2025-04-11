@@ -11,7 +11,7 @@
 | Atari 2600/VCS                        | :green_circle:            | :green_circle:   | :green_circle:             | a26, bin |
 | Atari 5200                            | :green_circle:            | :green_circle:   | :green_circle:             | a52, bin |
 | Atari 7800                            | :green_circle:            | :green_circle:   | :green_circle:             | a78, bin, cdf |
-| Atari Jaguar                          | :red_circle:              | :red_circle:     | :green_circle:             | j64, jag |
+| Atari Jaguar                          | :red_circle:              | :red_circle:     | :yellow_circle:            | j64, jag |
 | Atari Lynx                            | :green_circle:            | :green_circle:   | :green_circle:             | lnx |
 | NEC TurboGrafx-16/PC Engine           | :green_circle:            | :green_circle:   | :green_circle:             | pce, sgx, toc |
 | NEC TurboGrafx-CD/CD-ROM2 System      | :green_circle:            | :green_circle:   | :green_circle:             | cue, ccd, chd, m3u |
@@ -43,11 +43,11 @@
 | Sharp X68000                          | :green_circle:            | :green_circle:   | :green_circle:             | dim, img, d88, 88d, hdm, dup, 2hd, xdf, hdf, cmd, m3u |
 | Microsoft MSX                         | :green_circle:            | :green_circle:   | :green_circle:             | rom, ri, mx1, mx2, dsk, col, sg, sc, sf, cas, m3u |
 | Sinclair ZX Spectrum                  | :green_circle:            | :green_circle:   | :green_circle:             | tzx, tap, z80, rzx, scl, trd, dsk |
-| IBM PC (MS-DOS)                       | :yellow_circle:           | :yellow_circle:  | :green_circle:             | zip, dosz, exe, com, bat, iso, cue, ins, img, ima, vhd, jrc, tc, m3u, m3u8, conf |
+| IBM PC (MS-DOS)                       | :yellow_circle:           | :yellow_circle:  | :green_circle:             | zip, dosz, exe, com, bat, iso, cue, img, m3u, m3u8 |
 | ScummVM                               | :green_circle:            | :green_circle:   | :green_circle:             | scummvm, svm |
-| Alpha Player                          | :red_circle:              | :red_circle:     | :yellow_circle:            | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
+| Alpha Player (in development)         | :red_circle:              | :red_circle:     | :red_circle:               | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
 
 ## Icon Description
-:green_circle: Most games run fine near or at full performance with no emulations issues.</br>
+:green_circle: Most games run fine near or at full performance with no major emulations issues.</br>
 :yellow_circle: There are many games that could face emulation or performance issues.</br>
-:red_circle: System not supported due to bad performance.</br>
+:red_circle: System still not available or not supported due to bad performance.</br>

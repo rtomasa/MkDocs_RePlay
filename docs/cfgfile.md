@@ -4,7 +4,7 @@ The following is a description of all available options and default values that 
 
 The configuration file is located in `/media/sd/config/replay.cfg`:
 
-```python
+```cfg
 # video_mode
 ## 0 = default
 ## 1 = crt 320x240@vrr
@@ -16,6 +16,7 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 ## 7 = lcd 1440x1440@90
 ## 8 = lcd 1920x1080@60/50
 ## 9 = lcd 1280x720@60/50
+## 10 = lcd 1024x768@70
 video_mode                  = "0"
 # video_monitor_dual_mode
 ## 0 = disabled
@@ -26,11 +27,15 @@ video_monitor_dual_mode     = "0"
 # video_crt_type
 ## generic_15
 ## arcade_15
-## arcade_31
 ## arcade_15_25
 ## arcade_15_25_31
-## pc_31_120
+## arcade_31 (also used for PC)
 video_crt_type              = "generic_15"
+# video_crt_csync_mode
+## 0 = AND
+## 1 = XOR
+## 2 = separated H/V
+video_crt_csync_mode        = "0"
 # video_aspect_ratio
 ## 0 = full screen 4:3
 ## 1 = full screen native
@@ -44,6 +49,20 @@ video_crt_type              = "generic_15"
 video_aspect_ratio          = "0"
 video_monitor_x             = "0"
 video_monitor_y             = "0"
+# video_gamma
+## values = 0.5-1.5
+video_gamma                 = "1.0"
+# video_red_scale
+## values = 0.0-1.0
+video_red_scale             = "1.0"
+# video_green_scale
+## values = 0.0-1.0
+video_green_scale           = "1.0"
+# video_blue_scale
+## values = 0.0-1.0
+video_blue_scale            = "1.0"
+# video_ui_init_refresh_rate
+## values = 50/60
 video_ui_init_refresh_rate  = "60"
 # video_ui_rotation_mode
 ## 0 = 0
@@ -54,17 +73,12 @@ video_ui_rotation_mode      = "0"
 video_overscan_reduction    = "false"
 video_show_fps              = "false"
 video_show_info             = "false"
-# video_color_blind
-## 0 = none
-## 1 = protanopia
-## 2 = deuteranopia
-## 3 = tritanopia
-video_color_blind           = "0"
 # video_filter
 ## 0 = none
 ## 1 = light scanlines
 ## 2 = medium scanlines
 ## 3 = strong scanlines
+## 4 = black scanlines
 video_filter                = "0"
 # video_screen_saver
 ## 0 = OFF
@@ -84,21 +98,19 @@ audio_normalization         = "false"
 # audio_system_volume
 ## values = 0-10
 audio_system_volume         = "10"
-input_analog_to_digital     = "true"
-# input_digital_to_analog
-## 0 = off
-## 1 = 1/2 (b/x)
-## 2 = 2/3 (x/y)
-## 3 = 9/10 (shoulders l/r)
-input_digital_to_analog     = "0"
 input_gcon2_screen_flash    = "true"
 input_ui_swap_ab            = "false"
+input_all_control_ui        = "false"
 input_ui_select_fav         = "false"
 # input_ui_menu_btn
 ## 0 = home button
 ## 1 = select+start
 ## 2 = hold start
 input_ui_menu_btn           = "1"
+# input_true_kbd
+## true = keyboard works in native scancode mode
+## false = keyboard works in special cmd event mode
+input_true_kbd              = "true"
 # system_ui_view_filter
 ## 0 = show all
 ## 1 = show only horizontal

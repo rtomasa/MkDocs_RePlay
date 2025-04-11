@@ -1,5 +1,38 @@
 # Changelog
 
+# v0.51.0 (Third Private BETA)
+- [X] Added new "Arcade & PC 31kHz" monitor mode. This new mode enables the following features:
+    - Play 15kHz content on 31kHz monitors
+    - Play MS-DOS games at native 70Hz modes (requires disabling force 60fps in core settings)
+    - Play hi-res interlaced games (DC, PSX, Saturn, etc.) in progressive
+    - Enable or disable scanlines as desired
+- [X] Added new 1024x768@70Hz LCD video mode for native MS-DOS experience (requires disabling force 60fps in core settings)
+- [X] Added scanline options for "Arcade & PC 31kHz" CRT type mode
+- [X] Added new fully BLACK scanline option (perfect for 31kHz mode)
+- [X] Added missing Ctrl, Alt, Shift keyboard key support (now you can play MS-DOS properly)
+- [X] Added new PiBench core for CPU/GPU performance measurement
+- [X] Added ability to disable vsync internally at video engine level (used by PiBench)
+- [X] Added missing support for analog buttons in ANALOG mode causing also crashes in some cores (A2600, PSX, DC)
+- [X] Changed system boot sequence, reducing startup time a few seconds
+- [X] Changed (refactored) video engine for improved compatibility with different CRT monitor types
+- [X] Changed UI browser to show file type as info instead of extensions (cleaner look and easier identification)
+- [X] Changed M3U limit from 256 to 320 files per folder
+- [X] Changed Pi3 PSX core options for improved compatibility and performance
+- [X] Fixed HDMI LCD video init not properly selecting default 60Hz mode
+- [X] Fixed scanlines being displayed when vertical game resolution is equal to native screen resolution
+- [X] Fixed "Arcade 15/25/31kHz" CRT type mode
+- [X] Fixed crash caused by cores reporting more than 6 ports (PSX, DC)
+- [X] Fixed DynaRes prioritizing interlaced over progressive modes on PC/31 kHz monitors
+- [X] Fixed LCD DRR modes crashing
+- [X] Fixed System > Information > Resolution options not displaying native monitor refresh
+- [X] Fixed system image creation tool so that it can be now written using the official Raspberry Pi Imager
+
+# v0.50.2
+- [X] Improved DC/NAOMI image scaling quality in LCD
+
+# v0.50.1
+- [X] Added more available values to the Screen Position X/Y option
+
 # v0.50.0 (Second Private BETA)
 - [X] Added internal core version verification
 - [X] Updated MAME core to v0.275
@@ -85,7 +118,7 @@
 - [X] Fixed custom controller mappings not loading for several cores and crashing the system randomly
 
 # v0.49.5
-- [X] Fixed and refactored the new RGB-Pi DAC init system which was also preventing all RPi4 models from booting
+- [X] Fixed and refactored the new RGB-Pi 2 DAC init system which was also preventing all RPi4 models from booting
 
 # v0.49.4
 - [X] Fixed chash in forders having a big number of m3u files
@@ -136,7 +169,7 @@
 - [X] Added new keyboard option to set keyboard in real or command modes
 - [X] Added NDS in single screen mode
 - [X] Added NDS in CRT screen mode
-- [X] Changed native initialization interface for the RGB-Pi Prototype
+- [X] Changed native initialization interface for the RGB-Pi 2 Prototype
 - [X] Changed GB/GBC into two sepparated systems
 - [X] Changed Nintendo DS default screen option to "Bottom Only"
 - [X] Changed Amstrad CPC combo button to B to avoid frontend menu combo conflict
@@ -168,7 +201,7 @@
 - [X] Replaced color blind option by independent RGB color scale values
 
 ## v0.46.0
-- [X] Added new native initialization interface for the RGB-Pi Prototype
+- [X] Added new native initialization interface for the RGB-Pi 2 Prototype
 - [X] Added new option to set different CSYNC modes (Separated H/V, Csync (AND), Csync (XOR))
 - [X] Added new gamma video option
 - [X] Added display name and vendor in system information
@@ -226,11 +259,11 @@
 - [X] Fixed scan lines filter on pixel perfect aspect ratio
 - [X] Fixed video reinit speed regresion back again to 1-3 frames speed
 - [X] Removed NeoGeo CD listing CHD games since FBNeo does not support CHD format due to licensing conflict
-- [X] Removed temporary code for RGB-Pi Prototype initialization from automatic video mode option (moved to manual)
+- [X] Removed temporary code for RGB-Pi 2 Prototype initialization from automatic video mode option (moved to manual)
 
 ## v0.41.0
 - [X] Added a newly fully refactored A/V sync engine, now based on the audio master clock
-- [X] Added temporary code for RGB-Pi Prototype initialization
+- [X] Added temporary code for RGB-Pi 2 Prototype initialization
 - [X] Updated to new kernel 6.6.62 with support for RPi500
 - [X] Changed Dreamcast emulation profiles for improved performance
 - [X] Changed "Emulation Quality" to "Emulation Profile"
@@ -359,7 +392,7 @@
 - [X] Removed forced CRT 50/60Hz modes due to compatibility and stability issues
 
 ## v0.32.3
-**IMPORTANT!!! This is the last version containing development code for old RGB-Pi standard A/V**
+**IMPORTANT!!! This is the last version containing development code for old RGB-Pi GPIO/DPI standard A/V**
 - [X] Fixed bug in audio resampler dynamic audio pitch in single-thread cores
 
 ## v0.32.2

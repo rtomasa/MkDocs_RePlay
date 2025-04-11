@@ -37,11 +37,15 @@ The answer is likely to be no, as I'm trying to keep the system easy and small f
 No, there isn't. It will be released when it is finished.
 
 ## Will it be compatible with CRT TVs and RGB-Pi or other devices?
-The system is being developed using new RGB-Pi prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
+The system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
 
 All Raspberry Pi Zero 2, 3, 4 and 5 models will support CRT TVs using both progressive and interlaced video modes.
 
+Other CTR screens like Arcade and PC 31kHz monitors are also supported.
+
 **Note about DPI (GPIO) A/V support:** DPI is not longer compatible with current hardware due to the lack of audio and interlaced video support, so GPIO A/V hardware solutions like vga666 or current RGB-Pi (cable and JAMMA) won't be supported anymore in RePlay OS.
+
+**UPDATE:** Although interlaced support has been reintroduced in the Pi5 through the RP1 chip, its image quality and stability still fall significantly short compared to our new solution..
 
 ## Will it support image scraping?
 No, it won't. The main goal of the system is to be super fast, easy, and easy to setup. Scraping does not comply with this goal. In addition, it is not even feasible from a technical point of view since the UI layout makes not possible to fit images on either LCD or CRT screens.
@@ -63,12 +67,12 @@ Developers of cores don’t have to worry about writing different video drivers 
 
 **RePlay OS** uses a custom libretro frontend specifically tailored to Raspberry devices. It is programmed in C and uses the following libraries:
 
-- OpenGL ES 3.X for video
+- DRM, EGL, and OpenGL ES 3.X for video
 - SDL2 for audio and input devices
 
 ## Can I use CRT shaders on my LCD?
 
-No, that's not possible. The system offers only two basic scanline shaders tailored for LCD screens, and they're activated exclusively when integer scaling is enabled. These shaders are intended to provide a subtle texturing effect for those who prefer it, rather than to simulate the appearance of a CRT screen.
+No, that's not possible. The system offers several scanline shaders tailored for LCD screens and 31kKz CRT monitors, and they're activated exclusively when integer scaling is enabled. These shaders are intended to provide a subtle texturing effect for those who prefer it, rather than to simulate the appearance of a CRT screen.
 
 Attempting to replicate the authentic CRT TV experience using CRT shaders is beyond the project's intended scope and philosophy. In fact, CRT shaders introduce image aberrations and performance issues that vary depending on the system in use. Additionally, they cannot reproduce the distinctive contrast or smooth motion of a real CRT TV.
 
