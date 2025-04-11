@@ -14,6 +14,7 @@ BTW I'm also the creator of RGB-Pi OS 1/2/4!
 
 **Follow me for more info and news**
 
-* Follow me on [X-Twitter](https://x.com/rtomasal){target=_blank} or [Bluesky](https://bsky.app/profile/rtomasa.bsky.social){target=_blank} for news, updates, and more retro content.  
+* Follow me on [X-Twitter](https://x.com/rtomasal){target=_blank} for news, updates, and more retro content.
+* Join our official [Discord](https://discord.gg/2ghkKAWKDv){target=_blank} and [Telegram](https://t.me/replayos){target=_blank} servers for community discussions, support, and all the latest updates.
 * Visit [RTA RetroDev YouTube channel](https://www.youtube.com/@RTA_RetroDev){target=_blank} for a series of detailed development log videos. These videos offer a behind-the-scenes look at the creation and evolution of RePlay OS, providing valuable insights for those interested in its technical aspects and development journey.
 * Check out various of my opensource projects in my [RTA GitHub account](https://github.com/rtomasa){target=_blank}
