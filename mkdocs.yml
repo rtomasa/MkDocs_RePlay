@@ -4,7 +4,7 @@ site_author: Rubén Tomás
 site_description: >-
   RePlay OS is a Linux distribution featuring a streamlined libretro frontend. It's specifically designed to emulate a wide range of classic game consoles, arcade machines, and computers. The OS focuses on delivering fast and user-friendly emulation experiences, optimized for use with Raspberry Pi boards. This emphasis on ease of use and broad compatibility makes it an ideal choice for enthusiasts looking to relive classic gaming moments on modern hardware.
 copyright: >-
-  Copyright &copy; 2024 <a href="https://github.com/rtomasa" target="_blank" rel="noopener">Rubén Tomás Alonso (RTA)</a> -
+  Copyright &copy; <script>document.write(new Date().getFullYear())</script> <a href="https://github.com/rtomasa" target="_blank" rel="noopener">Rubén Tomás Alonso (RTA)</a> -
   <a href="#__consent">Change cookie settings</a>
 
 repo_name: MkDocs_RePlay
