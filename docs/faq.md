@@ -36,7 +36,7 @@ The answer is likely to be no, as I'm trying to keep the system easy and small f
 ## Is there any deadline for the first release?
 No, there isn't. It will be released when it is finished.
 
-## Is compatible with old RGB-Pi (GPIO) or other similar devices?
+## Is it compatible with the old RGB-Pi (GPIO) or other similar devices?
 No, it is not.
 
 The system is being developed asnd tested using new RGB-Pi 2 prototype hardware which is still in development, and no other devices will be supported or tested.
