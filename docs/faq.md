@@ -36,16 +36,18 @@ The answer is likely to be no, as I'm trying to keep the system easy and small f
 ## Is there any deadline for the first release?
 No, there isn't. It will be released when it is finished.
 
-## Will it be compatible with CRT TVs and RGB-Pi or other devices?
-The system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
+## Is compatible with old RGB-Pi (GPIO) or other similar devices?
+No, it is not.
+
+The system is being developed asnd tested using new RGB-Pi 2 prototype hardware which is still in development, and no other devices will be supported or tested.
+
+The new RGB-Pi 2 is an HDMI-to-SCART solution that uses 24-bit processing for both audio and video, features different sync combiners, and includes an additional audio jack.
 
 All Raspberry Pi Zero 2, 3, 4 and 5 models will support CRT TVs using both progressive and interlaced video modes.
 
-Other CTR screens like Arcade and PC 31kHz monitors are also supported.
-
 **Note about DPI (GPIO) A/V support:** DPI is not longer compatible with current hardware due to the lack of audio and interlaced video support, so GPIO A/V hardware solutions like vga666 or current RGB-Pi (cable and JAMMA) won't be supported anymore in RePlay OS.
 
-**UPDATE:** Although interlaced support has been reintroduced in the Pi5 through the RP1 chip, its image quality and stability still fall significantly short compared to our new solution..
+**UPDATE:** Although interlaced support has been reintroduced in the Pi5 through the RP1 chip, its image quality and stability still fall significantly short compared to our new solution.
 
 ## Will it support image scraping?
 No, it won't. The main goal of the system is to be super fast, easy, and easy to setup. Scraping does not comply with this goal. In addition, it is not even feasible from a technical point of view since the UI layout makes not possible to fit images on either LCD or CRT screens.
