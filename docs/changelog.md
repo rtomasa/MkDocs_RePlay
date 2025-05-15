@@ -1,5 +1,50 @@
 # Changelog
 
+# v0.52.0 (Fourth Private BETA)
+- [X] Refactored UI file browser engine for better performance
+- [X] Added new SYSTEM > UI PAUSES GAME option to pause game while the UI is open (now defaults to OFF)
+- [X] Added new game image rotation engine so that now cores like FBNeo can rotate the screen via core option
+    - Added proper aspect ratio calculation in games that are rotated 90 or 270 degrees
+- [X] Added experimental 2K and 4K (Pi 5 only) screen modes. Please be aware that enabling these modes may result in known video issues, increased heat, and higher power consumption, potentially reducing Pi performance and causing problems with external drives
+- [X] Added a "Crop Mode" option in PSX system settings, enabling users to set it to "All Borders" as a workaround for PSX PAL games displaying a black screen
+- [X] Added new REPLAY OPTIONS > VISIBILITY menu group
+    - Moved here all previous SYSTEM > UI SHOW * options
+    - Added four new arcade specific option filters:
+        - Number of Players
+        - Screen Rotation
+        - Number of Screens
+        - Number of Buttons
+- [X] Added automatic initialization of all audio hardware mixers to 100% volume
+- [X] Added ability to mix analog and digital buttons in core virtual input mappings
+- [X] Added and updated internal arcade naming database based on MAME 0.276
+- [X] Added dead zone handling for analog sticks and threshold detection for trigger buttons
+- [X] Changed analog stick processing to radial dead zone for improved accuracy and full-range movement (fixes some cores)
+- [X] Changed ScummVM core for better Libretro integration and updated to latest version. Fixes issues with games like:
+    - Leisure Suit Larry VII (CD Spanish)
+    - Escape from Monkey Island (CD Spanish)
+    - Cruise for a Corpse (DOS Spanish)
+- [X] Changed wrong default PSX default settings
+- [X] Changed Flycast core to latest stable realease due to an audio regression issue
+- [X] Changed M3U limit from 320 to 1024 files per folder (fixes X68K massive romset)
+- [X] Changed scanlines UI info message for clarity (Integer Scale V and Raspberry Pi4 or newer required)
+- [X] Changed REBOOT and POWER OFF functions to perform the actions in a graceful way, preventing potential data loss
+- [X] Changed save state folder structure to match rom folder structure
+- [X] Fixed several inaccuracies in X/Y position calculations for both games and UI
+- [X] Fixed video drop issues caused by system allowing default resolutions higher than 1920x1080 in "CRT/LCD AUTO" screen mode
+- [X] Fixed bug in UI file extension check exceeding max number of valid extensions
+- [X] Fixed NFS mount not persisting on reboot
+- [X] Fixed NFS UI corruption due to NFS v4 never guarantees d_type
+- [X] Fixed UI corruptions when reading UTF-8 filesystem chars
+- [X] Fixed autostart crashing when rom file does not exists
+- [X] Fixed DosBox-Pure core crashing in some games due to a bug with the disney sound system
+- [X] Fixed Caprice32 (CPC) core displaying the M3U file in the list of available disks
+- [X] Fixed video info displaying wrong Hz information for some cores/games
+- [X] Removed CRT 640X480@VRR video mode. The system is already able to properly manage the screen mode based on the CRT Type selected
+- [X] Removed Pi3/3+/Zero 2 default overclock due to instability issues (can be re‑enabled easily via config.txt)
+- [X] Removed unwanted and non-working PSX core options
+- [X] Removed unwanted and non-working N64 core options
+- [X] Removed STORAGE SAFE MODE due to poor performance and the potential to shorten the lifespan of SD cards and USB storage devices
+
 # v0.51.0 (Third Private BETA)
 - [X] Added new "Arcade & PC 31kHz" monitor mode. This new mode enables the following features:
     - Play 15kHz content on 31kHz monitors

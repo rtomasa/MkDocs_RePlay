@@ -8,15 +8,16 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 # video_mode
 ## 0 = default
 ## 1 = crt 320x240@vrr
-## 2 = crt 640x480@vrr
-## 3 = lcd 1920x1080@60
-## 4 = lcd 1280x720@60
-## 5 = lcd 1280x1024@60
-## 6 = lcd 1024x768@60
-## 7 = lcd 1440x1440@90
-## 8 = lcd 1920x1080@60/50
-## 9 = lcd 1280x720@60/50
-## 10 = lcd 1024x768@70
+## 2 = lcd 1920x1080@60
+## 3 = lcd 1280x720@60
+## 4 = lcd 1280x1024@60
+## 5 = lcd 1024x768@60
+## 6 = lcd 1440x1440@90
+## 7 = lcd 1920x1080@60/50
+## 8 = lcd 1280x720@60/50
+## 9 = lcd 1024x768@70
+## 10 = lcd 2560x1440@60
+## 11 = lcd 3840x2160@60
 video_mode                  = "0"
 # video_monitor_dual_mode
 ## 0 = disabled
@@ -111,18 +112,6 @@ input_ui_menu_btn           = "1"
 ## true = keyboard works in native scancode mode
 ## false = keyboard works in special cmd event mode
 input_true_kbd              = "true"
-# system_ui_view_filter
-## 0 = show all
-## 1 = show only horizontal
-## 2 = show only vertical
-## 3 = show only side-by-side dual screen 
-## 4 = show only stacked dual screen
-system_ui_view_filter       = "0"
-system_ui_view_player       = "false"
-system_ui_view_arcade       = "true"
-system_ui_view_console      = "true"
-system_ui_view_computer     = "true"
-system_ui_view_handheld     = "true"
 system_coinop               = "false"
 # system_coinop_time
 ## game time you get for a credit
@@ -181,7 +170,32 @@ system_boot_to_system       = "all"
 ## usb = external usb drive
 ## nfs = network nfs share
 system_storage              = "sd"
-system_storage_safe_mode    = "true"
+system_ui_pause             = "false"
+# view_players
+## 0 = show all
+## 1-6 = num players
+view_players                = "0"
+# view_rotation
+## 360 = show all
+## 0 = horizontal
+## 90 = vertical
+## 180 = horizontal inverted
+## 270 = vertical inverted
+view_rotation               = "360"
+# view_displays
+## 0 = show all
+## 1 = single screen
+## 2 = dual screen
+view_displays               = "0"
+# view_buttons
+## 0 = show all
+## 1-6 = N or less buttons
+view_buttons                = "0"
+view_player                 = "false"
+view_arcade                 = "true"
+view_console                = "true"
+view_computer               = "true"
+view_handheld               = "true"
 nfs_server                  = "192.168.x.x"
 nfs_share                   = "/media/share"
 # addon_retroflag_case_pi5
