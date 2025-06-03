@@ -60,6 +60,11 @@ This allows you to choose different display modes when playing on LCD screens (C
 | **INT-HV UNDER** | |
 | ![INT_HV_UNDER](img/underscaled.png){width="360"} ||
 
+## AmbiScan
+
+This option adds an adaptative color decoration effect to your games.
+![light](img/ambiscan.gif)
+
 ## Scan Lines
 
 This options allows you to add some texture to the image using a custom scanline filter. This mode can be only used with LCD screens when using any vertical integer scaling mode, or CRT 31kHz PC/Arcade monitors.
