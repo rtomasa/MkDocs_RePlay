@@ -1,5 +1,29 @@
 # Changelog
 
+# v0.53.0 (Fifth Private BETA)
+- [X] Refactored DynaRes to perform faster video mode switching using atomic or nonatomic operations based on the Pi model
+- [X] Added new AmbiScan color decoration effect (enabled by default)
+- [X] Added comfort noise generation (CNG) to the RePlay Menu Core to prevent smart speakers from entering standby mode during silence
+- [X] Added support for refreshing the RePlay Menu Core when rotating the UI
+- [X] Added per-system and per-game configuration support for scanlines filters
+- [X] Improved Raspberry Pi model detection used across various system features
+- [X] Improved shutdown functionality for safer and faster poweroff and reboot operations
+- [X] Changed Nintendo DS core to melonDS DS
+- [X] Changed Linux CLI locale to English for consistent system lang output
+- [X] Changed the sound normalizer engine (suggested test games: *Batsugun* for loud, *The Punisher* for quiet)
+- [X] Changed the `INITIAL REFRESH RATE` UI option to the new `CRT SCREEN MODE`
+- [X] Updated Flycast core to the latest available version
+- [X] Fixed screen test core not properly updating texture size on mode switch
+- [X] Fixed screen rotation and mirroring issues in hardware-accelerated 3D games
+- [X] Fixed a macroassembler bug in Flycast causing audio issues on ARM64 devices
+- [X] Fixed initialization and deinitialization bugs in the audio resampler that could lead to random crashes
+- [X] Fixed `usercontrollerdb.txt` not being refreshed when mounting different drives
+- [X] Fixed SRAM native save data not being properly written during reboot or power-off events
+- [X] Fixed audio resampler clipping that occurred in specific scenarios
+- [X] Fixed an issue where audio device selection could fail when booting with a USB audio DAC connected
+- [X] Fixed a bug where unplugging the controller during physical mapping caused the UI to become unresponsive
+- [X] Removed the general 20% volume reduction workaround for audio clipping, as it's no longer necessary
+
 # v0.52.0 (Fourth Private BETA)
 - [X] Refactored UI file browser engine for better performance
 - [X] Added new SYSTEM > UI PAUSES GAME option to pause game while the UI is open (now defaults to OFF)

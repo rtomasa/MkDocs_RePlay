@@ -7,14 +7,13 @@ Below you can find a description of some basic video configurations and features
 You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MODE`:
 
 * `CRT/LCD AUTO`: this mode automatically selects the type (CRT or LCD), and native default resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080 for LCD. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
-* `CRT 320X240@VRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It uses native variable refresh rates for each system/game. It is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
+* `CRT 320X240@60/VRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It uses native variable refresh rates for each system/game. It is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
+* `CRT 320X240@50/VRR`: same as `CRT 320X240@60/VRR` but boots the UI in 50Hz mode.
 * `LCD 1920X1080@60`
 * `LCD 1280X720@60`
 * `LCD 1280X1024@60`
 * `LCD 1024X768@60`
 * `LCD 1440X1440@90`: this is a special mode only for internal use.
-* `LCD 1920X1080@60/50`: this mode can switch between 60Hz and 50Hz, accommodating PAL games or arcade games that operate close to 50Hz (could not work in all TVs).
-* `LCD 1280X720@60/50`
 * `LCD 1024x768@70`: this is a special XGA mode.
 * `LCD 2560x1440@60`: experimental 2K resolution for Raspberry PI 5 and higher.
 * `LCD 3840x2160@60`: experimental 4K resolution for Raspberry PI 5 and higher.
@@ -59,6 +58,11 @@ This allows you to choose different display modes when playing on LCD screens (C
 | ![FULL_SCRN_NATIVE](img/system_native.png){width="360"} | ![INT_HV_OVER](img/overscaled.png){width="360"} |
 | **INT-HV UNDER** | |
 | ![INT_HV_UNDER](img/underscaled.png){width="360"} ||
+
+## AmbiScan
+
+This option adds an adaptative color decoration effect to your games.
+![light](img/ambiscan.gif)
 
 ## Scan Lines
 
