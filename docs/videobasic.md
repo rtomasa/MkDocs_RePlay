@@ -14,7 +14,6 @@ You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MOD
 * `LCD 1280X1024@60`
 * `LCD 1024X768@60`
 * `LCD 1440X1440@90`: this is a special mode only for internal use.
-* `LCD 1024x768@70`: this is a special XGA mode.
 * `LCD 2560x1440@60`: experimental 2K resolution for Raspberry PI 5 and higher.
 * `LCD 3840x2160@60`: experimental 4K resolution for Raspberry PI 5 and higher.
 
