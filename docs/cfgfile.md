@@ -7,17 +7,18 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 ```cfg
 # video_mode
 ## 0 = default
-## 1 = crt 320x240@vrr
-## 2 = lcd 1920x1080@60
-## 3 = lcd 1280x720@60
-## 4 = lcd 1280x1024@60
-## 5 = lcd 1024x768@60
-## 6 = lcd 1440x1440@90
-## 7 = lcd 1920x1080@60/50
-## 8 = lcd 1280x720@60/50
-## 9 = lcd 1024x768@70
-## 10 = lcd 2560x1440@60
-## 11 = lcd 3840x2160@60
+## 1 = crt 320x240@vrr (ui boots @60)
+## 2 = crt 320x240@vrr (ui boots @50)
+## 3 = lcd 1920x1080@60
+## 4 = lcd 1280x720@60
+## 5 = lcd 1280x1024@60
+## 6 = lcd 1024x768@60
+## 7 = unused
+## 8 = unused
+## 9 = unused
+## 10 = unused
+## 11 = lcd 2560x1440@60
+## 12 = lcd 3840x2160@60
 video_mode                  = "0"
 # video_monitor_dual_mode
 ## 0 = disabled
@@ -62,9 +63,6 @@ video_green_scale           = "1.0"
 # video_blue_scale
 ## values = 0.0-1.0
 video_blue_scale            = "1.0"
-# video_ui_init_refresh_rate
-## values = 50/60
-video_ui_init_refresh_rate  = "60"
 # video_ui_rotation_mode
 ## 0 = 0
 ## 1 = 90
@@ -81,6 +79,7 @@ video_show_info             = "false"
 ## 3 = strong scanlines
 ## 4 = black scanlines
 video_filter                = "0"
+video_ambiscan              = "true"
 # video_screen_saver
 ## 0 = OFF
 ## 60000 = 1 min
