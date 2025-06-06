@@ -12,9 +12,7 @@ RePlay OS automatically creates the required folder structure once the desired s
 
 Once you have selected the desired storage device and the folder structure is in place, you can proceed with transferring your games.
 
-### A Note About USB Drive
-
-RePlay OS configures external drives so that all write operations are performed immediately, without caching. This approach makes I/O operations slower but ensures users can power off the system without any risk of data loss. If you prefer to change this behavior, you can do so by navigating to `REPLAY OPTIONS > SYSTEM > STORAGE SAFE MODE`.
+**IMPORTANT!!!:** PCIe NVMe storage is not supported.
 
 ### A Note About NFS Share
 

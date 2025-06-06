@@ -11,6 +11,8 @@
 
     **CRT/JAMMA Users:** the system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
 
+    **IMPORTANT!!!:** PCIe NVMe storage is not supported.
+
 **Case:**
 
 * We recommend the official Raspberry Pi, metal Argon cases, or the nice looking Retroflag cases, to ensure the best cooling.
