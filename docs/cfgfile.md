@@ -38,6 +38,11 @@ video_crt_type              = "generic_15"
 ## 1 = XOR
 ## 2 = separated H/V
 video_crt_csync_mode        = "0"
+# video_crt_rgb_range
+## 0 = auto
+## 1 = full (0:255)
+## 2 = limited (16:235)
+video_crt_rgb_range         = "0"
 # video_aspect_ratio
 ## 0 = full screen 4:3
 ## 1 = full screen native
@@ -175,12 +180,10 @@ system_ui_pause             = "false"
 ## 1-6 = num players
 view_players                = "0"
 # view_rotation
-## 360 = show all
-## 0 = horizontal
-## 90 = vertical
-## 180 = horizontal inverted
-## 270 = vertical inverted
-view_rotation               = "360"
+## 0 = show all
+## 1 = horizontal
+## 2 = vertical
+view_rotation               = "0"
 # view_displays
 ## 0 = show all
 ## 1 = single screen

@@ -1644,7 +1644,7 @@ Below you can find a full reference to all available core system setting.
 | RetroPad > Right Analog > Left | scummvm_mapper_rl | n/a |
 | RetroPad > Right Analog > Right | scummvm_mapper_rr | n/a |
 
-## Alpha Player
+## [Alpha Player](alphaplayer.md)
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |

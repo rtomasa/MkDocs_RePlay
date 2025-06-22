@@ -1,5 +1,42 @@
 # Changelog
 
+# v0.54.0 (Sixth Private BETA)
+- [X] Added new alpha-player media core
+- [X] Added frontend support for the new alpha-player media core
+- [X] Added a new RGB color range setting for TVs or DACs that do not support full-range RGB output
+- [X] Added support for RPi5 NVMe PCIe storage units (system cannot boot from NVMe)
+- [X] Changed arcade rotation visibility option to filter any horizontal or vertical game of any rotation mode
+- [X] Fixed bug in system core options hiding one of the core options randomly
+- [X] Fixed screensaver displaying last color used by ambiscan
+- [X] Fixed scanline filter option not disabled on all unsupported modes
+- [X] Fixed Retroflag Reset button functionality
+- [X] Fixed poweroff and reboot not unloading game and core in all scenarios
+- [X] Fixed multiple audio DACs issues taking priority over hdmi one
+
+# v0.53.0 (Fifth Private BETA)
+- [X] Refactored DynaRes to perform faster video mode switching using atomic or nonatomic operations based on the Pi model
+- [X] Added new AmbiScan color decoration effect (enabled by default)
+- [X] Added comfort noise generation (CNG) to the RePlay Menu Core to prevent smart speakers from entering standby mode during silence
+- [X] Added support for refreshing the RePlay Menu Core when rotating the UI
+- [X] Added per-system and per-game configuration support for scanlines filters
+- [X] Improved Raspberry Pi model detection used across various system features
+- [X] Improved shutdown functionality for safer and faster poweroff and reboot operations
+- [X] Changed Nintendo DS core to melonDS DS
+- [X] Changed Linux CLI locale to English for consistent system lang output
+- [X] Changed the sound normalizer engine (suggested test games: *Batsugun* for loud, *The Punisher* for quiet)
+- [X] Changed the `INITIAL REFRESH RATE` UI option to the new `CRT SCREEN MODE`
+- [X] Updated Flycast core to the latest available version
+- [X] Fixed screen test core not properly updating texture size on mode switch
+- [X] Fixed screen rotation and mirroring issues in hardware-accelerated 3D games
+- [X] Fixed a macroassembler bug in Flycast causing audio issues on ARM64 devices
+- [X] Fixed initialization and deinitialization bugs in the audio resampler that could lead to random crashes
+- [X] Fixed `usercontrollerdb.txt` not being refreshed when mounting different drives
+- [X] Fixed SRAM native save data not being properly written during reboot or power-off events
+- [X] Fixed audio resampler clipping that occurred in specific scenarios
+- [X] Fixed an issue where audio device selection could fail when booting with a USB audio DAC connected
+- [X] Fixed a bug where unplugging the controller during physical mapping caused the UI to become unresponsive
+- [X] Removed the general 20% volume reduction workaround for audio clipping, as it's no longer necessary
+
 # v0.53.0 (Fifth Private BETA)
 - [X] Refactored DynaRes to perform faster video mode switching using atomic or nonatomic operations based on the Pi model
 - [X] Added new AmbiScan color decoration effect (enabled by default)
@@ -360,7 +397,7 @@
 - [X] Fixed silent boot
 
 ## v0.39.0
-- [X] Added new option to boot into PAL 50 or NTSC 60 mode (usefull for some CRT only PAL TVs)
+- [X] Added new option to boot into PAL 50 or NTSC 60 mode (useful for some CRT only PAL TVs)
 - [X] Added GPU Frequency in System Information option menu
 - [X] Added option to reset all system configurations (frontend, cores, and input)
 - [X] Changed Default video mode option to CRT/LCD Auto
@@ -488,7 +525,7 @@
     - Added handheld CRT lowres support
 - [X] Added new scalling modes:
     - Integer Scale Overscan (only works in FHD 1080! nearly the original overscan of a CRT)
-    - Integer Scale Underscan (usefull for special DIY projects)
+    - Integer Scale Underscan (useful for special DIY projects)
 - [X] Added new functionlity to RePlay start menu core
     - It now properly manage all diferent video modes at boot
     - Fixed background scaling in dual screen modes

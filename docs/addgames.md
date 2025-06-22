@@ -8,11 +8,10 @@ RePlay OS automatically creates the required folder structure once the desired s
 
 * `INTERNAL SD CARD`: This is a FAT partition created and expanded on the first boot, already prepared for use.
 * `EXTERNAL USB DRIVE`: Select this option if you want to use a pendrive or USB unit. Avoid mechanical drives, especially non-powered ones, to prevent power and performance drops. The unit must be manually formatted in FAT32 or exFAT before plugging it into the Raspberry Pi.
+* `INTERNAL NVME DRIVE`: This option makes use of the Raspberry Pi 5 PCIe NVMe M.2 interface for storage. 
 * `NETWORK NFS SHARE`: Select this option to use your own server share. Ensure the unit has read/write rights for the system to create folders and files.
 
 Once you have selected the desired storage device and the folder structure is in place, you can proceed with transferring your games.
-
-**IMPORTANT!!!:** PCIe NVMe storage is not supported.
 
 ### A Note About NFS Share
 

@@ -26,7 +26,7 @@ RePlay OS is able to make use of dual screen configuration in both LCD and CRT c
 * `OFF`: for single screen configuration.
 * `DUPLICATE`: clones the image in both screens. Useful for streaming or recreating arcades like Sega Versus City. 
 * `HORIZONTAL`: uses both screens in horizontal extended way. Useful for dual screen arcade games like Sagaia or OutRunners.
-* `VERTICAL`: uses both screens in vertical extended way. Usefull for arcades like Punch-Out or Nintendo DS.
+* `VERTICAL`: uses both screens in vertical extended way. Useful for arcades like Punch-Out or Nintendo DS.
 
 ## CRT Type
 

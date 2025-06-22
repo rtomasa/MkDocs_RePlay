@@ -79,3 +79,7 @@ No, that's not possible. The system offers several scanline shaders tailored for
 Attempting to replicate the authentic CRT TV experience using CRT shaders is beyond the project's intended scope and philosophy. In fact, CRT shaders introduce image aberrations and performance issues that vary depending on the system in use. Additionally, they cannot reproduce the distinctive contrast or smooth motion of a real CRT TV.
 
 If you're fond of the look and feel of CRT TVs, your best bet is to acquire an actual CRT TV!
+
+## Can I play movies?
+
+Yes, RePlay OS includes its own [Alpha Player](alphaplayer.md) multimedia core for playing all kinds of audio and video files. Since it is a software-based core, it requires a fairly powerful CPU, so it is recommended to use a Raspberry Pi 5 if you plan to play movies.

@@ -30,6 +30,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Out of the box support for more than 700 game controllers.
 - Low latency audio resampler engine.
 - Support for audio normalization.
+- SUpport for external USB/GPIO audio DACs.
 - Adaptative frontend UI integer scaling, based on system resolution.
 - Support for frontend UI rotation independently of the running system/game (90, 180 and 270 degrees).
 - Support for six players.
@@ -42,9 +43,11 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Support for autostart games on system boot for real arcade cabinet experience.
 - Support for real GunCon2 lightgun in CRT TVs via custom driver and frontend special functionalities.
 - Support for RPi5 RetroFlag cases
-- Ability to filter out arcade games by screen type (horizontal, vertical, dual side-by-side, and vertical stack).
+- Ability to filter out arcade games by number of players, number of screens, number of buttons, and screen orientation.
 - Ability to filter out by arcade, consoles, computers, and handhelds
 - Ability to boot right into specific system folder for better experience on custom builds.
+- Ability to enable dynamic colored borders via the AmbiScan feature.
+- Support for setting the RGB color range (full or limited) for external video DACs.
 
 ## DynaRes 2.0
 
@@ -61,3 +64,11 @@ When RePlay OS is executed on a CRT TV, CRT PC monitor, or CRT Arcade screen, it
 - **CSYNC Mode Selector**: you can choose different video signal mixer modes: Separated H/V, Csync (AND), Csync (XOR).
 
 *Note: Dual Screen is also available when LCD mode is set.*
+
+## Custom Cores
+
+RePLay OS provides several utility cores out of the box:
+
+- **PiBench**: a software render core for measuring Raspberry Pi CPU performance.
+- **Screen Test**: a simple core for checking CRT geometry and color range, with support for both NTSC and PAL modes (60/50Hz)
+- [Alpha Player](alphaplayer.md): a custom media player for playing video and audio files, with support for many formats.

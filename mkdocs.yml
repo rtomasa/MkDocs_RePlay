@@ -104,6 +104,7 @@ nav:
     - Video Configuration: videobasic.md
     - Input Lag: inputlag.md
     - Emulation Profiles: emuprofiles.md
+    - Alpha Player: alphaplayer.md
   - Wiki (advanced):
     - Wi-Fi Configuration: wifi.md
     - New Controllers Support: mappings.md
