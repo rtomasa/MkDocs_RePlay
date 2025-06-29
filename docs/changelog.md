@@ -5,6 +5,7 @@
 - [X] Added frontend support for the new alpha-player media core
 - [X] Added a new RGB color range setting for TVs or DACs that do not support full-range RGB output
 - [X] Added support for RPi5 NVMe PCIe storage units (system cannot boot from NVMe)
+- [X] Added new custom xone and xpad drivers (thanks to Kev - forkymcforkface)
 - [X] Changed arcade rotation visibility option to filter any horizontal or vertical game of any rotation mode
 - [X] Fixed bug in system core options hiding one of the core options randomly
 - [X] Fixed screensaver displaying last color used by ambiscan
