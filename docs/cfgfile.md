@@ -172,6 +172,7 @@ system_boot_to_system       = "all"
 # system_storage
 ## sd = internal sd card
 ## usb = external usb drive
+## nvme = internal nvme drive
 ## nfs = network nfs share
 system_storage              = "sd"
 system_ui_pause             = "false"
