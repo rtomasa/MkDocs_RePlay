@@ -13,12 +13,8 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 ## 4 = lcd 1280x720@60
 ## 5 = lcd 1280x1024@60
 ## 6 = lcd 1024x768@60
-## 7 = unused
-## 8 = unused
-## 9 = unused
-## 10 = unused
-## 11 = lcd 2560x1440@60
-## 12 = lcd 3840x2160@60
+## 7 = lcd 2560x1440@60
+## 8 = lcd 3840x2160@60
 video_mode                  = "0"
 # video_monitor_dual_mode
 ## 0 = disabled
@@ -33,7 +29,7 @@ video_monitor_dual_mode     = "0"
 ## arcade_15_25_31
 ## arcade_31 (also used for PC)
 video_crt_type              = "generic_15"
-# video_crt_csync_mode
+# video_crt_csync_mode (requires RGB-Pi compatible hardware)
 ## 0 = AND
 ## 1 = XOR
 ## 2 = separated H/V
@@ -97,6 +93,7 @@ video_screen_saver          = "0"
 ## 0 = HDMI
 ## 1 = GPIO DAC
 ## 2 = USB DAC
+video_hdmi_cec              = "false"
 audio_card                  = "0"
 audio_mono                  = "false"
 audio_normalization         = "false"
@@ -193,7 +190,7 @@ view_displays               = "0"
 ## 0 = show all
 ## 1-6 = N or less buttons
 view_buttons                = "0"
-view_player                 = "false"
+view_player                 = "true"
 view_arcade                 = "true"
 view_console                = "true"
 view_computer               = "true"
