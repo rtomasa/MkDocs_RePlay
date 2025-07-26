@@ -45,7 +45,7 @@
 | Sinclair ZX Spectrum                  | :green_circle:            | :green_circle:   | :green_circle:             | tzx, tap, z80, rzx, scl, trd, dsk |
 | IBM PC (MS-DOS)                       | :yellow_circle:           | :yellow_circle:  | :green_circle:             | zip, dosz, exe, com, bat, iso, cue, img, m3u, m3u8 |
 | ScummVM                               | :green_circle:            | :green_circle:   | :green_circle:             | scummvm, svm |
-| [Alpha Player](alphaplayer.md)        | :red_circle:              | :red_circle:     | :green_circle:             | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
+| [Alpha Player](alphaplayer.md)        | :red_circle:              | :yellow_circle:  | :green_circle:             | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |
 
 ## Icon Description
 :green_circle: Most games run fine near or at full performance with no major emulations issues.</br>
