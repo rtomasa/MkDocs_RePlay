@@ -14,6 +14,7 @@
 * **Audio Track Selection:** Easily switch between multiple audio tracks in supported media.
 * **Custom Loop Modes:** Supports track repeat, loop all, and shuffle for playlists.
 * **On-Screen Progress and Info:** Quick access to current time, progress, and media info.
+* **HDMI CEC Support:** Seamlessly control all player functions using your TV remote on compatible CEC TVs.
 
 ---
 
