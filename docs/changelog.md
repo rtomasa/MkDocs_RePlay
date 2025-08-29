@@ -1,10 +1,25 @@
 # Changelog
 
+# v0.56.0 (RC2)
+- [X] Added DynaRes LCD NRR (Native Refresh Rate) option
+    - Standard LCD screens run at 55-61Hz
+    - LCD VRR screens run at 48-75Hz
+- [X] Added wifi configuration to replay.cfg
+- [X] Removed MAME2K3+ from Pi5
+- [X] Removed CRT overscan reduction causing DAC image stability issues
+- [X] Improved Power Button detection
+- [X] Fixed system options text truncation
+- [X] Fixed SET_SYSTEM_AV_INFO not updating aspect ratio and refresh rate
+- [X] Fixed Alpha Player:
+    - Fixed geometry and av_info calls
+    - Fixed aspect ratio
+    - Fixed image stability and timings
+
 # v0.55.0 (RC1)
 - [X] Fully refactored DRM init mode
-    - [X] Added HDMI hotplug detection
-    - [X] Added HDMI CEC support
-    - [X] Added HDMI DPMS restart sequence
+    - Added HDMI hotplug detection
+    - Added HDMI CEC support
+    - Added HDMI DPMS restart sequence
 - [X] Added a new graceful implementation for poweroff, reboot, and exit events
 - [X] Added N64 and DC to BOOT TO SYSTEM option
 - [X] Added optional custom xone and xpad drivers installers to RePlay Extra section
@@ -95,7 +110,7 @@
 - [X] Fixed DosBox-Pure core crashing in some games due to a bug with the disney sound system
 - [X] Fixed Caprice32 (CPC) core displaying the M3U file in the list of available disks
 - [X] Fixed video info displaying wrong Hz information for some cores/games
-- [X] Removed CRT 640X480@VRR video mode. The system is already able to properly manage the screen mode based on the CRT Type selected
+- [X] Removed CRT 640X480@NRR video mode. The system is already able to properly manage the screen mode based on the CRT Type selected
 - [X] Removed Pi3/3+/Zero 2 default overclock due to instability issues (can be re‑enabled easily via config.txt)
 - [X] Removed unwanted and non-working PSX core options
 - [X] Removed unwanted and non-working N64 core options
@@ -401,7 +416,7 @@
     - Automatically adjusts core options based on RPi model, and Emulation Quality selected option
 - [X] Fixed bug making P1 controlling P2
 - [X] Fixed function for getting interlaced video modes in CRT mode 
-- [X] Fixed A/V sync in VRR mode in systems running internally at different speed rates
+- [X] Fixed A/V sync in NRR mode in systems running internally at different speed rates
 - [X] Fixed A/V reinit in OpenGL based cores when running in CRT in RPi5
 - [X] Fixed Screen Test core crashing due to bad compilation
 - [X] Fixed firstboot auto-configuration

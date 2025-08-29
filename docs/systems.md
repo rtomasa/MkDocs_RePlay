@@ -6,7 +6,7 @@
 | ------------------------------------- | :--------------:          | :--------------: | :------------:             | :----------------: |
 | Arcade (FBNeo)                        | :yellow_circle:           | :green_circle:   | :green_circle:             | zip |
 | Arcade (MAME)                         | :red_circle:              | :yellow_circle:  | :green_circle:             | zip |
-| Arcade (MAME 2K3+)                    | :yellow_circle:           | :yellow_circle:  | :green_circle:             | zip |
+| Arcade (MAME 2K3+)                    | :yellow_circle:           | :yellow_circle:  | :red_circle:               | zip |
 | Arcade SEGA Naomi/Atomis              | :red_circle:              | :yellow_circle:  | :green_circle:             | zip |
 | Atari 2600/VCS                        | :green_circle:            | :green_circle:   | :green_circle:             | a26, bin |
 | Atari 5200                            | :green_circle:            | :green_circle:   | :green_circle:             | a52, bin |

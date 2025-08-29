@@ -1,14 +1,15 @@
 # Video Configuration
 
-Below you can find a description of some basic video configurations and features on RePlay OS. You can change the resolution, add some video filters, adjust the overscan, select different scaling modes, enable dual screen, and more.
+Below you can find a description of some basic video configurations and features on RePlay OS. You can change the resolution, add some video filters, select different scaling modes, enable dual screen, and more.
 
 ## Screen Mode
 
 You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MODE`:
 
 * `CRT/LCD AUTO`: this mode automatically selects the type (CRT or LCD), and native default resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080 for LCD. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
-* `CRT 320X240@60/VRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It uses native variable refresh rates for each system/game. When used in combination of the corresponding CRT Type option, it is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
-* `CRT 320X240@50/VRR`: same as `CRT 320X240@60/VRR` but boots the UI in 50Hz mode.
+* `CRT 320X240@60/NRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It uses native refresh rates for each system/game. When used in combination of the corresponding CRT Type option, it is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
+* `CRT 320X240@50/NRR`: same as `CRT 320X240@60/NRR` but boots the UI in 50Hz mode.
+* `LCD DEFAULT@60/NRR`: This mode uses your monitor’s native default resolution and native refresh rates for different systems and games when available. The refresh rate selected depends on the [LCD monitor type](#lcd-type) chosen in the corresponding option.
 * `LCD 1920X1080@60`
 * `LCD 1280X720@60`
 * `LCD 1280X1024@60`
@@ -26,6 +27,13 @@ RePlay OS is able to make use of dual screen configuration in both LCD and CRT c
 * `DUPLICATE`: clones the image in both screens. Useful for streaming or recreating arcades like Sega Versus City. 
 * `HORIZONTAL`: uses both screens in horizontal extended way. Useful for dual screen arcade games like Sagaia or OutRunners.
 * `VERTICAL`: uses both screens in vertical extended way. Useful for arcades like Punch-Out or Nintendo DS.
+
+## LCD Type
+
+Allows you to choose different TV and monitor types.
+
+* `TV & PC 60Hz`: choose this if your monitor does not support VRR. Supported native refresh rates: 55-61 Hz.
+* `TV & PC VRR`: choose this if your monitor supports VRR. Supported native refresh rates: 48-75 Hz.
 
 ## CRT Type
 
@@ -111,12 +119,6 @@ This options allows you to add some texture to the image using a custom scanline
 | ![strong](img/scanline_strong.png) |
 | **Black** |
 | ![strong](img/scanline_black.png) |
-
-## Overscan Reduction
-
-This option is designed to reduce horizontal overscan when using CRT TVs, providing a wider visible area on the left and right borders of the screen while maintaining an integer scale image. In the image below, the red area indicates what is normally drawn in the overscan region and is not visible on standard CRT TVs.
-
-![subtle](img/overscan.png){width="768"}
 
 ## HDMI CEC
 

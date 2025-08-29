@@ -6,15 +6,17 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 
 ```cfg
 # video_mode
+## NRR (Native Refresh Rate)
 ## 0 = default
-## 1 = crt 320x240@vrr (ui boots @60)
-## 2 = crt 320x240@vrr (ui boots @50)
-## 3 = lcd 1920x1080@60
-## 4 = lcd 1280x720@60
-## 5 = lcd 1280x1024@60
-## 6 = lcd 1024x768@60
-## 7 = lcd 2560x1440@60
-## 8 = lcd 3840x2160@60
+## 1 = crt 320x240@nrr (ui boots @60)
+## 2 = crt 320x240@nrr (ui boots @50)
+## 3 = lcd native resolution & nrr
+## 4 = lcd 1920x1080@60
+## 5 = lcd 1280x720@60
+## 6 = lcd 1280x1024@60
+## 7 = lcd 1024x768@60
+## 8 = lcd 2560x1440@60
+## 9 = lcd 3840x2160@60
 video_mode                  = "0"
 # video_monitor_dual_mode
 ## 0 = disabled
@@ -22,6 +24,10 @@ video_mode                  = "0"
 ## 2 = horizontal
 ## 3 = vertical
 video_monitor_dual_mode     = "0"
+# video_lcd_type
+## generic_60 = supports 55-61hz ranges
+## gaming_vrr = supports 48-75hz ranges
+video_lcd_type              = "generic_60"
 # video_crt_type
 ## generic_15
 ## arcade_15
@@ -70,7 +76,6 @@ video_blue_scale            = "1.0"
 ## 2 = 180
 ## 3 = 270
 video_ui_rotation_mode      = "0"
-video_overscan_reduction    = "false"
 video_show_fps              = "false"
 video_show_info             = "false"
 # video_filter
@@ -171,7 +176,7 @@ system_boot_to_system       = "all"
 ## usb = external usb drive
 ## nfs = network nfs share
 system_storage              = "sd"
-system_ui_pause             = "false"
+system_ui_pauses_core       = "false"
 # view_players
 ## 0 = show all
 ## 1-6 = num players
@@ -195,8 +200,11 @@ view_arcade                 = "true"
 view_console                = "true"
 view_computer               = "true"
 view_handheld               = "true"
-nfs_server                  = "192.168.x.x"
-nfs_share                   = "/media/share"
+nfs_server                  = "192.168.X.X"
+nfs_share                   = "/export/share"
+wifi_name                   = "MyWifi"
+wifi_pwd                    = "********"
+wifi_country                = "ES"
 # addon_retroflag_case_pi5
 ## 0 = disabled
 ## 1 = reset button for reboot
