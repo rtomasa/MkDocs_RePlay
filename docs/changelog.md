@@ -1,5 +1,9 @@
 # Changelog
 
+# v0.57.0 (RC3)
+- [X] Fixed generic video DAC autodetection
+- [X] Updated all system cores
+
 # v0.56.0 (RC2)
 - [X] Added DynaRes LCD NRR (Native Refresh Rate) option
     - Standard LCD screens run at 55-61Hz
