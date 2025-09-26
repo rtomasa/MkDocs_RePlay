@@ -11,6 +11,10 @@
 
     **CRT/JAMMA Users:** the system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
 
+**RAM:**
+
+RePlay OS and its supported systems can run on any Raspberry Pi model with 1GB or more of RAM.
+
 **Case:**
 
 * We recommend the official Raspberry Pi, metal Argon cases, or the nice looking Retroflag cases, to ensure the best cooling.
