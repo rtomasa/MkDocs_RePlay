@@ -55,6 +55,7 @@ video_crt_rgb_range         = "0"
 ## 6 = full integer scaling
 ## 7 = full integer over scaling (only FHD TVs)
 ## 8 = full integer under scaling
+video_crt_stability_boost   = "true"
 video_aspect_ratio          = "0"
 video_monitor_x             = "0"
 video_monitor_y             = "0"
@@ -177,6 +178,7 @@ system_boot_to_system       = "all"
 ## nfs = network nfs share
 system_storage              = "sd"
 system_ui_pauses_core       = "false"
+system_folder_regen         = "true"
 # view_players
 ## 0 = show all
 ## 1-6 = num players
@@ -208,6 +210,11 @@ wifi_country                = "ES"
 # addon_retroflag_case_pi5
 ## 0 = disabled
 ## 1 = reset button for reboot
-## 2 = reset button for manu
+## 2 = reset button for menu
 addon_retroflag_case_pi5    = "0"
+# addon_tilt_input_pi5
+## 0 = disabled
+## 1 = +90
+## 3 = +270
+addon_tilt_input_pi5        = "0"
 ```

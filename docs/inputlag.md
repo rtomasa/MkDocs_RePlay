@@ -11,4 +11,9 @@ By default, the video engine used by RePlay OS introduces near zero-lag while ma
 
 ## USB Gamepads/Joysticks & GPIO Joystics Latency
 
-By default, RePlay OS is preconfigured with a 1ms polling rate, ensuring ultra-fast response times for optimal gaming performance.
+By default, RePlay OS is configured with a 1 ms polling rate, ensuring ultra-fast response times for optimal gaming performance.
+
+In addition, RePlay OS uses a bitmask input engine for digital controllers, which provides the following input-lag benefits:
+
+* **Consistent snapshot**: All button states are captured in the same poll cycle, eliminating per-button timing skew and matching real hardware behavior.
+* **Reduced input latency**: Cores skip dozens of callback round trips per frame. The improvement is small but measurable compared to traditional per-button polling.

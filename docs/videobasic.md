@@ -75,6 +75,10 @@ Certainly. Here’s a more concise and technically clear version:
 
 ![Screen Test](img/grid_60.png){width="768"}
 
+## CRT Stability Boost
+
+This option improves video stability (prevents image drops) with certain HDMI video DACs. It is enabled by default. If you experience video issues, try disabling it.
+
 ## Gamma, RGB Color Intensity and Screen X/Y Position
 
 You can fully customize various screen parameters, such as gamma, RGB color channel intensity (to adjust CRTs with degraded channels), and screen position on both LCD and CRT displays.

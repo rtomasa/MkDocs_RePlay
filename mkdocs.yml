@@ -109,7 +109,7 @@ nav:
   - Wiki (advanced):
     - Wi-Fi Configuration: wifi.md
     - New Controllers Support: mappings.md
-    - RePlay Custom Drivers: drivers.md
+    - RePlay Custom Drivers & DIY: drivers.md
     - RePlay Options File: cfgfile.md 
     - Core System Settings: settings.md
     - Emulation Know-How: insights.md

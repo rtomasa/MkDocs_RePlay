@@ -1,5 +1,19 @@
 # Changelog
 
+# v0.58.0 (RC4)
+- [X] Added support for new bitmask input engine for digital controllers (`RETRO_ENVIRONMENT_GET_INPUT_BITMASKS`):
+    - Lower CPU overhead: instead of cores asking input state 12-16 times per frame per port, they call it once and get all button states in a single call.
+    - Consistent snapshot: all button states come from the same poll cycle, eliminating per-button timing skew, matching real hardware behaviour.
+    - Less input latency: cores skip dozens of callback round-trips per frame. The improvement is small but measurable compared to traditional per-button polling.
+- [X] Added new `CRT STABILITY BOOST` option (enabled by default) for improved image stability
+- [X] Added new `FOLDER REGENERATION` option to enable/disable system rom folder regeneration of every boot
+- [X] Added support for DIY Tilt Input device addon to automatically rotate the UI and filter vertical games
+- [X] Added new XBOX driver installer in extras
+- [X] Changed generic DAC Color Range autodetection for known DAC models
+- [X] Changed black screensaver by ambiscan color cycle to prevent confusion with the Pi being powered off
+- [X] Fixed unwanted button press after resume, save/load state and extra cores
+- [X] Fixed `SWAP UI A/B BUTTONS` input option affecting keyboard
+
 # v0.57.0 (RC3)
 - [X] Fixed generic video DAC autodetection
 - [X] Updated all system cores
@@ -13,7 +27,7 @@
 - [X] Removed CRT overscan reduction causing DAC image stability issues
 - [X] Improved Power Button detection
 - [X] Fixed system options text truncation
-- [X] Fixed SET_SYSTEM_AV_INFO not updating aspect ratio and refresh rate
+- [X] Fixed `SET_SYSTEM_AV_INFO` not updating aspect ratio and refresh rate
 - [X] Fixed Alpha Player:
     - Fixed geometry and av_info calls
     - Fixed aspect ratio
@@ -25,14 +39,14 @@
     - Added HDMI CEC support
     - Added HDMI DPMS restart sequence
 - [X] Added a new graceful implementation for poweroff, reboot, and exit events
-- [X] Added N64 and DC to BOOT TO SYSTEM option
+- [X] Added N64 and DC to `BOOT TO SYSTEM` option
 - [X] Added optional custom xone and xpad drivers installers to RePlay Extra section
 - [X] Updated custom GCon2 and TAITO drivers to update automatically on kernel updates (DKMS)
 - [X] Updated Alpha Player to use standard VESA video mode when connected to 31kHz monitors
 - [X] Updated screen test utility image to make easier to identify limited color range issues
 - [X] Fixed bug where Alpha Player advanced to the next playlist entry before current file ended
 - [X] Fixed crash in Alpha Player when encountering a missing file in M3U playlist
-- [X] Fixed crash on BOOT TO SYSTEM option when the system is not visible
+- [X] Fixed crash on `BOOT TO SYSTEM` option when the system is not visible
 - [X] Fixed scanlines option not properly enabled in 31kHz mode
 - [X] Fixed a bug that caused mappings and input descriptors to load and refresh incorrectly after selecting different controller types
 - [X] Removed pre-installed custom xone and xpad drivers due to some regression and compatibility issues.
@@ -77,13 +91,13 @@
 
 # v0.52.0 (Fourth Private BETA)
 - [X] Refactored UI file browser engine for better performance
-- [X] Added new SYSTEM > UI PAUSES GAME option to pause game while the UI is open (now defaults to OFF)
+- [X] Added new `SYSTEM > UI PAUSES GAME` option to pause game while the UI is open (now defaults to OFF)
 - [X] Added new game image rotation engine so that now cores like FBNeo can rotate the screen via core option
     - Added proper aspect ratio calculation in games that are rotated 90 or 270 degrees
 - [X] Added experimental 2K and 4K (Pi 5 only) screen modes. Please be aware that enabling these modes may result in known video issues, increased heat, and higher power consumption, potentially reducing Pi performance and causing problems with external drives
 - [X] Added a "Crop Mode" option in PSX system settings, enabling users to set it to "All Borders" as a workaround for PSX PAL games displaying a black screen
-- [X] Added new REPLAY OPTIONS > VISIBILITY menu group
-    - Moved here all previous SYSTEM > UI SHOW * options
+- [X] Added new `REPLAY OPTIONS > VISIBILITY` menu group
+    - Moved here all previous `SYSTEM > UI SHOW *` options
     - Added four new arcade specific option filters:
         - Number of Players
         - Screen Rotation
@@ -102,10 +116,10 @@
 - [X] Changed Flycast core to latest stable realease due to an audio regression issue
 - [X] Changed M3U limit from 320 to 1024 files per folder (fixes X68K massive romset)
 - [X] Changed scanlines UI info message for clarity (Integer Scale V and Raspberry Pi4 or newer required)
-- [X] Changed REBOOT and POWER OFF functions to perform the actions in a graceful way, preventing potential data loss
+- [X] Changed `REBOOT` and `POWER OFF` functions to perform the actions in a graceful way, preventing potential data loss
 - [X] Changed save state folder structure to match rom folder structure
 - [X] Fixed several inaccuracies in X/Y position calculations for both games and UI
-- [X] Fixed video drop issues caused by system allowing default resolutions higher than 1920x1080 in "CRT/LCD AUTO" screen mode
+- [X] Fixed video drop issues caused by system allowing default resolutions higher than 1920x1080 in `CRT/LCD AUTO` screen mode
 - [X] Fixed bug in UI file extension check exceeding max number of valid extensions
 - [X] Fixed NFS mount not persisting on reboot
 - [X] Fixed NFS UI corruption due to NFS v4 never guarantees d_type
@@ -114,11 +128,11 @@
 - [X] Fixed DosBox-Pure core crashing in some games due to a bug with the disney sound system
 - [X] Fixed Caprice32 (CPC) core displaying the M3U file in the list of available disks
 - [X] Fixed video info displaying wrong Hz information for some cores/games
-- [X] Removed CRT 640X480@NRR video mode. The system is already able to properly manage the screen mode based on the CRT Type selected
+- [X] Removed `CRT 640X480@NRR` video mode. The system is already able to properly manage the screen mode based on the CRT Type selected
 - [X] Removed Pi3/3+/Zero 2 default overclock due to instability issues (can be re‑enabled easily via config.txt)
 - [X] Removed unwanted and non-working PSX core options
 - [X] Removed unwanted and non-working N64 core options
-- [X] Removed STORAGE SAFE MODE due to poor performance and the potential to shorten the lifespan of SD cards and USB storage devices
+- [X] Removed `STORAGE SAFE MODE` due to poor performance and the potential to shorten the lifespan of SD cards and USB storage devices
 
 # v0.51.0 (Third Private BETA)
 - [X] Added new "Arcade & PC 31kHz" monitor mode. This new mode enables the following features:
@@ -126,7 +140,7 @@
     - Play MS-DOS games at native 70Hz modes (requires disabling force 60fps in core settings)
     - Play hi-res interlaced games (DC, PSX, Saturn, etc.) in progressive
     - Enable or disable scanlines as desired
-- [X] Added new 1024x768@70Hz LCD video mode for native MS-DOS experience (requires disabling force 60fps in core settings)
+- [X] Added new `LCD 1024x768@70Hz` video mode for native MS-DOS experience (requires disabling force 60fps in core settings)
 - [X] Added scanline options for "Arcade & PC 31kHz" CRT type mode
 - [X] Added new fully BLACK scanline option (perfect for 31kHz mode)
 - [X] Added missing Ctrl, Alt, Shift keyboard key support (now you can play MS-DOS properly)
@@ -140,7 +154,7 @@
 - [X] Changed Pi3 PSX core options for improved compatibility and performance
 - [X] Fixed HDMI LCD video init not properly selecting default 60Hz mode
 - [X] Fixed scanlines being displayed when vertical game resolution is equal to native screen resolution
-- [X] Fixed "Arcade 15/25/31kHz" CRT type mode
+- [X] Fixed `ARCADE 15/25/31KHZ` CRT type mode
 - [X] Fixed crash caused by cores reporting more than 6 ports (PSX, DC)
 - [X] Fixed DynaRes prioritizing interlaced over progressive modes on PC/31 kHz monitors
 - [X] Fixed LCD DRR modes crashing
@@ -202,7 +216,7 @@
 
 # v0.49.15
 - [X] Added proper color conversion 0RGB1555 (fixes MAME Virtua Racing)
-- [X] Fixed bug in SET_INPUT_DESCRIPTORS and MAME 2K3+
+- [X] Fixed bug in `SET_INPUT_DESCRIPTORS` and MAME 2K3+
 
 # v0.49.14
 - [X] Changed the options info text to blue color for better differentiation
@@ -267,8 +281,8 @@
     - Fixed Remap Button options not properly applying the user selections
     - Fixed many bugs in save_input_cfg function
     - Fixed many bugs in load_input_cfg function
-    - Removed "LEFT STICK TO DPAD" option since it was confusing and it is not required with the new physical mappings
-    - Removed "BUTTONS TO TRIGGER" option since it was confusing and it is not required with the new physical mappings
+    - Removed `LEFT STICK TO DPAD` option since it was confusing and it is not required with the new physical mappings
+    - Removed `BUTTONS TO TRIGGER` option since it was confusing and it is not required with the new physical mappings
 - [X] Changed vanilla ScummVM by RePlayOS fork
 
 ## v0.48.4
@@ -352,7 +366,7 @@
 ## v0.43.0
 - [X] Added new gpio-joystick driver for Jamma arcade boards
 - [X] Added improved USB external drive mount engine
-- [X] Added new LOW LATENCY MODE option to both global and system/game settings
+- [X] Added new `LOW LATENCY MODE` option to both global and system/game settings
 - [X] Added new gamepads support
 - [X] Added CHD back to NGCD supported games and removed CCD
 - [X] Changed to NeoCD core for NeoGeo CD system
@@ -439,7 +453,7 @@
 - [X] Updated Amiga Core (2024-09-16). Fixes some game crashes and issues
 - [X] Changed Favorites, Recents and Autostart files from absolute to relative paths
 - [X] Changed default Linux kernel joystick polling rate to 1ms
-- [X] Fixed RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO refresh rate change detection
+- [X] Fixed `RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO` refresh rate change detection
 - [X] Fixed initialization of some gamepad and joysticks (E.g. Astro City Mini)
 - [X] Removed login service for improved boot experience and speed
 
@@ -569,7 +583,7 @@
     - Buttons 9/10 (L/R) - Useful in arcade/jamma and SNES like gamepads
 - [X] Changed all "Reset ..." option labels to "Remove ..."
 - [X] Fixed save/load slot name not updated when overrided
-- [X] Fixed core crashes due to a bug in RETRO_ENVIRONMENT_SET_MESSAGE
+- [X] Fixed core crashes due to a bug in `RETRO_ENVIRONMENT_SET_MESSAGE`
 - [X] Fixed save/load crash getting label 
 - [X] Fixed save/load name display lenght
 
@@ -623,12 +637,12 @@
 - [X] Added default Roland GM sound font to ScummVM system
 - [X] Updated libretro API interface header file
 - [X] Changed Home btn so that it always returns to system menu
-- [X] Changed RETRO_ENVIRONMENT_GET_TARGET_REFRESH_RATE behaviour (fixes ScummVM)
+- [X] Changed `RETRO_ENVIRONMENT_GET_TARGET_REFRESH_RATE` behaviour (fixes ScummVM)
 - [X] Changed favs and recent game display names (prettyfied)
 - [X] Fixed crash for cores not supporting savestates
-- [X] Fixed gl_init on RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO (fixes BLARGG filters)
+- [X] Fixed gl_init on `RETRO_ENVIRONMENT_SET_SYSTEM_AV_INFO` (fixes BLARGG filters)
 - [X] Fixed audio gpio dac output selection in audio options (developer purposes)
-- [X] Fixed incorrect FBO passed to gl-cores when requesting the same in RETRO_ENVIRONMENT_SET_HW_RENDER
+- [X] Fixed incorrect FBO passed to gl-cores when requesting the same in `RETRO_ENVIRONMENT_SET_HW_RENDER`
 - [X] Fixed recents when same roms and different core exists
 - [X] Fixed some DC crashes by adding drm_deinit to core_unload_game
 - [X] Fixed crash on exit due to duplicated video deinit
@@ -661,7 +675,7 @@
 - [X] Added ability to automatically filter out systems not supporting CRT mode
 - [X] Added ability to automatically set default aspect ratio when selecting dual/single monitor mode
 - [X] Added player/controller information
-- [X] Fixed resolution for cores not honoring RETRO_ENVIRONMENT_SET_GEOMETRY
+- [X] Fixed resolution for cores not honoring `RETRO_ENVIRONMENT_SET_GEOMETRY`
 - [X] Fixed deemed extensions in favs and recents
 - [X] Fixed recents not working with arcade games
 - [X] Fixed libretro log levels
