@@ -23,7 +23,7 @@ It's crucial to note that RePlay is compatible with both LCD and CRT monitors, a
 ## What about input lag?
 By default, the system operates in an ultra-low-latency mode, achieving a remarkable 0 to 1 frame of input lag.
 
-Looking for even more precision? A dedicated latency mode option lets you experience input lag comparable to, or even lower than, real hardware. This mode prioritizes speed by bypassing advanced features like runahead, guaranteeing 100% compatibility across all emulated systems. However, it demands more CPU resources, so feel free to experiment with it in your favorite games and systems to find the perfect balance.
+Want even tighter response? An optional low-latency mode is available. It avoids heavy techniques like runahead providing full compatibility across all emulated systems. This approach may demand more CPU power, so try it with your favorite games to find the best balance.
 
 Also, please note that some system cores provide their own custom runahead functionality. When combined with this feature, input lag could be significantly less than that experienced on the real hardware.
 
