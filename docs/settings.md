@@ -950,7 +950,7 @@ Below you can find a full reference to all available core system setting.
 | VMU Screen 4 Pixel Off Color | reicast_vmu4_pixel_off_color | n/a |
 | VMU Screen 4 Opacity | reicast_vmu4_screen_opacity | n/a |
 
-## SNK NEO-GEO (AES/MVS)
+## SNK NEO-GEO
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |

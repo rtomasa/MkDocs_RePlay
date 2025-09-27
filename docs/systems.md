@@ -30,7 +30,7 @@
 | SEGA Megadrive 32X/Sega 32X           | :green_circle:            | :green_circle:   | :green_circle:             | 32x |
 | SEGA Saturn                           | :red_circle:              | :red_circle:     | :green_circle:             | cue, ccd, chd, toc, m3u |
 | SEGA Dreamcast                        | :red_circle:              | :yellow_circle:  | :green_circle:             | chd, cdi, elf, cue, gdi, lst, dat, m3u |
-| SNK NEO-GEO (AES/MVS)                 | :green_circle:            | :green_circle:   | :green_circle:             | zip |
+| SNK NEO-GEO                           | :green_circle:            | :green_circle:   | :green_circle:             | zip |
 | SNK NEO-GEO CD                        | :green_circle:            | :green_circle:   | :green_circle:             | cue, chd |
 | SNK NEO-GEO Pocket                    | :green_circle:            | :green_circle:   | :green_circle:             | ngp, ngc, ngpc, npc |
 | SONY PlayStation                      | :green_circle:            | :green_circle:   | :green_circle:             | exe, psexe, cue, img, iso, chd, pbp, ecm, mds, psf, m3u |
