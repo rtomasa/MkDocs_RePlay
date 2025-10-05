@@ -27,7 +27,7 @@ RePlay OS and its supported systems can run on any Raspberry Pi model with 1GB o
 
 **Storage:**
 
-* (Required) MicroSD card (A2 U3) 8GB+ or better for system installation. We recommend the official [Raspberry Pi SD Cards](https://www.raspberrypi.com/products/sd-cards/){target=_blank}.
+* (Required) MicroSD card (A2 U3) 16GB+ or better for system installation. We recommend the official [Raspberry Pi SD Cards](https://www.raspberrypi.com/products/sd-cards/){target=_blank}.
 * (Optional) PCIe NVMe drive (Pi5), USB3 pendrive or SSD USB3 external drive for ROMs, BIOS, saves, and config files.
 
     **NOTE:** you can also use the MicroSD card for storing all your ROMs, BIOS, saves, and config files.
