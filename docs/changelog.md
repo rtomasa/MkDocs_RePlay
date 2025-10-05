@@ -1,5 +1,12 @@
 # Changelog
 
+<!--
+# v0.59.0 (RC5)
+- [X] Added support for mounting NFS shares using either DNS hostnames or IP addresses
+- [X] Added Wi-Fi WPA2/WPA3 support.
+- [X] Changed system label from `SNK NEO-GEO (AES/MVS)` to `SNK NEO-GEO` to clarify that it refers only to the console system
+- [X] Increased system root partition size from 3GB to 7GB to prevent issues during updates, driver installations, and package management
+-->
 # v0.58.0 (RC4)
 - [X] Added support for new bitmask input engine for digital controllers (`RETRO_ENVIRONMENT_GET_INPUT_BITMASKS`):
     - Lower CPU overhead: instead of cores asking input state 12-16 times per frame per port, they call it once and get all button states in a single call.
@@ -22,7 +29,7 @@
 - [X] Added DynaRes LCD NRR (Native Refresh Rate) option
     - Standard LCD screens run at 55-61Hz
     - LCD VRR screens run at 48-75Hz
-- [X] Added wifi configuration to replay.cfg
+- [X] Added Wi-Fi configuration to replay.cfg
 - [X] Removed MAME2K3+ from Pi5
 - [X] Removed CRT overscan reduction causing DAC image stability issues
 - [X] Improved Power Button detection

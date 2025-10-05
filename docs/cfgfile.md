@@ -207,6 +207,12 @@ nfs_share                   = "/export/share"
 wifi_name                   = "MyWifi"
 wifi_pwd                    = "********"
 wifi_country                = "ES"
+# wifi_mode
+## wpa2
+## wpa3
+## transition (for mixed wpa2 & wpa3)
+wifi_mode                   = "transition"
+wifi_hidden                 = "false"
 # addon_retroflag_case_pi5
 ## 0 = disabled
 ## 1 = reset button for reboot
