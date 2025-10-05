@@ -23,9 +23,25 @@ Notes:
 * Use `wpa2` for WPA/WPA2 APs. If your AP requires TKIP, select `wpa2` and enable TKIP on the router.
 * Refer to the full list of valid country codes here: [ISO 3166 Country Codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes).
 
-## Option 2: Manual Linux config
+## Option 2: RePlay config (Ethernet)
 
-1. SSH into the Pi: user `root`, password `replayos`.
+Use the same fields and notes as in **Option 1**. Edit the live config over SSH.
+
+Steps:
+
+1. Connect the Pi via Ethernet and SSH in: `ssh root@<ip-or-hostname>`  (password: `replayos`)
+2. Stop RePlay to release the config: `pkill replay`
+3. Edit the file on the SD card: `nano /media/sd/config/replay.cfg`
+4. Save, flush, and reboot:
+
+   ```
+   sync
+   reboot
+   ```
+
+## Option 3: Manual Linux config
+
+1. Connect the Pi via Ethernet and SSH in: `ssh root@<ip-or-hostname>`  (password: `replayos`)
 2. Edit: `nano /etc/wpa_supplicant/wpa_supplicant-wlan0.conf`
 3. Paste the profile that fits your network.
 
