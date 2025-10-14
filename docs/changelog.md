@@ -4,7 +4,7 @@
 - [X] Added support for mounting NFS shares using either DNS hostnames or IP addresses
 - [X] Added Wi-Fi WPA2/WPA3 support.
 - [X] Changed system label from `SNK NEO-GEO (AES/MVS)` to `SNK NEO-GEO` to clarify that it refers only to the console system
-- [X] Chnaged system root partition size from 3GB to 7GB to prevent issues during updates, driver installations, and package management
+- [X] Changed system root partition size from 3GB to 7GB to prevent issues during updates, driver installations, and package management
 - [X] Changed SD replay partition from FAT32 to exFAT
 - [X] Fixed keyboard events reaching games when the UI is open
 
