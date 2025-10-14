@@ -37,7 +37,7 @@ Download it from their [official web site](https://www.raspberrypi.com/software/
 
 ## First Boot
 
-When booting your Raspberry Pi for the first time, it will perform some initial operations silently (black screen), such as creating and expanding a new FAT partition on the MicroSD card for storing your ROMs, BIOS, saves, and config files.
+When booting your Raspberry Pi for the first time, it will perform some initial operations silently (black screen), such as creating and expanding a new exFAT partition on the MicroSD card for storing your ROMs, BIOS, saves, and config files.
 
 Please note that these operations could take some time, so be patient. **DO NOT POWER OFF** the device and wait until the system displays the user interface.
 

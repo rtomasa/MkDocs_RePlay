@@ -7,7 +7,7 @@ RePlay OS utilizes a well-defined folder structure for MicroSD, USB, and NFS uni
 
 ## Child data folders
 
-Whether you are using the internal the MicroSD FAT partition, USB unit or NFS share, the system will create the following folder structure inside any of these folders:
+Whether you are using the internal the MicroSD exFAT partition, USB unit or NFS share, the system will create the following folder structure inside any of these folders:
 
 ![Tree 02](img/tree_02.png)
 

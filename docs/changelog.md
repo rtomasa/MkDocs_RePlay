@@ -1,12 +1,13 @@
 # Changelog
 
-<!--
 # v0.59.0 (RC5)
 - [X] Added support for mounting NFS shares using either DNS hostnames or IP addresses
 - [X] Added Wi-Fi WPA2/WPA3 support.
 - [X] Changed system label from `SNK NEO-GEO (AES/MVS)` to `SNK NEO-GEO` to clarify that it refers only to the console system
-- [X] Increased system root partition size from 3GB to 7GB to prevent issues during updates, driver installations, and package management
--->
+- [X] Chnaged system root partition size from 3GB to 7GB to prevent issues during updates, driver installations, and package management
+- [X] Changed SD replay partition from FAT32 to exFAT
+- [X] Fixed keyboard events reaching games when the UI is open
+
 # v0.58.0 (RC4)
 - [X] Added support for new bitmask input engine for digital controllers (`RETRO_ENVIRONMENT_GET_INPUT_BITMASKS`):
     - Lower CPU overhead: instead of cores asking input state 12-16 times per frame per port, they call it once and get all button states in a single call.

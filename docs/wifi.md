@@ -5,7 +5,7 @@ RePlay OS supports WPA2, WPA3, and Transition mode. Configure it in either way b
 ## Option 1: RePlay config (SD card)
 
 1. Insert the SD card in your computer.
-2. Open the **replay** FAT partition and edit `config\replay.cfg`.
+2. Open the **replay** exFAT partition and edit `config\replay.cfg`.
 3. Set:
 
 ```cfg
