@@ -2,14 +2,42 @@
 
 Below you can find a description of some basic video configurations and features on RePlay OS. You can change the resolution, add some video filters, select different scaling modes, enable dual screen, and more.
 
-## Screen Mode
+## Video Connector
 
-You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MODE`:
+* `HDMI`: used for both HDMI>LCD and HDMI>DAC>CRT modes
+* `DPI (GPIO)`: enables limited support for legacy RGB-Pi (GPIO) model in Raspberry Pi5 (must be enabled from `ADDONS` option)
+    - Pi5 only
+    - No audio support
+    - Supports both LCD and CRT modes (defaults to CRT)
+    - Supports stable interlaced mode in CRT 15KHz mode
+    - Provides its own EDID information:
+        Monitor name: RPI-DPI-VGA
+        Vendor: RTA
+        Supported VGA modes:
+        ```sh
+            Mode 0: 1920x1080@60 
+            Mode 1: 1920x1080@50 
+            Mode 2: 1280x720@60 
+            Mode 3: 1280x720@50 
+            Mode 4: 1024x768@75 
+            Mode 5: 1024x768@70 
+            Mode 6: 1024x768@60 (*)
+            Mode 7: 800x600@75 
+            Mode 8: 800x600@60 
+            Mode 9: 640x480@75 
+            Mode 10: 640x480@60 
+            Mode 11: 640x480@60 
+            Mode 12: 720x400@70
+        ```
 
-* `CRT/LCD AUTO`: this mode automatically selects the type (CRT or LCD), and native default resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080 for LCD. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
+## Video Mode
+
+You can select the desired video mode from `REPLAY OPTIONS > VIDEO > VIDEO MODE`:
+
+* `CRT/LCD AUTO`: this mode automatically selects the type (CRT or LCD), and native resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080 for LCD. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
 * `CRT 320X240@60/NRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It uses native refresh rates for each system/game. When used in combination of the corresponding CRT Type option, it is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
 * `CRT 320X240@50/NRR`: same as `CRT 320X240@60/NRR` but boots the UI in 50Hz mode.
-* `LCD DEFAULT@60/NRR`: This mode uses your monitor’s native default resolution and native refresh rates for different systems and games when available. The refresh rate selected depends on the [LCD monitor type](#lcd-type) chosen in the corresponding option.
+* `LCD NATIVE@60/NRR`: This mode uses your monitor’s native resolution and native refresh rates for different systems and games when available. The refresh rate selected depends on the [LCD monitor type](#lcd-type) chosen in the corresponding option.
 * `LCD 1920X1080@60`
 * `LCD 1280X720@60`
 * `LCD 1280X1024@60`
@@ -19,14 +47,14 @@ You can select the desired screen mode from `REPLAY OPTIONS > VIDEO > SCREEN MOD
 
 **NOTE:** when changing between LCD and CRT modes, you must reboot the system to apply the configuration.
 
-## Dual Screen Mode
+## Multi Screen
 
-RePlay OS is able to make use of dual screen configuration in both LCD and CRT configurations. You can select different modes from `REPLAY OPTIONS > VIDEO > DUAL SCREEN MODE`:
+RePlay OS is able to make use of dual screen configuration in both LCD and CRT configurations. You can select different modes from `REPLAY OPTIONS > VIDEO > MULTI SCREEN`:
 
-* `OFF`: for single screen configuration.
-* `DUPLICATE`: clones the image in both screens. Useful for streaming or recreating arcades like Sega Versus City. 
-* `HORIZONTAL`: uses both screens in horizontal extended way. Useful for dual screen arcade games like Sagaia or OutRunners.
-* `VERTICAL`: uses both screens in vertical extended way. Useful for arcades like Punch-Out or Nintendo DS.
+* `DISABLED`: for single screen configuration.
+* `DUAL DUPLICATE`: clones the image in both screens. Useful for streaming or recreating arcades like Sega Versus City. 
+* `DUAL HORIZONTAL`: uses both screens in horizontal extended way. Useful for dual screen arcade games like Sagaia or OutRunners.
+* `DUAL VERTICAL`: uses both screens in vertical extended way. Useful for arcades like Punch-Out or Nintendo DS.
 
 ## LCD Type
 
@@ -79,6 +107,14 @@ Certainly. Here’s a more concise and technically clear version:
 
 This option improves video stability (prevents image drops) with certain HDMI video DACs. It is enabled by default. If you experience video issues, try disabling it.
 
+## CRT Horizontal Shift
+
+This option lets you adjust the horizontal image position by changing the horizontal timing so the electron beam scans slightly left or right.
+
+## CRT Horizontal Size
+
+Adjusts the image’s horizontal size (width) by changing the active video time per line, i.e., the horizontal hactive/porches and pixel clock.
+
 ## Gamma, RGB Color Intensity and Screen X/Y Position
 
 You can fully customize various screen parameters, such as gamma, RGB color channel intensity (to adjust CRTs with degraded channels), and screen position on both LCD and CRT displays.
@@ -94,7 +130,7 @@ This allows you to choose different display modes when playing on LCD screens (C
 * `INT-H 4:3-V`: Scales the horizontal resolution using an integer factor while maintaining a 4:3 aspect ratio for the vertical resolution.
 * `INT-H NATIVE-V`: Scales the horizontal resolution using an integer factor while scaling the vertical resolution to match the game's native aspect ratio.
 * `INT-HV`: Performs an integer scale to the maximum area allowed by the screen resolution.
-* `INT-HV OVER`: Uses an integer overscaling mode to extend the image over 1080p, nearly displaying the original overscan of a CRT. This works only with 1080p screen modes.
+* `INT-HV OVER`: Uses an integer overscaling mode to extend the image over 1080p, nearly displaying the original overscan of a CRT. This works only with 1080p video modes.
 * `INT-HV UNDER`: A special mode for performing integer underscale for internal use.
 
 | **FULL SCRN 4:3** | **INT-HV** |

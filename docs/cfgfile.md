@@ -5,6 +5,10 @@ The following is a description of all available options and default values that 
 The configuration file is located in `/media/sd/config/replay.cfg`:
 
 ```cfg
+# video_connector
+## 0 = hdmi
+## 1 = dpi (used for gpio)
+video_connector             = "0"
 # video_mode
 ## NRR (Native Refresh Rate)
 ## 0 = default
@@ -18,12 +22,12 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 ## 8 = lcd 2560x1440@60
 ## 9 = lcd 3840x2160@60
 video_mode                  = "0"
-# video_monitor_dual_mode
+# video_monitor_multi_mode
 ## 0 = disabled
-## 1 = duplicate
-## 2 = horizontal
-## 3 = vertical
-video_monitor_dual_mode     = "0"
+## 1 = dual cloned
+## 2 = dual horizontal
+## 3 = dual vertical
+video_monitor_multi_mode     = "0"
 # video_lcd_type
 ## generic_60 = supports 55-61hz ranges
 ## gaming_vrr = supports 48-75hz ranges
@@ -56,20 +60,26 @@ video_crt_rgb_range         = "0"
 ## 7 = full integer over scaling (only FHD TVs)
 ## 8 = full integer under scaling
 video_crt_stability_boost   = "true"
+# video_crt_h_shift
+## values = -16<-->16
+video_crt_h_shift           = "0"
+# video_crt_h_size
+## values = 0.5<-->1.5
+video_crt_h_size            = "1.0"
 video_aspect_ratio          = "0"
 video_monitor_x             = "0"
 video_monitor_y             = "0"
 # video_gamma
-## values = 0.5-1.5
+## values = 0.5<-->1.5
 video_gamma                 = "1.0"
 # video_red_scale
-## values = 0.0-1.0
+## values = 0.0<-->1.0
 video_red_scale             = "1.0"
 # video_green_scale
-## values = 0.0-1.0
+## values = 0.0<-->1.0
 video_green_scale           = "1.0"
 # video_blue_scale
-## values = 0.0-1.0
+## values = 0.0<-->1.0
 video_blue_scale            = "1.0"
 # video_ui_rotation_mode
 ## 0 = 0
@@ -104,7 +114,7 @@ audio_card                  = "0"
 audio_mono                  = "false"
 audio_normalization         = "false"
 # audio_system_volume
-## values = 0-10
+## values = 0<-->10
 audio_system_volume         = "10"
 input_gcon2_screen_flash    = "true"
 input_ui_swap_ab            = "false"
@@ -148,7 +158,7 @@ system_emu_quality          = "1"
 ## false = 0/1 frames input lag
 system_low_latency_mode     = "false"
 # system_skin
-## 0 = blue (default)
+## 0 = replay (default)
 ## 1 = mega tech
 ## 2 = play choice
 ## 3 = astro
@@ -159,6 +169,7 @@ system_low_latency_mode     = "false"
 ## 8 = simple purple
 ## 9 = metal
 ## 10 = unicolors
+## 11-36 = for custom user skins
 system_skin                 = "0"
 # system_boot_to_system
 ## all
@@ -223,4 +234,6 @@ addon_retroflag_case_pi5    = "0"
 ## 1 = +90
 ## 3 = +270
 addon_tilt_input_pi5        = "0"
+addon_gpio_joy_pi5          = "0"
+addon_dpi_dac_pi5           = "0"
 ```

@@ -1,5 +1,41 @@
 # Changelog
 
+# v0.60.0 (RC6)
+- [X] Added limited support for legacy RGB-Pi (GPIO) model in Pi5 (must be enabled from `ADDONS` option)
+    - Pi5 only
+    - No audio support
+    - Supports both LCD and CRT modes (defaults to CRT)
+    - Supports stable interlaced mode in CRT 15KHz mode
+    - Provides its own EDID information:
+        Monitor name: RPI-DPI-VGA
+        Vendor: RTA
+        Supported VGA modes:
+            Mode 0: 1920x1080@60 
+            Mode 1: 1920x1080@50 
+            Mode 2: 1280x720@60 
+            Mode 3: 1280x720@50 
+            Mode 4: 1024x768@75 
+            Mode 5: 1024x768@70 
+            Mode 6: 1024x768@60 (*)
+            Mode 7: 800x600@75 
+            Mode 8: 800x600@60 
+            Mode 9: 640x480@75 
+            Mode 10: 640x480@60 
+            Mode 11: 640x480@60 
+            Mode 12: 720x400@70 
+- [X] Added new `CRT HORIZONTAL SHIFT` for changing physical horizontal image position in CRT screens
+- [X] Added new `CRT HORIZONTAL SIZE` for changing physical horizontal image size in CRT screens
+- [X] Added bindings for multimedia keys `Play/Pause` and `Home Page` to open the UI menu
+- [X] Added a total of 26 extra slots for custom user skins
+- [X] Improved `AMBISCAN` by restricting color calculation to the game’s drawing area instead of the full texture (fixes NDS)
+- [X] Chanded `ADDONS` functionality to automatically disable conflicting GPIO add-ons
+- [X] Changed Sega Saturn default interlaced mode
+- [X] Changed DynaRes to transform 192p into 224p (fixes NDS aspect ratio in 15KHz TVs)
+- [X] Fixed audio latency reducing end-to-end from 80-110ms to 30-40ms
+- [X] Fixed bug in bitmask input engine preventing users from mapping X/Y axis to dpad
+- [X] Fixed RGB color range not properly set when value is set to auto and CRT manual mode is also selected
+- [X] Fixed `ASPECT RATIO` option not being properly enabled/disabled across CRT modes
+
 # v0.59.0 (RC5)
 - [X] Added support for mounting NFS shares using either DNS hostnames or IP addresses
 - [X] Added Wi-Fi WPA2/WPA3 support.

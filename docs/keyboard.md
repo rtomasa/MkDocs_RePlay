@@ -23,4 +23,6 @@ The system offers two function modes, which can be selected via `SYSTEM > INPUT 
 | <kbd>Tab</kbd>                          | Hotkey for opening MAME native config menu |
 | <kbd>H</kbd>                            | Hotkey for system halt (useful for taking real photos) |
 | <kbd>S</kbd>                            | Hotkey for taking screenshots |
-| <kbd>Windows Key</kbd>                  | Hotkey for opening/closing the UI menu |
+| <kbd>Windows/Command</kbd>              | Hotkey for opening/closing the UI menu |
+| <kbd>Play/Pause</kbd>                   | Hotkey for opening/closing the UI menu |
+| <kbd>Home Page</kbd>                    | Hotkey for opening/closing the UI menu |
