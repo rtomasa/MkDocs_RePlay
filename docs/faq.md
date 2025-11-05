@@ -18,7 +18,7 @@ RePlay's frontend is not just a simple launcher; it is a complete libretro-based
 
 Numerous features are exclusively achievable by using a custom libretro-based frontend, which cannot be accomplished using a stand-alone launcher paired with RetroArch. These include dual-screen support, minimal input lag (comparable to or even less than that of the original hardware) without utilizing runahead, complete control over various system options and configurations, core speed and performance enhancements, improvements in DynaRes engine for instant timing changes in CRT TVs, special functionalities like the coin-op time feature, and many others.
 
-It's crucial to note that RePlay is compatible with both LCD and CRT monitors, and it will support future ongoing RGB-Pi projects.
+It's crucial to note that RePlay is compatible with both LCD and CRT monitors, and it will support future RGB-Pi projects.
 
 ## What about input lag?
 By default, the system operates in an ultra-low-latency mode, achieving a remarkable 0 to 1 frame of input lag.
@@ -37,15 +37,18 @@ The answer is likely to be no, as I'm trying to keep the system easy and small f
 No, there isn't. It will be released when it is finished.
 
 ## Is it compatible with the old RGB-Pi (GPIO) or other similar devices?
-No, it is not.
+Partially. Limited support for DPI (GPIO) video has been introduced recently with certain limitations:
+- Requires some simple manual configuration that can be done directly from RePlay UI
+- It only works in Raspberry Pi 5/500 models
+- The RGB color mode is limited to 18 bits (can cause visible color banding on 24/32 bits content)
+- There is not audio support, so an additional USB audio DAC is required.
+- JAMMA and RGB-Pi+ devices will work only for video output, both audio and joystick controllers are not supported.
 
-The system is being developed asnd tested using new RGB-Pi 2 prototype hardware which is still in development, and no other devices will be supported or tested.
+The system is being developed and tested using new RGB-Pi 2 prototype hardware which is still in development, and no other devices will be supported or tested.
 
 The new RGB-Pi 2 is an HDMI-to-SCART solution that uses 24-bit processing for both audio and video, features different sync combiners, and includes an additional audio jack.
 
 All Raspberry Pi Zero 2, 3, 4 and 5 models will support CRT TVs using both progressive and interlaced video modes.
-
-**Note about DPI (GPIO) A/V support:** DPI is not longer compatible with current hardware due to the lack of audio and interlaced video support, so GPIO A/V hardware solutions like vga666 or current RGB-Pi (cable and JAMMA) won't be supported anymore in RePlay OS.
 
 **UPDATE:** Although interlaced support has been reintroduced in the Pi5 through the RP1 chip, its image quality and stability still fall significantly short compared to our new solution.
 

@@ -9,7 +9,7 @@
 
     **NOTE:** please check the [Supported System](./systems.md#compatibility-matrix) section to see which systems can be emulated depending on the Raspberry Pi model.
 
-    **CRT/JAMMA Users:** the system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested.
+    **CRT/JAMMA Users:** the system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested. For further details about old RGB-Pi devices please check the [FAQ section](./faq.md#is-it-compatible-with-the-old-rgb-pi-gpio-or-other-similar-devices).
 
 **RAM:**
 
