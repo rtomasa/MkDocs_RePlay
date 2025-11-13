@@ -7,3 +7,4 @@
 | PSX PAL games display black screen | This is a SwanStation bug. The workaround is changing `System Settings > Display Settings > Crop Mode > All Borders` and then `Save Game Settings` |
 | Games run poorly with many slowdowns, but I recall them working fine some time ago. | The issue is most likely that you are using a very weak power adapter. Please use an official power supply or a compatible one with a voltage of 5.1V to 5.25V. |
 | My wireless controllers stop working when I connect an external USB 3 device | USB 3 can cause 2.4 GHz interference, which disrupts other wireless devices |
+| Interlaced video shakes heavily when using DPI (GPIO) output | Please refer to [EEPROM Update](eeprom.md) section for instructions |
