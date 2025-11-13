@@ -1,13 +1,13 @@
 # Installation
 
-First we need to install Replay OS into your MicroSD card.
+First we need to install RePlayOS into your MicroSD card.
 
 ## Flashing the image
 
 * We suggest you to use [Raspberry Pi Imager](https://www.raspberrypi.com/software/){target=_blank} for flashing the system to the MicroSD card.
 Download it from their [official web site](https://www.raspberrypi.com/software/){target=_blank} and install it.
 
-* Next, download the latest version of RePlay OS from the [Download](./download.md) section.
+* Next, download the latest version of RePlayOS from the [Download](./download.md) section.
 
 * Now insert your MicroSD card into your computer and open Raspberry Pi Imager. Then, click on **CHOOSE OS**:
 ![Step 1](img/inst_01.png)

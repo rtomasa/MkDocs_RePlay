@@ -54,5 +54,5 @@ GND → Resistor → GPIO17 → Tilt Switch → 3.3V
 * When the tilt switch closes (due to movement), it connects GPIO17 directly to 3.3V.
 * GPIO17 then reads as HIGH, providing a clear digital signal transition (LOW → HIGH) that software can detect.
 * This avoids floating inputs and false triggers, ensuring stable readings.
-* RePlay OS includes a new option to enable this feature: ADDONS > TILT INPUT PI5.
+* RePlayOS includes a new option to enable this feature: ADDONS > TILT INPUT PI5.
 * When enabled, the system automatically rotates the UI and filters the game list to vertical titles.

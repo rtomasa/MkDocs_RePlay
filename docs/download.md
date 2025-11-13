@@ -1,8 +1,8 @@
 # Downloads
 
-## RePlay OS  
+## RePlayOS  
 
-Please note that **RePlay OS** is still in the BETA development phase, so there is no public download available yet.
+Please note that **RePlayOS** is still in the BETA development phase, so there is no public download available yet.
 
 Would you like to try out the BETA and support me with the development and other expenses?
 

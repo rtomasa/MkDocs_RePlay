@@ -1,6 +1,6 @@
 # Wi-Fi Configuration
 
-RePlay OS supports WPA2, WPA3, and Transition mode. Configure it in either way below.
+RePlayOS supports WPA2, WPA3, and Transition mode. Configure it in either way below.
 
 ## Option 1: RePlay config (SD card)
 

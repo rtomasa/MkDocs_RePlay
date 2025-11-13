@@ -9,8 +9,8 @@ No, it doesn't, and never will. Other devices completely lack support for Linux 
 ## What is the advantage over other RPi distros like Lakka, RetroPie, or RecalBox?
 Since the system is entirely focused on a single device family with a limited list of supported systems, I can maximize the hardware's power and introduce many [unique features](index.md#main-features). It's also worth noting that the system is extremely fast and user-friendly, with each system core thoroughly tested and pre-configured. This ensures the best experience right out of the box.
 
-## Why RePlay OS instead of a new RGB-Pi OS 5?
-The primary aim of RePlay OS is to offer a system that is fast and easy to start with. It demonstrates that emulation can achieve high quality when properly configured, allowing everyone to enjoy optimal gaming conditions from the start, without requiring technical emulation skills to fine-tune everything.
+## Why RePlayOS instead of a new RGB-Pi OS 5?
+The primary aim of RePlayOS is to offer a system that is fast and easy to start with. It demonstrates that emulation can achieve high quality when properly configured, allowing everyone to enjoy optimal gaming conditions from the start, without requiring technical emulation skills to fine-tune everything.
 
 In all versions of RGB-Pi OS (0, 1, 2, 4), we were limited by the two frontends used (mine for the user interface, and RetroArch for gaming). This limitation prevented certain functionalities, such as in-game menu rotation, a fully adaptable interface across various resolutions and devices, customization based on my design preferences, and more.
 
@@ -70,7 +70,7 @@ There are two sides to Libretro development:
 
 Developers of cores don’t have to worry about writing different video drivers for Direct3D, OpenGL or worrying about catering to all possible input APIs, sound APIs, gamepads, etc.
 
-**RePlay OS** uses a custom libretro frontend specifically tailored to Raspberry devices. It is programmed in C and uses the following libraries:
+**RePlayOS** uses a custom libretro frontend specifically tailored to Raspberry devices. It is programmed in C and uses the following libraries:
 
 - DRM, EGL, and OpenGL ES 3.X for video
 - SDL2 for audio and input devices
@@ -85,4 +85,4 @@ If you're fond of the look and feel of CRT TVs, your best bet is to acquire an a
 
 ## Can I play movies?
 
-Yes, RePlay OS includes its own [Alpha Player](alphaplayer.md) multimedia core for playing all kinds of audio and video files. Since it is a software-based core, it requires a fairly powerful CPU, so it is recommended to use a Raspberry Pi 5 if you plan to play movies.
+Yes, RePlayOS includes its own [Alpha Player](alphaplayer.md) multimedia core for playing all kinds of audio and video files. Since it is a software-based core, it requires a fairly powerful CPU, so it is recommended to use a Raspberry Pi 5 if you plan to play movies.

@@ -2,11 +2,11 @@
 
 Many systems require some mandatory BIOS files to run or use some special configurations. You can copy your BIOS files into the corresponding `/bios` folder in your storage unit.
 
-**IMPORTANT:** RePlay OS will check for any missing BIOS files required by the system you are trying to use. If any BIOS file is missing, it will prevent you from loading games until you copy all required BIOS files.
+**IMPORTANT:** RePlayOS will check for any missing BIOS files required by the system you are trying to use. If any BIOS file is missing, it will prevent you from loading games until you copy all required BIOS files.
 
 ## Minimum BIOS System Files
 
-The following table is a reference about the minimum required BIOS files used by the different systems in RePlay OS:
+The following table is a reference about the minimum required BIOS files used by the different systems in RePlayOS:
 
 **NOTE:** please check the [full BIOS folder structure](#full-bios-file-structure) in case that some system is not properly booting with the minimum bios files.
 

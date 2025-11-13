@@ -1,6 +1,6 @@
 # Video Configuration
 
-Below you can find a description of some basic video configurations and features on RePlay OS. You can change the resolution, add some video filters, select different scaling modes, enable dual screen, and more.
+Below you can find a description of some basic video configurations and features on RePlayOS. You can change the resolution, add some video filters, select different scaling modes, enable dual screen, and more.
 
 ## Video Connector
 
@@ -10,7 +10,7 @@ Below you can find a description of some basic video configurations and features
     - No audio support
     - Supports both LCD and CRT modes (defaults to CRT)
     - Supports stable interlaced mode in CRT 15KHz mode
-    - Interlaced requires EEPROM update >= 2025-11-05 (see note below)
+    - Interlaced requires [EEPROM Update](eeprom.md) >= 2025-11-05 (see note below)
     - Provides its own EDID information:
         Monitor name: RPI-DPI-VGA
         Vendor: RTA
@@ -30,7 +30,7 @@ Below you can find a description of some basic video configurations and features
             Mode 11: 640x480@60 
             Mode 12: 720x400@70
         ```
-**NOTE:** RePlay RC7+ automatically checks for and installs a customized 2025-11-05 EEPROM if a lower version is detected. After installation, a message will display a ***COLD REBOOT REQUIRED*** message to complete the EEPROM upgrade.
+**NOTE:** RePlay RC7+ automatically checks for and installs a customized 2025-11-05 EEPROM if a lower version is detected. Please check the [EEPROM Update](eeprom.md) section for further details.
 
 ## Video Mode
 
@@ -51,7 +51,7 @@ You can select the desired video mode from `REPLAY OPTIONS > VIDEO > VIDEO MODE`
 
 ## Multi Screen
 
-RePlay OS is able to make use of dual screen configuration in both LCD and CRT configurations. You can select different modes from `REPLAY OPTIONS > VIDEO > MULTI SCREEN`:
+RePlayOS is able to make use of dual screen configuration in both LCD and CRT configurations. You can select different modes from `REPLAY OPTIONS > VIDEO > MULTI SCREEN`:
 
 * `DISABLED`: for single screen configuration.
 * `DUAL DUPLICATE`: clones the image in both screens. Useful for streaming or recreating arcades like Sega Versus City. 

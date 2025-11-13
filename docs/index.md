@@ -5,14 +5,14 @@
 </figure>
 
 <figure markdown>
-  ![RePlay OS Logo](img/banner.png){width="500"}
+  ![RePlayOS Logo](img/banner.png){width="500"}
   <br>
   [Join my Patreon :simple-patreon:](https://patreon.com/RePlayOS){ .md-button target=_blank }
 </figure>
 
-## What is RePlay OS?
+## What is RePlayOS?
 
-**RePlay OS** is a Linux distribution featuring a streamlined [libretro](./faq.md/#what-is-libretro) frontend. It's specifically designed to emulate a wide range of classic game consoles, arcade machines, and computers. The OS focuses on delivering a fast and user-friendly emulation experience, optimized for use with Raspberry Pi boards in both LCD and CRT screens.
+**RePlayOS** is a Linux distribution featuring a streamlined [libretro](./faq.md/#what-is-libretro) frontend. It's specifically designed to emulate a wide range of classic game consoles, arcade machines, and computers. The OS focuses on delivering a fast and user-friendly emulation experience, optimized for use with Raspberry Pi boards in both LCD and CRT screens.
 
 Have more questions? Please check the [F.A.Q](./faq.md) section for further information.
 
@@ -50,7 +50,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 
 ## DynaRes 2.0
 
-When RePlay OS is executed on a CRT TV, CRT PC monitor, or CRT Arcade screen, it makes use of the **DynaRes** engine which provides the following advanced features:
+When RePlayOS is executed on a CRT TV, CRT PC monitor, or CRT Arcade screen, it makes use of the **DynaRes** engine which provides the following advanced features:
 
 - **Native Timings**: games are displayed using native horizontal and vertical resolutions and refresh rates.
 - **On-The-Fly Timing Changes**: the system is able to make instant timing changes for games that use different resolutions during the gameplay.
@@ -67,7 +67,7 @@ DynaRes can also operate in special NRR (**Native Refresh Rate**) mode on LCD sc
 
 ## Custom Cores
 
-RePLay OS provides several utility cores out of the box:
+RePlayOS provides several utility cores out of the box:
 
 - **PiBench**: a software render core for measuring Raspberry Pi CPU performance.
 - **Screen Test**: a simple core for checking CRT geometry and color range, with support for both NTSC and PAL modes (60/50Hz)

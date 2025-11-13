@@ -1,7 +1,7 @@
 # Folder Structure
 
 ## Root storage folders
-RePlay OS utilizes a well-defined folder structure for MicroSD, USB, and NFS units. The root path, shown below, is where these directories can be found. This structure is also automatically displayed when accessing the system via SFTP:
+RePlayOS utilizes a well-defined folder structure for MicroSD, USB, and NFS units. The root path, shown below, is where these directories can be found. This structure is also automatically displayed when accessing the system via SFTP:
 
 ![Tree 01](img/tree_01.png)
 

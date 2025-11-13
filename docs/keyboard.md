@@ -1,6 +1,6 @@
 # Keyboard Configuration
 
-**RePlay OS** was designed to make the keyboard function like the original hardware on systems that natively support it, such as microcomputers. Consequently, the keyboard's primary functionality is UI navigation and integration with core emulators that support this mode.
+**RePlayOS** was designed to make the keyboard function like the original hardware on systems that natively support it, such as microcomputers. Consequently, the keyboard's primary functionality is UI navigation and integration with core emulators that support this mode.
 
 **NOTE**: the keyboard does not emulate or function as a gamepad when used with console or arcade games.
 

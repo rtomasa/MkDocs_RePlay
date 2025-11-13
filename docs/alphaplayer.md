@@ -1,6 +1,6 @@
 # Alpha Player
 
-**Alpha Player** is a multimedia core for RePlay OS, based on a port of the powerful FFmpeg audio/video decoding library to the libretro platform. This allows seamless playback of a wide variety of audio and video formats, along with advanced features like audio visualizations and smooth interframe blending for non-native framerates.
+**Alpha Player** is a multimedia core for RePlayOS, based on a port of the powerful FFmpeg audio/video decoding library to the libretro platform. This allows seamless playback of a wide variety of audio and video formats, along with advanced features like audio visualizations and smooth interframe blending for non-native framerates.
 
 ---
 
@@ -21,7 +21,7 @@
 ## Usage Notes
 
 > **Note:**
-> Alpha Player is focused on Raspberry Pi devices and is actively developed for RePlay OS.
+> Alpha Player is focused on Raspberry Pi devices and is actively developed for RePlayOS.
 > It is *not guaranteed* to work on other platforms or general Linux systems.
 
 ---
