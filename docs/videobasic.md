@@ -10,6 +10,7 @@ Below you can find a description of some basic video configurations and features
     - No audio support
     - Supports both LCD and CRT modes (defaults to CRT)
     - Supports stable interlaced mode in CRT 15KHz mode
+    - Interlaced requires EEPROM update >= 2025-11-05 (see note below)
     - Provides its own EDID information:
         Monitor name: RPI-DPI-VGA
         Vendor: RTA
@@ -29,6 +30,7 @@ Below you can find a description of some basic video configurations and features
             Mode 11: 640x480@60 
             Mode 12: 720x400@70
         ```
+**NOTE:** RePlay RC7+ automatically checks for and installs a customized 2025-11-05 EEPROM if a lower version is detected. After installation, a message will display a ***COLD REBOOT REQUIRED*** message to complete the EEPROM upgrade.
 
 ## Video Mode
 

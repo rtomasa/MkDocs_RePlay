@@ -1,5 +1,23 @@
 # Changelog
 
+# v0.61.0 (RC7)
+- [X] Added Pi500 and CM5 support
+- [X] Added new Pi4/5 EEPROM update on boot:
+    - It is offline (no network required)
+    - It checks if the device has an EEPROM version < 2025-11-05
+    - It installs a custom EEPROM version with the following modifications:
+        ```sh
+        POWER_OFF_ON_HALT=1
+        NET_INSTALL_ENABLED=0
+        NET_INSTALL_AT_POWER_ON=0
+        ```
+    - Fixes GPIO DPI interlaced stability issues
+    - Fixes performance issues
+- [X] Added EEPROM version to the system `INFORMATION` screen
+- [X] Added a fully refactored Ambiscan engine for zero performance overhead and smoother, GPU-driven color averaging
+- [X] Improved audio latency by 12%, lowering all system cores to an average of 32ms
+- [X] Fixed legacy RGB-Pi (GPIO) partial support
+
 # v0.60.0 (RC6)
 - [X] Added limited support for legacy RGB-Pi (GPIO) model in Pi5 (must be enabled from `ADDONS` option)
     - Pi5 only

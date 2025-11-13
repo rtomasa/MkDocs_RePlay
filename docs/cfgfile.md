@@ -59,7 +59,7 @@ video_crt_rgb_range         = "0"
 ## 6 = full integer scaling
 ## 7 = full integer over scaling (only FHD TVs)
 ## 8 = full integer under scaling
-video_crt_stability_boost   = "true"
+video_crt_stability_boost   = "false"
 # video_crt_h_shift
 ## values = -16<-->16
 video_crt_h_shift           = "0"
