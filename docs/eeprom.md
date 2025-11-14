@@ -27,12 +27,9 @@ If you want to apply RePlayOS custom optimizations to speed up the boot process,
 rpi-eeprom-config --edit
 ```
 
-Apply the following settings:
+Add or modify the following settings:
 
 ```ini
-[all]
-BOOT_UART=1
-BOOT_ORDER=0xf461
 POWER_OFF_ON_HALT=1
 NET_INSTALL_ENABLED=0
 NET_INSTALL_AT_POWER_ON=0
