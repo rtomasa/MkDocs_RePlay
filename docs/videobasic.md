@@ -37,9 +37,9 @@ Below you can find a description of some basic video configurations and features
 You can select the desired video mode from `REPLAY OPTIONS > VIDEO > VIDEO MODE`:
 
 * `CRT/LCD AUTO`: this mode automatically selects the type (CRT or LCD), and native resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080 for LCD. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
-* `CRT 320X240@60/NRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It uses native refresh rates for each system/game. When used in combination of the corresponding CRT Type option, it is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
+* `CRT 320X240@60/NRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It boot in 60Hz mode and uses native refresh rates (**NRR**) for each system/game. When used in combination of the corresponding CRT Type option, it is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
 * `CRT 320X240@50/NRR`: same as `CRT 320X240@60/NRR` but boots the UI in 50Hz mode.
-* `LCD NATIVE@60/NRR`: This mode uses your monitor’s native resolution and native refresh rates for different systems and games when available. The refresh rate selected depends on the [LCD monitor type](#lcd-type) chosen in the corresponding option.
+* `LCD NATIVE@60/NRR`: This mode uses your monitor’s native resolution and native refresh rates (**NRR**) for different systems and games when available. The refresh rate selected depends on the [LCD monitor type](#lcd-type) chosen in the corresponding option.
 * `LCD 1920X1080@60`
 * `LCD 1280X720@60`
 * `LCD 1280X1024@60`
