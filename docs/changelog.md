@@ -1,5 +1,12 @@
 # Changelog
 
+# v0.62.0 (RC8)
+- [X] Added `RGBPI2_RESET` to `EXTRA` folder for development and testing purposes
+- [X] Updated SDL_GameControllerDB
+- [X] Fixed crash when selecting skins that have missing image files
+- [X] Fixed Ambiscan in CRT mode
+- [X] Fixed audio buffer-underrun cuts in the Alpha Player
+
 # v0.61.0 (RC7)
 - [X] Added Pi500 and CM5 support
 - [X] Added new Pi4/5 EEPROM update on boot:
