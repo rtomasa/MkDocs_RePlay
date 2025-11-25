@@ -2,6 +2,11 @@
 
 RePlayOS supports WPA2, WPA3, and Transition mode. Configure it in either way below.
 
+Here is an improved, concise version:
+
+**IMPORTANT:** For security, after a configuration is applied, RePlayOS replaces the password value in `replay.cfg` with `********`. This also lets RePlayOS detect when a new configuration has been set and reapply it on the next boot.
+
+
 ## Option 1: RePlay config (SD card)
 
 1. Insert the SD card in your computer.
