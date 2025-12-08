@@ -1,5 +1,14 @@
 # Changelog
 
+# v0.63.0 (RC9)
+- [X] Added a new version of the GunCon2 driver with improved position tracking and native offscreen detection
+- [X] Added an enhanced SDL frontend GunCon2 engine that takes adjantage of the new driver
+- [X] Added CSYNC option hints for TV and PVM
+- [X] Fixed game input mapping options when buttons do not exists for the selected input type
+- [X] Fixed system hanging when saving system/game input configuration after selecting lgun controller type
+- [X] Fixed random issue with video probe on system boot
+- [X] Fixed an issue with uneven CRT vertical resolutions (fixes image issues in Amiga PAL games)
+
 # v0.62.0 (RC8)
 - [X] Added `RGBPI2_RESET` to `EXTRA` folder for development and testing purposes
 - [X] Updated SDL_GameControllerDB

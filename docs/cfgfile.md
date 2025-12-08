@@ -59,14 +59,13 @@ video_crt_rgb_range         = "0"
 ## 6 = full integer scaling
 ## 7 = full integer over scaling (only FHD TVs)
 ## 8 = full integer under scaling
-video_crt_stability_boost   = "false"
+video_aspect_ratio          = "0"
 # video_crt_h_shift
 ## values = -16<-->16
 video_crt_h_shift           = "0"
 # video_crt_h_size
 ## values = 0.5<-->1.5
 video_crt_h_size            = "1.0"
-video_aspect_ratio          = "0"
 video_monitor_x             = "0"
 video_monitor_y             = "0"
 # video_gamma
@@ -94,7 +93,7 @@ video_show_info             = "false"
 ## 1 = light scanlines
 ## 2 = medium scanlines
 ## 3 = strong scanlines
-## 4 = black scanlines
+## 4 = black scanlines          
 video_filter                = "0"
 video_ambiscan              = "true"
 # video_screen_saver
@@ -107,8 +106,8 @@ video_ambiscan              = "true"
 video_screen_saver          = "0"
 # audio_card
 ## 0 = HDMI
-## 1 = GPIO DAC
-## 2 = USB DAC
+## 1 = USB DAC
+## 2 = GPIO DAC
 video_hdmi_cec              = "false"
 audio_card                  = "0"
 audio_mono                  = "false"
