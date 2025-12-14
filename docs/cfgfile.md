@@ -27,6 +27,7 @@ video_mode                  = "0"
 ## 1 = dual cloned
 ## 2 = dual horizontal
 ## 3 = dual vertical
+## 4 = dual smart rotation
 video_monitor_multi_mode     = "0"
 # video_lcd_type
 ## generic_60 = supports 55-61hz ranges
@@ -115,7 +116,12 @@ audio_normalization         = "false"
 # audio_system_volume
 ## values = 0<-->10
 audio_system_volume         = "10"
-input_gcon2_screen_flash    = "true"
+# input_gcon2_flash
+## 0 = disabled
+## 1 = pulse
+## 2 = hold
+input_gcon2_flash           = "1"
+input_gcon2_offscreen       = "true"
 input_ui_swap_ab            = "false"
 input_all_control_ui        = "false"
 input_ui_select_fav         = "false"

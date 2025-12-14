@@ -1,5 +1,14 @@
 # Changelog
 
+# v0.64.0 (RC10)
+- [X] Added new `DUAL SMART OUTPUT` option to display TATE/YOKO games in different screens
+- [X] Added new `GCON2 FLASH` system options with two modes `PULSE` (default) and `HOLD`
+- [X] Added new `GCON2 OFFSCREEN` system option to enable/disable GunCon2 offscreen functionality
+- [X] Changed GunCon2 driver to report two independent devices for Mouse and Joystick (fixes SDL add/remove device events)
+- [X] Changed flash brightness to the minimum working level (reduced by 10%)
+- [X] Fixed DRM atomic modeset EBUSY issue that prevented video mode from being applied (fixes X68K core mode changes)
+- [X] Fixed game controller readiness functionality (fixes GunCon2 not responding on init)
+
 # v0.63.0 (RC9)
 - [X] Added a new version of the GunCon2 driver with improved position tracking and native offscreen detection
 - [X] Added an enhanced SDL frontend GunCon2 engine that takes adjantage of the new driver
