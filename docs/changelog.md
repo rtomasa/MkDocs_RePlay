@@ -8,6 +8,7 @@
 - [X] Changed flash brightness to the minimum working level (reduced by 10%)
 - [X] Fixed DRM atomic modeset EBUSY issue that prevented video mode from being applied (fixes X68K core mode changes)
 - [X] Fixed game controller readiness functionality (fixes GunCon2 not responding on init)
+- [X] Fixed XBOX 3rd party driver installer in `REPLAY EXTRA`
 
 # v0.63.0 (RC9)
 - [X] Added a new version of the GunCon2 driver with improved position tracking and native offscreen detection
@@ -95,7 +96,7 @@
 - [X] Added new `CRT STABILITY BOOST` option (enabled by default) for improved image stability
 - [X] Added new `FOLDER REGENERATION` option to enable/disable system rom folder regeneration of every boot
 - [X] Added support for DIY Tilt Input device addon to automatically rotate the UI and filter vertical games
-- [X] Added new XBOX driver installer in extras
+- [X] Added new XBOX driver installer in `REPLAY EXTRA`
 - [X] Changed generic DAC Color Range autodetection for known DAC models
 - [X] Changed black screensaver by ambiscan color cycle to prevent confusion with the Pi being powered off
 - [X] Fixed unwanted button press after resume, save/load state and extra cores
