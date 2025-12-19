@@ -213,6 +213,15 @@ view_displays               = "0"
 ## 0 = show all
 ## 1-6 = N or less buttons
 view_buttons                = "0"
+# view_controller
+## 0 = show all
+## 1 = joystick (any)
+## 2 = joystick (4-way)
+## 3 = joystick (8-way)
+## 4 = dial / paddle
+## 5 = trackball / mouse
+## 6 = lightgun
+view_controller             = "0"
 view_player                 = "true"
 view_arcade                 = "true"
 view_console                = "true"

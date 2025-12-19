@@ -1,5 +1,14 @@
 # Changelog
 
+# v1.0.0 (Final Public Release)
+- [X] Added controler type information to the internal arcade naming database
+- [X] Added new `ARCADE CONTROLLER` visibility option
+- [X] Added improved error handling when loading games
+- [X] Added improved error handling on save states
+- [X] Updated PSX core with fixed BIOS reverb sound bug
+- [X] Changed DynaRes interlaced mode generation to provide timings closer to standard broadcast signals
+- [X] Fixed crash when forcing dual screen on Pi3
+
 # v0.64.0 (RC10)
 - [X] Added new `DUAL SMART OUTPUT` option to display TATE/YOKO games in different screens
 - [X] Added new `GCON2 FLASH` system options with two modes `PULSE` (default) and `HOLD`

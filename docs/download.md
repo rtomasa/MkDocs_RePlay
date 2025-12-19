@@ -2,15 +2,17 @@
 
 ## RePlayOS  
 
-Please note that **RePlayOS** is still in the BETA development phase, so there is no public download available yet.
-
-Would you like to try out the BETA and support me with the development and other expenses?
+Would you like to try the most cutting-edge development versions, including new features, and support my projects?
 
 [Join my Patreon :simple-patreon:](https://patreon.com/RePlayOS){ .md-button target=_blank }
 
+Download the latest public version here. It is **FREE!**:
+
+[Download :material-file-download:](https://www.patreon.com/posts/replayos-1-0-0-146183402?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
+
 ## RGB-Pi OS
 
-You can still download **RGB-Pi OS** if you want the best experience playing on Raspberry Pi (3/4) and CRT TVs. It is **FREE!**
+You can still download **RGB-Pi OS** if you want one of the best experiences playing on Raspberry Pi (3/4) and CRT TVs. It is **FREE!**
 
 [Download :material-file-download:](https://ko-fi.com/rtomas/shop){ .md-button target=_blank }
 
