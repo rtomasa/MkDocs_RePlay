@@ -50,6 +50,13 @@ The following table is a reference about the minimum required BIOS files used by
 | nec_pcecd          | syscard1.pce                           |
 | nec_pcecd          | syscard2.pce                           |
 | nec_pcecd          | syscard3.pce                           |
+| nintendo_ds        | melonDS DS/bios7.bin                   |
+| nintendo_ds        | melonDS DS/bios9.bin                   |
+| nintendo_ds        | melonDS DS/dsi_bios7.bin               |
+| nintendo_ds        | melonDS DS/dsi_bios9.bin               |
+| nintendo_ds        | melonDS DS/dsi_firmware.bin            |
+| nintendo_ds        | melonDS DS/dsi_nand.bin                |
+| nintendo_ds        | melonDS DS/firmware.bin                |
 | panasonic_3do      | panafz10.bin                           |
 | philips_cdi        | same_cdi/bios/cdibios.zip              |
 | philips_cdi        | same_cdi/bios/cdimono1.zip             |
