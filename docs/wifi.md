@@ -32,7 +32,7 @@ Use the same fields and notes as in **Option 1**. Edit the live config over SSH.
 Steps:
 
 1. Connect the Pi via Ethernet and SSH in: `ssh root@<ip-or-hostname>`  (password: `replayos`)
-2. Stop RePlay to release the config: `pkill replay`
+2. Stop RePlay to release the config: `systemctl stop replay.service`
 3. Edit the file on the SD card: `nano /media/sd/config/replay.cfg`
 4. Save, flush, and reboot:
 
