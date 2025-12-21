@@ -15,7 +15,9 @@
 
 **RAM:**
 
-RePlayOS and its supported systems can run on any Raspberry Pi model with 1GB or more of RAM.
+* RePlayOS and its supported systems can run on any Raspberry Pi model with 1 GB or more of RAM.
+
+    **NOTE:** for emulation workloads, having more RAM does not translate into better performance, as emulation is primarily limited by CPU and GPU capabilities rather than memory capacity.
 
 **Case:**
 
