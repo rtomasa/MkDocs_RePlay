@@ -124,16 +124,22 @@ input_gcon2_flash           = "1"
 input_gcon2_offscreen       = "true"
 input_ui_swap_ab            = "false"
 input_all_control_ui        = "false"
-input_ui_select_fav         = "false"
 # input_ui_menu_btn
 ## 0 = home button
 ## 1 = select+start
 ## 2 = hold start
 input_ui_menu_btn           = "1"
-# input_true_kbd
+input_ui_select_fav         = "false"
+# input_kbd_real_mode
 ## true = keyboard works in native scancode mode
 ## false = keyboard works in special cmd event mode
-input_true_kbd              = "true"
+input_kbd_real_mode         = "true"
+# input_kbd_menu_key
+## 0 = windows (left)
+## 1 = windows (right)
+## 2 = play/pause
+## 3 = home page
+input_kbd_menu_key          = "0"
 system_coinop               = "false"
 # system_coinop_time
 ## game time you get for a credit

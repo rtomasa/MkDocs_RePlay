@@ -1,6 +1,17 @@
 # Changelog
 
-# v1.0.0 (Final Public Release)
+# v1.1.0
+- [X] Added a new `KEYBOARD MENU KEY` option to fix computer core binding issues
+- [X] Added Nintendo DS BIOS check (required) to avoid content failing to load properly
+- [X] Fixed an updated version of xbox_drv_installer
+- [X] Changed DynaRes LCD custom CVT timing formula to standard libxcvt
+- [X] Removed crosshair for all SNES LGun Games in CRT mode
+- [X] Fixed cores not loading (NDS, Alpha Player) due to bad error handling
+- [X] Fixed input port redirect for all core LGun input type modes
+- [X] Fixed MSX not loading some MSX1 games by default
+- [X] Fixed issues with some gaming mouses causing erratic movements
+
+# v1.0.0 (Public Release)
 - [X] Added controler type information to the internal arcade naming database
 - [X] Added new `ARCADE CONTROLLER` visibility option
 - [X] Added improved error handling when loading games
