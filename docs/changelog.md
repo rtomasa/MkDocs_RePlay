@@ -1,6 +1,6 @@
 # Changelog
 
-# v1.1.0
+# v1.1.0 (Public Release)
 - [X] Added a new `KEYBOARD MENU KEY` option to fix computer core binding issues
 - [X] Added Nintendo DS BIOS check (required) to avoid content failing to load properly
 - [X] Fixed an updated version of xbox_drv_installer
