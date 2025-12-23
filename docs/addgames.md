@@ -9,20 +9,23 @@ RePlayOS automatically creates the required folder structure once the desired st
 * `INTERNAL SD CARD`: This is an exFAT partition created and expanded on the first boot, already prepared for use.
 * `EXTERNAL USB DRIVE`: Select this option if you want to use a pendrive or USB unit. Avoid mechanical drives, especially non-powered ones, to prevent power and performance drops. The unit must be manually formatted in FAT32 or exFAT before plugging it into the Raspberry Pi.
 * `INTERNAL NVME DRIVE`: This option makes use of the Raspberry Pi 5 PCIe NVMe M.2 interface for storage. The unit must be manually formatted in FAT32 or exFAT before using it with the Raspberry Pi.
-* `NETWORK NFS SHARE`: Select this option to use your own server share. Ensure the unit has read/write rights for the system to create folders and files.
+* `NETWORK NFS SHARE`: Select this option to use your own server share. Ensure the unit has read/write rights for the system to create folders and files, and that **NFS v4** is supported.
 
 Once you have selected the desired storage device and the folder structure is in place, you can proceed with transferring your games.
 
 ### A Note About NFS Share
 
-The configuration of the NFS share must be done manually in the `replay.cfg` file located in `/media/sd/config/replay.cfg`:
+The NFS share must be configured manually in the `replay.cfg` file located at `/media/sd/config/replay.cfg`.
+
+The **NFS server** is the IP address of the machine exporting the share, and the **NFS share** is the exported directory path on that server **where ROM files will be stored**. This directory must exist and be writable by the system.
 
 ```python
 nfs_server = "192.168.X.X"
 nfs_share = "/export/share"
 ```
 
-After restarting the system, you can check the new configuration from `REPLAY OPTIONS > INFORMATION > NFS SERVER / NFS SHARE`.
+After restarting the system, you can verify the configuration under
+`REPLAY OPTIONS > INFORMATION > NFS SERVER / NFS SHARE`.
 
 ## Transfer ROMs Over the Network via SFTP
 
