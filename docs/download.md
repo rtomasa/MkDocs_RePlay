@@ -14,7 +14,9 @@ Download the latest public version here. It is **FREE!**:
 
 You can still download **RGB-Pi OS** if you want one of the best experiences playing on Raspberry Pi (3/4) and CRT TVs. It is **FREE!**
 
-[Download :material-file-download:](https://ko-fi.com/rtomas/shop){ .md-button target=_blank }
+[RGB-Pi OS/1 :material-file-download:](https://www.patreon.com/posts/rgb-pi-os-1-pi2-146503235?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
+[RGB-Pi OS/2 :material-file-download:](https://www.patreon.com/posts/rgb-pi-os-2-pi2-146503547?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
+[RGB-Pi OS/4 :material-file-download:](https://www.patreon.com/posts/rgb-pi-os-4-pi4-146503653?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
 
 ## LICENSE
 
