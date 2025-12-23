@@ -8,7 +8,7 @@ Would you like to try the most cutting-edge development versions, including new 
 
 Download the latest public version here. It is **FREE!**:
 
-[Download :material-file-download:](https://www.patreon.com/posts/replayos-1-0-0-146183402?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
+[RePlayOS :material-file-download:](https://www.patreon.com/posts/replayos-1-0-0-146183402?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
 
 ## RGB-Pi OS
 
