@@ -1,6 +1,8 @@
 # Core System Settings
 
-Below you can find a full reference to all available core system setting.
+Below you can find a full reference to all available libretro core system setting.
+
+**Note:** The MAME core also includes its own built-in configuration menu. You can open it in-game by pressing **TAB**, or **Select + Y** on your gamepad.
 
 ## Arcade (FBNeo)
 
