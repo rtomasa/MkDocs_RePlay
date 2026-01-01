@@ -26,7 +26,6 @@ The following table is a reference about the minimum required BIOS files used by
 | atari_5200         | 5200.rom                               |
 | atari_7800         | 7800 BIOS (U).rom                      |
 | atari_lynx         | lynxboot.img                           |
-| atari_st           | hatari/tos/tos.img                     |
 | commodore_ami      | kick33180.A500                         |
 | commodore_ami      | kick34005.A500                         |
 | commodore_ami      | kick37175.A500                         |
@@ -81,8 +80,11 @@ The following table is a reference about the minimum required BIOS files used by
 | sony_psx           | scph5500.bin                           |
 | sony_psx           | scph5501.bin                           |
 | sony_psx           | scph5502.bin                           |
-| scummvm            | scummvm/soundfonts/Roland_SC-55.sf2    |
 | scummvm            | scummvm/extra/Roland_SC-55.sf2         |
+| scummvm            | scummvm/extra/CM32L_CONTROL.ROM        |
+| scummvm            | scummvm/extra/CM32L_PCM.ROM            |
+| scummvm            | scummvm/extra/MT32_CONTROL.ROM         |
+| scummvm            | scummvm/extra/MT32_PCM.ROM             |
 | sharp_x68k         | keropi/cgrom.dat                       |
 | sharp_x68k         | keropi/iplrom.dat                      |
 | sharp_x68k         | keropi/iplrom30.dat                    |
