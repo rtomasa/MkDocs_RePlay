@@ -37,11 +37,11 @@ enable_gs=true
 
 ## About General MIDI music
 
-By using the above configuration, the system will automatically use Roland SC-55 music when the additional required BIOS files are present and the game supports it. No additional configuration is required.
+By using the above configuration, the system will automatically use Roland SC-55 music when the [additional required BIOS files](addbios.md#minimum-bios-system-files) are present and the game supports it. No additional configuration is required.
 
 ## About Roland MT-32 music
 
-By using the above configuration, the system will automatically use Roland MT-32 music when the additional required BIOS files are present and the game supports it. No additional configuration is required.
+By using the above configuration, the system will automatically use Roland MT-32 music when the [additional required BIOS files](addbios.md#minimum-bios-system-files) are present and the game supports it. No additional configuration is required.
 
 ## Changing the MIDI soundfont manually
 
