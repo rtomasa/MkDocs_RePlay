@@ -28,3 +28,4 @@ You can select any of the below hotkeys for opening/closing the UI menu from `SY
 | <kbd>R Windows</kbd> <kbd>L Windows</kbd> | Hotkey for opening/closing the UI menu |
 | <kbd>Play/Pause</kbd>                     | Hotkey for opening/closing the UI menu |
 | <kbd>Home Page</kbd>                      | Hotkey for opening/closing the UI menu |
+| <kbd>Home</kbd>                           | Hotkey for opening/closing the UI menu |

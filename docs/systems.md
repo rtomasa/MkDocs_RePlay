@@ -42,7 +42,7 @@
 | Commodore Amiga CD32                  | :red_circle:              | :green_circle:   | :green_circle:             | cue, ccd, nrg, mds, iso, chd, m3u |
 | Sharp X68000                          | :green_circle:            | :green_circle:   | :green_circle:             | dim, img, d88, 88d, hdm, dup, 2hd, xdf, hdf, cmd, m3u |
 | Microsoft MSX                         | :green_circle:            | :green_circle:   | :green_circle:             | rom, ri, mx1, mx2, dsk, col, sg, sc, sf, cas, m3u |
-| Sinclair ZX Spectrum                  | :green_circle:            | :green_circle:   | :green_circle:             | tzx, tap, z80, rzx, scl, trd, dsk |
+| Sinclair ZX Spectrum                  | :green_circle:            | :green_circle:   | :green_circle:             | tzx, tap, z80, rzx, scl, trd, dsk, dck, sna, szx|
 | IBM PC (MS-DOS)                       | :yellow_circle:           | :yellow_circle:  | :green_circle:             | zip, dosz, exe, com, bat, iso, cue, img, m3u, m3u8 |
 | ScummVM                               | :green_circle:            | :green_circle:   | :green_circle:             | scummvm, svm |
 | [Alpha Player](alphaplayer.md)        | :red_circle:              | :yellow_circle:  | :green_circle:             | mkv, avi, f4v, f4f, 3gp, ogm, flv, mp4, mp3, flac, ogg, m4a, webm, 3g2, mov, wmv, mpg, mpeg, vob, asf, divx, m2p, m2ts, ps, ts, mxf, wma, wav |

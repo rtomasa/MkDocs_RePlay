@@ -6,6 +6,19 @@ ScummVM supports `.svm` and `.scummvm` launcher files. You can create an empty f
 
 For example, you can create an empty file named `Day of the Tentacle.svm`, place it in the game folder, and that is all that is required.
 
+## M3U playlists (single‑entry and folders)
+
+You can also use `.m3u` playlists to launch ScummVM games. Single‑entry m3u files are resolved to the referenced content (relative paths are supported), and the referenced files/folders are hidden from the UI to keep the list clean.
+
+Example `Day of the Tentacle.m3u` content (relative path):
+
+`./tentacle/tentacle.svm`
+
+**Notes**:
+
+* Single‑entry m3u playlists launch the referenced file directly.
+* Multi‑entry m3u playlists are kept intact for multi‑disc systems.
+
 ## Recommended `scummvm.ini` configuration file
 
 ```ini

@@ -85,6 +85,11 @@ The following table is a reference about the minimum required BIOS files used by
 | scummvm            | scummvm/extra/CM32L_PCM.ROM            |
 | scummvm            | scummvm/extra/MT32_CONTROL.ROM         |
 | scummvm            | scummvm/extra/MT32_PCM.ROM             |
+| ibm_pc             | scummvm/extra/Roland_SC-55.sf2         |
+| ibm_pc             | scummvm/extra/CM32L_CONTROL.ROM        |
+| ibm_pc             | scummvm/extra/CM32L_PCM.ROM            |
+| ibm_pc             | scummvm/extra/MT32_CONTROL.ROM         |
+| ibm_pc             | scummvm/extra/MT32_PCM.ROM             |
 | sharp_x68k         | keropi/cgrom.dat                       |
 | sharp_x68k         | keropi/iplrom.dat                      |
 | sharp_x68k         | keropi/iplrom30.dat                    |

@@ -109,15 +109,17 @@ nav:
   - Wiki (advanced):
     - EEPROM Update: eeprom.md
     - Wi-Fi Configuration: wifi.md
+    - Logging Information: loginfo.md
     - New Controllers Support: mappings.md
     - RePlay Custom Drivers & DIY: drivers.md
     - RePlay Options File: cfgfile.md 
     - Core System Settings: settings.md
-    - Emulation Know-How: insights.md
     - ROM Codes and Meanings: romcodes.md
     - M3U Multi-Disc Management: m3u.md
     - Pi3/4 Audio Jack: pi3jack.md
     - ScummVM: scummvm.md
+    - DOSBox: dosbox.md
+    - Emulation Know-How: insights.md
   - Common Issues: issues.md
   - Help & Support: support.md
   - F.A.Q: faq.md

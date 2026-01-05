@@ -139,19 +139,19 @@ input_kbd_real_mode         = "true"
 ## 1 = windows (right)
 ## 2 = play/pause
 ## 3 = home page
+## 4 = home
 input_kbd_menu_key          = "0"
 system_coinop               = "false"
 # system_coinop_time
 ## game time you get for a credit
 system_coinop_time          = "180"
 # system_verbose
-## 0 = debug
+## 0 = debug (not available for users)
 ## 1 = info
 ## 2 = warn
 ## 3 = error
-## 4 = trace
-## 5 = disabled
-system_verbose              = "5"
+## 4 = disabled
+system_verbose              = "4"
 system_kiosk_mode           = "false"
 # system_emu_quality
 ## 0 = Performance

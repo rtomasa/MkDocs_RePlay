@@ -1,5 +1,55 @@
 # Changelog
 
+# v1.2.0 (late public)
+- [X] Added libretro option categories to the following system cores:
+    - Amstrad CPC
+    - Atari 2600
+    - Atari 7800
+    - NeoGeo Pocket
+    - NeoGeo CD
+    - Philips CD-i
+    - Microsoft MSX
+    - Panasonic 3DO
+    - ZX Spectrum
+- [X] Added embeded subtitle support in Alpha Player:
+    - Added new core option to select font type
+    - Added new core option to select font size
+- [X] Added `RETRO_ENVIRONMENT_GET_VFS_INTERFACE` to allow file system core access (fixes DOSBox not reading soundfonts from bios directory)
+- [X] Added new enhanced m3u handling
+    - Resolve single-entry playlists (relative paths supported) to the target content (allows creating ScummVM game launcher outside the game folder)
+    - Hide referenced files/folders in the UI
+    - Keep multi-disc playlists intact
+- [X] Added new `SYSTEM MENU > SYSTEM VIRTUAL DISC > OPEN TRAY` option
+- [X] Added new `SYSTEM MENU > RESET` option. This emulates original system reset button (useful on PSX to go into built-in Main Menu after opening the system tray) 
+- [X] Added standard `HOME` button binsding to `KEYBOARD MENU KEY` option
+- [X] Added NFS4 system option hint
+- [X] Added current time in `SYSTEM > INFORMATION` menu (not refreshed real time)
+- [X] Added new `TAKE SCREENSHOT` option in `SYSTEM MENU`
+- [X] Added additional ScummVM and DOSBox BIOS check to ensure full Roland SC-55 (GM) and Roland MT32 support (requires new bios_v3.zip pack)
+- [X] Added `SYSTEM > LOG LEVEL` option (additional info available in the official website)
+- [X] Added DynaRes support for dynamically changing refresh rates in LCD NRR mode
+- [X] Created new bios_v3.zip pack:
+    - Enables MAME mainline hiscore support (please do note that MAME stores hiscores inside bios folder)
+    - Enables Roland SC-55 (GM) and Roland MT32 support in ScummVM
+    - Enables Roland SC-55 (GM) and Roland MT32 support in DOSBox
+- [X] Updated FBNeo and MAME mainline arcade cores (0.284)
+- [X] Updated internal arcade database to MAME 0.284
+- [X] Updated internal libretro.h API interface
+- [X] Changed puae by puae2021 Amiga core on Pi3/4 for improved performance (less accurate)
+- [X] Changed default Amiga `ALLOW HZ CHANGE` from Locked to Enabled for accurate PAL/NTSC refresh timing
+- [X] Changed `SCREEN_TEST` core by `AUDIO_VIDEO_TEST` now able to play stereo audio test sounds
+- [X] Changed default `EMULATION PROFILE` for N64 for improved graphics accuracy in Raspberry Pi 5
+- [X] Changed loging and messages code in Amstrad CPC core for improved user information
+- [X] Changed `SYSTEM > INFORMATION` menu to automatically refresh the information in realtime
+- [X] Changed Arcade (FBNeo) to use MVS bios and SNK NEO-GEO AES bios
+- [X] Changed custom controller physical mappings to remove commas from controller names, preventing the SDL DB from failing to read them properly
+- [X] Changed some UI font characters for improved readability
+- [X] Changed save/load behavior so reopening the UI starts at the root `SYSTEM MENU`
+- [X] Fixed analog left/right axis input to respect user-configured axis mappings (fixes NDS touch joystick mappings).
+- [X] Fixed RePlay Aspect Ratio legacy core options v0 missing values
+- [X] Fixed proper identification of Raspberry Pi CM5 and 500/500+ models
+- [X] Fixed power button hijacking keyboard grab on Raspberry Pi 400/500 models
+
 # v1.1.0 (Public Release)
 - [X] Added a new `KEYBOARD MENU KEY` option to fix computer core binding issues
 - [X] Added Nintendo DS BIOS check (required) to avoid content failing to load properly
