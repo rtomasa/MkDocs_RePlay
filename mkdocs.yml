@@ -119,6 +119,7 @@ nav:
     - Pi3/4 Audio Jack: pi3jack.md
     - ScummVM: scummvm.md
     - DOSBox: dosbox.md
+    - N64 C-Buttons: n64cbtns.md
     - Emulation Know-How: insights.md
   - Common Issues: issues.md
   - Help & Support: support.md
