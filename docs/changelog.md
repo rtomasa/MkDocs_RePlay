@@ -1,6 +1,6 @@
 # Changelog
 
-# v1.2.0 (late public)
+# v1.2.0 (Early Access → Public Release)
 - [X] Added libretro option categories to the following system cores:
     - Amstrad CPC
     - Atari 2600
