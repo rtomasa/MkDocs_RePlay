@@ -250,7 +250,6 @@ Below you can find a full reference to all available libretro core system settin
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| **Raspberry Pi 4 and higher** {: colspan=3} |
 | Color Palette | pce_palette | Composite tries to recreate the original console output and can show more details in some games. |
 | High Resolution Blending Strength | pce_hires_blend | Blend pixels together when in High Resolution mode. Higher values will blur the picture more. |
 | PSG Audio Chip (Restart Required) | pce_psgrevision | HuC6280 represents the original PC Engine, HuC6280A the SuperGrafx and CoreGrafx I. |
@@ -287,36 +286,11 @@ Below you can find a full reference to all available libretro core system settin
 | (CD) ADPCM Volume % | pce_adpcmvolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CDDA Volume % | pce_cddavolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CD PSG Volume % | pce_cdpsgvolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| **Raspberry Pi 3 / Zero 2** {: colspan=3} |
-| Color Palette | sgx_palette | Composite tries to recreate the original console output and can show more details in some games. |
-| Mouse Sensitivity | sgx_mouse_sensitivity | Higher values will make the mouse cursor move faster. |
-| Allow Opposing Directions | sgx_up_down_allowed | Enabling this will allow pressing / quickly alternating / holding both left and right (or up and down) directions at the same time. This may cause movement-based glitches. |
-| Disable Soft Reset (RUN+SELECT) | sgx_disable_softreset | When RUN and SELECT are pressed simultaneously, disable both buttons temporarily instead of resetting. |
-| Multitap 5-port Controller | sgx_multitap | Enable up to 5-player multitap emulation. Disabling this is only needed in some cases (e.g. Cho Aniki). |
-| P1 Default Joypad Type | sgx_default_joypad_type_p1 | Choose if port 1 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P2 Default Joypad Type | sgx_default_joypad_type_p2 | Choose if port 2 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P3 Default Joypad Type | sgx_default_joypad_type_p3 | Choose if port 3 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P4 Default Joypad Type | sgx_default_joypad_type_p4 | Choose if port 4 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P5 Default Joypad Type | sgx_default_joypad_type_p5 | Choose if port 5 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| Turbo Hotkey Mode | sgx_turbo_toggle | Enable turbo buttons. Hotkeys (buttons III and IV) can behave as either toggle switches or dedicated (hold to use) turbo buttons. |
-| Alternate Turbo Hotkey | sgx_turbo_toggle_hotkey | Assign RetroPad's L3/R3 buttons as turbo hotkeys instead of buttons III and IV. Works only in 'Toggle' mode and only as long as nothing is assigned to the L3/R3 buttons. You can avoid remapping buttons III and IV when switching to 6-button controlle |
-| Turbo Delay | sgx_turbo_delay | Adjust the time between turbo fire (in frames). |
-| Force SuperGrafx Emulation (Restart Required) | sgx_forcesgx | This is helpful to run homebrew games or to isolate games that will not run in SuperGrafx mode (like Space Harrier). Save states are not compatible with each mode. It's better to leave this option off unless needed. Known SuperGrafx games (like Dai- |
-| No Sprite Limit | sgx_nospritelimit | Remove 16-sprites-per-scanline hardware limit. WARNING: May cause graphics glitching on some games. |
-| CPU Overclock Multiplier (Restart Required) | sgx_ocmultiplier | Higher values can reduce slowdowns in games. WARNING: Can cause glitches and crashes. |
-| CD Image Cache (Restart Required) | sgx_cdimagecache | Load the complete image into memory at startup. Can potentially decrease loading times at the cost of an increased startup time. |
-| CD BIOS (Restart Required) | sgx_cdbios | Most games can run on 'System Card 3'. 'Games Express' is needed for several unlicensed games. |
-| Detect Games Express CD (Restart Required) | sgx_detect_gexpress | Automatically load the Games Express BIOS regardless of CD BIOS setting when loading Games Express CD games. |
-| (CD) CD Speed | sgx_cdspeed | Higher values enable faster loading times but can cause issues with a couple of games. |
-| (CD) ADPCM Volume % | sgx_adpcmvolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| (CD) CDDA Volume % | sgx_cddavolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| (CD) PSG Volume % | sgx_cdpsgvolume | CD game only. Setting this volume control too high may cause sample clipping. |
 
 ## NEC TurboGrafx-CD/CD-ROM2 System
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| **Raspberry Pi 4 and higher** {: colspan=3} |
 | Color Palette | pce_palette | Composite tries to recreate the original console output and can show more details in some games. |
 | High Resolution Blending Strength | pce_hires_blend | Blend pixels together when in High Resolution mode. Higher values will blur the picture more. |
 | PSG Audio Chip (Restart Required) | pce_psgrevision | HuC6280 represents the original PC Engine, HuC6280A the SuperGrafx and CoreGrafx I. |
@@ -353,30 +327,6 @@ Below you can find a full reference to all available libretro core system settin
 | (CD) ADPCM Volume % | pce_adpcmvolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CDDA Volume % | pce_cddavolume | CD game only. Setting this volume control too high may cause sample clipping. |
 | (CD) CD PSG Volume % | pce_cdpsgvolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| **Raspberry Pi 3 / Zero 2** {: colspan=3} |
-| Color Palette | sgx_palette | Composite tries to recreate the original console output and can show more details in some games. |
-| Mouse Sensitivity | sgx_mouse_sensitivity | Higher values will make the mouse cursor move faster. |
-| Allow Opposing Directions | sgx_up_down_allowed | Enabling this will allow pressing / quickly alternating / holding both left and right (or up and down) directions at the same time. This may cause movement-based glitches. |
-| Disable Soft Reset (RUN+SELECT) | sgx_disable_softreset | When RUN and SELECT are pressed simultaneously, disable both buttons temporarily instead of resetting. |
-| Multitap 5-port Controller | sgx_multitap | Enable up to 5-player multitap emulation. Disabling this is only needed in some cases (e.g. Cho Aniki). |
-| P1 Default Joypad Type | sgx_default_joypad_type_p1 | Choose if port 1 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P2 Default Joypad Type | sgx_default_joypad_type_p2 | Choose if port 2 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P3 Default Joypad Type | sgx_default_joypad_type_p3 | Choose if port 3 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P4 Default Joypad Type | sgx_default_joypad_type_p4 | Choose if port 4 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| P5 Default Joypad Type | sgx_default_joypad_type_p5 | Choose if port 5 joypad should be 2 or 6 buttons by default. This option is only applied when the core starts, if you want to switch while content is running, use the 'Mode Switch' button. NOTE: 6 buttons joypad can have weird behaviors in non compa |
-| Turbo Hotkey Mode | sgx_turbo_toggle | Enable turbo buttons. Hotkeys (buttons III and IV) can behave as either toggle switches or dedicated (hold to use) turbo buttons. |
-| Alternate Turbo Hotkey | sgx_turbo_toggle_hotkey | Assign RetroPad's L3/R3 buttons as turbo hotkeys instead of buttons III and IV. Works only in 'Toggle' mode and only as long as nothing is assigned to the L3/R3 buttons. You can avoid remapping buttons III and IV when switching to 6-button controlle |
-| Turbo Delay | sgx_turbo_delay | Adjust the time between turbo fire (in frames). |
-| Force SuperGrafx Emulation (Restart Required) | sgx_forcesgx | This is helpful to run homebrew games or to isolate games that will not run in SuperGrafx mode (like Space Harrier). Save states are not compatible with each mode. It's better to leave this option off unless needed. Known SuperGrafx games (like Dai- |
-| No Sprite Limit | sgx_nospritelimit | Remove 16-sprites-per-scanline hardware limit. WARNING: May cause graphics glitching on some games. |
-| CPU Overclock Multiplier (Restart Required) | sgx_ocmultiplier | Higher values can reduce slowdowns in games. WARNING: Can cause glitches and crashes. |
-| CD Image Cache (Restart Required) | sgx_cdimagecache | Load the complete image into memory at startup. Can potentially decrease loading times at the cost of an increased startup time. |
-| CD BIOS (Restart Required) | sgx_cdbios | Most games can run on 'System Card 3'. 'Games Express' is needed for several unlicensed games. |
-| Detect Games Express CD (Restart Required) | sgx_detect_gexpress | Automatically load the Games Express BIOS regardless of CD BIOS setting when loading Games Express CD games. |
-| (CD) CD Speed | sgx_cdspeed | Higher values enable faster loading times but can cause issues with a couple of games. |
-| (CD) ADPCM Volume % | sgx_adpcmvolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| (CD) CDDA Volume % | sgx_cddavolume | CD game only. Setting this volume control too high may cause sample clipping. |
-| (CD) PSG Volume % | sgx_cdpsgvolume | CD game only. Setting this volume control too high may cause sample clipping. |
 
 ## Nintendo NES/Famicom
 
@@ -412,7 +362,6 @@ Below you can find a full reference to all available libretro core system settin
 
 | Setting                               | Key            | Info           |
 | ------------------------------------- | -------------- | -------------- |
-| **Raspberry Pi 4 and higher** {: colspan=3} |
 | Console Region (Reload Core) | snes9x_region | Specify which region the system is from. 'PAL' is 50hz, 'NTSC' is 60hz. Games will run faster or slower than normal if the incorrect region is selected. |
 | Hi-Res Blending | snes9x_hires_blend | Blend adjacent pixels when game switches to hi-res mode (512x448). Required for certain games that use hi-res mode to produce transparency effects (Kirby's Dream Land, Jurassic Park...). |
 | Audio Interpolation | snes9x_audio_interpolation | Apply an audio filter. 'Gaussian' reproduces the bass-heavy sound of the original hardware. 'Cubic' and 'Sinc' are less accurate, and preserve more of the high range. |
@@ -444,14 +393,6 @@ Below you can find a full reference to all available libretro core system settin
 | Enable Sound Channel 6 | snes9x_sndchan_6 | n/a |
 | Enable Sound Channel 7 | snes9x_sndchan_7 | n/a |
 | Enable Sound Channel 8 | snes9x_sndchan_8 | n/a |
-| **Raspberry Pi 3 / Zero 2** {: colspan=3} |
-| Console Region (Restart) | snes9x_2010_region | Specify which region the system is from. 'PAL' is 50hz, 'NTSC' is 60hz. Games will run faster or slower than normal if the incorrect region is selected. |
-| Set Autofire Pulse | snes9x_2010_turbodelay | Fire interval: medium - 6 frames, fast - 4 frames, slow - 8 frames. |
-| Blargg NTSC Filter | snes9x_2010_blargg | Apply a video filter to mimic various NTSC TV signals. |
-| SuperFX Overclock | snes9x_2010_overclock | Overclock or underclock the SuperFX chip. This may improve the framerate and playability of games that use SuperFX. |
-| Reduce Slowdown (Hack, Unsafe) | snes9x_2010_overclock_cycles | Overclock SNES CPU. May cause games to crash! Use 'Light' for shorter loading times, 'Compatible' for most games exhibiting slowdown and 'Max' only if absolutely required (Gradius 3, Super R-type...). |
-| Reduce Flickering (Hack, Unsafe) | snes9x_2010_reduce_sprite_flicker | Increases number of sprites that can be drawn simultaneously on screen. |
-| Block Invalid VRAM Access (Restart) | snes9x_2010_block_invalid_vram_access | Some homebrew/ROM hacks require this option to be disabled for correct operation. |
 
 ## Nintendo 64
 
