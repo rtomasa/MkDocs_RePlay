@@ -46,6 +46,7 @@ You can select the desired video mode from `REPLAY OPTIONS > VIDEO > VIDEO MODE`
 * `LCD 1024X768@60`
 * `LCD 2560x1440@60`: experimental 2K resolution for Raspberry PI 5 and higher (can impact performance).
 * `LCD 3840x2160@60`: experimental 4K resolution for Raspberry PI 5 and higher (can impact performance).
+* `LCD 1920X1200@60`: 16:10 hi-res for Raspberry PI 4 and higher (can impact performance).
 
 **NOTE:** when changing between LCD and CRT modes, you must reboot the system to apply the configuration.
 
