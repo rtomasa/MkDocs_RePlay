@@ -152,18 +152,10 @@ system_coinop_time          = "180"
 ## 3 = error
 ## 4 = disabled
 system_verbose              = "4"
+# timezone_srv
+## timezone detection server URL
+timezone_srv                = "https://time.now/developer/api/ip"
 system_kiosk_mode           = "false"
-# system_emu_quality
-## 0 = Performance
-##     - audio linear resampler
-##     - set specific core options
-## 1 = Balanced
-##     - audio sync resampler
-##     - set specific core options
-## 2 = Quality
-##     - audio sync resampler
-##     - set specific core options
-system_emu_quality          = "1"
 # system_low_latency_mode
 ## true = -1/0 frames input lag
 ## false = 0/1 frames input lag
@@ -235,6 +227,10 @@ view_computer               = "true"
 view_handheld               = "true"
 nfs_server                  = "192.168.X.X"
 nfs_share                   = "/export/share"
+# nfs_version
+## 3 = NFSv3 (rpcbind/mountd required on server)
+## 4 = NFSv4
+nfs_version                 = "4"
 wifi_name                   = "MyWifi"
 wifi_pwd                    = "********"
 wifi_country                = "ES"

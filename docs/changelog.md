@@ -1,6 +1,37 @@
 # Changelog
 
-# v1.2.0 (Early Access → Public Release)
+# v1.3.0 (Public Release)
+- [X] Added support for mapping axis directions (+)/(-) to independent digital buttons (old mappings could stop working)
+- [X] Added support for WUXGA 1920x1200 (Pi4+)
+- [X] Added support for volume control via Keyboard (Keypad +/-, Volume Keys, and `M` for mute)
+- [X] Added `CAPS LOCK` key binding for enabling/disabling keyboard real mode
+- [X] Added configurable timezone server via `replay.cfg`
+- [X] Added configurable nfs version via `replay.cfg`
+- [X] Added added/removed usb audio device notification
+- [X] Updated Alpha Player core to v2.2.0:
+    - Added support for tracker music (s3m|it|xm|mod)
+    - Added support for Game Music Emulators (ay|gbs|gym|hes|kss|nsf|nsfe|sap|spc|vgm|vgz)
+    - Added external .srt file support
+    - Added options to enable/disable subtitles and audio visualizer
+    - Replaced audio visualizer
+    - Improved performance
+    - Fixed video buffer issues
+- [X] Changed SNES and PCE cores in RPi3 for improved accuracy
+- [X] Fixed analog trigger support failing in some cores (fixes MAME)
+- [X] Fixed mirrored movement when X/Y axes are swapped on the same stick
+- [X] Fixed DynaRes loging information
+- [X] Fixed `AUDIO_VIDEO_TEST` not loading due to missing binary file
+- [X] Fixed gamma configuration not properly refreshed after loading games
+- [X] Fixed scanlines on 31KHz and 480p
+- [X] Fixed screensaver behavior to prevent it from rendering during controller mapping
+- [X] Fixed the ability to open the UI menu with all controllers when `ALL USERS CONTROL UI` is enabled
+- [X] Fixed several memory leaks throughout the codebase that could lead to increased memory usage, instability, or crashes
+- [X] Fixed handheld aspect ratio in CRT mode
+- [X] Fixed `USE SELECT FOR FAV` option so that when it is enabled only Select button can set favs
+- [X] Fixed `FULL SCRN NATIVE` aspect ratio option
+- [X] Removed Emulation Quality profile options (not very useful and causes issues to users)
+
+# v1.2.0 (Private Release)
 - [X] Added libretro option categories to the following system cores:
     - Amstrad CPC
     - Atari 2600
@@ -21,9 +52,9 @@
     - Keep multi-disc playlists intact
 - [X] Added new `SYSTEM MENU > SYSTEM VIRTUAL DISC > OPEN TRAY` option
 - [X] Added new `SYSTEM MENU > RESET` option. This emulates original system reset button (useful on PSX to go into built-in Main Menu after opening the system tray) 
-- [X] Added standard `HOME` button binsding to `KEYBOARD MENU KEY` option
+- [X] Added standard `HOME` button binding to `KEYBOARD MENU KEY` option
 - [X] Added NFS4 system option hint
-- [X] Added current time in `SYSTEM > INFORMATION` menu (not refreshed real time)
+- [X] Added current time in `SYSTEM > INFORMATION` menu
 - [X] Added new `TAKE SCREENSHOT` option in `SYSTEM MENU`
 - [X] Added additional ScummVM and DOSBox BIOS check to ensure full Roland SC-55 (GM) and Roland MT32 support (requires new bios_v3.zip pack)
 - [X] Added `SYSTEM > LOG LEVEL` option (additional info available in the official website)
