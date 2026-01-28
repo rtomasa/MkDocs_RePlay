@@ -16,6 +16,9 @@
     - Replaced audio visualizer
     - Improved performance
     - Fixed video buffer issues
+- [X] Updated cores:
+    - Dreamcast/NAOMI
+    - PlayStation
 - [X] Changed SNES and PCE cores in RPi3 for improved accuracy
 - [X] Fixed analog trigger support failing in some cores (fixes MAME)
 - [X] Fixed mirrored movement when X/Y axes are swapped on the same stick
