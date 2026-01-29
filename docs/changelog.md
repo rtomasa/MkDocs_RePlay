@@ -20,6 +20,7 @@
     - Dreamcast/NAOMI
     - PlayStation
 - [X] Changed SNES and PCE cores in RPi3 for improved accuracy
+- [X] Fixed initial input remap initialization so mappings work on first game/system load
 - [X] Fixed analog trigger support failing in some cores (fixes MAME)
 - [X] Fixed mirrored movement when X/Y axes are swapped on the same stick
 - [X] Fixed DynaRes loging information
