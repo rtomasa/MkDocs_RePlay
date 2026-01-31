@@ -27,7 +27,7 @@ video_mode                  = "0"
 ## 1 = dual cloned
 ## 2 = dual horizontal
 ## 3 = dual vertical
-## 4 = dual smart rotation
+## 4 = dual smart output
 video_monitor_multi_mode     = "0"
 # video_lcd_type
 ## generic_60 = supports 55-61hz ranges
