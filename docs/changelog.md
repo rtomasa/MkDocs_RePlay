@@ -20,6 +20,8 @@
     - Dreamcast/NAOMI
     - PlayStation
 - [X] Changed SNES and PCE cores in RPi3 for improved accuracy
+- [X] Changed default blue skin
+- [X] Changed audio reinitialization behavior for improved system/game load transitions
 - [X] Fixed initial input remap initialization so mappings work on first game/system load
 - [X] Fixed analog trigger support failing in some cores (fixes MAME)
 - [X] Fixed mirrored movement when X/Y axes are swapped on the same stick
@@ -33,6 +35,7 @@
 - [X] Fixed handheld aspect ratio in CRT mode
 - [X] Fixed `USE SELECT FOR FAV` option so that when it is enabled only Select button can set favs
 - [X] Fixed `FULL SCRN NATIVE` aspect ratio option
+- [X] Fixed `DUAL SMART OUTPUT` option powering off non-active TV/monitor and facing shutter issues
 - [X] Removed Emulation Quality profile options (not very useful and causes issues to users)
 
 # v1.2.0 (Private Release)
