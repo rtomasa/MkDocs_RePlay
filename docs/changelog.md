@@ -1,5 +1,59 @@
 # Changelog
 
+# v1.4.0 (Public Release)
+- [X] Linux base OS upgraded to Debian Trixie
+- [X] Improved DynaRes hotplug engine:
+    - HDMI connector handling is now faster and more reliable
+    - Supports switching between different LCD/CRT displays on the fly
+- [X] Improved USB mounting logic including a retry system
+- [X] Added a new option to select screensaver type (rainbow or black)
+- [X] Added undervoltage check on boot and on every game load
+- [X] Added support for Sega CD 32X inside the Sega 32X system (can use cue, iso or chd)
+- [X] Added case-insensitive game list shorting
+- [X] Added reboot/poweroff delay system option
+- [X] Added key-repeat functionality to volume keys
+- [X] Added dynamic audio device selection option values
+- [X] Added support for Amiga ipf format
+- [X] Refactored Tilt and Retroflag GPIO code due to libgpiod-dev upgrade from v1 to v2
+- [X] Created new replay_bios_v5.zip pack:
+    - Includes MAME & MAME2K3+ missing sound samples
+    - Includes MAME cheats pack
+- [X] Updated Fuse (ZX Spectrum) core to split joy and cpu startup option messages
+- [X] Updated Alpha Player to support the updated libavutil API
+- [X] Updated internal arcade database up to MAME 0.285
+- [X] Updated `SuperX` handheld CRT aspect logic to use per-system Physical AR instead of hardcoded one
+- [X] Replaced linear volume-step scaling with a perceptual logarithmic (dB) curve
+- [X] Replaced `FOLDER REGENERATION` by `HIDE EMPTY FOLDERS` option
+- [X] Changed TATE arcade game behavior:
+    - Games on LCD play rotated for horizontal screens
+    - Games on LCD play on native aspect ratio for horizontal screens
+    - Games on CRT play natively (unrotated to the left) for vertical screens
+    - Games on LCD & CRT `DUAL SMART OUTPUT` play natively (unrotated to the left)
+- [X] Changed `CAPS LOCK` keyboard real mode behavior:
+    - Now it changes global configuration properly
+    - It is able to toggle the keyboard LED status
+    - LED and status is updated when setting the configuration from `INPUT` menu option
+- [X] Changed coin-op text to make it shorter
+- [X] Changed UI add/remove button behaviour:
+    - X = adds favorite from both game and recent list
+    - Y = removes favorites and recents
+- [X] Changed NFSv3 to always use nolock option
+- [X] Changed screenshots to be saved including timestamp
+- [X] Changed NDS default screen layout configuration
+- [X] Changed RePlay Extras visible value, icon and added rgbpi2 new content
+- [X] Fixed audio resampler so that now it properly handle games that run > 60Hz
+    - Fixes many arcade games like offroad
+    - Fixes and allow playing IBM MS-DOS (DosBox) at native 70Hz
+    - Improve audio quality in home systems like NES and SNES
+- [X] Fixed many refresh-rate inaccuracies in timing generation, display reporting, and audio pacing
+- [X] Fixed screenshots now saved in their corresponding folders
+- [X] Fixed dual screen mode in CRT
+- [X] Fixed audio regression issue causing buffer underrun
+- [X] Fixed images not displayed when games are in subfolders
+- [X] Fixed volume control when audio normalization is enabled
+- [X] Fixed mute status not honored when loading games
+- [X] Fixed several application crashes
+
 # v1.3.0 (Public Release)
 - [X] Added support for mapping axis directions (+)/(-) to independent digital buttons (old mappings could stop working)
 - [X] Added support for WUXGA 1920x1200 (Pi4+)

@@ -2,6 +2,11 @@
 
 The following is a description of all available options and default values that RePlay uses for global configuration.
 
+**Important:**
+- Changes to `addon_*` and GPIO settings must be made from the UI to take effect.
+- Stop the frontend before editing this configuration file.
+- For instructions on stopping the frontend, see [Logging Information](loginfo.md), or plug in the SD card in your PC.
+
 The configuration file is located in `/media/sd/config/replay.cfg`:
 
 ```cfg
@@ -97,13 +102,17 @@ video_show_info             = "false"
 ## 4 = black scanlines          
 video_filter                = "0"
 video_ambiscan              = "true"
-# video_screen_saver
+# video_screen_saver_time
 ## 0 = OFF
 ## 60000 = 1 min
 ## 180000 = 3 min
 ## 300000 = 5 min
 ## 600000 = 10 min
 ## 900000 = 15 min
+video_screen_saver_time     = "0"
+# video_screen_saver
+## 0 = rainbow
+## 1 = black
 video_screen_saver          = "0"
 # audio_card
 ## 0 = HDMI
@@ -160,6 +169,12 @@ system_kiosk_mode           = "false"
 ## true = -1/0 frames input lag
 ## false = 0/1 frames input lag
 system_low_latency_mode     = "false"
+# system_reboot_poweroff_delay
+## 0 = disabled
+## 3 = 3 seconds
+## 5 = 5 seconds
+## 7 = 7 seconds
+system_reboot_poweroff_delay = "3"
 # system_skin
 ## 0 = replay (default)
 ## 1 = mega tech
@@ -192,7 +207,7 @@ system_boot_to_system       = "all"
 ## nfs = network nfs share
 system_storage              = "sd"
 system_ui_pauses_core       = "false"
-system_folder_regen         = "true"
+system_hide_empty_folders   = "false"
 # view_players
 ## 0 = show all
 ## 1-6 = num players
