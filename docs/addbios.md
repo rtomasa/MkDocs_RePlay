@@ -26,6 +26,7 @@ The following table is a reference about the minimum required BIOS files used by
 | atari_5200         | 5200.rom                               |
 | atari_7800         | 7800 BIOS (U).rom                      |
 | atari_lynx         | lynxboot.img                           |
+| commodore_ami      | capsimg.so                             |
 | commodore_ami      | kick33180.A500                         |
 | commodore_ami      | kick34005.A500                         |
 | commodore_ami      | kick37175.A500                         |
@@ -37,6 +38,7 @@ The following table is a reference about the minimum required BIOS files used by
 | commodore_ami      | kick40068.A4000                        |
 | commodore_ami      | kick34005.CDTV                         |
 | commodore_ami      | kick40060.CD32                         |
+| commodore_ami      | kick40060.CD32.ext                     |
 | commodore_ami      | kick40060.CD32.ext                     |
 | microsoft_msx      | Machines/Shared Roms/MSX.ROM           |
 | microsoft_msx      | Machines/Shared Roms/MSX2.ROM          |
@@ -80,16 +82,16 @@ The following table is a reference about the minimum required BIOS files used by
 | sony_psx           | scph5500.bin                           |
 | sony_psx           | scph5501.bin                           |
 | sony_psx           | scph5502.bin                           |
-| scummvm            | scummvm/extra/Roland_SC-55.sf2         |
 | scummvm            | scummvm/extra/CM32L_CONTROL.ROM        |
 | scummvm            | scummvm/extra/CM32L_PCM.ROM            |
 | scummvm            | scummvm/extra/MT32_CONTROL.ROM         |
 | scummvm            | scummvm/extra/MT32_PCM.ROM             |
-| ibm_pc             | scummvm/extra/Roland_SC-55.sf2         |
+| scummvm            | scummvm/extra/Roland_SC-55.sf2         |
 | ibm_pc             | scummvm/extra/CM32L_CONTROL.ROM        |
 | ibm_pc             | scummvm/extra/CM32L_PCM.ROM            |
 | ibm_pc             | scummvm/extra/MT32_CONTROL.ROM         |
 | ibm_pc             | scummvm/extra/MT32_PCM.ROM             |
+| ibm_pc             | scummvm/extra/Roland_SC-55.sf2         |
 | sharp_x68k         | keropi/cgrom.dat                       |
 | sharp_x68k         | keropi/iplrom.dat                      |
 | sharp_x68k         | keropi/iplrom30.dat                    |
@@ -113,6 +115,7 @@ Here you can see a the full BIOS folder structure:
 ├── bios.sms
 ├── bios_U.sms
 ├── BS-X.bin
+├── capsimg.so
 ├── dc
 │   ├── airlbios.zip
 │   ├── awbios.zip
@@ -616,20 +619,175 @@ Here you can see a the full BIOS folder structure:
 │   └── Turbo-R - Panasonic FS-A1ST
 │       └── config.ini
 ├── mame
+│   ├── cheat.7z
 │   ├── hiscore
 │   ├── ini
 │   │   ├── plugin.ini
 │   │   └── ui.ini
-│   └── plugins
-│       ├── boot.lua
-│       └── hiscore
-│           ├── hiscore.dat
-│           ├── init.lua
-│           ├── plugin.json
-│           └── sort_hiscore.lua
+│   ├── plugins
+│   │   ├── boot.lua
+│   │   └── hiscore
+│   │       ├── hiscore.dat
+│   │       ├── init.lua
+│   │       ├── plugin.json
+│   │       └── sort_hiscore.lua
+│   └── samples
+│       ├── 005.zip
+│       ├── 3bagfull.zip
+│       ├── astrof.zip
+│       ├── battles.zip
+│       ├── bbc.zip
+│       ├── blockade.zip
+│       ├── bowl3d.zip
+│       ├── buckrog.zip
+│       ├── carnival.zip
+│       ├── circus.zip
+│       ├── clowns.zip
+│       ├── congo.zip
+│       ├── cosmica.zip
+│       ├── cosmicg.zip
+│       ├── crash.zip
+│       ├── dai3wksi.zip
+│       ├── depthch.zip
+│       ├── equites.zip
+│       ├── fantasy.zip
+│       ├── fruitsamples.zip
+│       ├── ftaerobi.zip
+│       ├── gaplus.zip
+│       ├── genpin.zip
+│       ├── gmissile.zip
+│       ├── gridlee.zip
+│       ├── homerun.zip
+│       ├── ifslots.zip
+│       ├── invaders.zip
+│       ├── invinco.zip
+│       ├── ipminvad.zip
+│       ├── journey.zip
+│       ├── kst25.zip
+│       ├── ktmnt2.zip
+│       ├── ktopgun2.zip
+│       ├── lrescue.zip
+│       ├── lupin3.zip
+│       ├── m4.zip
+│       ├── mmagic.zip
+│       ├── moepro88.zip
+│       ├── moepro90.zip
+│       ├── moepro.zip
+│       ├── monsterb.zip
+│       ├── mpsaikyo.zip
+│       ├── mptennis.zip
+│       ├── natodef.zip
+│       ├── nsub.zip
+│       ├── ozmawars.zip
+│       ├── panic.zip
+│       ├── phantom2.zip
+│       ├── ptrmj.zip
+│       ├── pulsar.zip
+│       ├── qbert.zip
+│       ├── rallyx.zip
+│       ├── redclash.zip
+│       ├── relay.zip
+│       ├── ripcord.zip
+│       ├── robotbwl.zip
+│       ├── safarir.zip
+│       ├── sasuke.zip
+│       ├── seawolf.zip
+│       ├── sharkatt.zip
+│       ├── smoepro.zip
+│       ├── spacefb.zip
+│       ├── spaceod.zip
+│       ├── subroc3d.zip
+│       ├── targ.zip
+│       ├── tattack.zip
+│       ├── terao.zip
+│       ├── thehand.zip
+│       ├── thief.zip
+│       ├── triplhnt.zip
+│       ├── turbo.zip
+│       ├── twotiger.zip
+│       ├── vanguard.zip
+│       ├── zaxxon.zip
+│       └── zerohour.zip
 ├── mame2003-plus
 │   ├── artwork
-│   └── hiscore.dat
+│   ├── hiscore.dat
+│   └── samples
+│       ├── 005.zip
+│       ├── 3bagfull.zip
+│       ├── astrof.zip
+│       ├── battles.zip
+│       ├── bbc.zip
+│       ├── blockade.zip
+│       ├── bowl3d.zip
+│       ├── buckrog.zip
+│       ├── carnival.zip
+│       ├── circus.zip
+│       ├── clowns.zip
+│       ├── congo.zip
+│       ├── cosmica.zip
+│       ├── cosmicg.zip
+│       ├── crash.zip
+│       ├── dai3wksi.zip
+│       ├── depthch.zip
+│       ├── equites.zip
+│       ├── fantasy.zip
+│       ├── fruitsamples.zip
+│       ├── ftaerobi.zip
+│       ├── gaplus.zip
+│       ├── genpin.zip
+│       ├── gmissile.zip
+│       ├── gridlee.zip
+│       ├── homerun.zip
+│       ├── ifslots.zip
+│       ├── invaders.zip
+│       ├── invinco.zip
+│       ├── ipminvad.zip
+│       ├── journey.zip
+│       ├── kst25.zip
+│       ├── ktmnt2.zip
+│       ├── ktopgun2.zip
+│       ├── lrescue.zip
+│       ├── lupin3.zip
+│       ├── m4.zip
+│       ├── mmagic.zip
+│       ├── moepro88.zip
+│       ├── moepro90.zip
+│       ├── moepro.zip
+│       ├── monsterb.zip
+│       ├── mpsaikyo.zip
+│       ├── mptennis.zip
+│       ├── natodef.zip
+│       ├── nsub.zip
+│       ├── ozmawars.zip
+│       ├── panic.zip
+│       ├── phantom2.zip
+│       ├── ptrmj.zip
+│       ├── pulsar.zip
+│       ├── qbert.zip
+│       ├── rallyx.zip
+│       ├── redclash.zip
+│       ├── relay.zip
+│       ├── ripcord.zip
+│       ├── robotbwl.zip
+│       ├── safarir.zip
+│       ├── sasuke.zip
+│       ├── seawolf.zip
+│       ├── sharkatt.zip
+│       ├── smoepro.zip
+│       ├── spacefb.zip
+│       ├── spaceod.zip
+│       ├── subroc3d.zip
+│       ├── targ.zip
+│       ├── tattack.zip
+│       ├── terao.zip
+│       ├── thehand.zip
+│       ├── thief.zip
+│       ├── triplhnt.zip
+│       ├── turbo.zip
+│       ├── twotiger.zip
+│       ├── vanguard.zip
+│       ├── zaxxon.zip
+│       └── zerohour.zip
 ├── melonDS DS
 │   ├── bios7.bin
 │   ├── bios9.bin
