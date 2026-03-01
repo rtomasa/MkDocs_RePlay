@@ -1,4 +1,4 @@
-# Logging Information
+# Debug Information
 
 You can use logs to view key events during RePlay execution and troubleshoot issues with any system core or a specific game.
 
