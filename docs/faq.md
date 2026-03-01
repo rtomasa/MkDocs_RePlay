@@ -73,7 +73,7 @@ Developers of cores don’t have to worry about writing different video drivers 
 **RePlayOS** uses a custom libretro frontend specifically tailored to Raspberry devices. It is programmed in C and uses the following libraries:
 
 - DRM, EGL, and OpenGL ES 3.X for video
-- SDL2 for audio and input devices
+- SDL3 for audio and input devices
 
 ## Can I use CRT shaders on my LCD?
 

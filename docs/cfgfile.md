@@ -5,7 +5,7 @@ The following is a description of all available options and default values that 
 **Important:**
 - Changes to `addon_*` and GPIO settings must be made from the UI to take effect.
 - Stop the frontend before editing this configuration file.
-- For instructions on stopping the frontend, see [Logging Information](loginfo.md), or plug in the SD card in your PC.
+- For instructions on stopping the frontend, see [Debug Information](loginfo.md), or plug in the SD card in your PC.
 
 The configuration file is located in `/media/sd/config/replay.cfg`:
 

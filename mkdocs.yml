@@ -108,7 +108,7 @@ nav:
   - Wiki (advanced):
     - EEPROM Update: eeprom.md
     - Wi-Fi Configuration: wifi.md
-    - Logging Information: loginfo.md
+    - Debug Information: loginfo.md
     - New Controllers Support: mappings.md
     - RePlay Custom Drivers & DIY: drivers.md
     - RePlay Options File: cfgfile.md 
