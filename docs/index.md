@@ -31,7 +31,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Support for audio normalization.
 - Support for external USB/GPIO audio DACs.
 - Adaptative frontend UI integer scaling, based on system resolution.
-- Support for frontend UI rotation independently of the running system/game (90, 180 and 270 degrees).
+- Support for multiple screen rotation modes for both UI and system/games.
 - Support for six players.
 - Support for Favorites and Recent played game list.
 - Support for Coin-op timer game mode.

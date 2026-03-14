@@ -1,5 +1,43 @@
 # Changelog
 
+# v1.5.0 (Public Release)
+- [X] Created new replay_bios_v6.zip pack:
+    - Added support for Amiga IPF roms
+- [X] Migrated from SDL2 to SDL3
+    - [X] Improved audio latency
+    - [X] Added audio output support for primary HDMI, secondary HDMI or both HDMI ports
+    - [X] Added multimouse support
+- [X] Added some performance optimizations:
+    - Improved input reading performance by removing multiple heap buffer requests per frame
+    - Improved video performance by caching render-state inputs to the shaders
+    - Added ARM64 NEON optimizations to the audio resampler
+    - Added UI dirty draw to avoid unnecesary proccessing when UI pixel data does not change
+    - Added 0RGB1555 color conversion optimization
+    - Removed old UI color conversion workarounds and built an stable conversion path
+- [X] Added captures functionality to games, favs and recents
+- [X] Added m3u support for Sega CD 32X inside the Sega 32X system
+- [X] Added new `UI ROTATION` `AUTO` mode that automatically rotate the UI and Arcade games
+- [X] Added two extra save states slots that were missing in the UI
+- [X] Added ambiscan option to `SYSTEM SETTINGS` to allow enable/disable it per core/game
+- [X] Updated script launcher and xbox_drv_installer
+- [X] Changed the following UI button mapping layout:
+    - North button = add favorite
+    - West button = show image (when available)
+    - Select button = delete favorite/recent
+- [X] Changed `HIDE EMPTY FOLDERS` option from `SYSTEM` to `VISIBILITY` section
+- [X] Changed default Amiga CPU compatibility to `CYCLE-EXACT`
+- [X] Changed `CRT HORIZONTAL SIZE` values to fractional and capped to safer values
+- [X] Changed `ADDONS`:
+    - Changed options to single mutually-exclusive option mode
+    - Manually setting this option in replay.cfg will be applied on next boot but will require a manual reboot to take effect
+- [X] Fixed LGun coordinates caused by changes introduced in the mouse events in recent versions of SDL2/3
+- [X] Fixed search by letter functionality
+- [X] Fixed unmute when changing volume
+- [X] Fixed screen rotation issues for both UI and games
+- [X] Fixed system menu crash by adding safer history and title handling
+- [X] Fixed KBD non-real mode not honoring the selected menu button
+- [X] Removed `USE SELECT FOR FAV` option due to the changes in the UI button mapping layout
+
 # v1.4.0 (Public Release)
 - [X] Linux base OS upgraded to Debian Trixie
 - [X] Improved DynaRes hotplug engine:
@@ -49,6 +87,7 @@
 - [X] Fixed screenshots now saved in their corresponding folders
 - [X] Fixed dual screen mode in CRT
 - [X] Fixed audio regression issue causing buffer underrun
+- [X] Fixed images not updated while navigating and holding `Y` button
 - [X] Fixed images not displayed when games are in subfolders
 - [X] Fixed volume control when audio normalization is enabled
 - [X] Fixed mute status not honored when loading games
@@ -58,6 +97,7 @@
 - [X] Added support for mapping axis directions (+)/(-) to independent digital buttons (old mappings could stop working)
 - [X] Added support for WUXGA 1920x1200 (Pi4+)
 - [X] Added support for volume control via Keyboard (Keypad +/-, Volume Keys, and `M` for mute)
+- [X] Added ability to display images when presing `Y` if a matching `rom_name.png` exists inside the captures folder
 - [X] Added `CAPS LOCK` key binding for enabling/disabling keyboard real mode
 - [X] Added configurable timezone server via `replay.cfg`
 - [X] Added configurable nfs version via `replay.cfg`
