@@ -1,0 +1,14 @@
+{
+  "product": "RePlayOS",
+  "version": "1.6.0",
+  "build": "20260323",
+  "platforms": [
+    "rpi3",
+    "rpi4",
+    "rpi5"
+  ],
+  "requires_reboot": true,
+  "size": 3500,
+  "sha256": "bf646433043efe5c8c386b66b6bdd8083bb32876152b9befa12d2983d6ea3022",
+  "url": "https://www.replayos.com/upd/update-1.6.0-20260323.tar.xz"
+}
