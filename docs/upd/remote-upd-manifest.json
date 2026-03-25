@@ -8,7 +8,7 @@
     "rpi5"
   ],
   "requires_reboot": true,
-  "size": 3500,
-  "sha256": "bf646433043efe5c8c386b66b6bdd8083bb32876152b9befa12d2983d6ea3022",
-  "url": "https://www.replayos.com/upd/update-1.6.0-20260323.tar.xz"
+  "size": 3696,
+  "sha256": "b1beee71896358613bfc91ccc244dc6a4aecaabd9e645881758f272dfd482c95",
+  "url": "update-1.6.0-20260323.tar.xz"
 }
