@@ -21,9 +21,7 @@ Numerous features are exclusively achievable by using a custom libretro-based fr
 It's crucial to note that RePlay is compatible with both LCD and CRT monitors, and it will support future RGB-Pi projects.
 
 ## What about input lag?
-By default, the system operates in an ultra-low-latency mode, achieving a remarkable 0 to 1 frame of input lag.
-
-Want even tighter response? An optional low-latency mode is available. It avoids heavy techniques like runahead providing full compatibility across all emulated systems. This approach may demand more CPU power, so try it with your favorite games to find the best balance.
+By default, the system operates in an ultra-low-latency mode, achieving a remarkable 0 frames of input lag without techniques like runahead, providing full compatibility across all emulated systems.
 
 Also, please note that some system cores provide their own custom runahead functionality. When combined with this feature, input lag could be significantly less than that experienced on the real hardware.
 

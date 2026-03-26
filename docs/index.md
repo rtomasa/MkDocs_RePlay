@@ -23,8 +23,9 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Support for both GL and Non-GL libretro based cores.
 - Support for both LCD and CRT screens via [DynaRes 2.0](index.md#dynares-20) engine.
 - Support for single or dual screen configurations in both LCD and CRT modes.
-- Low latency engine with option for zero input lag (does not use runahead).
+- Low latency video engine (comparable to real hardware not using runahead).
 - Low latency audio resampler engine (32ms average).
+- Low latency input engine (can check all button status in one single read per frame).
 - Support for easy virtual disk engine.
 - Out of the box automatic core configuration based on Pi model, emulated system, and monitor type.
 - Out of the box support for more than 700 game controllers.

@@ -26,6 +26,9 @@ video_connector             = "0"
 ## 7 = lcd 1024x768@60
 ## 8 = lcd 2560x1440@60
 ## 9 = lcd 3840x2160@60
+## 11 = lcd 1920x1200@60
+## 12 = lcd 640x480@60
+## 13 = lcd 800x600@60
 video_mode                  = "0"
 # video_monitor_multi_mode
 ## 0 = disabled
@@ -55,17 +58,13 @@ video_crt_csync_mode        = "0"
 ## 1 = full (0:255)
 ## 2 = limited (16:235)
 video_crt_rgb_range         = "0"
-# video_aspect_ratio
-## 0 = full screen 4:3
-## 1 = full screen native
-## 2 = vertical integer scaling, horizontal 4:3
-## 3 = vertical integer scaling, horizontal native
-## 4 = horizontal integer scaling, vertical 4:3
-## 5 = horizontal integer scaling, vertical native
-## 6 = full integer scaling
-## 7 = full integer over scaling (only FHD TVs)
-## 8 = full integer under scaling
-video_aspect_ratio          = "0"
+# video_integer_scale
+## 0 = disabled
+## 1 = vertical integer scaling
+## 2 = horizontal integer scaling
+## 3 = full integer scaling
+## 4 = full integer over scaling (only FHD TVs)
+video_integer_scale         = "0"
 # video_crt_h_shift
 ## values = -16<-->16
 video_crt_h_shift           = "0"
@@ -87,10 +86,12 @@ video_green_scale           = "1.0"
 ## values = 0.0<-->1.0
 video_blue_scale            = "1.0"
 # video_ui_rotation_mode
-## 0 = 0
+## 0 = 0 (disabled)
 ## 1 = 90
 ## 2 = 180
 ## 3 = 270
+## 4 = auto 90
+## 5 = auto 270
 video_ui_rotation_mode      = "0"
 video_show_fps              = "false"
 video_show_info             = "false"
@@ -125,6 +126,7 @@ audio_normalization         = "false"
 # audio_system_volume
 ## values = 0<-->10
 audio_system_volume         = "10"
+input_rumble                = "true"
 # input_gcon2_flash
 ## 0 = disabled
 ## 1 = pulse
@@ -138,7 +140,6 @@ input_all_control_ui        = "false"
 ## 1 = select+start
 ## 2 = hold start
 input_ui_menu_btn           = "1"
-input_ui_select_fav         = "false"
 # input_kbd_real_mode
 ## true = keyboard works in native scancode mode
 ## false = keyboard works in special cmd event mode
@@ -154,21 +155,17 @@ system_coinop               = "false"
 # system_coinop_time
 ## game time you get for a credit
 system_coinop_time          = "180"
-# system_verbose
+# system_log_level
 ## 0 = debug (not available for users)
 ## 1 = info
 ## 2 = warn
 ## 3 = error
 ## 4 = disabled
-system_verbose              = "4"
+system_log_level            = "4"
 # timezone_srv
 ## timezone detection server URL
 timezone_srv                = "https://time.now/developer/api/ip"
 system_kiosk_mode           = "false"
-# system_low_latency_mode
-## true = -1/0 frames input lag
-## false = 0/1 frames input lag
-system_low_latency_mode     = "false"
 # system_reboot_poweroff_delay
 ## 0 = disabled
 ## 3 = 3 seconds
@@ -255,16 +252,13 @@ wifi_country                = "ES"
 ## transition (for mixed wpa2 & wpa3)
 wifi_mode                   = "transition"
 wifi_hidden                 = "false"
-# addon_retroflag_case_pi5
-## 0 = disabled
-## 1 = reset button for reboot
-## 2 = reset button for menu
-addon_retroflag_case_pi5    = "0"
-# addon_tilt_input_pi5
-## 0 = disabled
-## 1 = +90
-## 3 = +270
-addon_tilt_input_pi5        = "0"
-addon_gpio_joy_pi5          = "0"
-addon_dpi_dac_pi5           = "0"
+# system_pi5_addon
+## none = disabled
+## retroflag_reboot = reset button for reboot
+## retroflag_menu = reset button for menu
+## tilt_90 = hardware tilt 0/+90
+## tilt_270 = hardware tilt 0/+270
+## gpio_joy = GPIO joystick profile
+## dpi_dac = DPI video DAC profile
+system_pi5_addon            = "none"
 ```

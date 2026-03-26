@@ -116,27 +116,19 @@ Adjusts the image’s horizontal size (width) by changing the active video time 
 
 You can fully customize various screen parameters, such as gamma, RGB color channel intensity (to adjust CRTs with degraded channels), and screen position on both LCD and CRT displays.
 
-## Aspect Ratio
+## Integer Scale
 
-This allows you to choose different display modes when playing on LCD screens (CRT always uses a native aspect ratio) from `REPLAY OPTIONS > VIDEO > ASPECT RATIO`:
+This allows you to choose different display modes when playing on LCD screens (CRT always uses a native resolution and aspect ratio) from `REPLAY OPTIONS > VIDEO > INTEGER SCALE`:
 
-* `FULL SCRN 4:3`: Displays the game image at full screen in 4:3, like a CRT TV.
-* `FULL SCRN NATIVE`: Scales fullscreen using the internal system native aspect ratio (e.g., NES/SNES 8:7).
-* `INT-V 4:3-H`: Scales the vertical resolution using an integer factor while maintaining a 4:3 aspect ratio for the horizontal resolution.
-* `INT-V NATIVE-H`: Scales the vertical resolution using an integer factor while scaling the horizontal resolution to match the game's native aspect ratio.
-* `INT-H 4:3-V`: Scales the horizontal resolution using an integer factor while maintaining a 4:3 aspect ratio for the vertical resolution.
-* `INT-H NATIVE-V`: Scales the horizontal resolution using an integer factor while scaling the vertical resolution to match the game's native aspect ratio.
-* `INT-HV`: Performs an integer scale to the maximum area allowed by the screen resolution.
-* `INT-HV OVER`: Uses an integer overscaling mode to extend the image over 1080p, nearly displaying the original overscan of a CRT. This works only with 1080p video modes.
-* `INT-HV UNDER`: A special mode for performing integer underscale for internal use.
+* `DISABLED`: Displays the game image using the core provided aspect ratio (aspect is controlled by core option).
+* `VERTICAL`: Scales the vertical resolution using an integer factor while maintaining the horizontal core provided aspect ratio.
+* `HORIZONTAL`: Scales the horizontal resolution using an integer factor while maintaining the vertical core provided aspect ratio.
+* `FULL`: Performs an integer scale to the maximum area allowed by the screen resolution.
+* `FULL OVERSCAN`: Uses an integer overscaling mode to extend the image over 1080p, nearly displaying the original overscan of a CRT. This works only with 1080p video modes.
 
-| **FULL SCRN 4:3** | **INT-HV** |
+| **DISABLED** | **FULL** |
 |:----------------------------------:|:------------------:|
 | ![4_3](img/4_3.png){width="360"} | ![INT_HV](img/pixel_perfect.png){width="360"} |
-| **FULL SCRN NATIVE** | **INT-HV OVER** |
-| ![FULL_SCRN_NATIVE](img/system_native.png){width="360"} | ![INT_HV_OVER](img/overscaled.png){width="360"} |
-| **INT-HV UNDER** | |
-| ![INT_HV_UNDER](img/underscaled.png){width="360"} ||
 
 ## AmbiScan
 

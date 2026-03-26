@@ -1,5 +1,32 @@
 # Changelog
 
+# v1.6.0 (Public Release)
+- [X] Added new OTA service to enable rolling release model
+- [X] Added video latency improvements:
+    - Improved libretro frame pacing by sending frame-time callbacks before every retro_run()
+    - Added GET_THROTTLE_STATE reporting (paused, vsync, unblocked) for better core timing behavior
+    - Unified all frontend frame execution through the same timing path and clamped resume-after-pause timing spikes
+    - Reordered EGL/DRM buffer swaps and tighten page-flip error handling
+    - Implemented GET_CURRENT_SOFTWARE_FRAMEBUFFER for software-rendered libretro cores, enabling compatible cores like PSX to render
+    directly into frontend-managed buffers
+    - Implemented explicit GPU-to-display sync using atomic KMS fences
+- [X] Added new option to disable rumble
+- [X] Changed aspect ratio and rotation behaviour:
+    - Replaced `ASPECT RATIO` option by `INTEGER SCALE` option with simplified options
+    - Aspect ratio is now controlled by the native core provided aspect option (when available)
+    - Removed all hardcoded game rotation configurations so CRT & `DUAL SMART` screen modes do not control games or UI rotations
+    - Added two new `UI ROTATION` modes that rotates the UI automatically 90 or 270 degrees when detecting a vertical (TATE) game
+- [X] Changed SRAM and savestate file naming by removing the system extension. **IMPORTANT:** You must manually rename your existing saves for them to work (e.g., `Aladdin.sms.srm` → `Aladdin.srm`, `Aladdin.sms.sst1` → `Aladdin.sst1`).
+- [X] Fixed audio in Pi3 model
+- [X] Fixed black-screen rendering issue in the frontend OpenGL ES path
+- [X] Fixed pixel color format in screen captures
+- [X] Fixed arcade title lookups leaking into non-arcade same-named ROMs in favorites and recents
+- [X] Fixed `FULL OVERSCAN` mode validations
+- [X] Removed `LOW LATENCY MODE` option (not needed anymore)
+- [X] Removed ALSA debug information
+- [X] Removed duplicated audio option due to compatibility and audio latency issues
+- [X] Removed rumble effect on system boot potentially causing issues on controller initialization 
+
 # v1.5.0 (Public Release)
 - [X] Created new replay_bios_v6.zip pack:
     - Added support for Amiga IPF roms
