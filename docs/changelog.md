@@ -1,5 +1,9 @@
 # Changelog
 
+# v1.6.1
+- [X] Fixed OSD notification engine incorrectly logging debug information
+- [X] Fixed invalid texture sizing in `SET_GEOMETRY`
+
 # v1.6.0 (Public Release)
 - [X] Added new OTA service to enable rolling release model
 - [X] Added video latency improvements:
