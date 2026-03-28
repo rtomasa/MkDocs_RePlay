@@ -1,5 +1,8 @@
 # Changelog
 
+# v1.6.2
+- [X] Removed debug check in core load function preventing cores from loading after update via OTA
+
 # v1.6.1
 - [X] Fixed OSD notification engine incorrectly logging debug information
 - [X] Fixed invalid texture sizing in `SET_GEOMETRY`
