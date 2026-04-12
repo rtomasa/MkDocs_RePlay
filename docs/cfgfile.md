@@ -123,6 +123,12 @@ video_hdmi_cec              = "false"
 audio_card                  = "0"
 audio_mono                  = "false"
 audio_normalization         = "false"
+rcheevos_enabled   = "false"
+rcheevos_hardcore  = "false"
+rcheevos_encore    = "false"
+rcheevos_spectator = "false"
+rcheevos_username  = ""
+rcheevos_password  = ""
 # audio_system_volume
 ## values = 0<-->10
 audio_system_volume         = "10"

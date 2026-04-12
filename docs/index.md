@@ -31,6 +31,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Out of the box support for more than 700 game controllers.
 - Support for audio normalization.
 - Support for external USB/GPIO audio DACs.
+- Support for [RetroAchievements](rcheevos.md) in compatible libretro cores and games.
 - Adaptative frontend UI integer scaling, based on system resolution.
 - Support for multiple screen rotation modes for both UI and system/games.
 - Support for six players.
