@@ -1,6 +1,6 @@
 # RetroAchievements
 
-RePlay includes RetroAchievements support for compatible libretro cores and games. When enabled, RePlay can identify supported games, log in to your RetroAchievements account, unlock achievements, process Hardcore mode, submit leaderboard scores, and keep routine communication with the RetroAchievements servers while you play.
+RePlay includes RetroAchievements support for compatible libretro cores and games. When enabled, RePlay can identify supported games, log in to your RetroAchievements account, unlock achievements, process Hardcore mode, submit leaderboard scores, browse achievements and leaderboards in the in-game UI, and keep routine communication with the RetroAchievements servers while you play.
 
 ## Requirements
 
@@ -63,13 +63,42 @@ RePlay currently supports:
 - Spectator mode.
 - Achievement unlock notifications.
 - Game mastered and subset completed notifications.
+- Dedicated achievements browsing in the in-game UI.
+- Dedicated leaderboards browsing in the in-game UI.
 - Leaderboard score submission in Hardcore mode.
 - Leaderboard result notifications showing score and rank.
+- Leaderboard browsing with separate list and detail views.
+- Current leaderboard tracker display in the leaderboard detail view.
 - RetroAchievements server error, offline, and reconnect notifications.
 - Multi-disc or multi-media validation when the core exposes the new media path.
 - Save-state progress pairing for Softcore play.
 
 Unofficial achievements are currently disabled.
+
+## Achievements And Leaderboards UI
+
+When a supported game is running, the game menu includes separate `ACHIEVEMENTS` and `LEADERBOARDS` entries. These are separate views. The leaderboard browser is not combined with the achievements browser.
+
+### Achievements View
+
+The achievements browser shows a dedicated achievements list and detail view for the current game.
+
+- The main view shows the unlocked count, total points, Hardcore status, and the achievement list.
+- The achievements list is built locally when the view opens, so moving through it is typically very fast.
+
+### Leaderboards View
+
+The leaderboards browser is a dedicated UI for the running game's RetroAchievements leaderboards.
+
+- The main view shows the leaderboard list for the current game.
+- The main view header also shows `YOUR POSITION` and `YOUR SCORE` for the currently selected leaderboard when available.
+- The detail view shows the leaderboard state, score order, live tracker value, your position, your score, the leaderboard description, and the top scores list.
+- The detail score list is currently limited to the top 100 ranks for the selected leaderboard.
+- The detail score list is paged at 7 scores per page.
+- `UP` and `DOWN` change the selected leaderboard.
+- In detail view, `LEFT` and `RIGHT` page through the selected leaderboard's scores.
+
+Because `YOUR POSITION`, `YOUR SCORE`, and the paged score list require RetroAchievements server data, moving between leaderboards or score pages can briefly pause while the request completes.
 
 ## On-Screen Messages
 
@@ -184,7 +213,11 @@ In the current RePlay implementation:
 - Leaderboard scores submit only in Hardcore mode.
 - Spectator mode does not submit leaderboard scores.
 - RePlay displays the submitted score and rank after the server returns the leaderboard result.
-- Live leaderboard tracker widgets and leaderboard browsing are not currently shown in the UI.
+- RePlay provides a dedicated `LEADERBOARDS` browser in the running game's menu.
+- The leaderboard browser has a list view and a separate detail view.
+- The detail view shows the live tracker value when the leaderboard is actively tracking.
+- The detail browser is currently capped to the top 100 ranks, shown 7 scores per page.
+- Some leaderboard browser fields are fetched online on demand, so changing leaderboards or score pages can briefly pause.
 
 ## Multi-Disc And Multi-Media Games
 
@@ -198,11 +231,15 @@ Unlocks, pings, and leaderboard submissions are sent through RePlay's RetroAchie
 
 If RePlay cannot initialize its network support, RetroAchievements network calls are disabled for that run.
 
+The achievements browser mainly uses data that is already loaded into the RetroAchievements client for the current game. The leaderboard browser also needs on-demand server requests for user rank, user score, and paged score entries, so it can feel less immediate when changing selection.
+
 ## Current Limitations
 
-- RetroAchievements requires internet access for login, game loading, unlock submission, and leaderboard submission.
+- RetroAchievements requires internet access for login, game loading, unlock submission, leaderboard submission, and some leaderboard browsing data.
 - Only official achievements are enabled.
-- Leaderboard browsing is not currently implemented.
-- Live leaderboard tracker overlays are not currently implemented.
+- Leaderboard browsing is limited to the first 100 ranks of each leaderboard.
+- Leaderboard detail pages currently show 7 scores at a time.
+- Some leaderboard browser header fields are fetched online on selection changes, so short pauses are expected there.
+- Leaderboard tracker information is shown in the detail view, not as a gameplay overlay.
 - Rich Presence is processed by RetroAchievements when present, but RePlay does not currently show a dedicated Rich Presence panel.
 - Media-change validation depends on the libretro core exposing the changed media path.
