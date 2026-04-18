@@ -1,5 +1,8 @@
 # Changelog
 
+# v1.6.5
+This is only a version number upgrade to solve OTA server cache issue
+
 # v1.6.4
 - [X] Added crop options in Amiga core
 - [X] Fixed RePlay boot core resolution in CRT mode
