@@ -1,7 +1,8 @@
 # Changelog
 
+# v1.6.6
 # v1.6.5
-This is only a version number upgrade to solve OTA server cache issue
+These are only version number upgrades to solve OTA date check issue
 
 # v1.6.4
 - [X] Added crop options in Amiga core
