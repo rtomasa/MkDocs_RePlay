@@ -1,5 +1,42 @@
 # Changelog
 
+# v1.6.3
+- [X] Created new replay_bios_v7.zip pack:
+    - Added support for ZX Spectrum Pentagon & Scorpion
+- [X] Updated Alpha Player:
+    - Added new video `ZOOM MODE` and `ZOOM` options
+        - Zoom Mode: `Uniform`, `Fill 16:9`, `Fill 4:3`, `Fill 21:9`, `Fill 8:3`, `Fill 3:2`, `Fill 1:1`
+        - In `Uniform` mode, it preserves the video’s aspect and just scales/crops uniformly
+    - Added new `AUTO RESUME` option (when supported)
+    - Added new `FRAME BLENDING` with configurable strength: Off, Low, Medium, High, Full
+    - Added new `PREFERRED LANGUAGE` option to select the prefferred audio track
+    - Added check for videos with no alternate audio tracks
+    - Added fallback to display the file name when no metadata exists
+    - Added `DISABLED SUBTITLES` virtual track cycling state
+    - Added support for embedded VobSub/DVD subtitles
+    - Improved support for SSA subtitles
+    - Changed Alpha Player’s timing base from hardcoded 60.0 to the frontend target refresh when available
+    - Fixed controller port initialization so input works correctly on direct boot
+    - Removed video thread decoder cores option
+    - Removed subtitle enable/disable core option
+    - Removed subtitle size option (breaks subs compatibility)
+    - Removed subtitle font option and now honoring font metadata (fallback to `sans-serif`)
+- [X] Added touch screen support
+- [X] Added touch simulation using mouse devices
+- [X] Added M3U `DISK_FILE|DISK_LABEL` parsing support
+- [X] Added new `RETRO_ENVIRONMENT_GET_DISPLAY_INFO` libretro API interface
+- [X] Improved LCD Auto and LCD NRR video mode selection
+- [X] Disabled Ambiscan by default in alpha player
+- [X] Changed RPi3 default resolutions (LCD and CRT) for improved compatibility
+- [X] Changed disc/disk/tray references to media/drive for CD-ROM and floppy-based systems
+- [X] Changed Kiosk mode:
+    - Disabled `CONTROLLER MAPPER` execution
+    - Hidden `EXTRAS` menu entry in `SYSTEMS` menu
+    - Hidden `REPLAY OPTIONS` menu entry in `SYSTEMS` menu
+- [X] Fixed Ambiscan in dual monitor modes
+- [X] Fixed a DRM/KMS output selection bug that could cause no video on some HDMI displays and VGA DAC setups
+- [X] Fixed hidden metadata files being treated as valid entries
+
 # v1.6.2
 - [X] Removed debug check in core load function preventing cores from loading after update via OTA
 
