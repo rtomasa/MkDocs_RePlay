@@ -1,5 +1,9 @@
 # Changelog
 
+# v1.6.4
+- [X] Added crop options in Amiga core
+- [X] Fixed RePlay boot core resolution in CRT mode
+
 # v1.6.3
 - [X] Created new replay_bios_v7.zip pack:
     - Added support for ZX Spectrum Pentagon & Scorpion
