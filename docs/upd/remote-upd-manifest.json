@@ -1,6 +1,6 @@
 {
   "product": "RePlayOS",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "build": "20260418",
   "platforms": [
     "rpi3",
@@ -8,7 +8,7 @@
     "rpi5"
   ],
   "requires_reboot": true,
-  "size": 750272,
-  "sha256": "1518a78234407c46b1a9b35b38ed05ca5a2cc34a346f7e09e4134569b7f22e11",
-  "url": "https://github.com/rtomasa/replayos-ota-upd/releases/download/ota/update-1.6.4-20260418.tar.xz"
+  "size": 753584,
+  "sha256": "67f6fb3df3d7bbf0a0a4a8bc5a7415ba20c7a8a03d3785ea22f9343ef1f623a0",
+  "url": "https://github.com/rtomasa/replayos-ota-upd/releases/download/ota/update-1.6.5-20260418.tar.xz"
 }
