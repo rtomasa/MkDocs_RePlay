@@ -12,9 +12,7 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Created new replay_bios_v7.zip pack:
     - Added support for ZX Spectrum Pentagon & Scorpion
 - [X] Updated Alpha Player:
-    - Added new video `ZOOM MODE` and `ZOOM` options
-        - Zoom Mode: `Uniform`, `Fill 16:9`, `Fill 4:3`, `Fill 21:9`, `Fill 8:3`, `Fill 3:2`, `Fill 1:1`
-        - In `Uniform` mode, it preserves the video’s aspect and just scales/crops uniformly
+    - Added new video `ZOOM` option. It preserves the video’s aspect and just scales/crops uniformly
     - Added new `AUTO RESUME` option (when supported)
     - Added new `FRAME BLENDING` with configurable strength: Off, Low, Medium, High, Full
     - Added new `PREFERRED LANGUAGE` option to select the prefferred audio track
