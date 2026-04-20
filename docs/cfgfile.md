@@ -51,7 +51,6 @@ video_crt_type              = "generic_15"
 # video_crt_csync_mode (requires RGB-Pi compatible hardware)
 ## 0 = AND
 ## 1 = XOR
-## 2 = separated H/V
 video_crt_csync_mode        = "0"
 # video_crt_rgb_range
 ## 0 = auto
