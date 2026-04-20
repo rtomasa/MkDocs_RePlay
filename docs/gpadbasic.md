@@ -12,11 +12,13 @@ For advanced controller configurations, please refer to the [New Controllers Sup
 
 ## Default UI Button Mapping
 
-| Key                                     | Description    |
+| Button                                  | Description    |
 | --------------------------------------- | -------------- |
 | <kbd>Up</kbd> <kbd>Down</kbd>           | Used for moving up and down through the menus |
 | <kbd>Left</kbd> <kbd>Right</kbd>        | Used for jumping forward and backward thorugh the menu pages |
 | <kbd>L</kbd> <kbd>R</kbd>               | Used for jumping forward and backward to the next letter thorugh the menu pages |
-| <kbd>B</kbd>                            | Used to navigate to the previous menu or screen |
-| <kbd>A</kbd>                            | Used for starting games, choosing options, and accessing menus |
-| <kbd>X</kbd>                            | Used for adding/removing favorites and removing recents |
+| <kbd>North</kbd>                        | Used for adding favorites |
+| <kbd>South</kbd>                        | Used to navigate to the previous menu or screen |
+| <kbd>East</kbd>                         | Used for starting games, choosing options, and accessing menus |
+| <kbd>West</kbd>                         | Used for displaying game captures (when available) |
+| <kbd>Select</kbd>                       | Used for removing favorites and recents |

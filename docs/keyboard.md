@@ -20,7 +20,7 @@ You can also select several of the below hotkeys for opening/closing the UI menu
 | <kbd>Page Up</kbd> <kbd>Page Down</kbd>    | Used for jumping forward and backward to the next letter thorugh the menu pages |
 | <kbd>Backspace</kbd>                       | Used to navigate to the previous menu or screen |
 | <kbd>Return</kbd>                          | Used for starting games, choosing options, and accessing menus |
-| <kbd>R Shift</kbd> <kbd>L Shift</kbd>      | Functions as the gamepad Select button |
+| <kbd>R Shift</kbd> <kbd>L Shift</kbd>      | Functions as the gamepad Select button (delete favorite/recent) |
 | <kbd>Space</kbd>                           | Functions as the gamepad Start button |
 | <kbd>Tab</kbd>                             | Hotkey for opening MAME native config menu (only works in real mode) |
 | <kbd>H</kbd>                               | Hotkey for system halt (useful for taking real photos) |
