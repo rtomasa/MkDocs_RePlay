@@ -1,5 +1,25 @@
 # Changelog
 
+# v1.6.7
+- [X] Updated Alpha Player:
+    - Added automatic `YADIF` deinterlacing for interlaced video
+    - Added video `DEINTERLACE` option with `Off`, `Auto` and `Always`
+    - Improved audio track switching to preserve video decode state and reduce sync jumps
+    - Fixed loop mode playback stalls and restart timing near the end of media
+    - Fixed seeking stalls and PTS resets after timeline jumps
+- [X] Updated Amiga core PUAE to v5.3.1
+- [X] Added new DynaRes timing calculation mode (experimental)
+- [X] Improved boot menu core performance
+- [X] Improved Raspberry Pi 3 performance by disabling unsupported OpenGL ES 3.X code running in background
+- [X] Improved audio stability on Raspberry Pi 3, reducing background crackles and pops in some games
+- [X] Improved audio/video sync more accurate for games with slightly unusual refresh rates
+- [X] Improved NDS dual screen touch support. Best results:
+    - Use only one touch screen
+    - Connect touch screen to the secondary HDMI port
+    - Desired configuration must be set in `Screen Layout #1` from the NDS core system settings
+- [X] Fixed touch pointer coordinate mapping to work with different viewport scaling and aspect-ratios
+- [X] Fixed core OSD messages being filtered by log level
+
 # v1.6.6
 # v1.6.5
 These are only version number upgrades to solve OTA date check issue
