@@ -2,6 +2,14 @@
 
 RePlay includes RetroAchievements support for compatible libretro cores and games. When enabled, RePlay can identify supported games, log in to your RetroAchievements account, unlock achievements, process Hardcore mode, submit leaderboard scores, browse achievements and leaderboards in the in-game UI, and keep routine communication with the RetroAchievements servers while you play.
 
+## Abbreviations
+
+- `RA`: RetroAchievements
+- `CHAL`: Challenge
+- `PROG`: Progress
+- `LB`: Leaderboard
+- `PTS`: Points
+
 ## Requirements
 
 - An active internet connection.
@@ -62,6 +70,8 @@ RePlay currently supports:
 - Encore mode.
 - Spectator mode.
 - Achievement unlock notifications.
+- Challenge, measured-progress, and leaderboard runtime notifications.
+- Rotating active indicators for challenges, measured-progress achievements, and leaderboard trackers.
 - Game mastered and subset completed notifications.
 - Dedicated achievements browsing in the in-game UI.
 - Dedicated leaderboards browsing in the in-game UI.
@@ -84,6 +94,12 @@ When a supported game is running, the game menu includes separate `ACHIEVEMENTS`
 The achievements browser shows a dedicated achievements list and detail view for the current game.
 
 - The main view shows the unlocked count, total points, Hardcore status, and the achievement list.
+- The list shows `M` for measured achievements and `T` for trigger achievements.
+- The detail view shows achievement flags, including `MEASURED`, `TRIGGER`, or both.
+- The detail view shows measured progress when available.
+- If only percentage progress is available, the menu shows that percentage instead of reporting `0%`.
+- Measured progress updates refresh while the achievements menu is open.
+- Unlocks refresh the full achievements list so totals, status, and ordering stay current.
 - The achievements list is built locally when the view opens, so moving through it is typically very fast.
 
 ### Leaderboards View
@@ -100,29 +116,42 @@ The leaderboards browser is a dedicated UI for the running game's RetroAchieveme
 
 Because `YOUR POSITION`, `YOUR SCORE`, and the paged score list require RetroAchievements server data, moving between leaderboards or score pages can briefly pause while the request completes.
 
+### Menu Reopen Behavior
+
+The achievements and leaderboards views behave like the other running-game menus when the UI is hidden and reopened.
+
+- Closing the UI while inside achievements or leaderboards resumes gameplay.
+- Reopening the UI returns to the same achievements or leaderboards view.
+- Selection and detail state are preserved for that hide and reopen path.
+- Normal back or cancel navigation still returns to the game options menu and resets the submenu path as before.
+
 ## On-Screen Messages
 
-RePlay displays short messages for the most important RetroAchievements events:
+RePlay displays messages for the most important RetroAchievements events:
 
 | Message | Meaning |
 | --- | --- |
 | `RA x/y \| PTS x/y` | Game summary after loading RetroAchievements data. |
-| Achievement title | An achievement was unlocked. |
+| `RA UNLOCK: <title>` | An achievement was unlocked. |
+| `RA CHAL: <title>` | A challenge achievement became active. |
+| `RA CHAL FAIL: <title>` | A challenge achievement failed or was hidden. |
+| `RA PROG: <title> <progress>` | A measured achievement reported progress. |
 | `GAME MASTERED` | All achievements for the game were earned. |
 | `SUBSET COMPLETED` | All achievements in a subset were earned. |
-| `RA LB <score> #<rank>/<total>` | A leaderboard score was submitted and ranked. |
-| `RA LB BEST <score> #<rank>/<total>` | The submitted score is now your best returned score. |
+| `RA LB START: <title>` | A leaderboard attempt started. |
+| `RA LB FAIL: <title>` | A leaderboard attempt failed. |
+| `RA LB SENT: <title>` | A leaderboard score was submitted. |
+| `RA LB: <score> #<rank>/<total>` | A leaderboard score was submitted and ranked. |
+| `RA LB: BEST <score> #<rank>/<total>` | The submitted score is now your best returned score. |
 | `RA OFFLINE` | A request could not be completed and is pending. |
 | `RA RECONNECTED` | Pending requests were completed. |
 | `RA LOGIN FAILED` | Login failed. Check your account details. |
 | `RA HARDCORE OFF` | Hardcore was disabled for safety or validation reasons. |
 | `RA MEDIA FAILED` | RetroAchievements could not validate changed media. |
 
-Abbreviations:
+RetroAchievements info messages stay visible for at least 6 seconds. Long messages are preserved and scroll as a marquee inside the small in-game info area, so long achievement and leaderboard names can be read instead of being cut off at the visible width.
 
-- `RA`: RetroAchievements
-- `LB`: Leaderboard
-- `PTS`: Points
+When several RetroAchievements items are active during gameplay, the info area rotates between them every 2 seconds. RePlay tracks up to 4 active challenges, 4 active leaderboard trackers, and 4 active measured-progress achievements. Challenge indicators are kept briefly for visibility, then expire after 6 seconds so they do not stay on screen indefinitely.
 
 ## Encore Mode
 
@@ -216,6 +245,7 @@ In the current RePlay implementation:
 - RePlay provides a dedicated `LEADERBOARDS` browser in the running game's menu.
 - The leaderboard browser has a list view and a separate detail view.
 - The detail view shows the live tracker value when the leaderboard is actively tracking.
+- Runtime notifications are shown for leaderboard start, fail, submit, and tracker states.
 - The detail browser is currently capped to the top 100 ranks, shown 7 scores per page.
 - Some leaderboard browser fields are fetched online on demand, so changing leaderboards or score pages can briefly pause.
 
@@ -240,6 +270,6 @@ The achievements browser mainly uses data that is already loaded into the RetroA
 - Leaderboard browsing is limited to the first 100 ranks of each leaderboard.
 - Leaderboard detail pages currently show 7 scores at a time.
 - Some leaderboard browser header fields are fetched online on selection changes, so short pauses are expected there.
-- Leaderboard tracker information is shown in the detail view, not as a gameplay overlay.
+- Gameplay only rotates through the first 4 active challenges, 4 active leaderboard trackers, and 4 active measured-progress achievements.
 - Rich Presence is processed by RetroAchievements when present, but RePlay does not currently show a dedicated Rich Presence panel.
 - Media-change validation depends on the libretro core exposing the changed media path.
