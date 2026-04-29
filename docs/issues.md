@@ -8,6 +8,7 @@
 | HDMI-0 port is faulty and I need to use HDMI-1 as the main output | Add the `nohdmi0` option to the `dtoverlay` line in `/boot/firmware/config.txt` (for example `dtoverlay=vc4-kms-v3d,nohdmi0`) and reboot the system. |
 | My wireless controllers stop working when I connect an external USB 3 device | USB 3 can cause 2.4 GHz interference, which disrupts other wireless devices |
 | Interlaced video shakes heavily when using DPI (GPIO) output | Please refer to [EEPROM Update](eeprom.md) section for instructions |
+| RePlayOS fails to download updates and/or auto detect time zone | Your ISP is blocking the NTP time server. You can update the date manually via SSH using this sample command: `date -s "25 APR 2026 16:40:00"` |
 
 | Load State Errors                            | Description       |
 | -------------------------------------------- | -------------- |
