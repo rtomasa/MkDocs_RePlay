@@ -13,7 +13,7 @@
     - Removed frontend target refresh timing dependency; PAL-like video streams now use 50 Hz and all other content defaults to 60 Hz
 - [X] Updated Atari Jaguar core including RetroAchievements support
 - [X] Updated gamecontrollerdb.txt and replaycontrollerdb.txt
-- [X] Added RetroAchievements support **(hardcode mode is not supported)**
+- [X] Added RetroAchievements support **(hardcore mode is not supported)**
 - [X] Added signed `replay_insider_token` runtime unlock for future testing features
 - [X] Added marquee scrolling for long info popup messages
 - [X] Added wait message when pressing on `APPLY UPDATE`

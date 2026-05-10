@@ -1,12 +1,12 @@
 # RetroAchievements
 
-RePlay includes RetroAchievements support for compatible libretro cores and games. When enabled, RePlay can identify supported games, log in to your RetroAchievements account, unlock achievements, process Hardcore mode, submit leaderboard scores, browse achievements and leaderboards in the in-game UI, and keep routine communication with the RetroAchievements servers while you play.
+RePlay includes RetroAchievements support for compatible libretro cores and games. When enabled, RePlay can identify supported games, log in to your RetroAchievements account, unlock achievements in Softcore, show achievement and leaderboard activity in the in-game overlay, browse achievements and leaderboards from the running-game menu, and keep routine communication with the RetroAchievements servers while you play.
+
+Hardcore mode is not supported in the current public build.
 
 ## Abbreviations
 
 - `RA`: RetroAchievements
-- `CHAL`: Challenge
-- `PROG`: Progress
 - `LB`: Leaderboard
 - `PTS`: Points
 
@@ -24,13 +24,10 @@ RetroAchievements is configured from RePlay's `ONLINE` settings and account fiel
 | Setting | Description |
 | --- | --- |
 | `RETROACHIEVEMENTS` | Enables or disables RetroAchievements support. |
-| `RA USERNAME` | Your RetroAchievements username. |
-| `RA PASSWORD` | Your RetroAchievements password. |
-| `RA HARDCORE` | Enables Hardcore mode when a game is loaded. |
-| `RA ENCORE` | Allows earning achievements again even if they were already unlocked. |
+| `RA ENCORE` | Allows already-earned achievements to trigger again locally. |
 | `RA SPECTATOR` | Loads RetroAchievements data without submitting unlocks or leaderboard scores. |
 
-The RetroAchievements username and password are file-only settings. Add them manually to `replay.cfg` using the `rcheevos_username` and `rcheevos_password` entries:
+The RetroAchievements username and password are file-only settings. Add them manually to `replay.cfg` using these entries:
 
 ```cfg
 rcheevos_username  = "your_username"
@@ -45,7 +42,7 @@ systemctl stop replay.service
 
 If you are editing the SD card from a PC, open the **replay** partition and edit `config\replay.cfg`.
 
-Mode changes should be made before loading a game. If a setting says it requires a restart or reload, restart the game before expecting the change to apply.
+Mode changes should be made before loading a game. `RETROACHIEVEMENTS`, `RA ENCORE`, and `RA SPECTATOR` are applied when a game is loaded, so restart the game after changing them.
 
 ## Website Hi-Score Visibility
 
@@ -65,54 +62,53 @@ RePlay currently supports:
 - Game identification through RetroAchievements.
 - Login using your RetroAchievements username and password.
 - Official achievements.
-- Softcore achievement unlocks when Hardcore is off.
-- Hardcore achievement unlocks when Hardcore is on and allowed.
+- Softcore achievement unlocks.
 - Encore mode.
 - Spectator mode.
 - Achievement unlock notifications.
-- Challenge, measured-progress, and leaderboard runtime notifications.
-- Rotating active indicators for challenges, measured-progress achievements, and leaderboard trackers.
+- Challenge, measured-progress, and leaderboard runtime indicators.
 - Game mastered and subset completed notifications.
+- User avatar, game badge, and achievement badge images in the RetroAchievements overlay when image downloads are available.
 - Dedicated achievements browsing in the in-game UI.
 - Dedicated leaderboards browsing in the in-game UI.
-- Leaderboard score submission in Hardcore mode.
-- Leaderboard result notifications showing score and rank.
-- Leaderboard browsing with separate list and detail views.
-- Current leaderboard tracker display in the leaderboard detail view.
-- RetroAchievements server error, offline, and reconnect notifications.
+- Leaderboard list and detail browsing with online score fetching.
+- Leaderboard result notifications when the RetroAchievements runtime reports a submitted score result.
+- RetroAchievements server error, offline, reconnect, login, and memory-load notifications.
 - Multi-disc or multi-media validation when the core exposes the new media path.
 - Save-state progress pairing for Softcore play.
 
-Unofficial achievements are currently disabled.
+RePlay currently does not support Hardcore mode. Unofficial achievements are disabled.
 
 ## Achievements And Leaderboards UI
 
-When a supported game is running, the game menu includes separate `ACHIEVEMENTS` and `LEADERBOARDS` entries. These are separate views. The leaderboard browser is not combined with the achievements browser.
+When a supported game is running, the game menu includes separate `ACHIEVEMENTS` and `LEADERBOARDS` entries. These are separate views.
 
 ### Achievements View
 
 The achievements browser shows a dedicated achievements list and detail view for the current game.
 
-- The main view shows the unlocked count, total points, Hardcore status, and the achievement list.
-- The list shows `M` for measured achievements and `T` for trigger achievements.
-- The detail view shows achievement flags, including `MEASURED`, `TRIGGER`, or both.
-- The detail view shows measured progress when available.
-- If only percentage progress is available, the menu shows that percentage instead of reporting `0%`.
-- Measured progress updates refresh while the achievements menu is open.
-- Unlocks refresh the full achievements list so totals, status, and ordering stay current.
-- The achievements list is built locally when the view opens, so moving through it is typically very fast.
+- The main view shows the unlocked count, total points, Softcore status, and the achievement list.
+- The list shows status, point value, and short flags for measured and trigger achievements.
+- The bottom info line shows selected achievement status, points, flags, progress, or subset information when available.
+- The detail view shows status, points, achievement type, Softcore status, flags, progress, subset name, and description.
+- Measured progress updates while the achievements menu is open.
+- Unlocks refresh the achievements list so totals, status, and ordering stay current.
+- The selected achievement is preserved when the list refreshes.
+- The achievements list is built from data already loaded by the RetroAchievements client, so moving through it is typically fast.
 
 ### Leaderboards View
 
 The leaderboards browser is a dedicated UI for the running game's RetroAchievements leaderboards.
 
 - The main view shows the leaderboard list for the current game.
-- The main view header also shows `YOUR POSITION` and `YOUR SCORE` for the currently selected leaderboard when available.
-- The detail view shows the leaderboard state, score order, live tracker value, your position, your score, the leaderboard description, and the top scores list.
-- The detail score list is currently limited to the top 100 ranks for the selected leaderboard.
+- The main view header shows `YOUR POSITION` and `YOUR SCORE` for the selected leaderboard when available.
+- The list shows each leaderboard state and title.
+- The bottom info line shows the selected leaderboard state and live tracker value when available.
+- The detail view shows state, score order, live tracker value, your position, your score, the leaderboard description, and the top scores list.
+- The detail score list is limited to the top 100 ranks for the selected leaderboard.
 - The detail score list is paged at 7 scores per page.
 - `UP` and `DOWN` change the selected leaderboard.
-- In detail view, `LEFT` and `RIGHT` page through the selected leaderboard's scores.
+- Page controls move by list page in the main leaderboard view and by score page in the detail view.
 
 Because `YOUR POSITION`, `YOUR SCORE`, and the paged score list require RetroAchievements server data, moving between leaderboards or score pages can briefly pause while the request completes.
 
@@ -123,35 +119,39 @@ The achievements and leaderboards views behave like the other running-game menus
 - Closing the UI while inside achievements or leaderboards resumes gameplay.
 - Reopening the UI returns to the same achievements or leaderboards view.
 - Selection and detail state are preserved for that hide and reopen path.
-- Normal back or cancel navigation still returns to the game options menu and resets the submenu path as before.
+- Normal back or cancel navigation returns to the game options menu and resets the submenu path.
 
-## On-Screen Messages
+## On-Screen Overlay
 
-RePlay displays messages for the most important RetroAchievements events:
+RePlay uses a dedicated RetroAchievements overlay instead of the standard small info message area for RA activity. The overlay can show a login summary, notice queue, active challenge icons, active leaderboard trackers, and badge images when they are available.
 
-| Message | Meaning |
+Common overlay notices include:
+
+| Notice | Meaning |
 | --- | --- |
-| `RA x/y \| PTS x/y` | Game summary after loading RetroAchievements data. |
-| `RA UNLOCK: <title>` | An achievement was unlocked. |
-| `RA CHAL: <title>` | A challenge achievement became active. |
-| `RA CHAL FAIL: <title>` | A challenge achievement failed or was hidden. |
-| `RA PROG: <title> <progress>` | A measured achievement reported progress. |
-| `GAME MASTERED` | All achievements for the game were earned. |
-| `SUBSET COMPLETED` | All achievements in a subset were earned. |
-| `RA LB START: <title>` | A leaderboard attempt started. |
-| `RA LB FAIL: <title>` | A leaderboard attempt failed. |
-| `RA LB SENT: <title>` | A leaderboard score was submitted. |
-| `RA LB: <score> #<rank>/<total>` | A leaderboard score was submitted and ranked. |
-| `RA LB: BEST <score> #<rank>/<total>` | The submitted score is now your best returned score. |
+| `Welcome back <user>` | Login and game summary after loading RetroAchievements data. |
+| `Achievement Unlocked` | An achievement was unlocked. |
+| `Achievement Progress` | A measured achievement reported progress. |
+| `Challenge Failed` | A challenge achievement failed or was hidden before unlocking. |
+| `Game Mastered` | All core achievements for the game were earned. |
+| `Subset Completed` | All achievements in a subset were earned. |
+| `Leaderboard Started` | A leaderboard attempt started. |
+| `Leaderboard Failed` | A leaderboard attempt failed. |
+| `Leaderboard Submitted` | A leaderboard score was submitted. |
+| `Leaderboard Best` | The submitted score is now the best returned score. |
+| `Leaderboard Rank` | A submitted score returned rank information. |
 | `RA OFFLINE` | A request could not be completed and is pending. |
 | `RA RECONNECTED` | Pending requests were completed. |
 | `RA LOGIN FAILED` | Login failed. Check your account details. |
-| `RA HARDCORE OFF` | Hardcore was disabled for safety or validation reasons. |
+| `RA NOT AVAILABLE` | The loaded game was not recognized or has no usable RA data. |
+| `RA MEMORY FAILED` | The core did not expose usable memory for RetroAchievements after the retry window. |
 | `RA MEDIA FAILED` | RetroAchievements could not validate changed media. |
+| `RA LB NOT AVAILABLE` | No leaderboards are available for the current game. |
+| `RA LB LOAD FAILED` | Leaderboard score data could not be loaded. |
 
-RetroAchievements info messages stay visible for at least 6 seconds. Long messages are preserved and scroll as a marquee inside the small in-game info area, so long achievement and leaderboard names can be read instead of being cut off at the visible width.
+Notices stay visible for at least 6 seconds. The overlay tracks up to 4 active challenges, 4 active leaderboard trackers, 4 active measured-progress achievements, and 5 queued notices. When the notice queue is full, older notices can be dropped to keep newer activity visible.
 
-When several RetroAchievements items are active during gameplay, the info area rotates between them every 2 seconds. RePlay tracks up to 4 active challenges, 4 active leaderboard trackers, and 4 active measured-progress achievements. Challenge indicators are kept briefly for visibility, then expire after 6 seconds so they do not stay on screen indefinitely.
+The overlay uses a compact info font and can resize or change its notice layout based on the active screen area so achievement names, leaderboard names, and tracker values remain readable.
 
 ## Encore Mode
 
@@ -187,43 +187,34 @@ In RePlay, Spectator mode is applied when the game is loaded. After changing `RA
 
 | Use case | `RA ENCORE` | `RA SPECTATOR` | Behavior |
 | --- | --- | --- | --- |
-| Normal play | Off | Off | Standard RetroAchievements behavior. New achievements can unlock normally on the server. |
+| Normal Softcore play | Off | Off | Standard Softcore RetroAchievements behavior. New achievements can unlock normally on the server. |
 | Replay already-earned achievements | On | Off | Previously earned achievements can trigger locally again. New achievements can still unlock normally on the server. |
 | Safe test mode | Off | On | Local-only testing. No achievement unlocks or leaderboard entries are submitted. |
 | Repeat local testing of earned achievements | On | On | Best for repeated local testing. Nothing is submitted to the server, and previously earned achievements may trigger again locally depending on the runtime state loaded for the session. |
 
 ## Hardcore Mode
 
-Hardcore mode follows the RetroAchievements restrictions expected by the official runtime.
+Hardcore mode is currently disabled in RePlay's public build.
 
-When Hardcore mode is active:
+- The `RA HARDCORE` option is hidden from the `ONLINE` menu.
+- `rcheevos_hardcore` is ignored if it is manually added to `replay.cfg`.
+- RePlay reports RetroAchievements sessions as Softcore.
+- Loading save states is not blocked by RetroAchievements because Hardcore never becomes active.
+- Hardcore-only leaderboard behavior should not be expected.
 
-- Loading save states is blocked.
-- Saving save states is allowed.
-- Leaderboard scores can be submitted.
-- Pause spam is restricted.
-- Disallowed core options, cheats, or gameplay-altering hacks can disable Hardcore.
+Some Hardcore safety checks remain in the code path for future use, including disallowed core option checks, pause checks, and media-change validation responses. They do not enable Hardcore in the current public build.
 
-If you try to load a save state while Hardcore is active, RePlay shows `DISABLE RA HARDCORE` and does not load the state.
+## Save States And Progress
 
-Saving a state is still allowed. RePlay also saves RetroAchievements runtime progress with the save state. When loading a save state outside Hardcore mode, RePlay restores the matching RetroAchievements progress when available. If matching progress is missing, the RetroAchievements runtime is reset to avoid carrying invalid progress forward.
+RePlay saves RetroAchievements runtime progress with save states during Softcore play. When loading a save state, RePlay restores the matching RetroAchievements progress when available. If matching progress is missing, the RetroAchievements runtime is reset to avoid carrying invalid progress forward.
 
-## Automatic Hardcore Disable
-
-RePlay can automatically disable Hardcore in these cases:
-
-- The loaded game has no RetroAchievements functionality, meaning no achievements, no leaderboards, and no rich presence.
-- A core option is detected that RetroAchievements marks as disallowed for Hardcore.
-- A known cheat or widescreen hack option is enabled.
-- Changed disc or media cannot be recognized by RetroAchievements while Hardcore is active.
-
-When Hardcore is automatically disabled because the loaded game has no RetroAchievements functionality, RePlay restores the configured Hardcore setting when the game is unloaded or before the next game is loaded.
+Because Hardcore is disabled, save-state loading is allowed.
 
 ## Cheats And Core Options
 
 RePlay does not provide a frontend cheat system, rewind, slowdown, frame advance, debugger windows, or recorded input playback.
 
-Some libretro cores expose their own cheat or hack options. RePlay checks the RetroAchievements libretro disallowed setting list and also blocks known cheat or gameplay-altering options, including MAME cheat settings and Reicast widescreen cheat or hack settings. If one of these settings is enabled while Hardcore is requested, Hardcore is disabled and RePlay shows `RA HARDCORE OFF`.
+Some libretro cores expose their own cheat or hack options. RePlay keeps checks for the RetroAchievements libretro disallowed setting list and known cheat or gameplay-altering options, including MAME cheat settings and Reicast widescreen cheat or hack settings. These checks are retained for Hardcore support but do not make Hardcore available in the current public build.
 
 Upscaling and normal video output changes are not treated as cheats by RePlay.
 
@@ -231,45 +222,43 @@ Upscaling and normal video output changes are not treated as cheats by RePlay.
 
 When RePlay's menu actually pauses the running game, RePlay stops calling the RetroAchievements frame processor and calls the RetroAchievements idle processor instead. This keeps the player listed as active and allows pending communication with the server to continue.
 
-In Hardcore mode, RePlay asks RetroAchievements whether pausing is currently allowed. If the pause happens too soon after the previous pause, RePlay refuses the pause and shows `RA PAUSE WAIT` or `RA PAUSE WAIT <seconds>S`.
+Hardcore pause-spam restrictions are not active because Hardcore is disabled.
 
 ## Leaderboards
 
-Leaderboards are processed automatically while gameplay is running. No separate user action is needed to submit a valid score.
+Leaderboards are processed by the RetroAchievements runtime while gameplay is running, and RePlay provides a dedicated `LEADERBOARDS` browser in the running game's menu.
 
 In the current RePlay implementation:
 
-- Leaderboard scores submit only in Hardcore mode.
 - Spectator mode does not submit leaderboard scores.
-- RePlay displays the submitted score and rank after the server returns the leaderboard result.
-- RePlay provides a dedicated `LEADERBOARDS` browser in the running game's menu.
-- The leaderboard browser has a list view and a separate detail view.
-- The detail view shows the live tracker value when the leaderboard is actively tracking.
-- Runtime notifications are shown for leaderboard start, fail, submit, and tracker states.
-- The detail browser is currently capped to the top 100 ranks, shown 7 scores per page.
+- RePlay can display submitted score and rank information when the runtime returns a leaderboard scoreboard event.
+- Runtime notifications are shown for leaderboard start, fail, submit, tracker, and scoreboard states.
+- The detail browser is capped to the top 100 ranks, shown 7 scores per page.
 - Some leaderboard browser fields are fetched online on demand, so changing leaderboards or score pages can briefly pause.
+- Hardcore-only leaderboard submission should not be expected while Hardcore support is disabled.
 
 ## Multi-Disc And Multi-Media Games
 
 For systems that support changing discs or media, RePlay notifies RetroAchievements when media is changed, as long as the core exposes the new media path.
 
-If the new media is recognized, play continues normally. If the media is not recognized while Hardcore is active, Hardcore is disabled. If validation fails for another reason, RePlay shows `RA MEDIA FAILED`.
+If the new media is recognized, play continues normally. If validation fails, RePlay shows `RA MEDIA FAILED`. If RetroAchievements reports that Hardcore was disabled during media validation, RePlay shows `RA HARDCORE OFF`, although Hardcore is not enabled in the current public build.
 
 ## Network Handling
 
-Unlocks, pings, and leaderboard submissions are sent through RePlay's RetroAchievements network path. Temporary connection failures can be retried by the RetroAchievements client. Server errors that cannot be retried are shown to the player.
+Login, game loading, unlocks, pings, badge image downloads, and leaderboard requests use RePlay's RetroAchievements network path. Temporary connection failures can be retried by the RetroAchievements client. Server errors that cannot be retried are shown to the player.
 
-If RePlay cannot initialize its network support, RetroAchievements network calls are disabled for that run.
+If RePlay cannot initialize network support, RetroAchievements network calls are disabled for that run.
 
 The achievements browser mainly uses data that is already loaded into the RetroAchievements client for the current game. The leaderboard browser also needs on-demand server requests for user rank, user score, and paged score entries, so it can feel less immediate when changing selection.
 
 ## Current Limitations
 
-- RetroAchievements requires internet access for login, game loading, unlock submission, leaderboard submission, and some leaderboard browsing data.
+- Hardcore mode is not supported in the current public build.
+- RetroAchievements requires internet access for login, game loading, unlock submission, badge image downloads, leaderboard browsing data, and any leaderboard submission handled by the runtime.
 - Only official achievements are enabled.
 - Leaderboard browsing is limited to the first 100 ranks of each leaderboard.
-- Leaderboard detail pages currently show 7 scores at a time.
+- Leaderboard detail pages show 7 scores at a time.
 - Some leaderboard browser header fields are fetched online on selection changes, so short pauses are expected there.
-- Gameplay only rotates through the first 4 active challenges, 4 active leaderboard trackers, and 4 active measured-progress achievements.
+- Gameplay overlay indicators are limited to 4 active challenges, 4 active leaderboard trackers, 4 active measured-progress achievements, and 5 queued notices.
 - Rich Presence is processed by RetroAchievements when present, but RePlay does not currently show a dedicated Rich Presence panel.
 - Media-change validation depends on the libretro core exposing the changed media path.
