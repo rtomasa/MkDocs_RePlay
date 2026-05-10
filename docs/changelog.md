@@ -1,5 +1,40 @@
 # Changelog
 
+# v1.7.0
+- [X] Updated Alpha Player:
+    - Added perfromance improvements:
+        - Moved RGB conversion to GL shader
+        - Subtitles now render into a separate RGBA overlay texture
+        - Added ARM64 NEON compositing for the CPU subtitle overlay
+    - Fixed EOF playback shutdown stalls that could leave the frontend UI unresponsive
+    - Fixed libretro reset after EOF to restart the current video from the beginning
+    - Fixed DVD/VobSub subtitle packet handling that could hang playback on a black screen
+    - Fixed the startup video stall path
+    - Removed frontend target refresh timing dependency; PAL-like video streams now use 50 Hz and all other content defaults to 60 Hz
+- [X] Updated Atari Jaguar core including RetroAchievements support
+- [X] Updated gamecontrollerdb.txt and replaycontrollerdb.txt
+- [X] Added RetroAchievements support **(hardcode mode is not supported)**
+- [X] Added signed `replay_insider_token` runtime unlock for future testing features
+- [X] Added marquee scrolling for long info popup messages
+- [X] Added wait message when pressing on `APPLY UPDATE`
+- [X] Added OTA update on screen logging info
+- [X] Added `NONE` option in `SYSTEM INPUT` mappings to allow users to unmap buttons
+- [X] Added proper RETRO_HW_CONTEXT_OPENGLES_VERSION handling (not hardcoded anymore)
+- [X] Added automatic raise of controller mapping when no mapping exists
+- [X] Changed info popups to a compact 3x5px font, nearly doubling the visible character count
+- [X] Changed arcade game browser info to show the ROM filename instead of the file type
+- [X] Changed `RECENT GAMES` system entry name to `RECENTS` 
+- [X] Fixed Windows/Super keys not being passed correctly in keyboard real mode
+- [X] Fixed Nintendo DS always displaying OSD layout
+- [X] Fixed VFS update-existing opens incorrectly creating missing files instead of failing as expected
+- [X] Fixed Amiga and Amiga CD32 not properly loading content due to wrong kickstart default configuration
+- [X] Fixed N64 audio buffer underrun
+- [X] Fixed boot menu background in CRT dual screen mode
+- [X] Fixed autoboot crashing for some systems
+- [X] Fixed HDMI hotplug mode detection and EDID retry
+- [X] Fixed some minor UI ellipsis rendering issues
+- [X] Removed some FBNeo unwanted options
+
 # v1.6.7
 - [X] Updated Alpha Player:
     - Added automatic `YADIF` deinterlacing for interlaced video
@@ -8,7 +43,6 @@
     - Fixed loop mode playback stalls and restart timing near the end of media
     - Fixed seeking stalls and PTS resets after timeline jumps
 - [X] Updated Amiga core PUAE to v5.3.1
-- [X] Added new DynaRes timing calculation mode (experimental)
 - [X] Improved boot menu core performance
 - [X] Improved Raspberry Pi 3 performance by disabling unsupported OpenGL ES 3.X code running in background
 - [X] Improved audio stability on Raspberry Pi 3, reducing background crackles and pops in some games
@@ -1120,7 +1154,7 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Fixed Amstrad CPC horizontal resolution (in core)
 - [X] Fixed a crash when core incorrectly reports a NULL configuration value
 - [X] Fixed UI dimmed font icon chars
-- [X] Fixed UI folder elipsis position
+- [X] Fixed UI folder ellipsis position
 - [X] Removed ScummVM core Exit button (not needed)
 
 ## v0.19.0
