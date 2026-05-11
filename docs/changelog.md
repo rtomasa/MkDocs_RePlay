@@ -21,7 +21,6 @@
 - [X] Added `NONE` option in `SYSTEM INPUT` mappings to allow users to unmap buttons
 - [X] Added proper RETRO_HW_CONTEXT_OPENGLES_VERSION handling (not hardcoded anymore)
 - [X] Added automatic raise of controller mapping when no mapping exists
-- [X] Changed info popups to a compact 3x5px font, nearly doubling the visible character count
 - [X] Changed arcade game browser info to show the ROM filename instead of the file type
 - [X] Changed `RECENT GAMES` system entry name to `RECENTS` 
 - [X] Fixed Windows/Super keys not being passed correctly in keyboard real mode
