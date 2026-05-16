@@ -33,3 +33,80 @@ You can also select several of the below hotkeys for opening/closing the UI menu
 | <kbd>Home Page</kbd>                       | Hotkey for opening/closing the UI menu |
 | <kbd>Home</kbd>                            | Hotkey for opening/closing the UI menu |
 | <kbd>Caps Lock</kbd>                       | Hotkey for toggling Keyboard Real mode ON/OFF |
+
+## Key Remapping (example **Right Ctrl → Right Super**)
+
+### Software method with `keyd`
+
+```bash
+apt update
+apt install keyd
+systemctl enable --now keyd
+mkdir -p /etc/keyd
+nano /etc/keyd/default.conf
+```
+
+Config:
+
+```ini
+[ids]
+*
+
+[main]
+rightcontrol = rightmeta
+```
+
+Apply:
+
+```bash
+systemctl restart keyd
+```
+
+### Firmware method on Pi 500 / Pi 500+
+
+```bash
+apt update
+apt install rpi-keyboard-config
+```
+
+Find Right Ctrl position:
+
+```bash
+rpi-keyboard-config info --ascii
+```
+
+List keycodes:
+
+```bash
+rpi-keyboard-config list-keycodes
+```
+
+Look for the right Super/GUI keycode, likely:
+
+```text
+KC_RGUI
+```
+
+Unlock:
+
+```bash
+rpi-keyboard-config unlock
+```
+
+Set Right Ctrl’s row/column to Right GUI. Replace `<row>` and `<column>` with the coordinates shown for **Right Ctrl**:
+
+```bash
+rpi-keyboard-config key set <row> <column> KC_RGUI
+```
+
+Lock:
+
+```bash
+rpi-keyboard-config lock
+```
+
+Reset if needed:
+
+```bash
+rpi-keyboard-config reset-keymap
+```
