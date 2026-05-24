@@ -121,6 +121,7 @@ nav:
     - DOSBox: dosbox.md
     - N64 C-Buttons: n64cbtns.md
     - Emulation Know-How: insights.md
+    - Autostart Games: autostart.md
   - Common Issues: issues.md
   - Help & Support: support.md
   - F.A.Q: faq.md

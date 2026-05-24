@@ -21,7 +21,7 @@ This is the place where screenshots are stored.
 This is where all input and core configurations are saved. The different configurations can be applied to the entire system, specific games, or particular types of TVs, whether LCD or CRT.
 
 ## roms folder
-This is where you can copy your game files. The system folders are prefixed by the company name for better categorization. Additionally, there are special system folders prefixed with an underscore, such as `_autostart`, `_extra`, `_favorites`, and `_recent`.
+This is where you can copy your game files. The system folders are prefixed by the company name for better categorization. Additionally, there are special system folders prefixed with an underscore, such as [`_autostart`](autostart.md), `_extra`, `_favorites`, and `_recent`.
 
 ## saves folder
 This folder contains all user save states and native system saves. Other special system preference files could be also saved here.

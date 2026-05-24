@@ -41,7 +41,7 @@ Have more questions? Please check the [F.A.Q](./faq.md) section for further info
 - Support for a system halt state (using H key) to facilitate people taking photos of CRT screens.
 - Support for user X/Y screen position adjustment, gamma and RGB color correction in both LCD and CRT modes.
 - Support for Kiosk mode.
-- Support for autostart games on system boot for real arcade cabinet experience.
+- Support for [autostart games](autostart.md) on system boot for real arcade cabinet experience.
 - Support for real GunCon2 lightgun in CRT TVs via custom driver and frontend special functionalities.
 - Support for RPi5 RetroFlag cases
 - Ability to filter out arcade games by number of players, number of screens, number of buttons, and screen orientation.
