@@ -63,6 +63,7 @@ video_crt_rgb_range         = "0"
 ## 2 = horizontal integer scaling
 ## 3 = full integer scaling
 ## 4 = full integer over scaling (only FHD TVs)
+## 5 = vertical integer over scaling (only FHD TVs)
 video_integer_scale         = "0"
 # video_crt_h_shift
 ## values = -16<-->16
@@ -101,7 +102,12 @@ video_show_info             = "false"
 ## 3 = strong scanlines
 ## 4 = black scanlines          
 video_filter                = "0"
-video_ambiscan              = "true"
+# video_ambiscan
+## 0 = disabled
+## 1 = flat
+## 2 = radial
+## 3 = smart
+video_ambiscan              = "2"
 # video_screen_saver_time
 ## 0 = OFF
 ## 60000 = 1 min
@@ -122,10 +128,12 @@ video_hdmi_cec              = "false"
 audio_card                  = "0"
 audio_mono                  = "false"
 audio_normalization         = "false"
-rcheevos_enabled   = "false"
-rcheevos_hardcore  = "false"
-rcheevos_encore    = "false"
-rcheevos_spectator = "false"
+rcheevos_enabled            = "false"
+rcheevos_encore             = "false"
+rcheevos_spectator          = "false"
+rcheevos_show_challenge_inf = "true"
+rcheevos_show_progress_inf  = "true"
+rcheevos_show_lb_trackers   = "true"
 rcheevos_username  = ""
 rcheevos_password  = ""
 # audio_system_volume

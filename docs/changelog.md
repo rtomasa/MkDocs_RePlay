@@ -1,5 +1,46 @@
 # Changelog
 
+# v1.7.1
+- [X] Updated Alpha Player:
+    - Added a new `Subtitles` option group:
+        - Subtitle Mode - `Off`, `Forced only`, `Preferred language`, `Always show preferred language`
+            - `Off` starts playback with subtitles disabled; manual subtitle cycling is still available
+            - `Forced only` selects a forced subtitle track, preferring the configured language when available
+            - `Preferred language` shows the preferred subtitle language unless the active audio track already matches it, in which case it shows forced subtitles only
+            - `Always show preferred language` shows the preferred subtitle language regardless of the active audio track
+        - Preferred Language - `Default`, `English`, `Spanish`, etc.
+            - `Default` uses the file default subtitle track, a same-name external subtitle, or the first subtitle track
+- [X] Updated DOSBox Pure core now including multiple volume controls for different sound cards
+- [X] Updated SEGA Saturn core to the latest v1.32.1 stable version including many improvements, bug fixes and SEGA ST-V support
+- [X] Updated Atari Jaguar core from 2.1.0 to 2.3.1 including many improvements, bug fixes, and RetroAchivements support (Doom / Wolf3D / Skyhammer / Iron Soldier 2 still have known issues)
+- [X] Updated GBA core including almost 2 years of updates and improvements
+- [X] Updated RetroAchievements:
+    - Renamed `ONLINE` menu to `ACHIVEMENTS`
+    - Added new visibility options to enable/disable long-lasting/permanent messages
+    - The panel now dynamically adapts its size to the content
+    - Fixed UI rotation source coords
+    - Fixed panel placement in dual screen modes
+- [X] Created new replay_bios_v8.zip pack:
+    - Added support for SEGA Titan (STV)
+    - Fixed bad ZX CRC rom files
+- [X] Added `AMBISCAN` 2.0 including several modes:
+    - `DISABLED` = off
+    - `FLAT` = one averaged color for all borders
+    - `RADIAL` = four edge colors blended from screen center outward
+    - `SMART` = edge-aware multi-zone lighting with smoother corner/side blending
+- [X] Added new `ARCADE SEGA TITAN/ST-V` system
+- [X] Added new `SYSTEM > UI TEXT SHADOW` for improved readability
+- [X] Added new `INTEGER SCALE > VERTICAL OVERSCAN` mode 
+- [X] Improved Wi-Fi network name and password setup support for WPA3 and WPA2/WPA3 transition networks
+- [X] Improved game list recovery when the current folder is deleted externally to avoid unmounting the external unit
+- [X] Fixed keyboard menu key priority so keys used for the menu no longer leak into emulated keyboard input
+- [X] Fixed single-entry M3U settings and input configs saving under the resolved disk image name instead of the M3U filename
+- [X] Fixed unnecessary empty SRAM files being created for cores and games that do not expose frontend-managed save RAM
+- [X] Fixed controller auto-mapper falsely launching during transient gamepad startup events
+- [X] Fixed alpha-player video timing generation for PAL content
+- [X] Fixed button test moving menu highlight
+- [X] Removed boot-time controller and audio device notifications
+
 # v1.7.0
 - [X] Updated Alpha Player:
     - Added perfromance improvements:

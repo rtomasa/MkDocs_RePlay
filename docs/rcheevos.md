@@ -19,7 +19,7 @@ Hardcore mode is not supported in the current public build.
 
 ## Setup
 
-RetroAchievements is configured from RePlay's `ONLINE` settings and account fields:
+RetroAchievements is configured from RePlay's `ACHIVEMENTS` settings and account fields:
 
 | Setting | Description |
 | --- | --- |
@@ -196,7 +196,7 @@ In RePlay, Spectator mode is applied when the game is loaded. After changing `RA
 
 Hardcore mode is currently disabled in RePlay's public build.
 
-- The `RA HARDCORE` option is hidden from the `ONLINE` menu.
+- The `RA HARDCORE` option is hidden from the `ACHIVEMENTS` menu.
 - `rcheevos_hardcore` is ignored if it is manually added to `replay.cfg`.
 - RePlay reports RetroAchievements sessions as Softcore.
 - Loading save states is not blocked by RetroAchievements because Hardcore never becomes active.
