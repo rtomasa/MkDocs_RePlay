@@ -107,7 +107,7 @@ video_filter                = "0"
 ## 1 = flat
 ## 2 = radial
 ## 3 = smart
-video_ambiscan              = "2"
+video_ambiscan              = "3"
 # video_screen_saver_time
 ## 0 = OFF
 ## 60000 = 1 min

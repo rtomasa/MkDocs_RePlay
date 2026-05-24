@@ -1,5 +1,9 @@
 # Changelog
 
+# v1.7.2
+- [X] Updated `AMBISCAN` with a refactored algorithm for improved visual details and performance
+- [X] Changed UI text shadow color to black
+
 # v1.7.1
 - [X] Updated Alpha Player:
     - Added a new `Subtitles` option group:
