@@ -107,6 +107,7 @@ nav:
     - Alpha Player: alphaplayer.md
     - RetroAchivements: rcheevos.md
   - Wiki (advanced):
+    - Linux Terminal Access: terminal.md
     - EEPROM Update: eeprom.md
     - Wi-Fi Configuration: wifi.md
     - Debug Information: loginfo.md

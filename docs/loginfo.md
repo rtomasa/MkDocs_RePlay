@@ -5,7 +5,7 @@ You can use logs to view key events during RePlay execution and troubleshoot iss
 Steps:
 
 1. Go to `SYSTEM > LOG LEVEL` and set the desired value (for example, INFO).
-2. Connect to your Raspberry Pi via SSH.
+2. Connect to your Raspberry Pi via SSH. See [Linux Terminal Access](terminal.md) if you need the connection steps.
 3. Stop the running process with `systemctl stop replay.service`.
 4. Go to the RePlay system folder: `cd /opt/replay`.
 5. Start RePlay with `./replay`.
