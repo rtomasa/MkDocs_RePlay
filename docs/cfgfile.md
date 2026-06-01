@@ -217,7 +217,8 @@ system_boot_to_system       = "all"
 ## nfs = network nfs share
 system_storage              = "sd"
 system_ui_pauses_core       = "false"
-system_hide_empty_folders   = "false"
+system_net_control          = "false"
+view_hide_empty_folders     = "false"
 # view_players
 ## 0 = show all
 ## 1-6 = num players
@@ -265,6 +266,8 @@ wifi_country                = "ES"
 ## transition (for mixed wpa2 & wpa3)
 wifi_mode                   = "transition"
 wifi_hidden                 = "false"
+replay_insider_token        = ""
+replay_http_token           = ""
 # system_pi5_addon
 ## none = disabled
 ## retroflag_reboot = reset button for reboot

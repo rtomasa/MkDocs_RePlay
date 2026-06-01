@@ -1,5 +1,18 @@
 # Changelog
 
+# v1.7.3
+- [X] Added a new `SYSTEM > NET_CONTROL` option. This enables a tiny custom HTTP server that exposes a REST API for sending commands to and retrieving information from RePlayOS. Please check the official website for full API documentation
+- [X] Added `VISIBILITY > ADVANCED SYSTEM SETTINGS` to switch between basic and advanced core option lists
+- [X] Replaced the STV core with a dedicated Mednafen STV build that properly supports arcade decryption chips and other STV-specific hardware
+- [X] Fixed RetroAchievements overlay panel sizing and indicator rendering across LCD, CRT, dual-screen, and ultrawide layouts
+- [X] Fixed stale N64 hardware-rendered frame borders after switching games at lower resolutions
+- [X] Fixed missing spacing between long system option values and their labels
+- [X] Fixed game options showing invalid configured values instead of falling back to their defaults
+- [X] Fixed filenames containing `@` displaying only the text after the symbol
+- [X] Fixed OTA updates failing due to third-party `xone` Xbox controller DKMS driver not able to rebuild
+- [X] Fixed failed USB, NVMe, or NFS storage mounts not persisting the SD card fallback in `replay.cfg`
+- [X] Removed `CAPS LOCK` keyboard real mode toggle to avoid key conflicts
+
 # v1.7.2
 - [X] Updated `AMBISCAN` with a refactored algorithm for improved visual details and performance
 - [X] Changed UI text shadow color to black
