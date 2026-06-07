@@ -14,7 +14,7 @@ All endpoints use `GET` and return `application/json`. Query string values shoul
 
 ## Authentication
 
-All API requests must include the net control code in the `X-RePlay-Token` HTTP header. The code is shown in `SYSTEM > INFORMATION > NET CONTROL CODE`.
+All API requests except `get_version` must include the net control code in the `X-RePlay-Token` HTTP header. The code is shown in `SYSTEM > INFORMATION > NET CONTROL CODE`.
 
 Example:
 
@@ -44,6 +44,8 @@ Unsupported methods return `405 Method Not Allowed`. Unknown endpoints return `4
 
 Returns the RePlayOS version.
 
+This endpoint does not require authentication, allowing clients to discover the RePlayOS version before authenticating.
+
 ```text
 GET /api/v1/get_version
 ```
@@ -51,7 +53,7 @@ GET /api/v1/get_version
 Example:
 
 ```bash
-curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/get_version'
+curl 'http://<replay-ip>:55356/api/v1/get_version'
 ```
 
 Response:
@@ -64,7 +66,9 @@ Response:
 
 ## Get Status
 
-Returns current system, game, UI view, pause, and core information.
+Returns current system, game, UI view, pause, halt, and core information.
+
+The `paused` field reports whether core execution is paused. The `halted` field independently reports whether the frontend has been halted using `set_cmd?cmd=halt`. Both fields may be `true` at the same time.
 
 ```text
 GET /api/v1/get_status
@@ -84,6 +88,7 @@ Response:
   "game_file": "/media/nvme/roms/arcade_fbneo/altbeast.zip",
   "game_name": "Altered Beast (set 8) (8751 317-0078)",
   "paused": false,
+  "halted": false,
   "view": "game_play",
   "view_id": 2,
   "core_file": "fbneo_libretro.so",
@@ -120,18 +125,21 @@ Sensitive or noisy fields are intentionally omitted from this response, includin
 
 ## Set RePlay Config
 
-Updates one direct-only `replay.cfg` configuration variable. The value is validated against the system option definition, then saved to `replay.cfg`.
+Updates one or more direct-only `replay.cfg` configuration variables. Each value is validated against its system option definition. The complete request is validated before any changes are applied, then all changes are saved to `replay.cfg` in a single write.
 
 ```text
 GET /api/v1/set_replay_config?option=<option>&value=<value>
+GET /api/v1/set_replay_config?option=<option-1>&value=<value-1>&option=<option-2>&value=<value-2>
 ```
 
 Parameters:
 
 | Name | Required | Description |
 | --- | --- | --- |
-| `option` | Yes | Configuration variable name. Only the variables listed below are accepted. |
-| `value` | Yes | New value. It must be URL encoded and must not contain quotes or control characters. |
+| `option` | Yes | Configuration variable name. Only the variables listed below are accepted. Repeat together with `value` to update multiple variables. |
+| `value` | Yes | New value for the corresponding `option`. It must be URL encoded and must not contain quotes or control characters. |
+
+Up to 64 changes may be included in one request. Every `option` must have a corresponding `value`. If any option or value is invalid, the entire request is rejected and none of its changes are applied.
 
 Accepted `option` values:
 
@@ -152,7 +160,7 @@ Accepted `option` values:
 | `rcheevos_password` | Free-form string. |
 | `system_kiosk_mode` | `true`, `false` |
 
-Example:
+Single-change example:
 
 ```bash
 curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_replay_config?option=nfs_version&value=4'
@@ -164,6 +172,22 @@ Response:
 {
   "command": "set_replay_config",
   "option": "nfs_version",
+  "updated": true
+}
+```
+
+Multiple-change example:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_replay_config?option=nfs_server&value=192.168.1.10&option=nfs_version&value=4'
+```
+
+Response:
+
+```json
+{
+  "command": "set_replay_config",
+  "options": ["nfs_server", "nfs_version"],
   "updated": true
 }
 ```
