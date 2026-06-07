@@ -107,41 +107,62 @@ Known `view` values:
 | `4` | `achievements` |
 | `5` | `leaderboards` |
 
-## Get RePlay Config
+## Get Config
 
-Returns the current system configuration as JSON.
+Returns the selected configuration.
 
 ```text
-GET /api/v1/get_replay_config
+GET /api/v1/get_config?type=<replay|core|game>
 ```
+
+The `type` parameter is mandatory:
+
+| Type | Configuration |
+| --- | --- |
+| `replay` | Returns the global `replay.cfg` configuration. Sensitive fields including `nfs_*` and `wifi_*` are omitted. |
+| `core` | Returns only the managed RePlay-owned options from the override file for the active game's system and display type. |
+| `game` | Returns only the managed RePlay-owned options from the active game's override file. |
 
 Example:
 
 ```bash
-curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/get_replay_config'
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/get_config?type=core'
 ```
 
-Sensitive or noisy fields are intentionally omitted from this response, including `nfs_*`, `wifi_*`.
+When the selected core or game override file does not exist, the request succeeds and reports that no override is configured:
 
-## Set RePlay Config
+```json
+{
+  "type": "core",
+  "configured": false,
+  "config": {}
+}
+```
 
-Updates one or more direct-only `replay.cfg` configuration variables. Each value is validated against its system option definition. The complete request is validated before any changes are applied, then all changes are saved to `replay.cfg` in a single write.
+## Set Config
+
+Updates one or more settings for the selected configuration type. The complete request is validated before any changes are written.
 
 ```text
-GET /api/v1/set_replay_config?option=<option>&value=<value>
-GET /api/v1/set_replay_config?option=<option-1>&value=<value-1>&option=<option-2>&value=<value-2>
+GET /api/v1/set_config?type=<replay|core|game>&option=<option>&value=<value>
+GET /api/v1/set_config?type=<replay|core|game>&option=<option-1>&value=<value-1>&option=<option-2>&value=<value-2>
 ```
 
 Parameters:
 
 | Name | Required | Description |
 | --- | --- | --- |
-| `option` | Yes | Configuration variable name. Only the variables listed below are accepted. Repeat together with `value` to update multiple variables. |
-| `value` | Yes | New value for the corresponding `option`. It must be URL encoded and must not contain quotes or control characters. |
+| `type` | Yes | Configuration type: `replay`, `core`, or `game`. |
+| `option` | Yes | Configuration option name. Repeat together with `value` to update multiple options. |
+| `value` | Yes | New value for the corresponding `option`. |
 
-Up to 64 changes may be included in one request. Every `option` must have a corresponding `value`. If any option or value is invalid, the entire request is rejected and none of its changes are applied.
+Up to 64 changes may be included in one request. If any option or value is invalid, none of the changes are written.
 
-Accepted `option` values:
+### RePlay Config
+
+It updates direct-edit `replay.cfg` options and writes all changes atomically.
+
+Accepted RePlay options:
 
 | Option | Values |
 | --- | --- |
@@ -160,73 +181,49 @@ Accepted `option` values:
 | `rcheevos_password` | Free-form string. |
 | `system_kiosk_mode` | `true`, `false` |
 
-Single-change example:
+Example:
 
 ```bash
-curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_replay_config?option=nfs_version&value=4'
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_config?type=replay&option=nfs_version&value=4'
+```
+
+### Core And Game Config
+
+Core and game configuration is restricted to the common RePlay-owned options listed below. Libretro core-specific options are never returned or managed by this API.
+
+Core and game values also accept `default`, which inherits the global RePlay value. If the selected override file does not exist, it is created containing only these managed options. Existing override files retain all unrelated core-specific options. After a successful update, the active game immediately reloads the effective game-over-core settings and an open game settings menu is refreshed.
+
+| Option | RePlay values |
+| --- | --- |
+| `replay_video_ambiscan` | `0`, `1`, `2`, `3` |
+| `replay_video_integer_scale` | `0`, `1`, `2`, `3`, `4`, `5` |
+| `replay_video_filter` | `0` through `4` |
+| `replay_video_gamma` | `0.5` through `1.5` in increments of `0.1` |
+| `replay_video_monitor_x` | `-64` through `64` in increments of `4` |
+| `replay_video_monitor_y` | `-64` through `64` in increments of `4` |
+| `replay_audio_system_volume` | `0` through `10` |
+
+Core and game configurations accept the same values plus `default`.
+
+Example:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_config?type=game&option=replay_video_filter&value=3'
 ```
 
 Response:
 
 ```json
 {
-  "command": "set_replay_config",
-  "option": "nfs_version",
+  "command": "set_config",
+  "type": "game",
+  "options": ["replay_video_filter"],
+  "created": true,
   "updated": true
 }
 ```
 
-Multiple-change example:
-
-```bash
-curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_replay_config?option=nfs_server&value=192.168.1.10&option=nfs_version&value=4'
-```
-
-Response:
-
-```json
-{
-  "command": "set_replay_config",
-  "options": ["nfs_server", "nfs_version"],
-  "updated": true
-}
-```
-
-Invalid options return the full accepted option list:
-
-```json
-{
-  "error": "Invalid Option",
-  "allowed_config_variables": [
-    "timezone_srv",
-    "nfs_server",
-    "nfs_share",
-    "nfs_version",
-    "wifi_name",
-    "wifi_pwd",
-    "wifi_country",
-    "wifi_mode",
-    "wifi_hidden",
-    "replay_insider_token",
-    "replay_http_token",
-    "rcheevos_username",
-    "rcheevos_password",
-    "system_kiosk_mode"
-  ]
-}
-```
-
-Invalid values return the accepted values for that option when the option has a fixed value list:
-
-```json
-{
-  "error": "Invalid Value",
-  "option": "wifi_mode",
-  "allowed_values": ["wpa2", "wpa3", "transition"]
-}
-```
-
-For free-form options, `allowed_values` is an empty array.
+If no active core or game target exists, the endpoint returns `409 Configuration Unavailable`.
 
 ## Set Message
 
