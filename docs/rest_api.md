@@ -107,6 +107,64 @@ Known `view` values:
 | `4` | `achievements` |
 | `5` | `leaderboards` |
 
+## Get Info
+
+Returns system hardware, resource, display, and active core/game resolution information.
+
+```text
+GET /api/v1/get_info
+```
+
+Example:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/get_info'
+```
+
+Response:
+
+```json
+{
+  "version": "RePlayOS v1.7.4",
+  "model": "Raspberry Pi 5",
+  "eeprom": "2025-11-05",
+  "cpu_frequency_mhz": 2400,
+  "gpu_frequency_mhz": 800,
+  "cpu_temperature_c": 48.2,
+  "available_ram_mb": 8192,
+  "available_space_bytes": 123456789,
+  "display": "DISPLAY NAME, VEN",
+  "display_resolution": {
+    "width": 1920,
+    "height": 1080,
+    "refresh_hz": 60.00
+  },
+  "game_resolution": {
+    "width": 320,
+    "height": 240,
+    "refresh_hz": 59.94
+  }
+}
+```
+
+Fields:
+
+| Field | Description |
+| --- | --- |
+| `version` | Full RePlayOS version string. |
+| `model` | Detected Raspberry Pi or PC model. |
+| `eeprom` | Raspberry Pi bootloader EEPROM date. It is an empty string on platforms where this information is unavailable. |
+| `cpu_frequency_mhz` | Detected CPU frequency in MHz. |
+| `gpu_frequency_mhz` | Detected GPU frequency in MHz. It is `0` when unavailable. |
+| `cpu_temperature_c` | Current CPU temperature in degrees Celsius. It is `0.0` when unavailable. |
+| `available_ram_mb` | RAM value shown in `SYSTEM > INFORMATION`, in MB. |
+| `available_space_bytes` | Free space on the configured RePlay media storage, in bytes. It is `0` when unavailable. |
+| `display` | Detected display name and vendor. |
+| `display_resolution` | Current display width, height, and refresh rate. |
+| `game_resolution` | Geometry and content refresh rate reported by the active libretro core. |
+
+`game_resolution` is populated for any active core that reports valid geometry, including the RePlay boot menu core. It is `null` while no valid core geometry is available, such as during unload or failed-load transitions.
+
 ## Get Config
 
 Returns the selected configuration.
