@@ -126,6 +126,10 @@ video_screen_saver          = "0"
 ## 2 = GPIO DAC
 video_hdmi_cec              = "false"
 audio_card                  = "0"
+# midi_output
+## none = disabled
+## ALSA raw MIDI device path selected from AUDIO > MIDI DEVICE
+midi_output                 = "none"
 audio_mono                  = "false"
 audio_normalization         = "false"
 rcheevos_enabled            = "false"
@@ -211,6 +215,10 @@ system_skin                 = "0"
 ## sega_smd
 ## sony_psx
 system_boot_to_system       = "all"
+# system_boot_last_media
+## true = boot multi-media games using the last selected media
+## false = always boot media 1
+system_boot_last_media      = "true"
 # system_storage
 ## sd = internal sd card
 ## usb = external usb drive

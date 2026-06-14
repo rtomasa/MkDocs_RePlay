@@ -1,5 +1,37 @@
 # Changelog
 
+# v1.7.4
+- [X] Updated Alpha Player:
+    - Added MIDI support, including software-based FluidSynth and the RePlay raw MIDI interface
+    - Added EOF controls so media title and playback progress remain available after playback ends
+    - Added rewind support from the ended state by reloading the current media and seeking back from the end
+    - Fixed ended-state progress display to report the full duration and `100%`
+    - Fixed video pause rendering so the cached frame remains visible instead of a black screen
+    - Fixed repeated audio-only seeks leaving stale MP3 decoder/resampler timing state
+- [X] Updated the Net Control REST API:
+    - Replaced `get_replay_config` and `set_replay_config` with typed `get_config` and `set_config` endpoints supporting atomic multi-option updates for RePlay, core, and game settings
+    - Added restricted management of common RePlay-owned core and game options, including automatic creation of missing override files, immediate live application, and open-menu refreshes
+    - Added independent `paused` and `halted` fields to status reporting
+    - Added a `get_info` endpoint exposing system, resource, display, and active core/game resolution information
+    - Allowed version discovery without net control token authentication
+    - Fixed games launched through the REST API not being added to recent games
+    - Changed REST API actions such as `set_msg`, `load_state`, `load_game`, and `set_cmd` to dismiss and reset the screen saver
+- [X] Added libretro MIDI output support with dynamic selection of external ALSA raw MIDI devices
+- [X] Added libretro input device capability reporting for joypad, analog, keyboard, mouse, light gun, and pointer devices
+- [X] Added libretro RTC memory persistence for cores that expose `RETRO_MEMORY_RTC`
+- [X] Added libretro audio buffer status callback support for cores that adapt to frontend audio queue occupancy
+- [X] Added libretro target sample rate reporting for cores that query `RETRO_ENVIRONMENT_GET_TARGET_SAMPLE_RATE`
+- [X] Added libretro JIT capability reporting for cores that query `RETRO_ENVIRONMENT_GET_JIT_CAPABLE`
+- [X] Added `SYSTEM > BOOT LAST MEDIA` to remember and restore the last selected media in multi-media games
+- [X] Improved libretro savestate compatibility by supporting serialization quirks and variable-size state files, fixing errors in cores like DOSBox Pure
+- [X] Improved legacy core option presentation by removing hardcoded category prefixes from labels
+- [X] Improved legacy advanced core option visibility by hiding `Advanced >` options unless advanced system settings are enabled
+- [X] Fixed empty core option categories appearing when no matching options are available for the loaded content
+- [X] Fixed OTA updates failing when Raspberry Pi kernel package scripts need to write to a read-only `/boot/firmware` partition
+- [X] Fixed disabled RetroAchievements challenge, progress, and leaderboard indicators appearing on non-overlapping layouts
+- [X] Fixed disabling RetroAchievements during gameplay not stopping the active session
+- [X] Fixed controller device type selections requiring two attempts in cores that refresh controller information
+
 # v1.7.3
 - [X] Added a new `SYSTEM > NET_CONTROL` option. This enables a tiny custom HTTP server that exposes a REST API for sending commands to and retrieving information from RePlayOS. Please check the official website for full API documentation
 - [X] Added `VISIBILITY > ADVANCED SYSTEM SETTINGS` to switch between basic and advanced core option lists
