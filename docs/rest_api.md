@@ -165,6 +165,67 @@ Fields:
 
 `game_resolution` is populated for any active core that reports valid geometry, including the RePlay boot menu core. It is `null` while no valid core geometry is available, such as during unload or failed-load transitions.
 
+## Get Playtime
+
+Returns tracked playtime totals for all systems and games, or a filtered subset.
+
+```text
+GET /api/v1/get_playtime
+GET /api/v1/get_playtime?system=<system>
+GET /api/v1/get_playtime?system=<system>&game_file=<game-file>
+```
+
+Parameters:
+
+| Name | Required | Description |
+| --- | --- | --- |
+| `system` | No | Filters `systems` and `games` to one system folder/name, such as `snes`. |
+| `game_file` | No | Filters `games` to one game identity. Full paths and filenames are accepted; only the filename portion is matched. |
+| `game` | No | Alias for `game_file`, accepted for compatibility with simpler clients. |
+
+Example:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/get_playtime?system=snes&game_file=Super%20Pang%20(Japan).sfc'
+```
+
+Response:
+
+```json
+{
+  "tracking_enabled": true,
+  "all_seconds": 12540,
+  "all": "3H 29M",
+  "systems": [
+    {
+      "system": "snes",
+      "seconds": 3720,
+      "time": "1H 2M"
+    }
+  ],
+  "games": [
+    {
+      "system": "snes",
+      "game": "Super Pang (Japan).sfc",
+      "seconds": 720,
+      "time": "0H 12M"
+    }
+  ]
+}
+```
+
+Fields:
+
+| Field | Description |
+| --- | --- |
+| `tracking_enabled` | Whether `SYSTEM > TRACK PLAY TIME` is currently enabled. |
+| `all_seconds` | Total tracked playtime across all tracked games, in seconds. |
+| `all` | Total tracked playtime formatted as `H M`. |
+| `systems` | Per-system totals. Filtered by `system` when provided. |
+| `games` | Per-game totals. Filtered by `system` and `game_file`/`game` when provided. |
+
+When tracking is disabled, the endpoint still returns the stored totals but `tracking_enabled` is `false`. Special entries under `_extra` are not tracked.
+
 ## Get Config
 
 Returns the selected configuration.
