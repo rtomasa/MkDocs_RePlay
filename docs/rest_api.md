@@ -196,6 +196,8 @@ Response:
   "tracking_enabled": true,
   "all_seconds": 12540,
   "all": "3H 29M",
+  "session_seconds": 1800,
+  "session": "0H 30M",
   "systems": [
     {
       "system": "snes",
@@ -221,6 +223,8 @@ Fields:
 | `tracking_enabled` | Whether `SYSTEM > TRACK PLAY TIME` is currently enabled. |
 | `all_seconds` | Total tracked playtime across all tracked games, in seconds. |
 | `all` | Total tracked playtime formatted as `H M`. |
+| `session_seconds` | Tracked playtime accumulated during the current boot session, in seconds. This value is in memory only and resets when RePlay powers off or exits. |
+| `session` | Current boot session playtime formatted as `H M`. |
 | `systems` | Per-system totals. Filtered by `system` when provided. |
 | `games` | Per-game totals. Filtered by `system` and `game_file`/`game` when provided. |
 
