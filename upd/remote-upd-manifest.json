@@ -1,0 +1,14 @@
+{
+  "product": "RePlayOS",
+  "version": "1.7.4",
+  "build": "20260614",
+  "platforms": [
+    "rpi3",
+    "rpi4",
+    "rpi5"
+  ],
+  "requires_reboot": true,
+  "size": 10065828,
+  "sha256": "908697295a13b963b8b27317b0f508f47c3ed5b7d7147931d64d19e9387d869c",
+  "url": "https://github.com/rtomasa/replayos-ota-upd/releases/download/ota/update-1.7.4-20260614.tar.xz"
+}
