@@ -114,6 +114,7 @@ nav:
     - New Controllers Support: mappings.md
     - RePlay Custom Drivers & DIY: drivers.md
     - RePlay Options File: cfgfile.md
+    - Custom UI Skins: skins.md
     - RePlay REST API: rest_api.md
     - Autostart Games: autostart.md
     - Core System Settings: settings.md

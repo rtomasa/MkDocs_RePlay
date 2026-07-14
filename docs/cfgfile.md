@@ -189,20 +189,7 @@ system_kiosk_mode           = "false"
 ## 5 = 5 seconds
 ## 7 = 7 seconds
 system_reboot_poweroff_delay = "3"
-# system_skin
-## 0 = replay (default)
-## 1 = mega tech
-## 2 = play choice
-## 3 = astro
-## 4 = super video
-## 5 = mvs
-## 6 = rpg
-## 7 = fantasy
-## 8 = simple purple
-## 9 = metal
-## 10 = unicolors
-## 11-36 = for custom user skins
-system_skin                 = "0"
+system_skin                 = "replay"
 # system_boot_to_system
 ## all
 ## arcade_fbneo

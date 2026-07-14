@@ -127,6 +127,7 @@ storage
 │   ├── snk_ngcd
 │   ├── snk_ngp
 │   └── sony_psx
+├── skins
 └── saves
     ├── alpha_player
     ├── amstrad_cpc
@@ -187,6 +188,9 @@ This is where all input and core configurations are saved. The different configu
 
 ## roms folder
 This is where you can copy your game files. The system folders are prefixed by the company name for better categorization. Additionally, there are special system folders prefixed with an underscore, such as [`_autostart`](autostart.md), `_extra`, `_favorites`, and `_recent`.
+
+## skins folder
+It contains user-installed UI skin folders. RePlayOS creates this folder automatically on the active SD, USB, NVMe or NFS unit. See [Custom UI Skins](skins.md) for the package layout and per-system overrides.
 
 ## saves folder
 This folder contains all user save states and native system saves. Other special system preference files could be also saved here.
