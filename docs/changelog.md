@@ -1,5 +1,65 @@
 # Changelog
 
+# v1.8.0
+
+## Patreon Poll Winner
+
+Selected by RePlayOS supporters through the Patreon feature poll and available to all users.
+
+- [X] Reworked UI skins:
+    - Replaced numeric skin slots with named skin folders and `skin.json` manifests
+    - Added automatic custom skin discovery from the active SD, USB, NVMe or NFS unit
+    - Added per-system `menu.png`, `selector.png` and `info.png` overrides
+    - Added component-level fallback to the selected base skin and bundled RePlay skin
+    - Added automatic skin folder creation and OTA cleanup of the obsolete numbered image layout
+
+## Other Changes
+
+- [X] Added contentless startup through any empty file with a valid system extension when the selected core supports it (Amstrad CPC, Commodore 64, Microsoft MSX and ZX Spectrum)
+- [X] Added new `SONY PlayStation Portable` system
+- [X] Created new replay_bios_v9.zip pack:
+    - Added PSP required bios assets files
+    - Added updated MAME plugin files
+- [X] Updated all cores (compiled on 30/07/2026)
+- [X] Updated Alpha Player:
+    - Fixed MIDI content failing to load when frontend raw MIDI output is selected but no MIDI device is available
+    - Added fallback from unavailable frontend raw MIDI output to the default SoundFont renderer
+    - Fixed audio-only seek timeouts causing MP3 playback to rush toward EOF
+    - Fixed forward seeks past the end of media stopping at the ended state and reporting `100%`
+    - Changed media title OSD to display the file name instead of embedded metadata title
+    - Added audio `PREFERRED LANGUAGE #2` fallback option
+- [X] Updated RetroAchievements:
+    - Added CHD support
+    - Added a 30-second network wait before launching autostart games giving Ethernet/Wi-Fi time to acquire an IP address
+    - Fixed loading before delayed core memory maps were exposed, fixing Game Boy DMG/Color/Advance
+    - Fixed PSX support
+- [X] Updated AV Test Core:
+    - Fixed PAL/NTSC switching: 240p now reports NTSC 59.94 Hz, 288p reports PAL 50 Hz, with region and geometry updated consistently
+- [X] Added `REPLAY OPTIONS > CREDITS` with top supporters and special-thanks credits
+- [X] Added `SYSTEM > TRACK PLAY TIME` to track and display playtime per system, per game, per session and total playtime from `REPLAY OPTIONS > INFORMATION`
+- [X] Added the `/api/v1/get_playtime` REST API endpoint for retrieving tracked playtime data
+- [X] Added UI volume button bindings to L2/R2 (works only while the UI is open)
+- [X] Added controller mapping visual prompts on top of the UI
+- [X] Added `REPLAY OPTIONS > VISIBILITY` toggles for favorites, recents and extras
+- [X] Added Replay Control installation and uninstallation scripts to extras
+- [X] Changed CRT Ambiscan predefaults to disable it for regular CRT systems, use flat mode for handheld CRT systems, and remove the LCD Alpha Player override
+- [X] Increased Screen Position X/Y options to `-64` to `+64` in finer 2-unit steps
+- [X] Improved log information when mounting NVMe units
+- [X] Refactored audio buffering and resampling across Pi 3/4/5:
+    - Reduced audio latency by up to half in some systems while eliminating the tested underruns, drops and backpressure pops
+    - Added a portable queue policy based on the negotiated device period and core frame rate, with live adaptive safety margins that do not pause playback or overreact to isolated core stalls
+    - Added proper `RETRO_ENVIRONMENT_SET_MINIMUM_AUDIO_LATENCY` support
+    - Preserved all resampler input and bounded large audio submissions to prevent dropped samples, excessive queue growth and recovery gaps
+- [X] Fixed already-mounted USB and NVMe units being rejected as busy during storage reconfiguration
+- [X] Fixed storage mount status messages disappearing after refreshing storage-provided UI skins
+- [X] Added a RePlayOS sysctl I/O profile to reduce long writeback stalls on slow SD cards, USB storage, and network-backed workflows
+- [X] Fixed some small UI text typos
+- [X] Fixed some controller input labels bugs
+- [X] Fixed libretro joypad subclass input polling for controller types such as Flycast Arcade Stick
+- [X] Fixed game launch controller button presses leaking into the core's first frame, which could prevent sound from initializing in some FBNeo games
+- [X] Fixed categorized core option labels incorrectly using `desc_categorized` instead of `desc`
+- [X] Fixed `LOG LEVEL = ERROR` option preventing the system from booting properly
+
 # v1.7.4
 - [X] Updated Alpha Player:
     - Added MIDI support, including software-based FluidSynth and the RePlay raw MIDI interface

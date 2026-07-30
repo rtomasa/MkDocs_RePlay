@@ -35,6 +35,7 @@
 | SNK NEO-GEO CD                        | :green_circle:            | :green_circle:   | :green_circle:             | cue, chd |
 | SNK NEO-GEO Pocket                    | :green_circle:            | :green_circle:   | :green_circle:             | ngp, ngc, ngpc, npc |
 | SONY PlayStation                      | :green_circle:            | :green_circle:   | :green_circle:             | exe, psexe, cue, img, iso, chd, pbp, ecm, mds, psf, m3u |
+| SONY PlayStation Portable             | :red_circle:              | :red_circle:     | :green_circle:             | elf, iso, cso, prx, pbp, chd |
 | Panasonic 3DO                         | :red_circle:              | :yellow_circle:  | :yellow_circle:            | iso, chd, cue |
 | Philips CD-I                          | :red_circle:              | :yellow_circle:  | :yellow_circle:            | iso, chd, cue |
 | Amstrad CPC                           | :green_circle:            | :green_circle:   | :green_circle:             | dsk, sna, tap, cdt, voc, cpr, m3u |

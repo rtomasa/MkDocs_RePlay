@@ -71,7 +71,11 @@ video_crt_h_shift           = "0"
 # video_crt_h_size
 ## values = 0.5<-->1.5
 video_crt_h_size            = "1.0"
+# video_monitor_x
+## values = -64<-->64 in steps of 2
 video_monitor_x             = "0"
+# video_monitor_y
+## values = -64<-->64 in steps of 2
 video_monitor_y             = "0"
 # video_gamma
 ## values = 0.5<-->1.5
@@ -172,6 +176,7 @@ system_coinop               = "false"
 # system_coinop_time
 ## game time you get for a credit
 system_coinop_time          = "180"
+system_track_playtime       = "true"
 # system_log_level
 ## 0 = debug (not available for users)
 ## 1 = info
@@ -214,6 +219,14 @@ system_storage              = "sd"
 system_ui_pauses_core       = "false"
 system_net_control          = "false"
 view_hide_empty_folders     = "false"
+view_extra                  = "true"
+view_favorites              = "true"
+view_recent                 = "true"
+view_player                 = "true"
+view_arcade                 = "true"
+view_console                = "true"
+view_computer               = "true"
+view_handheld               = "true"
 # view_players
 ## 0 = show all
 ## 1-6 = num players
@@ -241,11 +254,6 @@ view_buttons                = "0"
 ## 5 = trackball / mouse
 ## 6 = lightgun
 view_controller             = "0"
-view_player                 = "true"
-view_arcade                 = "true"
-view_console                = "true"
-view_computer               = "true"
-view_handheld               = "true"
 nfs_server                  = "192.168.X.X"
 nfs_share                   = "/export/share"
 # nfs_version
