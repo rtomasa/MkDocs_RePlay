@@ -20,7 +20,8 @@ Selected by RePlayOS supporters through the Patreon feature poll and available t
 - [X] Created new replay_bios_v9.zip pack:
     - Added PSP required bios assets files
     - Added updated MAME plugin files
-- [X] Updated all cores (compiled on 30/07/2026)
+- [X] Updated all cores (compiled on 31/07/2026)
+- [X] Updated internal arcade database up to MAME 0.289
 - [X] Updated Alpha Player:
     - Fixed MIDI content failing to load when frontend raw MIDI output is selected but no MIDI device is available
     - Added fallback from unavailable frontend raw MIDI output to the default SoundFont renderer
