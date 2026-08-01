@@ -8,7 +8,7 @@
     "rpi5"
   ],
   "requires_reboot": true,
-  "size": 121677392,
-  "sha256": "6260fc1c041e7a11a33ee282266ced034983a90c6dfbedcfa0e3f5cd9a169d7d",
+  "size": 121660572,
+  "sha256": "06dfa954874869e8410da17d6c70f826ee0f6b775688a934496f9f599b99e9d3",
   "url": "https://github.com/rtomasa/replayos-ota-upd/releases/download/ota/update-1.8.0-20260801.tar.xz"
 }
