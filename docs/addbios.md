@@ -10,7 +10,6 @@ The following table is a reference about the minimum required BIOS files used by
 
 **NOTE:** please check the [full BIOS folder structure](#full-bios-file-structure) in case that some system is not properly booting with the minimum bios files.
 
-
 | System | BIOS / File |
 |---|---|
 | `arcade_dc` | `dc/airlbios.zip` |
