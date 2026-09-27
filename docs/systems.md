@@ -2,23 +2,31 @@
 
 ## Compatibility Matrix
 
-| System                                | RPi 3/Zero 2              | RPi 4            | RPi 5                      | Supported Format   |
+The GameCube, Wii, Triforce, and PlayStation 2 rows are experimental and require an authenticated Insider build on Raspberry Pi 5 with Vulkan selected as the preferred renderer. Virtual Boy is a standard system on all supported Pi models. Format lists match the current frontend file browser.
+
+
+| System                                | RPi 3                     | RPi 4            | RPi 5                      | Supported Format   |
 | ------------------------------------- | :--------------:          | :--------------: | :------------:             | ------------------ |
 | Arcade (FBNeo)                        | :yellow_circle:           | :green_circle:   | :green_circle:             | zip |
 | Arcade (MAME)                         | :red_circle:              | :yellow_circle:  | :green_circle:             | zip |
 | Arcade (MAME 2K3+)                    | :yellow_circle:           | :yellow_circle:  | :red_circle:               | zip |
 | Arcade SEGA Naomi/Atomis              | :red_circle:              | :yellow_circle:  | :green_circle:             | zip |
 | Arcade SEGA TITAN/ST-V                | :red_circle:              | :red_circle:     | :green_circle:             | zip |
+| Arcade Namco/SEGA/Nintendo Triforce  | :red_circle:              | :red_circle:     | :yellow_circle:            | gcm, iso, ciso, gcz, elf, dol, dff, tgc, rvz, m3u, wia |
 | Atari 2600/VCS                        | :green_circle:            | :green_circle:   | :green_circle:             | a26, bin |
 | Atari 5200                            | :green_circle:            | :green_circle:   | :green_circle:             | a52, bin |
 | Atari 7800                            | :green_circle:            | :green_circle:   | :green_circle:             | a78, bin, cdf |
 | Atari Jaguar                          | :red_circle:              | :red_circle:     | :yellow_circle:            | j64, jag |
+| Atari Jaguar CD                       | :red_circle:              | :red_circle:     | :green_circle:             | cue, cdi |
 | Atari Lynx                            | :green_circle:            | :green_circle:   | :green_circle:             | lnx |
 | NEC TurboGrafx-16/PC Engine           | :green_circle:            | :green_circle:   | :green_circle:             | pce, sgx, toc |
 | NEC TurboGrafx-CD/CD-ROM2 System      | :green_circle:            | :green_circle:   | :green_circle:             | cue, ccd, chd, m3u |
 | Nintendo NES/Famicom                  | :green_circle:            | :green_circle:   | :green_circle:             | fds, nes, unf, unif |
 | Nintendo Super Nintendo/Super Famicom | :green_circle:            | :green_circle:   | :green_circle:             | smc, sfc, swc, fig, bs, st |
 | Nintendo 64                           | :red_circle:              | :yellow_circle:  | :green_circle:             | n64, v64, z64, bin, u1 |
+| Nintendo GameCube                     | :red_circle:              | :red_circle:     | :yellow_circle:            | gcm, iso, ciso, gcz, elf, dol, dff, tgc, rvz, m3u, wia |
+| Nintendo Wii                          | :red_circle:              | :red_circle:     | :yellow_circle:            | iso, wbfs, ciso, gcz, elf, dol, dff, wad, rvz, m3u, wia |
+| Nintendo Virtual Boy                   | :green_circle:            | :green_circle:   | :green_circle:             | vb, vboy, bin |
 | Nintendo Game Boy                     | :green_circle:            | :green_circle:   | :green_circle:             | gb, sgb |
 | Nintendo Game Boy Color               | :green_circle:            | :green_circle:   | :green_circle:             | gbc, sgbc |
 | Nintendo Game Boy Advance             | :green_circle:            | :green_circle:   | :green_circle:             | gba |
@@ -35,6 +43,7 @@
 | SNK NEO-GEO CD                        | :green_circle:            | :green_circle:   | :green_circle:             | cue, chd |
 | SNK NEO-GEO Pocket                    | :green_circle:            | :green_circle:   | :green_circle:             | ngp, ngc, ngpc, npc |
 | SONY PlayStation                      | :green_circle:            | :green_circle:   | :green_circle:             | exe, psexe, cue, img, iso, chd, pbp, ecm, mds, psf, m3u |
+| SONY PlayStation 2                    | :red_circle:              | :red_circle:     | :yellow_circle:            | elf, iso, ciso, cue, gz, chd, cso, zso, m3u |
 | SONY PlayStation Portable             | :red_circle:              | :red_circle:     | :green_circle:             | elf, iso, cso, prx, pbp, chd |
 | Panasonic 3DO                         | :red_circle:              | :yellow_circle:  | :yellow_circle:            | iso, chd, cue |
 | Philips CD-I                          | :red_circle:              | :yellow_circle:  | :yellow_circle:            | iso, chd, cue |
@@ -52,4 +61,4 @@
 ## Icon Description
 :green_circle: Most games run fine near or at full performance with no major emulations issues.</br>
 :yellow_circle: There are many games that could face emulation or performance issues.</br>
-:red_circle: System still not available or not supported due to bad performance.</br>
+:red_circle: System is unavailable on this Pi model. Yellow on an Insider-only row marks experimental availability, not a performance guarantee.</br>

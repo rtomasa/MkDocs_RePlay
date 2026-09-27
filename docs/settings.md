@@ -1,6 +1,6 @@
 # Core System Settings
 
-Below you can find a full reference to all available libretro core system setting.
+Below is a reference for the established libretro cores. The experimental Insider GameCube, Wii, Triforce, and PlayStation 2 cores are not included in this table; inspect their live SYSTEM SETTINGS menu for the options supported by the installed core version. See the [compatibility matrix](systems.md#compatibility-matrix) for their platform requirements.
 
 **Note:** The MAME core also includes its own built-in configuration menu. You can open it in-game by pressing **TAB**, or **Select + Y** on your gamepad.
 

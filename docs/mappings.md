@@ -1,20 +1,27 @@
-# Enhanced Controller Support in RePlayOS
+# Physical Controller Mapping
 
-RePlayOS is designed to offer seamless compatibility with a wide range of gamepads and joysticks, thanks to its extensive predefined controller database. This database is built upon the [SDL_GameControllerDB](https://github.com/mdqinc/SDL_GameControllerDB){target=_blank} project, which boasts support for over **700** different controllers and their various revisions, ensuring that most devices work perfectly right out of the box.
+RePlayOS includes the official [SDL_GameControllerDB](https://github.com/mdqinc/SDL_GameControllerDB){target=_blank}, plus RePlay-specific mappings, for more than **700** controllers and revisions. These physical mappings translate each controller's raw buttons, hats, and axes into a consistent SDL gamepad layout.
 
 ## Custom Controller Mapping
 
-If your gamepad or joystick isn't automatically recognized by RePlayOS, or if the default mappings don't align with your preferences, you have the flexibility to create a custom SDL controller mapping. This can be done easily through the `REPLAY OPTIONS > INPUT > CONTROLLER MAPPER` menu.
+Create a physical mapping only when a controller is not recognized or its SDL layout is incorrect. This is different from changing what a button does in a particular system or game; gameplay mappings are explained in [Gamepad Configuration](gpadbasic.md).
+
+RePlay opens the mapper automatically when a newly connected controller is unsupported. Use the manual process below when SDL recognizes the controller but its existing physical layout is wrong.
 
 ### Mapping Process
 
-1. **Access the Controller Mapper**: Navigate to `REPLAY OPTIONS > INPUT > CONTROLLER MAPPER` in the RePlayOS menu.
-2. **Start Mapping**: Follow the on-screen instructions to map each button and axis on your controller. Each button mapping has a timeout of 5 seconds; if no input is detected within this period, the button will be skipped.
-3. **Save Your Mapping**: Once the mapping process is complete, your custom configuration will be saved to the `<unit>/config/input/sdlusermapsdb.txt` file. The location of this file depends on whether you're using an SD card or USB unit.
+1. Connect the controller and open `REPLAY OPTIONS > INPUT`.
+2. Open the Player slot containing that controller and select `PHYSICAL MAPPING`.
+3. Follow the visual prompts to map its controls. Use Space or an already mapped control to skip a requested control that is not present.
+4. Complete the sequence. RePlay applies the new SDL mapping immediately and saves it automatically.
+
+The custom mapping is stored in `<data location>/config/input/usercontrollerdb.txt` and loaded after the bundled databases, so it overrides their entry for the same SDL GUID. Controllers that share the same GUID also share this physical mapping.
+
+Physical mapping does not select a Player slot and is not saved per system, folder, or game. Player assignments are stored separately, and changing an SDL display name does not change a controller's assignment.
 
 ## Input Layout Design
 
-RePlayOS employs a universal gamepad layout inspired by the XBOX controller but uses positional button labeling to accommodate the diverse physical layouts of various controllers. This approach minimizes conflicts and ensures a consistent user experience across different devices.
+RePlayOS uses positional SDL button names so controllers with Xbox, Nintendo, PlayStation, or arcade layouts can share the same logical layout. Map controls by their physical position rather than the letter printed on the controller.
 
 ### Visual Mapping Guide
 
@@ -22,4 +29,4 @@ For a clearer understanding of the button mapping process, refer to the visual g
 
 ![Mapping Guide](img/mapping_guide.png)
 
-This guide will help you visualize the button positions and ensure accurate mapping for your controller.
+Use this guide to match each prompt to the intended physical position.

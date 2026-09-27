@@ -1,0 +1,24 @@
+{% extends "main.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <style>
+    .md-main__inner {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .md-content__inner {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .md-content__inner::before {
+      height: 0 !important;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+  {% include "partials/home-content.html" %}
+{% endblock %}

@@ -1,6 +1,6 @@
 # RePlay Options File
 
-The following is a description of all available options and default values that RePlay uses for global configuration.
+The following is a description of the global configuration options and their default values. Insider-only options appear in the menu only when a valid Insider token is active.
 
 **Important:**
 - Changes to `addon_*` and GPIO settings must be made from the UI to take effect.
@@ -10,16 +10,25 @@ The following is a description of all available options and default values that 
 The configuration file is located in `/media/sd/config/replay.cfg`:
 
 ```cfg
+# video_engine
+## opengles = default OpenGL ES renderer
+## vulkan = experimental preferred renderer for authenticated Insiders on Pi 5
+## Software-frame and OpenGL ES cores retain their normal rendering paths.
+video_engine = "opengles"
+# video_frame_pacing
+## balanced = best performance (default)
+## low_latency = lower display latency; may reduce performance
+video_frame_pacing = "balanced"
 # video_connector
 ## 0 = hdmi
 ## 1 = dpi (used for gpio)
-video_connector             = "0"
+video_connector = "0"
 # video_mode
-## NRR (Native Refresh Rate)
+## GRR (Game Refresh Rate)
+## Matches display timing to the running system/game
 ## 0 = default
-## 1 = crt 320x240@nrr (ui boots @60)
-## 2 = crt 320x240@nrr (ui boots @50)
-## 3 = lcd native resolution & nrr
+## 1 = crt 320x240 grr
+## 3 = lcd native resolution & grr
 ## 4 = lcd 1920x1080@60
 ## 5 = lcd 1280x720@60
 ## 6 = lcd 1280x1024@60
@@ -29,34 +38,34 @@ video_connector             = "0"
 ## 11 = lcd 1920x1200@60
 ## 12 = lcd 640x480@60
 ## 13 = lcd 800x600@60
-video_mode                  = "0"
+video_mode = "0"
 # video_monitor_multi_mode
 ## 0 = disabled
 ## 1 = dual cloned
 ## 2 = dual horizontal
 ## 3 = dual vertical
 ## 4 = dual smart output
-video_monitor_multi_mode     = "0"
+video_monitor_multi_mode = "0"
 # video_lcd_type
 ## generic_60 = supports 55-61hz ranges
 ## gaming_vrr = supports 48-75hz ranges
-video_lcd_type              = "generic_60"
+video_lcd_type = "generic_60"
 # video_crt_type
 ## generic_15
 ## arcade_15
 ## arcade_15_25
 ## arcade_15_25_31
 ## arcade_31 (also used for PC)
-video_crt_type              = "generic_15"
+video_crt_type = "generic_15"
 # video_crt_csync_mode (requires RGB-Pi compatible hardware)
 ## 0 = AND
 ## 1 = XOR
-video_crt_csync_mode        = "0"
+video_crt_csync_mode = "0"
 # video_crt_rgb_range
 ## 0 = auto
 ## 1 = full (0:255)
 ## 2 = limited (16:235)
-video_crt_rgb_range         = "0"
+video_crt_rgb_range = "0"
 # video_integer_scale
 ## 0 = disabled
 ## 1 = vertical integer scaling
@@ -64,31 +73,31 @@ video_crt_rgb_range         = "0"
 ## 3 = full integer scaling
 ## 4 = full integer over scaling (only FHD TVs)
 ## 5 = vertical integer over scaling (only FHD TVs)
-video_integer_scale         = "0"
+video_integer_scale = "0"
 # video_crt_h_shift
 ## values = -16<-->16
-video_crt_h_shift           = "0"
+video_crt_h_shift = "0"
 # video_crt_h_size
 ## values = 0.5<-->1.5
-video_crt_h_size            = "1.0"
+video_crt_h_size = "1.0"
 # video_monitor_x
 ## values = -64<-->64 in steps of 2
-video_monitor_x             = "0"
+video_monitor_x = "0"
 # video_monitor_y
 ## values = -64<-->64 in steps of 2
-video_monitor_y             = "0"
+video_monitor_y = "0"
 # video_gamma
 ## values = 0.5<-->1.5
-video_gamma                 = "1.0"
+video_gamma = "1.0"
 # video_red_scale
 ## values = 0.0<-->1.0
-video_red_scale             = "1.0"
+video_red_scale = "1.0"
 # video_green_scale
 ## values = 0.0<-->1.0
-video_green_scale           = "1.0"
+video_green_scale = "1.0"
 # video_blue_scale
 ## values = 0.0<-->1.0
-video_blue_scale            = "1.0"
+video_blue_scale = "1.0"
 # video_ui_rotation_mode
 ## 0 = 0 (disabled)
 ## 1 = 90
@@ -96,22 +105,22 @@ video_blue_scale            = "1.0"
 ## 3 = 270
 ## 4 = auto 90
 ## 5 = auto 270
-video_ui_rotation_mode      = "0"
-video_show_fps              = "false"
-video_show_info             = "false"
+video_ui_rotation_mode = "0"
+video_show_fps = "false"
+video_show_info = "false"
 # video_filter
 ## 0 = none
 ## 1 = light scanlines
 ## 2 = medium scanlines
 ## 3 = strong scanlines
 ## 4 = black scanlines          
-video_filter                = "0"
+video_filter = "0"
 # video_ambiscan
 ## 0 = disabled
 ## 1 = flat
 ## 2 = radial
 ## 3 = smart
-video_ambiscan              = "3"
+video_ambiscan = "3"
 # video_screen_saver_time
 ## 0 = OFF
 ## 60000 = 1 min
@@ -119,82 +128,105 @@ video_ambiscan              = "3"
 ## 300000 = 5 min
 ## 600000 = 10 min
 ## 900000 = 15 min
-video_screen_saver_time     = "0"
+video_screen_saver_time = "0"
 # video_screen_saver
 ## 0 = rainbow
 ## 1 = black
-video_screen_saver          = "0"
+video_screen_saver = "0"
 # audio_card
 ## 0 = HDMI
 ## 1 = USB DAC
 ## 2 = GPIO DAC
-video_hdmi_cec              = "false"
-audio_card                  = "0"
+video_hdmi_cec = "false"
+audio_card = "0"
 # midi_output
 ## none = disabled
 ## ALSA raw MIDI device path selected from AUDIO > MIDI DEVICE
-midi_output                 = "none"
-audio_mono                  = "false"
-audio_normalization         = "false"
-rcheevos_enabled            = "false"
-rcheevos_encore             = "false"
-rcheevos_spectator          = "false"
+midi_output = "none"
+audio_mono = "false"
+audio_normalization = "false"
+rcheevos_enabled = "false"
+rcheevos_encore = "false"
+rcheevos_spectator = "false"
 rcheevos_show_challenge_inf = "true"
-rcheevos_show_progress_inf  = "true"
-rcheevos_show_lb_trackers   = "true"
-rcheevos_username  = ""
-rcheevos_password  = ""
+rcheevos_show_progress_inf = "true"
+rcheevos_show_lb_trackers = "true"
+rcheevos_username = ""
+rcheevos_password = ""
+# link_play_mode
+## disabled = link play is disabled
+## host = host a link play session
+## client = join the host configured below
+link_play_mode = "disabled"
+# link_play_address
+## Host name or IPv4/IPv6 address used in client mode
+link_play_address = ""
+# link_play_port
+## TCP port used by the host and clients
+link_play_port = "55435"
+# link_play_lan_discovery
+## Advertise and discover compatible sessions on the local network (enabled by default)
+link_play_lan_discovery = "true"
 # audio_system_volume
 ## values = 0<-->10
-audio_system_volume         = "10"
-input_rumble                = "true"
+audio_system_volume = "10"
+input_rumble = "true"
 # input_gcon2_flash
 ## 0 = disabled
 ## 1 = pulse
 ## 2 = hold
-input_gcon2_flash           = "1"
-input_gcon2_offscreen       = "true"
-input_ui_swap_ab            = "false"
-input_all_control_ui        = "false"
+input_gcon2_flash = "1"
+input_gcon2_offscreen = "true"
+input_ui_swap_ab = "false"
+input_all_control_ui = "false"
 # input_ui_menu_btn
 ## 0 = home button
 ## 1 = select+start
 ## 2 = hold start
-input_ui_menu_btn           = "1"
+input_ui_menu_btn = "1"
 # input_kbd_real_mode
 ## true = keyboard works in native scancode mode
 ## false = keyboard works in special cmd event mode
-input_kbd_real_mode         = "true"
+input_kbd_real_mode = "true"
 # input_kbd_menu_key
 ## 0 = windows (left)
 ## 1 = windows (right)
 ## 2 = play/pause
 ## 3 = home page
 ## 4 = home
-input_kbd_menu_key          = "0"
-system_coinop               = "false"
+input_kbd_menu_key = "0"
+system_coinop = "false"
 # system_coinop_time
 ## game time you get for a credit
-system_coinop_time          = "180"
-system_track_playtime       = "true"
+system_coinop_time = "180"
+system_track_playtime = "true"
 # system_log_level
 ## 0 = debug (not available for users)
 ## 1 = info
 ## 2 = warn
 ## 3 = error
 ## 4 = disabled
-system_log_level            = "4"
+system_log_level = "4"
 # timezone_srv
 ## timezone detection server URL
-timezone_srv                = "https://time.now/developer/api/ip"
-system_kiosk_mode           = "false"
+timezone_srv = "https://time.now/developer/api/ip"
+system_kiosk_mode = "false"
 # system_reboot_poweroff_delay
 ## 0 = disabled
 ## 3 = 3 seconds
 ## 5 = 5 seconds
 ## 7 = 7 seconds
 system_reboot_poweroff_delay = "3"
-system_skin                 = "replay"
+system_skin = "replay"
+# replay_ui_background_animation
+## enabled = animate the menu tile background
+## disabled = keep the menu tile background aligned and still
+replay_ui_background_animation = "enabled"
+# replay_ui_background_style
+# Tiles, Rotozoom checkerboard, Starfield, Pixel rain, Doom fire,
+## Dithered plasma, Plasma orbs, Kaleidoscope, Reaction-diffusion cells,
+## Circuit board, Vector tunnel, Neon grid or Raster lines
+replay_ui_background_style = "Tiles"
 # system_boot_to_system
 ## all
 ## arcade_fbneo
@@ -206,45 +238,59 @@ system_skin                 = "replay"
 ## nintendo_gb
 ## sega_smd
 ## sony_psx
-system_boot_to_system       = "all"
+system_boot_to_system = "all"
 # system_boot_last_media
 ## true = boot multi-media games using the last selected media
 ## false = always boot media 1
-system_boot_last_media      = "true"
+system_boot_last_media = "true"
 # system_storage
 ## sd = internal sd card
 ## usb = external usb drive
+## nvme = internal NVMe drive on supported Pi 5 systems
 ## nfs = network nfs share
-system_storage              = "sd"
-system_ui_pauses_core       = "false"
-system_net_control          = "false"
-view_hide_empty_folders     = "false"
-view_extra                  = "true"
-view_favorites              = "true"
-view_recent                 = "true"
-view_player                 = "true"
-view_arcade                 = "true"
-view_console                = "true"
-view_computer               = "true"
-view_handheld               = "true"
+system_storage = "sd"
+# system_data_location
+## storage_unit = save data on the selected storage unit
+## local_sd = save data on the local SD card
+system_data_location = "storage_unit"
+system_ui_pauses_core = "false"
+# system_wifi_enabled
+## Enable or disable the Wi-Fi adapter.
+system_wifi_enabled = "true"
+system_net_control = "false"
+view_hide_empty_folders = "false"
+# view_m3u_contents
+## Show files and folders referenced by M3U playlists in game lists.
+view_m3u_contents = "false"
+# view_replays
+## Show the Insider Replays browser in the main menu.
+view_replays = "true"
+view_extra = "true"
+view_favorites = "true"
+view_recent = "true"
+view_player = "true"
+view_arcade = "true"
+view_console = "true"
+view_computer = "true"
+view_handheld = "true"
 # view_players
 ## 0 = show all
 ## 1-6 = num players
-view_players                = "0"
+view_players = "0"
 # view_rotation
 ## 0 = show all
 ## 1 = horizontal
 ## 2 = vertical
-view_rotation               = "0"
+view_rotation = "0"
 # view_displays
 ## 0 = show all
 ## 1 = single screen
 ## 2 = dual screen
-view_displays               = "0"
+view_displays = "0"
 # view_buttons
 ## 0 = show all
 ## 1-6 = N or less buttons
-view_buttons                = "0"
+view_buttons = "0"
 # view_controller
 ## 0 = show all
 ## 1 = joystick (any)
@@ -253,24 +299,27 @@ view_buttons                = "0"
 ## 4 = dial / paddle
 ## 5 = trackball / mouse
 ## 6 = lightgun
-view_controller             = "0"
-nfs_server                  = "192.168.X.X"
-nfs_share                   = "/export/share"
+view_controller = "0"
+nfs_server = "192.168.X.X"
+nfs_share = "/export/share"
 # nfs_version
 ## 3 = NFSv3 (rpcbind/mountd required on server)
 ## 4 = NFSv4
-nfs_version                 = "4"
-wifi_name                   = "MyWifi"
-wifi_pwd                    = "********"
-wifi_country                = "ES"
-# wifi_mode
-## wpa2
-## wpa3
-## transition (for mixed wpa2 & wpa3)
-wifi_mode                   = "transition"
-wifi_hidden                 = "false"
-replay_insider_token        = ""
-replay_http_token           = ""
+nfs_version = "4"
+# nfs_port: NFS service port; 0 = default or negotiated port
+nfs_port = "0"
+# nfs_mountport: NFSv3 mountd port; 0 = default or negotiated port
+nfs_mountport = "0"
+wifi_name = ""
+wifi_pwd = ""
+# wifi_country
+## ISO 3166-1 alpha-2 country code, or 00 for the world regulatory domain.
+wifi_country = "00"
+# wifi_hidden
+## Enable only when the access point does not broadcast its SSID.
+wifi_hidden = "false"
+replay_insider_token = ""
+replay_http_token = ""
 # system_pi5_addon
 ## none = disabled
 ## retroflag_reboot = reset button for reboot
@@ -279,5 +328,5 @@ replay_http_token           = ""
 ## tilt_270 = hardware tilt 0/+270
 ## gpio_joy = GPIO joystick profile
 ## dpi_dac = DPI video DAC profile
-system_pi5_addon            = "none"
+system_pi5_addon = "none"
 ```

@@ -212,7 +212,7 @@ Because Hardcore is disabled, save-state loading is allowed.
 
 ## Cheats And Core Options
 
-RePlay does not provide a frontend cheat system, rewind, slowdown, frame advance, debugger windows, or recorded input playback.
+RePlay does not provide a frontend cheat system, rewind, slowdown, frame advance, or debugger windows. [Insider Replays](replays.md) can record and play back input for compatible cores, but recording and playback are blocked while RetroAchievements is active.
 
 Some libretro cores expose their own cheat or hack options. RePlay keeps checks for the RetroAchievements libretro disallowed setting list and known cheat or gameplay-altering options, including MAME cheat settings and Reicast widescreen cheat or hack settings. These checks are retained for Hardcore support but do not make Hardcore available in the current public build.
 

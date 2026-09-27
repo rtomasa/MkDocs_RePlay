@@ -1,6 +1,6 @@
 # Autostart Games
 
-RePlayOS can automatically launch one game on startup using the `roms/_autostart` folder.
+RePlayOS can automatically launch one game on startup using the `roms/_autostart` folder. The folder is created automatically when RePlay prepares the selected ROM storage unit.
 
 Favorites and recents are stored as small reference files:
 

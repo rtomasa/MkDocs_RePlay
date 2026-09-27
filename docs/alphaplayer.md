@@ -65,6 +65,13 @@
 
 ## Changelog
 
+**v2.11.0** (bundled with RePlayOS v2.0.52)
+
+* Improved playback smoothness, seeking, and audio/video synchronization.
+* Improved handling of older MPEG, DivX, and Xvid files and AVI packed B-frames.
+* Improved recovery from damaged or inaccurate timestamps.
+* Reduced decoding work and memory growth while seeking or paused.
+
 **v2.1.0**
 
 * Changed scaling from POINT to BILINEAR for improved image quality

@@ -1,5 +1,5 @@
 site_name: RePlayOS Official Site
-site_url: https://github.com/rtomasa/MkDocs_RePlay
+site_url: https://www.replayos.com/
 site_author: Rubén Tomás
 site_description: >-
   RePlayOS is a Linux distribution featuring a streamlined libretro frontend. It's specifically designed to emulate a wide range of classic game consoles, arcade machines, and computers. The OS focuses on delivering fast and user-friendly emulation experiences, optimized for use with Raspberry Pi boards. This emphasis on ease of use and broad compatibility makes it an ideal choice for enthusiasts looking to relive classic gaming moments on modern hardware.
@@ -9,6 +9,9 @@ copyright: >-
 
 repo_name: MkDocs_RePlay
 repo_url: https://github.com/rtomasa/MkDocs_RePlay
+
+extra_css:
+  - stylesheets/extra.css
 
 theme:
   name: material
@@ -85,17 +88,19 @@ markdown_extensions:
       custom_checkbox: true
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - md_in_html
   - tables
 
 nav:
   - Home: index.md
+  - Replay Control: replaycontrol.md
   - Wiki (basic):
     - Requirements: sysreq.md
     - Supported Systems: systems.md
     - Installation & First Boot: install.md
+    - Software Updates: updates.md
     - Gamepad Configuration: gpadbasic.md
     - Keyboard Configuration: keyboard.md
     - Folder Structure: folders.md
@@ -105,13 +110,15 @@ nav:
     - Video Configuration: videobasic.md
     - Input Lag: inputlag.md
     - Alpha Player: alphaplayer.md
-    - RetroAchivements: rcheevos.md
+    - RetroAchievements: rcheevos.md
+    - Replays: replays.md
+    - Link Play: linkplay.md
   - Wiki (advanced):
     - Linux Terminal Access: terminal.md
     - EEPROM Update: eeprom.md
     - Wi-Fi Configuration: wifi.md
     - Debug Information: loginfo.md
-    - New Controllers Support: mappings.md
+    - Physical Controller Mapping: mappings.md
     - RePlay Custom Drivers & DIY: drivers.md
     - RePlay Options File: cfgfile.md
     - Custom UI Skins: skins.md

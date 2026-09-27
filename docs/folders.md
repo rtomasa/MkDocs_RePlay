@@ -13,7 +13,7 @@ media
 
 ## Child data folders
 
-Whether you are using the internal the MicroSD exFAT partition, USB unit or NFS share, the system will create the following folder structure inside any of these folders:
+RePlayOS creates the following folders on the selected storage unit. When DATA LOCATION is LOCAL SD, ROMs and BIOS remain on the selected unit while config, captures, saves, skins, and Insider replays are stored on the SD card. System folders depend on the Pi model and Insider access:
 
 ```sh
 storage
@@ -26,10 +26,12 @@ storage
 │   ├── arcade_mame
 │   ├── arcade_mame_2k3p
 │   ├── arcade_stv
+│   ├── arcade_triforce
 │   ├── atari_2600
 │   ├── atari_5200
 │   ├── atari_7800
 │   ├── atari_jaguar
+│   ├── atari_jaguarcd
 │   ├── atari_lynx
 │   ├── commodore_ami
 │   ├── commodore_amicd
@@ -45,6 +47,9 @@ storage
 │   ├── nintendo_gba
 │   ├── nintendo_gbc
 │   ├── nintendo_n64
+│   ├── nintendo_gc
+│   ├── nintendo_wii
+│   ├── nintendo_vb
 │   ├── nintendo_nes
 │   ├── nintendo_snes
 │   ├── panasonic_3do
@@ -64,16 +69,26 @@ storage
 │   ├── snk_ng
 │   ├── snk_ngcd
 │   ├── snk_ngp
-│   └── sony_psx
+│   ├── sony_psx
+│   ├── sony_ps2
+│   └── sony_psp
 ├── config
 │   ├── input
+│   │   ├── folder
+│   │   │   ├── crt
+│   │   │   └── lcd
 │   │   ├── game
 │   │   │   ├── crt
 │   │   │   └── lcd
-│   │   └── system
-│   │       ├── crt
-│   │       └── lcd
+│   │   ├── system
+│   │   │   ├── crt
+│   │   │   └── lcd
+│   │   ├── player_assignments.cfg
+│   │   └── usercontrollerdb.txt
 │   └── settings
+│       ├── folder
+│       │   ├── crt
+│       │   └── lcd
 │       ├── game
 │       │   ├── crt
 │       │   └── lcd
@@ -88,14 +103,17 @@ storage
 │   ├── arcade_mame
 │   ├── arcade_mame_2k3p
 │   ├── arcade_stv
+│   ├── arcade_triforce
 │   ├── atari_2600
 │   ├── atari_5200
 │   ├── atari_7800
 │   ├── atari_jaguar
+│   ├── atari_jaguarcd
 │   ├── atari_lynx
 │   ├── commodore_ami
 │   ├── commodore_amicd
 │   ├── commodore_c64
+│   ├── _autostart
 │   ├── _extra
 │   ├── _favorites
 │   ├── ibm_pc
@@ -107,6 +125,9 @@ storage
 │   ├── nintendo_gba
 │   ├── nintendo_gbc
 │   ├── nintendo_n64
+│   ├── nintendo_gc
+│   ├── nintendo_wii
+│   ├── nintendo_vb
 │   ├── nintendo_nes
 │   ├── nintendo_snes
 │   ├── panasonic_3do
@@ -126,7 +147,10 @@ storage
 │   ├── snk_ng
 │   ├── snk_ngcd
 │   ├── snk_ngp
-│   └── sony_psx
+│   ├── sony_psx
+│   ├── sony_ps2
+│   └── sony_psp
+├── replays
 ├── skins
 └── saves
     ├── alpha_player
@@ -136,10 +160,12 @@ storage
     ├── arcade_mame
     ├── arcade_mame_2k3p
     ├── arcade_stv
+    ├── arcade_triforce
     ├── atari_2600
     ├── atari_5200
     ├── atari_7800
     ├── atari_jaguar
+    ├── atari_jaguarcd
     ├── atari_lynx
     ├── commodore_ami
     ├── commodore_amicd
@@ -155,6 +181,9 @@ storage
     ├── nintendo_gba
     ├── nintendo_gbc
     ├── nintendo_n64
+    ├── nintendo_gc
+    ├── nintendo_wii
+    ├── nintendo_vb
     ├── nintendo_nes
     ├── nintendo_snes
     ├── panasonic_3do
@@ -174,7 +203,9 @@ storage
     ├── snk_ng
     ├── snk_ngcd
     ├── snk_ngp
-    └── sony_psx
+    ├── sony_psx
+    ├── sony_ps2
+    └── sony_psp
 ```
 
 ## bios folder
@@ -184,10 +215,14 @@ It is where all system BIOS, arcade samples, sound fonts, computer special core 
 This is the place where screenshots are stored.
 
 ## config folder
-This is where all input and core configurations are saved. The different configurations can be applied to the entire system, specific games, or particular types of TVs, whether LCD or CRT.
+This is where input and core configurations are saved. Input profiles can apply to a system, ROM folder, or individual game and are separated for LCD and CRT displays. Persistent Player assignments and custom physical SDL controller mappings are also stored under `config/input`.
 
 ## roms folder
 This is where you can copy your game files. The system folders are prefixed by the company name for better categorization. Additionally, there are special system folders prefixed with an underscore, such as [`_autostart`](autostart.md), `_extra`, `_favorites`, and `_recent`.
+
+## replays folder
+
+Authenticated Insiders have a `replays/<system>/` folder containing `.rplm` input recordings. RePlay stores it at the selected data location. See [Insider Replays](replays.md) for recording and playback.
 
 ## skins folder
 It contains user-installed UI skin folders. RePlayOS creates this folder automatically on the active SD, USB, NVMe or NFS unit. See [Custom UI Skins](skins.md) for the package layout and per-system overrides.

@@ -1,135 +1,34 @@
 # Wi-Fi Configuration
 
-RePlayOS supports WPA2, WPA3, and Transition mode. Configure it in either way below.
+RePlayOS v2 uses IWD with `systemd-networkd` and automatically detects the access point's WPA2, WPA3, or transition security mode. The old `wifi_mode` setting is no longer used.
 
-**IMPORTANT:** For security, after a configuration is applied, RePlayOS replaces the password value in `replay.cfg` with `********`. This also lets RePlayOS detect when a new configuration has been set and reapply it on the next boot.
+## Configure from the RePlay menu
 
-## Option 1: RePlay config (SD card)
+Open `REPLAY OPTIONS > INFORMATION` and edit the Wi-Fi fields, or use the configuration file method below. `REPLAY OPTIONS > SYSTEM > WI-FI` enables or disables the Wi-Fi adapter immediately and preserves that choice across restarts.
 
-1. Insert the SD card in your computer.
-2. Open the **replay** exFAT partition and edit `config\replay.cfg`.
-3. Set:
+## Configure `replay.cfg`
+
+Edit `/media/sd/config/replay.cfg` from a computer, or over SSH after stopping RePlay:
 
 ```cfg
 wifi_name    = "MyWifi"
-wifi_pwd     = "********"
-wifi_country = "ES"           # ISO 3166 code (e.g., ES, US, DE)
-wifi_mode    = "transition"   # wpa3 | wpa2 | transition
-wifi_hidden  = "false"        # "true" if SSID is hidden
+wifi_pwd     = "MyWifiPassword"
+wifi_country = "ES"       # ISO 3166 two-letter country code
+wifi_hidden  = "false"    # "true" for a hidden SSID
 ```
 
-Notes:
+The password is protected in the live configuration after it has been applied. The default country on a clean image is `00` (world domain); set the real country before normal use so the permitted channels and transmit power are correct.
 
-* `transition` works on mixed WPA2/WPA3 SSIDs.
-* Use `wpa3` for WPA3-only APs.
-* Use `wpa2` for WPA/WPA2 APs. If your AP requires TKIP, select `wpa2` and enable TKIP on the router.
-* Refer to the full list of valid country codes here: [ISO 3166 Country Codes](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes).
+For a hidden network, set `wifi_hidden` to `"true"`. No separate WPA2/WPA3 selection is required. IWD chooses the appropriate security method from the access point.
 
-## Option 2: RePlay config (Ethernet)
+## Verify the connection
 
-Use the same fields and notes as in **Option 1**. Edit the live config over SSH.
-
-Steps:
-
-1. Connect the Pi via Ethernet and SSH in: `ssh root@<ip-or-hostname>`  (password: `replayos`)
-2. Stop RePlay to release the config: `systemctl stop replay.service`
-3. Edit the file on the SD card: `nano /media/sd/config/replay.cfg`
-4. Save, flush, and reboot:
-
-   ```
-   sync
-   reboot
-   ```
-
-## Option 3: Manual Linux config
-
-1. Connect the Pi via Ethernet and SSH in: `ssh root@<ip-or-hostname>`  (password: `replayos`)
-2. Edit: `nano /etc/wpa_supplicant/wpa_supplicant-wlan0.conf`
-3. Paste the profile that fits your network.
-
-### WPA3-Personal (SAE)
-
-```cfg
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=ES
-
-network={
-    ssid="YourNetworkName"
-    psk="YourNetworkPassword"
-    key_mgmt=SAE
-    proto=RSN
-    pairwise=CCMP
-    group=CCMP
-    ieee80211w=2
-}
-```
-
-### WPA2/WPA3 Transition
-
-```cfg
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=ES
-
-network={
-    ssid="YourNetworkName"
-    psk="YourNetworkPassword"
-    key_mgmt=WPA-PSK SAE
-    proto=RSN
-    pairwise=CCMP
-    group=CCMP
-    ieee80211w=1
-}
-```
-
-### WPA2-Personal (secure default)
-
-```cfg
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-country=ES
-
-network={
-    ssid="YourNetworkName"
-    psk="YourNetworkPassword"
-    key_mgmt=WPA-PSK
-    proto=RSN
-    pairwise=CCMP
-    group=CCMP
-}
-```
-
-### WPA/WPA2 legacy with TKIP (only if required by AP)
-
-```cfg
-network={
-    ssid="YourNetworkName"
-    psk="YourNetworkPassword"
-    key_mgmt=WPA-PSK
-    proto=WPA RSN
-    pairwise=CCMP TKIP
-    group=CCMP TKIP
-}
-```
-
-4. Hidden SSID: add `scan_ssid=1` inside `network{}`.
-5. Apply without reboot:
+From an SSH session, use:
 
 ```sh
-ip link set wlan0 up
-systemctl try-reload-or-restart wpa_supplicant@wlan0.service || wpa_cli -i wlan0 reconfigure
-wpa_cli -i wlan0 reassociate
+iw dev
+networkctl status
+ip addr show wlan0
 ```
 
-## Verify and troubleshoot
-
-* Status: `wpa_cli -i wlan0 status`
-* IP: `ip addr show wlan0`
-* Scan: `wpa_cli -i wlan0 scan && sleep 2 && wpa_cli -i wlan0 scan_results`
-
-## Router & Access point tips
-
-* WPA2: set **WPA2-PSK + AES/CCMP**. Avoid **Auto** and TKIP.
-* WPA3: enable **WPA3-Personal (SAE)** with **PMF required**.
-* Set the correct `country` for proper channel use.
+If Wi-Fi is unavailable at boot, RePlay still starts and can be configured later over Ethernet or by editing the SD card. Credentials are runtime data and should not be included in screenshots, logs, or shared configuration files.

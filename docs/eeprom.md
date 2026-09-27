@@ -1,8 +1,8 @@
-RePlayOS supports analog video through the DPI interface (GPIO). To ensure proper operation—especially when using interlaced video modes—a minimum Raspberry Pi EEPROM/firmware version is required on both Raspberry Pi 4 and Raspberry Pi 5 devices (the fix is not available for Raspberry Pi 3).
+RePlayOS supports analog video through the DPI interface (GPIO). To ensure proper operation—especially when using interlaced video modes—a minimum Raspberry Pi EEPROM/firmware version is required on Raspberry Pi 4 and Raspberry Pi 5 devices (the fix is not available for Raspberry Pi 3).
 
-At boot, the system automatically checks the installed EEPROM version and updates it to the minimum required release (2025-11-05) if necessary. After the update, the UI will prompt you to perform a cold boot (disconnect and reconnect the power cable) to complete the installation.
+RePlayOS checks the installed EEPROM version and shows a warning when it is below the minimum required release (2025-11-05). The public image does not install EEPROM updates automatically; update it deliberately using the Raspberry Pi tools below when required.
 
-In some devices, the automatic installer may not be able to detect or apply the EEPROM update. If that happens, you can still perform the update manually via SSH using the steps below.
+Pi 3 has no applicable bootloader EEPROM. On Pi 4/5, back up important data before updating and perform a cold boot (disconnect and reconnect power) after the update.
 
 ## Check EEPROM version & apply optional configurations
 

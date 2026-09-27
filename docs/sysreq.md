@@ -11,7 +11,7 @@
 
     **NOTE 2:** compatibility with the following devices is unverified, as RePlayOS has not been tested on them: RPi CM4, RPi 400, RPi CM5, RPi 500.
 
-    **CRT/JAMMA Users:** the system is being developed using new RGB-Pi 2 prototype hardware (new hardware will be announced in the comming months), and no other devices will be supported or tested. For further details about old RGB-Pi devices please check the [FAQ section](./faq.md#is-it-compatible-with-the-old-rgb-pi-gpio-or-other-similar-devices).
+    **CRT/JAMMA Users:** RGB-Pi 2 is the recommended HDMI-to-SCART solution for RePlayOS. Raspberry Pi 5 also has limited legacy DPI (GPIO) video support with separate audio requirements. See [Video Configuration](videobasic.md#video-connector) and the [FAQ](./faq.md#is-it-compatible-with-the-old-rgb-pi-gpio-or-other-similar-devices) before using other CRT hardware.
 
 **RAM:**
 

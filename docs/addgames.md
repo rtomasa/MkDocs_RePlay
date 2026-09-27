@@ -13,6 +13,12 @@ RePlayOS automatically creates the required folder structure once the desired st
 
 Once you have selected the desired storage device and the folder structure is in place, you can proceed with transferring your games.
 
+### Keep user data on the local SD card
+
+If your ROM library is on an NFS share or another shared storage unit, open `REPLAY OPTIONS > SYSTEM > DATA LOCATION` and choose `LOCAL SD`. This keeps saves, save states, captures, input mappings, core/game settings, and skins on `/media/sd` while ROMs, BIOS files, favorites, and recents continue to use the selected storage unit.
+
+Changing this option does not copy, merge, or delete existing files. Playtime statistics are always stored on the local SD card.
+
 ### A Note About NFS Share
 
 The NFS share must be configured manually in the `replay.cfg` file located at `/media/sd/config/replay.cfg`.
@@ -49,7 +55,7 @@ In the example below, we are copying a SEGA Master System game to the correspond
 
 ## Transfer ROMs to the MicroSD
 
-You can turn off your Raspberry Pi, remove the MicroSD card, and plug it into your computer to transfer ROMs. A FAT formatted partition named `replay` will be available from your file browser.
+You can turn off your Raspberry Pi, remove the MicroSD card, and plug it into your computer to transfer ROMs. An exFAT partition named `replay` will be available from your file browser.
 
 ## Supported File Formats
 

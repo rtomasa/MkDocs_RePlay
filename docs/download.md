@@ -8,7 +8,16 @@ Would you like to try the most cutting-edge development versions, including new 
 
 Download the latest public version here. It is **FREE!**:
 
-[RePlayOS :material-file-download:](https://www.patreon.com/posts/replayos-1-0-0-146183402?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
+RePlayOS images are distributed as compressed raw SD-card images (`.img.xz`) for supported Raspberry Pi models. Flash the downloaded image with Raspberry Pi Imager or balenaEtcher.
+
+[RePlayOS :material-file-download:](https://www.patreon.com/RePlayOS/posts/replayos-2-is-170745525?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
+
+## Replay Control
+
+Replay Control is the companion web app for RePlayOS, created by [Antonio Abad (lapastillaroja)](https://github.com/lapastillaroja){ target=_blank rel="noopener" }. Install it separately on your Raspberry Pi to browse your library, launch games on the TV, manage favorites, and configure your system from a phone, tablet, or computer.
+
+[Learn about Replay Control](replaycontrol.md){ .md-button .md-button--primary }
+[Official website](https://lapastillaroja.github.io/replay-control/){ .md-button target=_blank rel="noopener" }
 
 ## RGB-Pi OS
 

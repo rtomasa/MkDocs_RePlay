@@ -2,10 +2,16 @@
 
 Below you can find a description of some basic video configurations and features on RePlayOS. You can change the resolution, add some video filters, select different scaling modes, enable dual screen, and more.
 
+## Preferred Renderer and Frame Pacing
+
+`REPLAY OPTIONS > VIDEO > PREFERRED RENDERER` defaults to OpenGL ES. Authenticated Insiders on Raspberry Pi 5 can select experimental Vulkan. This is a preference for Vulkan-capable cores; OpenGL ES cores and software-frame cores continue through their supported paths. Changing the renderer requires a game restart.
+
+`REPLAY OPTIONS > VIDEO > FRAME PACING` offers `BALANCED` (default, best performance) and `LOW LATENCY` (which may reduce performance). A running game's `SYSTEM SETTINGS > FRAME PACING` option can override the global choice. Apply a changed frame-pacing setting by restarting the game.
+
 ## Video Connector
 
 * `HDMI`: used for both HDMI>LCD and HDMI>DAC>CRT modes
-* `DPI (GPIO)`: enables limited support for legacy RGB-Pi (GPIO) model in Raspberry Pi5 (must be enabled from `ADDONS` option)
+* `DPI (GPIO)`: enables limited support for legacy RGB-Pi (GPIO) model in Raspberry Pi5 (must be enabled from `REPLAY OPTIONS > SYSTEM > PI5 ADD-ON`)
     - Pi5 only
     - No audio support
     - Supports both LCD and CRT modes (defaults to CRT)
@@ -30,16 +36,15 @@ Below you can find a description of some basic video configurations and features
             Mode 11: 640x480@60 
             Mode 12: 720x400@70
         ```
-**NOTE:** RePlay RC7+ automatically checks for and installs a customized 2025-11-05 EEPROM if a lower version is detected. Please check the [EEPROM Update](eeprom.md) section for further details.
+**NOTE:** RePlayOS checks the EEPROM minimum version and shows a warning when an update is required. It does not install EEPROM updates automatically. Please check the [EEPROM Update](eeprom.md) section for deliberate manual updates.
 
 ## Video Mode
 
 You can select the desired video mode from `REPLAY OPTIONS > VIDEO > VIDEO MODE`:
 
 * `CRT/LCD AUTO`: this mode automatically selects the type (CRT or LCD), and native resolution of your monitor. However, please note that this only applies to resolutions up to 1920x1080 for LCD. This limitation ensures backward compatibility with all Raspberry Pi models and addresses performance considerations. Consequently, even if you have a 4K monitor, the system will configure it to a maximum resolution of 1920x1080.
-* `CRT 320X240@60/NRR`: this enables analog video support in 240p mode, which is the standard for any commercial CRT TV. It boot in 60Hz mode and uses native refresh rates (**NRR**) for each system/game. When used in combination of the corresponding CRT Type option, it is also able to automatically scale to 480p when used with high-resolution arcade 31kHz monitors, such as those found in NAOMI cabinets.
-* `CRT 320X240@50/NRR`: same as `CRT 320X240@60/NRR` but boots the UI in 50Hz mode.
-* `LCD NATIVE@60/NRR`: This mode uses your monitor’s native resolution and native refresh rates (**NRR**) for different systems and games when available. The refresh rate selected depends on the [LCD monitor type](#lcd-type) chosen in the corresponding option.
+* `CRT 320X240 GRR`: this enables analog video support in 240p mode, which is the standard for a commercial CRT TV. It uses the game refresh rate (**GRR**) for each system/game and can scale to 480p with suitable high-resolution arcade 31kHz monitor profiles.
+* `LCD GRR`: this mode uses your monitor’s native resolution and the game refresh rate (**GRR**) for different systems and games when available. The refresh rate selected depends on the [LCD monitor type](#lcd-type) chosen in the corresponding option.
 * `LCD 1920X1080@60`
 * `LCD 1280X720@60`
 * `LCD 1280X1024@60`
@@ -48,7 +53,7 @@ You can select the desired video mode from `REPLAY OPTIONS > VIDEO > VIDEO MODE`
 * `LCD 3840x2160@60`: experimental 4K resolution for Raspberry PI 5 and higher (can impact performance).
 * `LCD 1920X1200@60`: 16:10 hi-res for Raspberry PI 4 and higher (can impact performance).
 
-**NOTE:** when changing between LCD and CRT modes, you must reboot the system to apply the configuration.
+**NOTE:** video connector, video mode, multi-screen, LCD type, and CRT type changes are applied live. RePlay shows a three-second cancellation countdown before rebuilding the video stack.
 
 ## Multi Screen
 

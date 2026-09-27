@@ -1,6 +1,139 @@
 # Changelog
 
+# v2.0.52
+- [X] Added Insider-only input recording and playback for compatible cores, with recordings streamed to disk through a bounded memory queue
+- [X] Added balanced and low-latency frame pacing options globally and per game
+- [X] Added automatic creation of the ROM library's _autostart folder
+- [X] Completed a major overhaul of the RePlayOS base system:
+    - Rebuilt OS images with Raspberry Pi's rpi-image-gen
+    - Made it possible to upgrade offline by reflashing an existing RePlayOS v2 SD card with a compatible image while preserving the exFAT `replay` data partition
+    - Packaged RePlayOS components as coordinated, versioned Debian packages
+    - Added a dedicated, signed Debian package repository for safer OTA updates
+    - Made OTA updates transactional, with offline installation and automatic recovery
+    - Replaced wpa_supplicant with IWD for simpler Wi-Fi setup and automatic WPA security detection
+- [X] Added custom forked Flycast core including the following improvements:
+    - Enabled GLES 3.1 OIT (Order-independent transparency) AKA Alpha Sorting Per-Pixel
+    - Optimized ARM64 framebuffer emulation paths (3.9x performance improvement)
+- [X] Added an **Experimental Insider-only Raspberry Pi 5** Vulkan engine for Vulkan and software-frame libretro cores:
+    - Compiled Vulkan support into frontend binary while showing and enabling `Preferred renderer` only on Raspberry Pi 5
+    - Retained OpenGL ES as the default and as the native path for OpenGL cores
+    - Retained software-frame core rendering through the existing compositor
+    - Preserved CRT modes, dual cloned displays, UI composition, and HDMI hotplug recovery
+    - Preserved headless Vulkan core contexts across DRM/EGL monitor-topology rebuilds
+    - Made native Vulkan-to-KMS composition implicit when Vulkan is selected
+    - Added single- and dual-display LCD/CRT gameplay, direct atomic Switchres modesets, cloned/side-by-side/vertical/smart layouts, UI/overlay alpha composition, rotation, colour/gamma controls, video filters, lightgun flash, Ambiscan backgrounds, screenshots, and screen-saver rendering
+    - Kept a Vulkan-to-GLES DMA-BUF bridge lazy and internal for genuine KMS/capability recovery, cached unchanged overlay uploads, and retained release-build CPU/GPU and presentation-latency profiling through `REPLAY_VULKAN_PROFILE=1`
+- [X] Added experimental Nintendo GameCube, Nintendo Wii, and Arcade Triforce (Dolphin) and Sony PlayStation 2 (LRPS2) cores, available only to Insiders on Raspberry Pi 5 when Vulkan is enabled
+- [X] Added Atari Jaguar CD system on Raspberry Pi5
+- [X] Added Nintendo Virtual Boy system as a standard console on all Raspberry Pi models
+- [X] Created new replay_bios_v11.zip pack:
+    - Added PS2 required bios
+    - Added Jaguar CD required bios
+    - Added GC required system files
+- [X] Added frontend integration for the new RePlayOS OTA updater:
+    - Added `REPLAY OPTIONS > UPDATES` with update status and last-check time
+    - Added selectable `STABLE` and `TESTING` update channels
+    - Added non-blocking update checks with live status refresh
+    - Added background update preparation followed by automatic reboot into offline installation
+    - Disabled update actions while an operation or scheduled transaction is active
+- [X] Updated Alpha Player to v2.11.0:
+    - Smoother video playback without periodic pauses, freezes, or frame shaking
+    - More reliable seeking, with video and audio resuming together at the selected time
+    - Improved playback and seeking for older MPEG, DivX, and Xvid videos
+    - Automatic support for AVI files that use packed B-frames
+    - Better recovery from damaged or inaccurate audio and video timestamps
+    - Reduced unnecessary decoding work and buffer growth while seeking or pausing
+    - Reduced verbose FFmpeg logging overhead in debug builds, especially for H.264 videos
+- [X] Added custom PS3 DualShock/Sixaxis USB autopairing service
+- [X] Added many UI/UX improvements and fixes:
+    - [X] Added a new UI font:
+        - Replaced the 5×5-pixel monospaced font with a custom, variable-width 4×5-pixel font
+        - Improved readability
+        - Allowed more text to fit on screen
+        - Permanently enabled a 1-pixel black text shadow
+    - [X] Improved the information area:
+        - Added marquee scrolling for long information text
+        - Added libretro core option category and definition descriptions to core System settings
+        - Added system information in recents and favorites
+        - Added prioritized notification queuing with live status/progress updates, repeated-message replacement and full libretro message handling
+    - [X] Improved the default RePlay skin to provide better contrast
+    - [X] Added several procedurally and animated generated background styles, selectable under `SYSTEM`
+    - [X] Added targeted asynchronous UI jobs for directory scanning and metadata collection, image decoding and preview preparation, network/update work, slow storage or external-operations probing, and SDL device hotplug; a dedicated monitor handles joystick updates and a low-priority worker handles gamepad open/close while frontend state and controller configuration stay on the main thread
+    - [X] Refreshed controller state continuously in the background, so games receive a recent, complete controller snapshot whenever they check input; this improves quick input reliability while keeping slow device updates out of gameplay.
+    - [X] Added core-aware asynchronous savestate saving: state files are written atomically on a low-priority worker, cores that opt in through `RETRO_ENVIRONMENT_SET_SAVE_STATE_IN_BACKGROUND` can serialize off the main thread, and pending saves are drained safely during loads and shutdown
+    - [X] Added hold-to-repeat volume adjustment using L2/R2 in the UI
+    - [X] Fixed occasional blank notifications
+    - [X] Fixed the frontend UI menu colors and transparency rendering black during PPSSPP movie playback
+    - [X] Moved the Pi 5 add-on setting from its own `ADD-ONS` group to `SYSTEM`
+    - [X] Option to show/hide files referenced by M3U playlists
+- [X] Added new system options and features:
+    - [X] Redesigned controller assignment and input mapping:
+        - Added persistent `PLAYER 1`-`PLAYER 6` controller assignments that follow distinguishable controllers across restarts and USB port changes
+        - Added per-player controller assignment, physical mapping, input testing and rumble testing; displaced controllers automatically move to the first free player slot
+        - Added `RESET PLAYER ASSIGNMENTS` to restore automatic connection-order assignment
+        - Added a default `AUTO` mode to `ALL USERS CONTROL UI`: P1 exclusively controls the UI while assigned, and the remaining players can control it when P1 is unavailable
+        - Added live button/axis capture for game mappings and clearer `P1`–`P6` game-port forwarding, without changing UI controls
+        - Added folder input profiles with `GAME > FOLDER > SYSTEM > DEFAULT` priority and a visible active-profile indicator
+        - Added folder settings profiles with `GAME > FOLDER > SYSTEM > DEFAULT` priority and a visible active-profile indicator
+        - Kept SDL database mappings separate from game profiles and fixed physical remapping names from changing player assignments
+        - Fixed disconnected or remapped controllers resetting unrelated player mappings; each saved profile now keeps all six player ports together
+        - Existing input profile files are not migrated and must be recreated
+    - [X] Added live CPU and GPU usage to `REPLAY OPTIONS > INFORMATION`:
+        - CPU usage reports the RePlay process load, where 100% represents one fully occupied CPU core and multithreaded cores can exceed 100%
+        - GPU usage reports the RePlay process V3D load using the greater of the bin and render engine utilization
+        - Usage sampling runs in a background worker only while the Information screen is open
+    - [X] Added `REPLAY OPTIONS > LINK PLAY` for core-managed link-cable, wireless, serial, and LAN multiplayer
+        - Supports menu-selectable host/client modes and LAN discovery, `replay.cfg`/REST configuration, compatibility checks, and disables time/state manipulation while connected
+        - As of 21 August 2026, only Atari Jaguar and Nintendo DS cores support this link protocol
+    - [X] Added new `REPLAY OPTIONS > PLAY STATS` option group:
+        - Current Game Time = Time spent in the currently running game
+        - Current Session Time = Total play time during the current RePlayOS session
+        - Play Time This Week = Total play time during the current week
+        - Total Play Time = Lifetime play time across all games
+        - Games Played = Number of unique games launched
+        - Total Sessions = Number of RePlayOS sessions
+        - Average Session Time = Total play time ÷ sessions
+        - Longest Session = Longest continuous RePlayOS session
+    - [X] Added `REPLAY OPTIONS > SYSTEM > DATA LOCATION`:
+        - `STORAGE UNIT` preserves the existing per-unit locations for skins, core/game settings, input mappings, saves, save states, and captures
+        - `LOCAL SD` keeps those files under `/media/sd`, allowing multiple users to share an NFS (or any other storage device) ROM library while retaining independent local data
+        - ROMs, BIOS, favorites, and recents continue to use the selected storage unit
+        - Playtime remains local to the SD card, independent of the selected data location
+        - Changing the option never copies, merges, or deletes existing data
+        - Changing storage or data location now provides a five-second cancel window; after it expires, a running game is closed and the RePlay menu core is reloaded before storage is reconfigured
+    - [X] Added live application of `VIDEO CONNECTOR`, `VIDEO MODE`, `MULTI SCREEN`, `LCD TYPE`, and `CRT TYPE` changes with a fixed three-second cancellation countdown before rebuilding the video stack
+    - [X] Added immediate live application of `AUDIO OUTPUT` changes, preserving the current output and configuration when the requested device is unavailable
+    - [X] Added `REPLAY OPTIONS > SYSTEM > WI-FI` to enable or disable Wi-Fi immediately and persist the choice across restarts
+    - [X] Updated the Net Control REST API:
+        - Added all play statistics to the `/api/v1/get_playtime` response, including Most Played Game and Most Played System
+        - Removed the obsolete `wifi_mode` managed configuration option after the IWD migration
+    - [X] Updated game menu button navigation when opening and closing the UI
+- [X] Added fast-forward functionality (Select + R2)
+- [X] Added a manually maintained arcade database for games missing from the generated MAME database:
+    - Added Mushihime-Sama Matsuri Ver 1.5 (`matsuri15`)
+    - Added DoDonPachi SaiDaiOuJou (`ddpsdoj`)
+- [X] Added audio processing and frontend rendering optimizations
+- [X] Updated gamecontrollerdb.txt
+- [X] Replaced frontend-managed EEPROM installation with a read-only minimum-version warning
+- [X] Changed the terminology from NRR (Native Refresh Rate) to GRR (Game Refresh Rate) to avoid confusion
+- [X] Changed credits.json file location to avoid issues on clean ISO installations
+- [X] Changed the default OS setting `force_turbo=1` to `core_freq_fixed=1`:
+    - Fixed incorrect HDMI pixel-clock programming on Raspberry Pi 3
+    - Fixed out-of-sync CRT and Game Refresh Rate (GRR) video modes
+    - Fixes Pi4 USB3 power drops
+    - Restored correct 60 FPS frame pacing on LCD displays
+- [X] Fixed stale DRM/GBM scanout buffer ownership after hot-plugging from a CRT DAC to an HDMI LCD, which caused a black screen and repeated CRTC `Device or resource busy` page-flip errors when launching a game
+- [X] Fixed some Flycast NAOMI games losing video and making the UI menu invisible after runtime AV geometry changes when threaded rendering was enabled
+- [X] Fixed PSX displaying the advanced options when `VISIBILITY > ADVANCED SYSTEM SETTINGS` is disabled
+- [X] Fixed PSX displaying BIOS information on boot when info logging is disabled
+- [X] Fixed Neo Geo Pocket missing the CRT ambiscan default
+- [X] Removed xbox_drv_installer.sh since it is not compatible with OTA updates and can break on kernel changes/updates
+
 # v1.8.0
+
+## Replay Control Companion App
+
+This release added installation and uninstallation scripts for [Replay Control](replaycontrol.md), the companion web app created by [Antonio Abad (lapastillaroja)](https://github.com/lapastillaroja). It lets you browse, manage, and launch games from a phone, tablet, or computer on your local network.
 
 ## Patreon Poll Winner
 
@@ -42,7 +175,7 @@ Selected by RePlayOS supporters through the Patreon feature poll and available t
 - [X] Added UI volume button bindings to L2/R2 (works only while the UI is open)
 - [X] Added controller mapping visual prompts on top of the UI
 - [X] Added `REPLAY OPTIONS > VISIBILITY` toggles for favorites, recents and extras
-- [X] Added Replay Control installation and uninstallation scripts to extras
+- [X] Added [Replay Control](replaycontrol.md) installation and uninstallation scripts to extras
 - [X] Changed CRT Ambiscan predefaults to disable it for regular CRT systems, use flat mode for handheld CRT systems, and remove the LCD Alpha Player override
 - [X] Increased Screen Position X/Y options to `-64` to `+64` in finer 2-unit steps
 - [X] Improved log information when mounting NVMe units
@@ -122,10 +255,10 @@ Selected by RePlayOS supporters through the Patreon feature poll and available t
             - `Default` uses the file default subtitle track, a same-name external subtitle, or the first subtitle track
 - [X] Updated DOSBox Pure core now including multiple volume controls for different sound cards
 - [X] Updated SEGA Saturn core to the latest v1.32.1 stable version including many improvements, bug fixes and SEGA ST-V support
-- [X] Updated Atari Jaguar core from 2.1.0 to 2.3.1 including many improvements, bug fixes, and RetroAchivements support (Doom / Wolf3D / Skyhammer / Iron Soldier 2 still have known issues)
+- [X] Updated Atari Jaguar core from 2.1.0 to 2.3.1 including many improvements, bug fixes, and RetroAchievements support (Doom / Wolf3D / Skyhammer / Iron Soldier 2 still have known issues)
 - [X] Updated GBA core including almost 2 years of updates and improvements
 - [X] Updated RetroAchievements:
-    - Renamed `ONLINE` menu to `ACHIVEMENTS`
+    - Renamed `ONLINE` menu to `ACHIEVEMENTS`
     - Added new visibility options to enable/disable long-lasting/permanent messages
     - The panel now dynamically adapts its size to the content
     - Fixed UI rotation source coords
@@ -235,7 +368,7 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Added touch simulation using mouse devices
 - [X] Added M3U `DISK_FILE|DISK_LABEL` parsing support
 - [X] Added new `RETRO_ENVIRONMENT_GET_DISPLAY_INFO` libretro API interface
-- [X] Improved LCD Auto and LCD NRR video mode selection
+- [X] Improved LCD Auto and LCD GRR video mode selection
 - [X] Disabled Ambiscan by default in alpha player
 - [X] Changed RPi3 default resolutions (LCD and CRT) for improved compatibility
 - [X] Changed disc/disk/tray references to media/drive for CD-ROM and floppy-based systems
@@ -285,9 +418,9 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Created new replay_bios_v6.zip pack:
     - Added support for Amiga IPF roms
 - [X] Migrated from SDL2 to SDL3
-    - [X] Improved audio latency
-    - [X] Added audio output support for primary HDMI, secondary HDMI or both HDMI ports
-    - [X] Added multimouse support
+    - Improved audio latency
+    - Added audio output support for primary HDMI, secondary HDMI or both HDMI ports
+    - Added multimouse support
 - [X] Added some performance optimizations:
     - Improved input reading performance by removing multiple heap buffer requests per frame
     - Improved video performance by caching render-state inputs to the shaders
@@ -440,7 +573,7 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Added new `TAKE SCREENSHOT` option in `SYSTEM MENU`
 - [X] Added additional ScummVM and DOSBox BIOS check to ensure full Roland SC-55 (GM) and Roland MT32 support (requires new bios_v3.zip pack)
 - [X] Added `SYSTEM > LOG LEVEL` option (additional info available in the official website)
-- [X] Added DynaRes support for dynamically changing refresh rates in LCD NRR mode
+- [X] Added DynaRes support for dynamically changing refresh rates in LCD GRR mode
 - [X] Created new bios_v3.zip pack:
     - Enables MAME mainline hiscore support (please do note that MAME stores hiscores inside bios folder)
     - Enables Roland SC-55 (GM) and Roland MT32 support in ScummVM
@@ -590,7 +723,7 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Updated all system cores
 
 # v0.56.0 (RC2)
-- [X] Added DynaRes LCD NRR (Native Refresh Rate) option
+- [X] Added DynaRes LCD GRR (Game Refresh Rate) option
     - Standard LCD screens run at 55-61Hz
     - LCD VRR screens run at 48-75Hz
 - [X] Added Wi-Fi configuration to replay.cfg
@@ -699,7 +832,7 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Fixed DosBox-Pure core crashing in some games due to a bug with the disney sound system
 - [X] Fixed Caprice32 (CPC) core displaying the M3U file in the list of available disks
 - [X] Fixed video info displaying wrong Hz information for some cores/games
-- [X] Removed `CRT 640X480@NRR` video mode. The system is already able to properly manage the screen mode based on the CRT Type selected
+- [X] Removed `CRT 640X480@GRR` video mode. The system is already able to properly manage the screen mode based on the CRT Type selected
 - [X] Removed Pi3/3+/Zero 2 default overclock due to instability issues (can be re‑enabled easily via config.txt)
 - [X] Removed unwanted and non-working PSX core options
 - [X] Removed unwanted and non-working N64 core options
@@ -728,7 +861,7 @@ These are only version number upgrades to solve OTA date check issue
 - [X] Fixed `ARCADE 15/25/31KHZ` CRT type mode
 - [X] Fixed crash caused by cores reporting more than 6 ports (PSX, DC)
 - [X] Fixed DynaRes prioritizing interlaced over progressive modes on PC/31 kHz monitors
-- [X] Fixed LCD DRR modes crashing
+- [X] Fixed LCD GRR modes crashing
 - [X] Fixed System > Information > Resolution options not displaying native monitor refresh
 - [X] Fixed system image creation tool so that it can be now written using the official Raspberry Pi Imager
 
@@ -982,7 +1115,6 @@ These are only version number upgrades to solve OTA date check issue
 
 ## v0.40.2
 - [X] Changed DC RPi5 performance profile
-- [X] Removed "Reset All System Configs" option from user compilation (only available in debug mode)
 - [X] Fixed bug loading emulation quality profiles
 
 ## v0.40.1
@@ -998,14 +1130,13 @@ These are only version number upgrades to solve OTA date check issue
 ## v0.39.0
 - [X] Added new option to boot into PAL 50 or NTSC 60 mode (useful for some CRT only PAL TVs)
 - [X] Added GPU Frequency in System Information option menu
-- [X] Added option to reset all system configurations (frontend, cores, and input)
 - [X] Changed Default video mode option to CRT/LCD Auto
 - [X] Changed all predefault overclock settings for better stability
 - [X] Changed Emulation Quality options to Performance, Balanced, and Quality
     - Automatically adjusts core options based on RPi model, and Emulation Quality selected option
 - [X] Fixed bug making P1 controlling P2
 - [X] Fixed function for getting interlaced video modes in CRT mode 
-- [X] Fixed A/V sync in NRR mode in systems running internally at different speed rates
+- [X] Fixed A/V sync in GRR mode in systems running internally at different speed rates
 - [X] Fixed A/V reinit in OpenGL based cores when running in CRT in RPi5
 - [X] Fixed Screen Test core crashing due to bad compilation
 - [X] Fixed firstboot auto-configuration

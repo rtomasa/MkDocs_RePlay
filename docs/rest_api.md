@@ -60,7 +60,7 @@ Response:
 
 ```json
 {
-  "version": "RePlayOS v1.7.3"
+  "version": "RePlayOS v2.0.52"
 }
 ```
 
@@ -125,9 +125,17 @@ Response:
 
 ```json
 {
-  "version": "RePlayOS v1.7.4",
+  "version": "RePlayOS v2.0.52",
   "model": "Raspberry Pi 5",
   "eeprom": "2025-11-05",
+  "insider_enabled": false,
+  "insider_features": [
+    "replays",
+    "vulkan",
+    "gamecube",
+    "playstation2",
+    "update_channel"
+  ],
   "cpu_frequency_mhz": 2400,
   "gpu_frequency_mhz": 800,
   "cpu_temperature_c": 48.2,
@@ -154,6 +162,8 @@ Fields:
 | `version` | Full RePlayOS version string. |
 | `model` | Detected Raspberry Pi or PC model. |
 | `eeprom` | Raspberry Pi bootloader EEPROM date. It is an empty string on platforms where this information is unavailable. |
+| `insider_enabled` | Whether the configured signed Insider token is currently valid. The token itself is never exposed. |
+| `insider_features` | Feature IDs supported by this RePlayOS build and hardware, regardless of the Insider token. The array may be empty when none are supported. |
 | `cpu_frequency_mhz` | Detected CPU frequency in MHz. |
 | `gpu_frequency_mhz` | Detected GPU frequency in MHz. It is `0` when unavailable. |
 | `cpu_temperature_c` | Current CPU temperature in degrees Celsius. It is `0.0` when unavailable. |
@@ -164,6 +174,18 @@ Fields:
 | `game_resolution` | Geometry and content refresh rate reported by the active libretro core. |
 
 `game_resolution` is populated for any active core that reports valid geometry, including the RePlay boot menu core. It is `null` while no valid core geometry is available, such as during unload or failed-load transitions.
+
+Current `insider_features` values:
+
+| Feature ID | Description |
+| --- | --- |
+| `replays` | RePlay input-movie recording and playback. |
+| `vulkan` | Pi 5 Vulkan renderer capability. |
+| `gamecube` | Nintendo GameCube (Dolphin) support. |
+| `playstation2` | Sony PlayStation 2 (LRPS2) support. |
+| `update_channel` | Selection of the RePlayOS update channel. |
+
+The array describes supported capabilities, rather than temporary state or access granted by the Insider token. For example, `vulkan` may be present even while OpenGL ES is currently selected. A feature listed here may still require a valid Insider token to use. Clients should tolerate unknown feature IDs so newer RePlayOS versions can add capabilities without breaking integrations.
 
 ## Get Playtime
 
@@ -194,10 +216,22 @@ Response:
 ```json
 {
   "tracking_enabled": true,
+  "current_game_seconds": 420,
+  "current_game": "0H 7M",
   "all_seconds": 12540,
   "all": "3H 29M",
   "session_seconds": 1800,
   "session": "0H 30M",
+  "week_seconds": 7440,
+  "week": "2H 4M",
+  "games_played": 18,
+  "total_sessions": 9,
+  "most_played_game": "Super Pang (Japan).sfc",
+  "most_played_system": "snes",
+  "average_session_seconds": 1393,
+  "average_session": "0H 23M",
+  "longest_session_seconds": 3600,
+  "longest_session": "1H 0M",
   "systems": [
     {
       "system": "snes",
@@ -221,14 +255,26 @@ Fields:
 | Field | Description |
 | --- | --- |
 | `tracking_enabled` | Whether `SYSTEM > TRACK PLAY TIME` is currently enabled. |
+| `current_game_seconds` | Time spent in the currently running game during this launch, in seconds. It is `0` when no tracked game is running. |
+| `current_game` | Current game time formatted as `H M`. |
 | `all_seconds` | Total tracked playtime across all tracked games, in seconds. |
 | `all` | Total tracked playtime formatted as `H M`. |
-| `session_seconds` | Tracked playtime accumulated during the current boot session, in seconds. This value is in memory only and resets when RePlay powers off or exits. |
-| `session` | Current boot session playtime formatted as `H M`. |
+| `session_seconds` | Total tracked playtime accumulated during the current RePlayOS session, in seconds. This value is in memory only and resets when RePlay powers off or exits. |
+| `session` | Current RePlayOS session playtime formatted as `H M`. |
+| `week_seconds` | Total tracked playtime during the current local calendar week, starting Monday, in seconds. |
+| `week` | Current-week playtime formatted as `H M`. |
+| `games_played` | Number of unique tracked games launched. |
+| `total_sessions` | Number of RePlayOS sessions registered while playtime tracking was enabled. |
+| `most_played_game` | Game identity with the highest accumulated playtime, or an empty string when no game has tracked time. |
+| `most_played_system` | System folder/name with the highest accumulated playtime, or an empty string when no system has tracked time. |
+| `average_session_seconds` | Lifetime tracked playtime divided by `total_sessions`, in whole seconds. It is `0` when no session has been registered. |
+| `average_session` | Average session playtime formatted as `H M`. |
+| `longest_session_seconds` | Highest tracked playtime accumulated during a single RePlayOS session, in seconds. |
+| `longest_session` | Longest session playtime formatted as `H M`. |
 | `systems` | Per-system totals. Filtered by `system` when provided. |
 | `games` | Per-game totals. Filtered by `system` and `game_file`/`game` when provided. |
 
-When tracking is disabled, the endpoint still returns the stored totals but `tracking_enabled` is `false`. Special entries under `_extra` are not tracked.
+The summary statistics are always global; query parameters filter only the `systems` and `games` arrays. When tracking is disabled, the endpoint still returns the stored totals but `tracking_enabled` is `false`. Special entries under `_extra` are not tracked.
 
 ## Get Config
 
@@ -269,6 +315,8 @@ Updates one or more settings for the selected configuration type. The complete r
 ```text
 GET /api/v1/set_config?type=<replay|core|game>&option=<option>&value=<value>
 GET /api/v1/set_config?type=<replay|core|game>&option=<option-1>&value=<value-1>&option=<option-2>&value=<value-2>
+GET /api/v1/set_config?type=core&system=<system>&option=<option>&value=<value>
+GET /api/v1/set_config?type=game&system=<system>&game_file=<full-game-path>&option=<option>&value=<value>
 ```
 
 Parameters:
@@ -278,8 +326,12 @@ Parameters:
 | `type` | Yes | Configuration type: `replay`, `core`, or `game`. |
 | `option` | Yes | Configuration option name. Repeat together with `value` to update multiple options. |
 | `value` | Yes | New value for the corresponding `option`. |
+| `system` | No | For `core` and `game`, the expected `system` from `get_status`. Rejects the write if the active system changed. Not accepted for `replay`. |
+| `game_file` | No | For `game`, the expected full `game_file` path from `get_status`. Must be supplied together with `system`; rejects the write if the active game changed. Not accepted for `core` or `replay`. |
 
 Up to 64 changes may be included in one request. If any option or value is invalid, none of the changes are written.
+
+The target parameters are optional for compatibility with existing clients. When supplied, RePlay checks them immediately before applying the update. Use the exact `system` and `game_file` values from `get_status`; unlike the `get_playtime` filter, `game_file` is compared as a full path. URL-encode the path in the query string. For `game` updates, supply both target parameters or neither. Empty or invalid target parameters return `400 Bad Request`.
 
 ### RePlay Config
 
@@ -296,18 +348,74 @@ Accepted RePlay options:
 | `wifi_name` | Free-form string. |
 | `wifi_pwd` | Free-form string. |
 | `wifi_country` | Free-form string. |
-| `wifi_mode` | `wpa2`, `wpa3`, `transition` |
 | `wifi_hidden` | `true`, `false` |
 | `replay_insider_token` | Free-form string. |
 | `replay_http_token` | Six numeric digits. |
 | `rcheevos_username` | Free-form string. |
 | `rcheevos_password` | Free-form string. |
+| `link_play_mode` | `disabled`, `host`, `client` |
+| `link_play_address` | Host name or IPv4/IPv6 address used in client mode. |
+| `link_play_port` | TCP port from `1` through `65535`; default `55435`. |
+| `link_play_lan_discovery` | `true`, `false`; default `true`. |
 | `system_kiosk_mode` | `true`, `false` |
 
 Example:
 
 ```bash
 curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_config?type=replay&option=nfs_version&value=4'
+```
+
+#### Link Play Configuration
+
+All four [Link Play](linkplay.md) settings can be read with `get_config?type=replay` and changed with `set_config?type=replay`. Successful changes are saved atomically to `replay.cfg` and queued for immediate application by the frontend.
+
+| Option | Runtime effect |
+| --- | --- |
+| `link_play_mode=disabled` | Stops the Link Play transport. |
+| `link_play_mode=host` | Listens for compatible clients while a game that supports the Netpacket Interface is running. |
+| `link_play_mode=client` | Connects to `link_play_address` and `link_play_port` while a compatible game is running. |
+| `link_play_address=<host>` | Sets the client host name or IP address. URL-encode the value when necessary. |
+| `link_play_port=<1-65535>` | Sets the TCP transport port; the default is `55435`. |
+| `link_play_lan_discovery=true` | Default. Allows active hosts to announce themselves. Clients search only in `client` mode while the Link Play menu is open. |
+| `link_play_lan_discovery=false` | Stops advertisements and closes the discovery socket. It does not stop an existing Link Play transport. |
+
+Configure a host and enable LAN discovery in one atomic request:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' \
+  'http://<replay-ip>:55356/api/v1/set_config?type=replay&option=link_play_mode&value=host&option=link_play_port&value=55435&option=link_play_lan_discovery&value=true'
+```
+
+Configure a client atomically so it never temporarily enters client mode without an address:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' \
+  'http://<replay-ip>:55356/api/v1/set_config?type=replay&option=link_play_mode&value=client&option=link_play_address&value=192.168.1.42&option=link_play_port&value=55435'
+```
+
+A successful multi-option request returns:
+
+```json
+{
+  "command": "set_config",
+  "type": "replay",
+  "options": ["link_play_mode", "link_play_address", "link_play_port"],
+  "updated": true
+}
+```
+
+Disable only LAN discovery without changing the active transport mode:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' \
+  'http://<replay-ip>:55356/api/v1/set_config?type=replay&option=link_play_lan_discovery&value=false'
+```
+
+To stop Link Play completely, set its mode to `disabled`:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' \
+  'http://<replay-ip>:55356/api/v1/set_config?type=replay&option=link_play_mode&value=disabled'
 ```
 
 ### Core And Game Config
@@ -322,8 +430,8 @@ Core and game values also accept `default`, which inherits the global RePlay val
 | `replay_video_integer_scale` | `0`, `1`, `2`, `3`, `4`, `5` |
 | `replay_video_filter` | `0` through `4` |
 | `replay_video_gamma` | `0.5` through `1.5` in increments of `0.1` |
-| `replay_video_monitor_x` | `-64` through `64` in increments of `4` |
-| `replay_video_monitor_y` | `-64` through `64` in increments of `4` |
+| `replay_video_monitor_x` | `-64` through `64` in increments of `2` |
+| `replay_video_monitor_y` | `-64` through `64` in increments of `2` |
 | `replay_audio_system_volume` | `0` through `10` |
 
 Core and game configurations accept the same values plus `default`.
@@ -347,6 +455,24 @@ Response:
 ```
 
 If no active core or game target exists, the endpoint returns `409 Configuration Unavailable`.
+
+To guard a game update against a game switch, first read `get_status`, then send its `system` and `game_file` values with the write:
+
+```bash
+curl -G -H 'X-RePlay-Token: 123456' \
+  --data-urlencode 'type=game' \
+  --data-urlencode 'system=arcade_fbneo' \
+  --data-urlencode 'game_file=/media/nvme/roms/arcade_fbneo/altbeast.zip' \
+  --data-urlencode 'option=replay_video_filter' \
+  --data-urlencode 'value=3' \
+  'http://<replay-ip>:55356/api/v1/set_config'
+```
+
+For a core update, include only `system`. If the supplied target no longer matches the active one, no options are written and the endpoint returns `409 Target Changed`:
+
+```json
+{"error":"Target Changed","detail":"Active configuration target changed"}
+```
 
 ## Set Message
 
