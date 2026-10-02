@@ -1,5 +1,14 @@
 # Changelog
 
+# v2.0.53
+- [X] Added direction labels to X and Y stick axis mappings for both sticks
+- [X] Added shared game and Ambiscan shader effects between OpenGL ES and Vulkan
+- [X] Changed PSX default options to improve emulation accuracy
+- [X] Changed explicit OSD messages to replace the current message immediately
+- [X] Fixed the missing libchdr frontend dependency that prevented CHD images from working with RetroAchievements
+- [X] Fixed Raspberry Pi GPU frequency reporting to show the configured maximum instead of the startup clock
+- [X] Fixed explicit OSD messages to remain visible regardless of the log level
+
 # v2.0.52
 - [X] Added Insider-only input recording and playback for compatible cores, with recordings streamed to disk through a bounded memory queue
 - [X] Added balanced and low-latency frame pacing options globally and per game
