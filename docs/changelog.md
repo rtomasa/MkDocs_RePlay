@@ -1,5 +1,12 @@
 # Changelog
 
+# v2.0.54
+- [X] Changed controller assignment to use the UI OK/Cancel buttons and respect the UI A/B swap setting
+- [X] Changed CRT horizontal size and shift to apply live with confirmation and automatic rollback
+- [X] Fixed interactive input and confirmation prompts to remain visible while pending and display results immediately
+- [X] Fixed CRT video rebuilds to use the generated calibration timing instead of a matching EDID mode
+- [X] Fixed Alpha Player to use consistent NTSC/PAL timing profiles during loading, live changes, and hotplug recovery
+
 # v2.0.53
 - [X] Added direction labels to X and Y stick axis mappings for both sticks
 - [X] Added shared game and Ambiscan shader effects between OpenGL ES and Vulkan
