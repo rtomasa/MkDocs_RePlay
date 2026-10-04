@@ -1,5 +1,16 @@
 # Changelog
 
+# v2.0.57
+- [X] Fixed Update package download messages to show completed OTA downloads, then `Rebooting...`, before restarting
+
+# v2.0.56
+- [X] Fixed Update package download counts
+
+# v2.0.55
+- [X] Added persistent `config.user.txt` for custom boot settings that survive system updates
+- [X] Added package download counts to the Updates page as `Downloading X/Y`
+- [X] Fixed duplicate recent game entries when launching the same game from Favorites and its directory
+
 # v2.0.54
 - [X] Changed controller assignment to use the UI OK/Cancel buttons and respect the UI A/B swap setting
 - [X] Changed CRT horizontal size and shift to apply live with confirmation and automatic rollback
