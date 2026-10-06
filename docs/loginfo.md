@@ -8,8 +8,10 @@ Steps:
 2. Connect to your Raspberry Pi via SSH. See [Linux Terminal Access](terminal.md) if you need the connection steps.
 3. Stop the running process with `systemctl stop replay.service`.
 4. Go to the RePlay system folder: `cd /opt/replay`.
-5. Start RePlay with `./replay`.
+5. Start RePlay with `./replay 2>&1 | tee replay.log`.
 
 After doing the above steps, RePlay will run in the foreground and you will see log output in your SSH terminal. To stop it, press `Ctrl + C`.
+
+Use the generated `replay.log` when opening issues in GitHub.
 
 **Note**: leaving logging enabled when it is not required can slightly impact performance and may briefly show white text on screen when using CRT modes.

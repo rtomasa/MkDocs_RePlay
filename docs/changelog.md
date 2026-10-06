@@ -1,5 +1,12 @@
 # Changelog
 
+# v2.0.58
+- [X] Added `Screenshot UI` in System options to include or exclude the interface, notifications, and achievement overlays in screenshots (Off by default)
+- [X] Added RePlay custom options inside a `RePlay options` submenu at the end of System settings
+- [X] Added per-system multi-screen overrides to the RePlay options submenu
+- [X] Fixed the default background style to `Scrolling`
+- [X] Removed the background animation toggle and replaced with a `Static` a new background style
+
 # v2.0.57
 - [X] Fixed Update package download messages to show completed OTA downloads, then `Rebooting...`, before restarting
 
