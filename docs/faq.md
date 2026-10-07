@@ -25,6 +25,12 @@ By default, the system operates in an ultra-low-latency mode, achieving a remark
 
 Also, please note that some system cores provide their own custom runahead functionality. When combined with this feature, input lag could be significantly less than that experienced on the real hardware.
 
+## Does connecting a joystick to USB 2.0 instead of USB 3.0 affect input lag?
+Usually, there is no noticeable difference. USB 2.0 already supports polling every **1 ms (1000 Hz)** for compatible controllers. Most joysticks use the same polling rate on either port, so USB 3.0’s higher bandwidth does not make them respond faster.
+
+## Does enabling scanlines in RePlay affect input lag?
+Scanlines should not add noticeable input lag as long as the game maintains full speed. RePlay applies them during rendering without buffering an extra frame. They add a small amount of GPU work, so lag could increase if the system cannot keep up.
+
 ## Is it OpenSource?
 The OS operates under a dual-license model: while most components are free and open-source, the frontend remains proprietary. For more details, please refer to the licensing information on the [download](download.md#license) page.
 
