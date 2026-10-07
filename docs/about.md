@@ -1,3 +1,7 @@
+---
+paypal: true
+---
+
 # About
 
 <figure markdown>
@@ -11,6 +15,16 @@ BTW I'm also the creator of RGB-Pi OS 1/2/4!
 **Support me on Patreon if you like RePlayOS or any of my other projects**
 
 [Join my Patreon :simple-patreon:](https://patreon.com/RePlayOS){ .md-button target=_blank }
+
+<div class="paypal-donation">
+  <p>Support RePlayOS with a one-time donation via PayPal.</p>
+  <div id="paypal-container-HES4MUK2PMB6A"></div>
+</div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "HES4MUK2PMB6A",
+  }).render("#paypal-container-HES4MUK2PMB6A");
+</script>
 
 **Follow me for more info and news**
 

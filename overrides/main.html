@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
+{% block extrahead %}
+{{ super() }}
+{% if page and page.meta.paypal %}
+<script src="https://www.paypal.com/sdk/js?client-id=BAAnzb489NH3F6gld6dpoqwPfl6YJe-lnliyfw1q_-ynVhhzRDv90S6l1R9E3RyBnreTzsYIibNtLJrZzA&amp;components=hosted-buttons&amp;disable-funding=venmo&amp;currency=EUR"></script>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 {{ super() }}
 {% endblock %}

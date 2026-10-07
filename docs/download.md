@@ -1,3 +1,7 @@
+---
+paypal: true
+---
+
 # Downloads
 
 ## RePlayOS  
@@ -11,6 +15,16 @@ Download the latest public version here. It is **FREE!**:
 RePlayOS images are distributed as compressed raw SD-card images (`.img.xz`) for supported Raspberry Pi models. Flash the downloaded image with Raspberry Pi Imager or balenaEtcher.
 
 [RePlayOS :material-file-download:](https://www.patreon.com/RePlayOS/posts/replayos-2-is-170745525?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link){ .md-button target=_blank }
+
+<div class="paypal-donation">
+  <p>Support RePlayOS with a one-time donation via PayPal.</p>
+  <div id="paypal-container-HES4MUK2PMB6A"></div>
+</div>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "HES4MUK2PMB6A",
+  }).render("#paypal-container-HES4MUK2PMB6A");
+</script>
 
 ## Replay Control
 

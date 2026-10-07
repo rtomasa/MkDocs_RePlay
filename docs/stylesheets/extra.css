@@ -26,6 +26,12 @@
   margin: 1rem 0;
 }
 
+.paypal-donation {
+  max-width: 24rem;
+  margin: 1rem auto 2rem;
+  text-align: center;
+}
+
 .home-logo {
   margin-top: 0;
 }
