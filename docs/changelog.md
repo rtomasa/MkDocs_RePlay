@@ -1,5 +1,15 @@
 # Changelog
 
+# v2.0.60
+- [X] Added automatic gameplay screenshots when saving states, so now Save/Load state menus show the selected slot's screenshot above the list
+- [X] Added slot numbers alongside timestamps in Save/Load state menus, including empty slots
+- [X] Changed live CRT horizontal size/shift to apply generated timings without rebuilding DRM/GBM/EGL, with confirmation after application and exact timing rollback
+- [X] Changed system settings, core options, and system input value lists to open with the cursor on the currently configured value and display its page
+- [X] Changed `TRACK PLAY TIME` moved from `SYSTEM` into `PLAY STATS` and renamed it `TRACK PLAY STATS` so tracking can be enabled or disabled alongside its statistics
+- [X] Fixed identical controllers without serial numbers claiming each other's saved player assignments; assignments now use their physical USB paths
+- [X] Fixed long system option values, including the Information page time server URL, to scroll when selected while keeping their labels readable
+- [X] Fixed Save/Load state list navigation to return to the first page when moving down past the last slot
+
 # v2.0.59
 - [X] Added `Screenshot UI` in System options to include or exclude the interface, notifications, and achievement overlays in screenshots (Off by default)
 - [X] Added RePlay custom options inside a `RePlay options` submenu at the end of System settings
