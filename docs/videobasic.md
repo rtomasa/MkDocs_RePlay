@@ -140,6 +140,27 @@ This allows you to choose different display modes when playing on LCD screens (C
 This option adds an adaptative color decoration effect to your games.
 ![light](img/ambiscan.gif)
 
+## Analog Filter
+
+`REPLAY OPTIONS > VIDEO > ANALOG FILTER` adds analog video effects or selectively blends dithered pixel patterns. It supports all systems and offers four modes:
+
+| Mode | Effect |
+|:-----|:-------|
+| **Disabled** (default) | Displays the original image without an analog filter. |
+| **S-Video** | Adds colour bleed. |
+| **Composite** | Adds colour bleed and composite video artifacts. |
+| **Dither Blending** | Selectively blends pixel patterns used to create transparency or additional colours. |
+
+RePlay's implementation addresses historical issues with core-native filters, including colour shifting and flickering in Sonic 1's waterfalls and Shinobi III's water during horizontal movement.
+
+Compare the modes below using Sonic 1's waterfall:
+
+| **Disabled (original)** | **S-Video** |
+|:----------------------:|:-----------:|
+| ![Sonic 1 with the analog filter disabled](img/analog_filter_disabled.png){width="360"} | ![Sonic 1 with S-Video colour bleed](img/analog_filter_svideo.png){width="360"} |
+| **Composite** | **Dither Blending** |
+| ![Sonic 1 with Composite colour bleed and artifacts](img/analog_filter_composite.png){width="360"} | ![Sonic 1 with selective Dither Blending](img/analog_filter_dither_blending.png){width="360"} |
+
 ## Scan Lines
 
 This options allows you to add some texture to the image using a custom scanline filter. This mode can be only used with LCD screens when using any vertical integer scaling mode, or CRT 31kHz PC/Arcade monitors.
