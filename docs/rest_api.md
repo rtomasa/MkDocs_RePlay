@@ -66,9 +66,11 @@ Response:
 
 ## Get Status
 
-Returns current system, game, UI view, pause, halt, and core information.
+Returns current system, game, UI view, pause, halt, core, and active display type information.
 
 The `paused` field reports whether core execution is paused. The `halted` field independently reports whether the frontend has been halted using `set_cmd?cmd=halt`. Both fields may be `true` at the same time.
+
+The `screen_type` field is `"crt"` or `"lcd"` and reports the active runtime display mode. With `video_mode=0` (automatic detection), it reports the detected result rather than the configured auto setting. Clients can use this field to show or hide display-specific settings.
 
 ```text
 GET /api/v1/get_status
@@ -89,6 +91,7 @@ Response:
   "game_name": "Altered Beast (set 8) (8751 317-0078)",
   "paused": false,
   "halted": false,
+  "screen_type": "lcd",
   "view": "game_play",
   "view_id": 2,
   "core_file": "fbneo_libretro.so",
@@ -281,7 +284,7 @@ The summary statistics are always global; query parameters filter only the `syst
 Returns the selected configuration.
 
 ```text
-GET /api/v1/get_config?type=<replay|core|game>
+GET /api/v1/get_config?type=<replay|core|folder|game>
 ```
 
 The `type` parameter is mandatory:
@@ -290,6 +293,7 @@ The `type` parameter is mandatory:
 | --- | --- |
 | `replay` | Returns the global `replay.cfg` configuration. Sensitive fields including `nfs_*` and `wifi_*` are omitted. |
 | `core` | Returns only the managed RePlay-owned options from the override file for the active game's system and display type. |
+| `folder` | Returns only the managed RePlay-owned options from the active game's immediate folder override file, for the active display type. |
 | `game` | Returns only the managed RePlay-owned options from the active game's override file. |
 
 Example:
@@ -298,7 +302,7 @@ Example:
 curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/get_config?type=core'
 ```
 
-When the selected core or game override file does not exist, the request succeeds and reports that no override is configured:
+When the selected core, folder, or game override file does not exist, the request succeeds and reports that no override is configured:
 
 ```json
 {
@@ -308,14 +312,17 @@ When the selected core or game override file does not exist, the request succeed
 }
 ```
 
+For `core`, `folder`, and `game`, `configured` indicates whether the selected saved file exists in the active CRT/LCD configuration directory. Query each type independently to enable its deletion button. Several files can exist at once; this field does not identify a single active profile or describe the settings currently held in memory.
+
 ## Set Config
 
 Updates one or more settings for the selected configuration type. The complete request is validated before any changes are written.
 
 ```text
-GET /api/v1/set_config?type=<replay|core|game>&option=<option>&value=<value>
-GET /api/v1/set_config?type=<replay|core|game>&option=<option-1>&value=<value-1>&option=<option-2>&value=<value-2>
+GET /api/v1/set_config?type=<replay|core|folder|game>&option=<option>&value=<value>
+GET /api/v1/set_config?type=<replay|core|folder|game>&option=<option-1>&value=<value-1>&option=<option-2>&value=<value-2>
 GET /api/v1/set_config?type=core&system=<system>&option=<option>&value=<value>
+GET /api/v1/set_config?type=folder&system=<system>&game_file=<full-game-path>&option=<option>&value=<value>
 GET /api/v1/set_config?type=game&system=<system>&game_file=<full-game-path>&option=<option>&value=<value>
 ```
 
@@ -323,15 +330,15 @@ Parameters:
 
 | Name | Required | Description |
 | --- | --- | --- |
-| `type` | Yes | Configuration type: `replay`, `core`, or `game`. |
+| `type` | Yes | Configuration type: `replay`, `core`, `folder`, or `game`. |
 | `option` | Yes | Configuration option name. Repeat together with `value` to update multiple options. |
 | `value` | Yes | New value for the corresponding `option`. |
-| `system` | No | For `core` and `game`, the expected `system` from `get_status`. Rejects the write if the active system changed. Not accepted for `replay`. |
-| `game_file` | No | For `game`, the expected full `game_file` path from `get_status`. Must be supplied together with `system`; rejects the write if the active game changed. Not accepted for `core` or `replay`. |
+| `system` | No | For `core`, `folder`, and `game`, the expected `system` from `get_status`. Rejects the write if the active system changed. Not accepted for `replay`. |
+| `game_file` | No | For `folder` and `game`, the expected full `game_file` path from `get_status`. Must be supplied together with `system`; rejects the write if the active game changed. Not accepted for `core` or `replay`. |
 
 Up to 64 changes may be included in one request. If any option or value is invalid, none of the changes are written.
 
-The target parameters are optional for compatibility with existing clients. When supplied, RePlay checks them immediately before applying the update. Use the exact `system` and `game_file` values from `get_status`; unlike the `get_playtime` filter, `game_file` is compared as a full path. URL-encode the path in the query string. For `game` updates, supply both target parameters or neither. Empty or invalid target parameters return `400 Bad Request`.
+The target parameters are optional for compatibility with existing clients. When supplied, RePlay checks them immediately before applying the update. Use the exact `system` and `game_file` values from `get_status`; unlike the `get_playtime` filter, `game_file` is compared as a full path. URL-encode the path in the query string. For `folder` and `game` updates, supply both target parameters or neither. Empty or invalid target parameters return `400 Bad Request`.
 
 ### RePlay Config
 
@@ -418,11 +425,11 @@ curl -H 'X-RePlay-Token: 123456' \
   'http://<replay-ip>:55356/api/v1/set_config?type=replay&option=link_play_mode&value=disabled'
 ```
 
-### Core And Game Config
+### Core, Folder And Game Config
 
-Core and game configuration is restricted to the common RePlay-owned options listed below. Libretro core-specific options are never returned or managed by this API.
+Core, folder, and game configuration is restricted to the common RePlay-owned options listed below. Libretro core-specific options are never returned or managed by this API.
 
-Core and game values also accept `default`, which inherits the global RePlay value. If the selected override file does not exist, it is created containing only these managed options. Existing override files retain all unrelated core-specific options. After a successful update, the active game immediately reloads the effective game-over-core settings and an open game settings menu is refreshed.
+Core, folder, and game values also accept `default`, which inherits the global RePlay value. If the selected override file does not exist, it is created containing only these managed options. Existing override files retain all unrelated core-specific options. After a successful update, the active game immediately reloads the effective settings and an open game settings menu is refreshed. Settings take precedence in this order: game, current folder, core, system defaults, then global defaults. Parent folders are not searched for settings or input profiles.
 
 | Option | RePlay values |
 | --- | --- |
@@ -434,7 +441,7 @@ Core and game values also accept `default`, which inherits the global RePlay val
 | `replay_video_monitor_y` | `-64` through `64` in increments of `2` |
 | `replay_audio_system_volume` | `0` through `10` |
 
-Core and game configurations accept the same values plus `default`.
+Core, folder, and game configurations accept the same values plus `default`.
 
 Example:
 
@@ -454,9 +461,24 @@ Response:
 }
 ```
 
-If no active core or game target exists, the endpoint returns `409 Configuration Unavailable`.
+#### Folder Target
 
-To guard a game update against a game switch, first read `get_status`, then send its `system` and `game_file` values with the write:
+`type=folder` reads, updates, or deletes the active game's immediate folder below the ROM library's system directory. It uses the same configuration file and folder-name encoding as the UI's **Save folder settings**, including separate LCD and CRT settings.
+
+For example, while playing `/media/nvme/roms/snes/RPG/Chrono Trigger.sfc`, these requests target the `RPG` folder:
+
+```bash
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/get_config?type=folder'
+curl -H 'X-RePlay-Token: 123456' 'http://<replay-ip>:55356/api/v1/set_config?type=folder&option=replay_video_integer_scale&value=1'
+```
+
+Reads, writes, and deletions address only the immediate folder, matching the frontend's **Save folder settings** and **Remove folder settings** actions. Loading also checks only the immediate folder; parent configurations are not inherited. A read returns `{"type":"folder","configured":false,"config":{}}` if the immediate folder has no settings file. A write creates that file with the other managed options initialized to `default`, or updates the existing file while preserving unrelated options. Game overrides continue to take precedence over folder changes.
+
+Games directly inside a system's ROM directory have no folder target. If no active core, folder, or game target exists, the endpoint returns `409 Configuration Unavailable`.
+
+#### Target Guards
+
+To guard a folder or game update against a game switch, first read `get_status`, then send its `system` and `game_file` values with the write:
 
 ```bash
 curl -G -H 'X-RePlay-Token: 123456' \
@@ -468,11 +490,71 @@ curl -G -H 'X-RePlay-Token: 123456' \
   'http://<replay-ip>:55356/api/v1/set_config'
 ```
 
-For a core update, include only `system`. If the supplied target no longer matches the active one, no options are written and the endpoint returns `409 Target Changed`:
+For a folder update, use `type=folder` with the same pair of target parameters. For a core update, include only `system`. If the supplied target no longer matches the active one, no options are written and the endpoint returns `409 Target Changed`:
 
 ```json
 {"error":"Target Changed","detail":"Active configuration target changed"}
 ```
+
+## Delete Config
+
+Deletes the selected saved settings file without resetting or reloading the running settings, matching the frontend's removal actions.
+
+```text
+GET /api/v1/delete_config?type=<core|folder|game>
+GET /api/v1/delete_config?type=core&system=<system>
+GET /api/v1/delete_config?type=folder&system=<system>&game_file=<full-game-path>
+GET /api/v1/delete_config?type=game&system=<system>&game_file=<full-game-path>
+```
+
+Parameters:
+
+| Name | Required | Description |
+| --- | --- | --- |
+| `type` | Yes | `core` (system settings), `folder` (current folder settings), or `game` (game settings). `replay` is not accepted. |
+| `system` | No | Expected `system` from `get_status`. For `core`, this is the only supported target guard. |
+| `game_file` | No | Expected full `game_file` from `get_status`. For `folder` and `game`, supply this together with `system`, or omit both. Not accepted for `core`. |
+
+All three types require an active system and game and use the active CRT/LCD configuration directory. Folder deletion targets only the game's immediate folder below the system ROM directory; it never searches parent folders. Games directly inside the system ROM directory have no folder target. This endpoint deletes settings profiles only; it does not delete input profiles, games, save states, or the global `replay.cfg`.
+
+The entire selected `.cfg` is deleted, including any libretro core-specific options stored in it. The running values remain in memory until settings are reloaded, such as on game restart. The frontend's saved-profile indicator and open game settings menu are refreshed.
+
+Example with target guards:
+
+```bash
+curl -G -H 'X-RePlay-Token: 123456' \
+  --data-urlencode 'type=game' \
+  --data-urlencode 'system=arcade_fbneo' \
+  --data-urlencode 'game_file=/media/nvme/roms/arcade_fbneo/altbeast.zip' \
+  'http://<replay-ip>:55356/api/v1/delete_config'
+```
+
+Target guards use exact values from `get_status` and are checked on the frontend thread immediately before deletion, like `set_config`. URL-encode their values. Empty, duplicate, or malformed target parameters return `400 Bad Request`. A mismatch returns `409 Target Changed` without deleting anything.
+
+Success response (HTTP 200):
+
+```json
+{
+  "command": "delete_config",
+  "type": "game",
+  "deleted": true
+}
+```
+
+Clients should use `get_config?type=core`, `type=folder`, and `type=game` to enable each deletion button only when its `configured` field is `true`, and refresh these values after deletion. A missing file still returns an explicit error if deletion is attempted:
+
+```json
+{"error":"Configuration Not Found"}
+```
+
+| HTTP status | Error | Meaning |
+| --- | --- | --- |
+| 400 | `Invalid Type` | Missing or unsupported type. Response includes `allowed_types`: `["core","folder","game"]`. |
+| 400 | `Bad Request` | Invalid target guard parameters. |
+| 404 | `Configuration Not Found` | The selected file does not exist. |
+| 409 | `Configuration Unavailable` | No applicable active system/game/folder target. |
+| 409 | `Target Changed` | The active target no longer matches the supplied guard parameters. |
+| 500 | `Internal Server Error` | The file could not be deleted. |
 
 ## Set Message
 
