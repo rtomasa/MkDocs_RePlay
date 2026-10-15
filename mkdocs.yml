@@ -125,6 +125,7 @@ nav:
     - RePlay REST API: rest_api.md
     - Autostart Games: autostart.md
     - Core System Settings: settings.md
+    - External Systems & Cores: externalcores.md
     - ROM Codes and Meanings: romcodes.md
     - M3U Multi-Disc Management: m3u.md
     - Pi3/4 Audio Jack: pi3jack.md
