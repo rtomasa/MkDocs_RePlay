@@ -435,7 +435,8 @@ Core, folder, and game values also accept `default`, which inherits the global R
 | --- | --- |
 | `replay_video_ambiscan` | `0`, `1`, `2`, `3` |
 | `replay_video_integer_scale` | `0`, `1`, `2`, `3`, `4`, `5` |
-| `replay_video_filter` | `0` through `4` |
+| `replay_video_filter` | `0` through `10`; see [Display Filter](videobasic.md#display-filter) and [configuration values](cfgfile.md) |
+| `replay_video_analog_filter` | `0` through `4`; see [Analog Filter](videobasic.md#analog-filter) and [configuration values](cfgfile.md) |
 | `replay_video_gamma` | `0.5` through `1.5` in increments of `0.1` |
 | `replay_video_monitor_x` | `-64` through `64` in increments of `2` |
 | `replay_video_monitor_y` | `-64` through `64` in increments of `2` |

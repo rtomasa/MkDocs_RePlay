@@ -11,14 +11,10 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 
 ```cfg
 # video_engine
-## opengles = default OpenGL ES renderer
-## vulkan = experimental preferred renderer for authenticated Insiders on Pi 5
-## Software-frame and OpenGL ES cores retain their normal rendering paths.
+## opengles = existing OpenGL ES renderer (default)
+## vulkan = preferred API for Vulkan-capable cores; Insider-only on Pi 5
+## Software-frame and OpenGL ES cores continue to use their native paths.
 video_engine = "opengles"
-# video_frame_pacing
-## balanced = best performance (default)
-## low_latency = lower display latency; may reduce performance
-video_frame_pacing = "balanced"
 # video_connector
 ## 0 = hdmi
 ## 1 = dpi (used for gpio)
@@ -109,12 +105,27 @@ video_ui_rotation_mode = "0"
 video_show_fps = "false"
 video_show_info = "false"
 # video_filter
+## Display Filter: physical screen effects
 ## 0 = none
 ## 1 = light scanlines
 ## 2 = medium scanlines
 ## 3 = strong scanlines
-## 4 = black scanlines          
+## 4 = maximum scanlines
+## 5 = CRT TV (scanlines + subtle phosphor mask)
+## 6 = LCD Grid Dark (dark pixel matrix)
+## 10 = LCD Grid Light (light pixel matrix)
+## 7 = LCD RGB (colour subpixel matrix)
+## 8 = LCD BGR (reversed colour subpixel matrix)
+## 9 = LCD DMG (shaded dots with light gaps; core palette retained)
 video_filter = "0"
+# video_analog_filter
+## Pi4+ only
+## 0 = disabled
+## 1 = RGB
+## 2 = S-Video
+## 3 = Composite
+## 4 = Dither Blending
+video_analog_filter = "0"
 # video_ambiscan
 ## 0 = disabled
 ## 1 = flat
@@ -178,7 +189,11 @@ input_rumble = "true"
 input_gcon2_flash = "1"
 input_gcon2_offscreen = "true"
 input_ui_swap_ab = "false"
-input_all_control_ui = "false"
+# input_all_control_ui
+## auto = only P1 when available, otherwise all assigned players
+## true = all assigned players
+## false = only P1
+input_all_control_ui = "auto"
 # input_ui_menu_btn
 ## 0 = home button
 ## 1 = select+start
@@ -199,7 +214,6 @@ system_coinop = "false"
 # system_coinop_time
 ## game time you get for a credit
 system_coinop_time = "180"
-system_track_playtime = "true"
 # system_log_level
 ## 0 = debug (not available for users)
 ## 1 = info
@@ -218,15 +232,10 @@ system_kiosk_mode = "false"
 ## 7 = 7 seconds
 system_reboot_poweroff_delay = "3"
 system_skin = "replay"
-# replay_ui_background_animation
-## enabled = animate the menu tile background
-## disabled = keep the menu tile background aligned and still
-replay_ui_background_animation = "enabled"
 # replay_ui_background_style
-# Tiles, Rotozoom checkerboard, Starfield, Pixel rain, Doom fire,
-## Dithered plasma, Plasma orbs, Kaleidoscope, Reaction-diffusion cells,
-## Circuit board, Vector tunnel, Neon grid or Raster lines
-replay_ui_background_style = "Tiles"
+## Scrolling, Perspective, Lens, Breathing, Wobble or Static
+## Static = stationary, unlit checkerboard
+replay_ui_background_style = "Scrolling"
 # system_boot_to_system
 ## all
 ## arcade_fbneo
@@ -246,7 +255,6 @@ system_boot_last_media = "true"
 # system_storage
 ## sd = internal sd card
 ## usb = external usb drive
-## nvme = internal NVMe drive on supported Pi 5 systems
 ## nfs = network nfs share
 system_storage = "sd"
 # system_data_location
@@ -254,17 +262,16 @@ system_storage = "sd"
 ## local_sd = save data on the local SD card
 system_data_location = "storage_unit"
 system_ui_pauses_core = "false"
+# system_screenshot_ui
+## true = include the UI, notifications, and achievement overlays
+## false = capture the game without UI overlays
+system_screenshot_ui = "false"
 # system_wifi_enabled
 ## Enable or disable the Wi-Fi adapter.
 system_wifi_enabled = "true"
 system_net_control = "false"
-view_hide_empty_folders = "false"
-# view_m3u_contents
-## Show files and folders referenced by M3U playlists in game lists.
+view_show_empty_folders = "true"
 view_m3u_contents = "false"
-# view_replays
-## Show the Insider Replays browser in the main menu.
-view_replays = "true"
 view_extra = "true"
 view_favorites = "true"
 view_recent = "true"
@@ -300,6 +307,7 @@ view_buttons = "0"
 ## 5 = trackball / mouse
 ## 6 = lightgun
 view_controller = "0"
+play_stats_track = "true"
 nfs_server = "192.168.X.X"
 nfs_share = "/export/share"
 # nfs_version

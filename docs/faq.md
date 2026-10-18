@@ -29,7 +29,7 @@ Also, please note that some system cores provide their own custom runahead funct
 Usually, there is no noticeable difference. USB 2.0 already supports polling every **1 ms (1000 Hz)** for compatible controllers. Most joysticks use the same polling rate on either port, so USB 3.0’s higher bandwidth does not make them respond faster.
 
 ## Does enabling scanlines in RePlay affect input lag?
-Scanlines should not add noticeable input lag as long as the game maintains full speed. RePlay applies them during rendering without buffering an extra frame. They add a small amount of GPU work, so lag could increase if the system cannot keep up.
+Display and analog filters process the current frame without buffering an extra frame. They add GPU work, so input lag can increase if rendering misses its presentation deadline. Cost depends on the filter, native game resolution and output size; high-resolution LCD masks and analog filter reconstruction are more demanding than simple scanlines or Dither Blending. See [Filter Performance](videobasic.md#filter-performance).
 
 ## Is it OpenSource?
 The OS operates under a dual-license model: while most components are free and open-source, the frontend remains proprietary. For more details, please refer to the licensing information on the [download](download.md#license) page.
@@ -81,11 +81,9 @@ Developers of cores don’t have to worry about writing different video drivers 
 
 ## Can I use CRT shaders on my LCD?
 
-No, that's not possible. The system offers several scanline shaders tailored for LCD screens and 31kKz CRT monitors, and they're activated exclusively when integer scaling is enabled. These shaders are intended to provide a subtle texturing effect for those who prefer it, rather than to simulate the appearance of a CRT screen.
+Yes. On Raspberry Pi 4 and newer, `VIDEO > DISPLAY FILTER` offers four scanline strengths and CRT TV, which combines scanlines with a fine phosphor mask. Integer scaling is not required. These are lightweight approximations of screen texture; they do not reproduce a real CRT's contrast or motion characteristics.
 
-Attempting to replicate the authentic CRT TV experience using CRT shaders is beyond the project's intended scope and philosophy. In fact, CRT shaders introduce image aberrations and performance issues that vary depending on the system in use. Additionally, they cannot reproduce the distinctive contrast or smooth motion of a real CRT TV.
-
-If you're fond of the look and feel of CRT TVs, your best bet is to acquire an actual CRT TV!
+LCD Grid Dark/Light, LCD RGB, LCD BGR and LCD DMG presets are also available. A separate Analog Filter option provides RGB, S-Video, Composite and Dither Blending, which can be combined with a display preset. See [Video Configuration](videobasic.md#display-filter) for descriptions and screenshots.
 
 ## Can I play movies?
 

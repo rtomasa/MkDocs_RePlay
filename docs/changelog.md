@@ -1,5 +1,17 @@
 # Changelog
 
+# v2.1.0
+- [X] Added `ANALOG FILTER` with RGB, S-Video and Composite modes, and dynamic Dither Blending for pixel-pattern transparencies; supports NTSC/PAL content across systems, consistent colour levels, non-integer scaling and independent display effects without changing core options
+- [X] Improved `DISPLAY FILTER` (previously `SCANLINES`) with new effects (Scanlines Light/Medium/Strong/Maximum, CRT TV, LCD Grid Dark/Light, LCD RGB/BGR, LCD DMG) with native-pixel alignment across output resolutions, non-integer scaling, brightness-adaptive scanlines, filtering to reduce moiré, and core-palette preservation in LCD modes
+- [X] Added support for external libretro systems (check the official website for detailed information)
+- [X] Added `Visibility > Show external systems` below `Show handhelds` (On by default), with a distinct PICO-8 extended orange folder icon for external systems
+- [X] Added `type=folder` to the configuration REST API to read and update the active game's folder settings, matching the UI's folder scope
+- [X] Added `screen_type` to the REST API status response to report the active CRT/LCD mode, including when using automatic detection
+- [X] Added the `delete_config` REST API endpoint to delete system, folder, and game settings files without resetting running settings, with optional target guards against system/game changes
+- [X] Fixed failed game launches creating or reordering entries in Recents, including launches from Favorites and remote control
+- [X] Fixed core-loading failures to report missing dependencies or entry points and return to the menu, and ensured core save directories exist before use
+- [X] Fixed keyboard input crashes after switching from MAME to FBNeo or another core that does not register a keyboard callback
+
 # v2.0.60
 - [X] Added automatic gameplay screenshots when saving states, so now Save/Load state menus show the selected slot's screenshot above the list
 - [X] Added slot numbers alongside timestamps in Save/Load state menus, including empty slots
@@ -49,9 +61,6 @@
 - [X] Fixed explicit OSD messages to remain visible regardless of the log level
 
 # v2.0.52
-- [X] Added Insider-only input recording and playback for compatible cores, with recordings streamed to disk through a bounded memory queue
-- [X] Added balanced and low-latency frame pacing options globally and per game
-- [X] Added automatic creation of the ROM library's _autostart folder
 - [X] Completed a major overhaul of the RePlayOS base system:
     - Rebuilt OS images with Raspberry Pi's rpi-image-gen
     - Made it possible to upgrade offline by reflashing an existing RePlayOS v2 SD card with a compatible image while preserving the exFAT `replay` data partition
@@ -179,10 +188,6 @@
 
 # v1.8.0
 
-## Replay Control Companion App
-
-This release added installation and uninstallation scripts for [Replay Control](replaycontrol.md), the companion web app created by [Antonio Abad (lapastillaroja)](https://github.com/lapastillaroja). It lets you browse, manage, and launch games from a phone, tablet, or computer on your local network.
-
 ## Patreon Poll Winner
 
 Selected by RePlayOS supporters through the Patreon feature poll and available to all users.
@@ -223,7 +228,7 @@ Selected by RePlayOS supporters through the Patreon feature poll and available t
 - [X] Added UI volume button bindings to L2/R2 (works only while the UI is open)
 - [X] Added controller mapping visual prompts on top of the UI
 - [X] Added `REPLAY OPTIONS > VISIBILITY` toggles for favorites, recents and extras
-- [X] Added [Replay Control](replaycontrol.md) installation and uninstallation scripts to extras
+- [X] Added Replay Control installation and uninstallation scripts to extras
 - [X] Changed CRT Ambiscan predefaults to disable it for regular CRT systems, use flat mode for handheld CRT systems, and remove the LCD Alpha Player override
 - [X] Increased Screen Position X/Y options to `-64` to `+64` in finer 2-unit steps
 - [X] Improved log information when mounting NVMe units
