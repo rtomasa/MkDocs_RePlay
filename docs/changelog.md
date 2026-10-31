@@ -1,6 +1,7 @@
 # Changelog
 
 # v2.1.0
+- [X] Removed the Insider requirement for the experimental Vulkan renderer and Nintendo GameCube, Nintendo Wii, and Arcade Triforce (Dolphin) cores on Raspberry Pi 5; these cores still require Vulkan, and Sony PlayStation 2 remains Insider-only
 - [X] Added `ANALOG FILTER` with RGB, S-Video and Composite modes, and dynamic Dither Blending for pixel-pattern transparencies; supports NTSC/PAL content across systems, consistent colour levels, non-integer scaling and independent display effects without changing core options
 - [X] Improved `DISPLAY FILTER` (previously `SCANLINES`) with new effects (Scanlines Light/Medium/Strong/Maximum, CRT TV, LCD Grid Dark/Light, LCD RGB/BGR, LCD DMG) with native-pixel alignment across output resolutions, non-integer scaling, brightness-adaptive scanlines, filtering to reduce moiré, and core-palette preservation in LCD modes
 - [X] Added support for external libretro systems (check the official website for detailed information)
@@ -71,7 +72,7 @@
 - [X] Added custom forked Flycast core including the following improvements:
     - Enabled GLES 3.1 OIT (Order-independent transparency) AKA Alpha Sorting Per-Pixel
     - Optimized ARM64 framebuffer emulation paths (3.9x performance improvement)
-- [X] Added an **Experimental Insider-only Raspberry Pi 5** Vulkan engine for Vulkan and software-frame libretro cores:
+- [X] Added an **Experimental Raspberry Pi 5** Vulkan engine for Vulkan and software-frame libretro cores:
     - Compiled Vulkan support into frontend binary while showing and enabling `Preferred renderer` only on Raspberry Pi 5
     - Retained OpenGL ES as the default and as the native path for OpenGL cores
     - Retained software-frame core rendering through the existing compositor
@@ -80,7 +81,8 @@
     - Made native Vulkan-to-KMS composition implicit when Vulkan is selected
     - Added single- and dual-display LCD/CRT gameplay, direct atomic Switchres modesets, cloned/side-by-side/vertical/smart layouts, UI/overlay alpha composition, rotation, colour/gamma controls, video filters, lightgun flash, Ambiscan backgrounds, screenshots, and screen-saver rendering
     - Kept a Vulkan-to-GLES DMA-BUF bridge lazy and internal for genuine KMS/capability recovery, cached unchanged overlay uploads, and retained release-build CPU/GPU and presentation-latency profiling through `REPLAY_VULKAN_PROFILE=1`
-- [X] Added experimental Nintendo GameCube, Nintendo Wii, and Arcade Triforce (Dolphin) and Sony PlayStation 2 (LRPS2) cores, available only to Insiders on Raspberry Pi 5 when Vulkan is enabled
+- [X] Added experimental Nintendo GameCube, Nintendo Wii, and Arcade Triforce (Dolphin) cores, available on Raspberry Pi 5 when Vulkan is enabled
+- [X] Added an experimental Sony PlayStation 2 (LRPS2) core, available only to Insiders on Raspberry Pi 5 when Vulkan is enabled
 - [X] Added Atari Jaguar CD system on Raspberry Pi5
 - [X] Added Nintendo Virtual Boy system as a standard console on all Raspberry Pi models
 - [X] Created new replay_bios_v11.zip pack:

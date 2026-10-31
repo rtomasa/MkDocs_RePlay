@@ -101,8 +101,8 @@ Replay Control was created by [Antonio Abad (lapastillaroja)](https://github.com
 - Support for external USB/GPIO audio DACs.
 - Support for [RetroAchievements](rcheevos.md) in compatible libretro cores and games.
 - Experimental [Insider Replays](replays.md) input recording and playback for compatible cores.
-- Experimental Vulkan renderer on Raspberry Pi 5 for authenticated Insiders; OpenGL ES remains the default.
-- Experimental GameCube, Wii, Triforce, and PlayStation 2 cores on Insider Pi 5 systems using Vulkan; Virtual Boy is available on all supported Pi models.
+- Experimental Vulkan renderer on Raspberry Pi 5; OpenGL ES remains the default.
+- Experimental GameCube, Wii, and Triforce cores on Raspberry Pi 5 using Vulkan; PlayStation 2 additionally requires a valid Insider token. Virtual Boy is available on all supported Pi models.
 - Balanced and low-latency frame pacing options globally and per game.
 - [Replay Control](replaycontrol.md) companion web app for browsing, managing, and launching games from another device.
 - Support for [Link Play](linkplay.md) core-managed multiplayer over a local network.

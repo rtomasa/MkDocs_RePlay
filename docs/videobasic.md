@@ -4,7 +4,7 @@ Below you can find a description of some basic video configurations and features
 
 ## Preferred Renderer and Frame Pacing
 
-`REPLAY OPTIONS > VIDEO > PREFERRED RENDERER` defaults to OpenGL ES. Authenticated Insiders on Raspberry Pi 5 can select experimental Vulkan. This is a preference for Vulkan-capable cores; OpenGL ES cores and software-frame cores continue through their supported paths. Changing the renderer requires a game restart.
+`REPLAY OPTIONS > VIDEO > PREFERRED RENDERER` defaults to OpenGL ES. Users on Raspberry Pi 5 can select experimental Vulkan without an Insider token. This is a preference for Vulkan-capable cores; OpenGL ES cores and software-frame cores continue through their supported paths. Changing the renderer requires a game restart.
 
 `REPLAY OPTIONS > VIDEO > FRAME PACING` offers `BALANCED` (default, best performance) and `LOW LATENCY` (which may reduce performance). A running game's `SYSTEM SETTINGS > FRAME PACING` option can override the global choice. Apply a changed frame-pacing setting by restarting the game.
 

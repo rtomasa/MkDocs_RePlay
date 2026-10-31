@@ -2,7 +2,7 @@
 
 ## Compatibility Matrix
 
-The GameCube, Wii, Triforce, and PlayStation 2 rows are experimental and require an authenticated Insider build on Raspberry Pi 5 with Vulkan selected as the preferred renderer. Virtual Boy is a standard system on all supported Pi models. Format lists match the current frontend file browser.
+The GameCube, Wii, Triforce, and PlayStation 2 rows are experimental and require Raspberry Pi 5 with Vulkan selected as the preferred renderer. Only PlayStation 2 additionally requires a valid Insider token. Virtual Boy is a standard system on all supported Pi models. Format lists match the current frontend file browser.
 
 
 | System                                | RPi 3                     | RPi 4            | RPi 5                      | Supported Format   |
@@ -61,4 +61,4 @@ The GameCube, Wii, Triforce, and PlayStation 2 rows are experimental and require
 ## Icon Description
 :green_circle: Most games run fine near or at full performance with no major emulations issues.</br>
 :yellow_circle: There are many games that could face emulation or performance issues.</br>
-:red_circle: System is unavailable on this Pi model. Yellow on an Insider-only row marks experimental availability, not a performance guarantee.</br>
+:red_circle: System is unavailable on this Pi model. Yellow on an experimental row marks availability, not a performance guarantee.</br>

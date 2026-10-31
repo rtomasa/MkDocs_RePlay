@@ -134,8 +134,6 @@ Response:
   "insider_enabled": false,
   "insider_features": [
     "replays",
-    "vulkan",
-    "gamecube",
     "playstation2",
     "update_channel"
   ],
@@ -183,12 +181,10 @@ Current `insider_features` values:
 | Feature ID | Description |
 | --- | --- |
 | `replays` | RePlay input-movie recording and playback. |
-| `vulkan` | Pi 5 Vulkan renderer capability. |
-| `gamecube` | Nintendo GameCube (Dolphin) support. |
 | `playstation2` | Sony PlayStation 2 (LRPS2) support. |
 | `update_channel` | Selection of the RePlayOS update channel. |
 
-The array describes supported capabilities, rather than temporary state or access granted by the Insider token. For example, `vulkan` may be present even while OpenGL ES is currently selected. A feature listed here may still require a valid Insider token to use. Clients should tolerate unknown feature IDs so newer RePlayOS versions can add capabilities without breaking integrations.
+The array describes supported capabilities, rather than temporary state or access granted by the Insider token. For example, `playstation2` may be present on Raspberry Pi 5 even while OpenGL ES is currently selected; using it requires Vulkan and a valid Insider token. Vulkan and GameCube/Wii/Triforce no longer require an Insider token and are not listed in this array. Clients should tolerate unknown feature IDs so newer RePlayOS versions can add capabilities without breaking integrations.
 
 ## Get Playtime
 

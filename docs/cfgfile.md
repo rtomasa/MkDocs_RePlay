@@ -12,7 +12,7 @@ The configuration file is located in `/media/sd/config/replay.cfg`:
 ```cfg
 # video_engine
 ## opengles = existing OpenGL ES renderer (default)
-## vulkan = preferred API for Vulkan-capable cores; Insider-only on Pi 5
+## vulkan = preferred API for Vulkan-capable cores; available on Pi 5
 ## Software-frame and OpenGL ES cores continue to use their native paths.
 video_engine = "opengles"
 # video_connector
